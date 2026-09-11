@@ -179,3 +179,125 @@ footer{padding-top:48px;padding-bottom:32px}
   .fullbleed-hero-copy h1{font-size:clamp(23px,6.2vw,35px);line-height:1.08;max-width:300px}
   .fullbleed-hero-description{font-size:10px;margin:20px 0 18px;max-width:280px}
 }
+
+/* Campaign-led portfolio: generous image scale and a quieter studio rhythm. */
+.work{padding-top:120px;padding-bottom:150px}
+.work .section-heading{margin-bottom:48px}
+.work .section-heading h2{font-size:32px;letter-spacing:-1.2px}
+.work .project-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:90px 32px;align-items:start}
+.work .project-card{grid-column:span 6;margin-top:0}
+.work .project-card:nth-child(3n + 1){grid-column:1 / -1}
+.work .project-card:nth-child(3n + 1) .card-image{aspect-ratio:1.9}
+.work .card-image{aspect-ratio:1.55}
+.work .card-caption{padding-top:20px}
+.work .card-caption h3{font-size:14px;letter-spacing:.3px}
+.work .card-view{display:none}
+.philosophy{padding-top:100px;padding-bottom:85px}
+.philosophy h2{font-size:clamp(38px,5.2vw,76px);max-width:1000px}
+.philosophy h2 em{font-family:inherit;font-style:normal;color:inherit}
+.philosophy svg,.founder-label>svg{display:none}
+.why,.founder{padding-top:130px;padding-bottom:130px}
+.studio-intro h2,.founder h2,.partners h2{font-size:clamp(30px,3.2vw,46px);line-height:1.15}
+.project-detail .detail-heading h1{font-size:clamp(36px,6vw,90px);letter-spacing:-.045em;overflow-wrap:break-word}
+.project-detail>.portfolio-image{height:auto;max-height:none;object-fit:contain}
+.project-information{padding:90px 0 110px}
+.project-detail .campaign-sequence{grid-template-columns:repeat(2,minmax(0,1fr));gap:60px 28px;align-items:start}
+.project-detail .campaign-sequence>.portfolio-image{height:auto;aspect-ratio:auto;object-fit:contain;margin-top:0}
+.project-detail .campaign-sequence>.portfolio-image:nth-child(3n + 1){grid-column:1 / -1}
+.project-end{padding-top:110px;padding-bottom:90px}
+@media(max-width:700px){
+  .work{padding-top:70px;padding-bottom:85px}
+  .work .project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:45px}
+  .work .project-card,.work .project-card:nth-child(3n + 1){grid-column:1;margin:0}
+  .work .card-image,.work .project-card:nth-child(3n + 1) .card-image{aspect-ratio:1.55}
+  .work .card-caption{flex-wrap:wrap;gap:8px}
+  .work .card-caption h3{font-size:12px;max-width:85%}
+  .philosophy{padding-top:65px;padding-bottom:55px}
+  .why,.founder{padding-top:75px;padding-bottom:75px}
+  .project-information{padding:50px 0 65px}
+  .project-detail .campaign-sequence{grid-template-columns:minmax(0,1fr);gap:28px}
+  .project-detail .campaign-sequence>.portfolio-image{grid-column:1}
+  .project-end{padding:65px 0;gap:25px}
+}
+
+/* A clear brand outcome, with the product carrying the visual impact. */
+.fullbleed-hero .hero-image{height:calc(100svh - 106px);min-height:640px;max-height:1100px;background:#000}
+.fullbleed-hero .portfolio-image{transform:scale(1.2) translateX(14%);object-position:center}
+.fullbleed-hero .homepage-hero-photo::after{display:none}
+.fullbleed-hero-copy{left:5%;top:53%;max-width:44%}
+.fullbleed-hero-brand{font-size:10px;letter-spacing:1.8px;margin-bottom:32px}
+.fullbleed-hero-copy h1{font-size:clamp(34px,4.25vw,68px);font-weight:500;line-height:1.08;letter-spacing:-.05em;max-width:640px;text-wrap:initial}
+.fullbleed-hero-description{font-size:13px;line-height:1.8;letter-spacing:0;max-width:310px;margin:28px 0 0;color:#c0c2b9}
+@media(max-width:800px){
+  .fullbleed-hero .hero-image{height:calc(100svh - 106px);min-height:740px;max-height:1000px}
+  .fullbleed-hero .homepage-hero-photo{position:absolute;bottom:0;height:65%;width:100%}
+  .fullbleed-hero .portfolio-image{transform:none;object-position:center 42%}
+  .fullbleed-hero-copy{left:6%;right:6%;top:7%;transform:none;max-width:none}
+  .fullbleed-hero-brand{font-size:9px;margin-bottom:22px}
+  .fullbleed-hero-copy h1{font-size:clamp(32px,6vw,48px);max-width:550px;line-height:1.1}
+  .fullbleed-hero-description{font-size:12px;max-width:310px;margin-top:20px;line-height:1.7}
+}
+
+/* Selected Work uses one consistent full-width frame for every campaign. */
+.curated-grid{display:flex;flex-direction:column;gap:96px}
+.curated-grid .curated-card{grid-column:auto;grid-row:auto;width:100%;margin:0}
+.curated-grid .curated-image{width:100%}
+@media(max-width:700px){.curated-grid{gap:54px}.curated-grid .curated-card{width:100%}}
+@media(max-width:600px){
+  .fullbleed-hero .hero-image{height:calc(100svh - 78px);min-height:700px}
+  .fullbleed-hero .homepage-hero-photo{height:60%}
+}
+
+/* Individually placed campaign covers, in the studio's selected order. */
+.curated-work .section-heading{margin-bottom:54px}
+.curated-grid{display:flex;flex-direction:column;gap:96px}
+.curated-card{width:100%;margin:0!important}
+.curated-image .portfolio-image{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.curated-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:28px;row-gap:110px;align-items:start}
+.curated-card{display:block;min-width:0}
+.curated-card-1{grid-column:1 / -1;grid-row:1}
+.curated-card-2{grid-column:1 / 9;grid-row:2}
+.curated-card-3{grid-column:10 / 13;grid-row:2;margin-top:clamp(80px,12vw,190px)}
+.curated-card-4{grid-column:2 / -1;grid-row:3}
+.curated-card-5{grid-column:6 / -1;grid-row:4}
+.curated-card-6{grid-column:1 / 5;grid-row:4;margin-top:clamp(110px,16vw,230px)}
+.curated-image{overflow:hidden;background:#000}
+.curated-image .portfolio-image{height:auto;aspect-ratio:auto;object-fit:contain}
+.curated-caption{display:flex;justify-content:space-between;gap:20px;padding-top:18px}
+.curated-caption h3{margin:0;font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.6px}
+.curated-caption p{margin:5px 0 0;font-size:11px;line-height:1.6;color:var(--muted)}
+.curated-caption>span{font-size:20px;line-height:1.2;color:var(--muted)}
+.curated-card:hover .curated-caption>span,.curated-card:focus-visible .curated-caption>span{color:var(--orange)}
+/* Keep each complete image within a comfortable viewing height. */
+.curated-project>.portfolio-image{max-height:80svh;width:100%;height:auto;object-fit:contain;background:#000}
+.curated-project .campaign-sequence{grid-template-columns:repeat(12,minmax(0,1fr));gap:72px 28px;align-items:start}
+.curated-project .campaign-sequence>.portfolio-image{grid-column:1 / -1;max-height:85svh;width:100%;height:auto;object-fit:contain;margin:0;background:#000}
+.curated-project .campaign-sequence>.portfolio-image:nth-child(3n + 2){grid-column:1 / 8}
+.curated-project .campaign-sequence>.portfolio-image:nth-child(3n + 3){grid-column:9 / -1;margin-top:80px}
+.curated-project .campaign-sequence>.portfolio-image:last-child:nth-child(3n + 2){grid-column:3 / 11;margin-top:20px}
+@media(max-width:1000px) and (min-width:701px){
+  .curated-grid{column-gap:20px;row-gap:80px}
+  .curated-card-2{grid-column:1 / 8}
+  .curated-card-3{grid-column:9 / -1}
+}
+@media(max-width:700px){
+  .curated-work .section-heading{margin-bottom:32px}
+  .curated-grid{display:flex;flex-direction:column;gap:54px}
+  .curated-card{margin:0}
+  .curated-large{width:100%}
+  .curated-medium{width:94%}
+  .curated-small{width:80%}
+  .curated-card-3,.curated-card-5{align-self:flex-end}
+  .curated-caption{padding-top:13px;gap:12px}
+  .curated-caption h3{font-size:11px}
+  .curated-caption p{font-size:10px}
+  .curated-project .campaign-sequence{display:flex;flex-direction:column;gap:30px}
+  .curated-project .campaign-sequence>.portfolio-image:nth-child(n){width:100%;margin:0;max-height:80svh}
+  .curated-project .campaign-sequence>.portfolio-image:nth-child(3n + 3){width:88%;align-self:flex-end}
+}
+
+/* Keep every Selected Work frame the same full-width scale. */
+.curated-work .curated-grid{display:flex;flex-direction:column;gap:96px}
+.curated-work .curated-card{grid-column:auto;grid-row:auto;width:100%;margin:0}
+.curated-work .curated-image{width:100%}
+@media(max-width:700px){.curated-work .curated-grid{gap:54px}.curated-work .curated-card{width:100%}}
