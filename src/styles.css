@@ -347,3 +347,10 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .rotating-work-image .rotating-alternate{opacity:0}
 .rotating-work-image.show-alternate .rotating-primary{opacity:0}
 .rotating-work-image.show-alternate .rotating-alternate{opacity:1}
+
+/* Homepage hero phase: a taller frame and contain sizing keep every full product visible. */
+.curated-work .curated-image{height:min(86svh,1020px)}
+.curated-work .rotating-work-image .rotating-primary{object-fit:cover}
+.curated-work .rotating-work-image .rotating-alternate{object-fit:contain;background:#000}
+.curated-work .curated-card:hover .rotating-alternate{transform:none}
+@media(max-width:800px){.curated-work .curated-image{height:auto;aspect-ratio:16/10}}
