@@ -11,11 +11,22 @@ function Orbit({ className = '' }: { className?: string }) { return <svg classNa
 function Header() { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit<span>®</span></a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href="/#contact" onClick={() => setOpen(false)}>Let’s talk <span>↗</span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 700px) 100vw, 90vw" alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label} — image placeholder, final imagery to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
 function Work() {
+  const [showHero, setShowHero] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const interval = window.setInterval(() => setShowHero(current => !current), 30000);
+    return () => window.clearInterval(interval);
+  }, []);
+
   return <section id="work" className="work section-pad curated-work">
     <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Campaign systems,<br/>built through image.</h2></div><p className="section-note">PRODUCT / CAMPAIGN / IMAGE-MAKING<br/>WASHINGTON, DC · WORLDWIDE</p></div>
     <div className="curated-grid">{selectedWork.map((selection, i) => (
       <a className={`curated-card curated-card-${i + 1} curated-${selection.size}`} href={`/work/${selection.slug}`} key={selection.slug}>
-        <div className="curated-image"><img className="portfolio-image" src={selection.image.src} srcSet={selection.image.srcSet} sizes={selection.size === 'large' ? '90vw' : selection.size === 'medium' ? '(max-width: 700px) 85vw, 60vw' : '(max-width: 700px) 72vw, 30vw'} width={selection.image.width} height={selection.image.height} alt={selection.image.alt} loading="lazy" decoding="async"/></div>
+        <div className={`curated-image rotating-work-image${showHero ? ' show-alternate' : ''}`}>
+          <img className="portfolio-image rotating-primary" src={selection.image.src} srcSet={selection.image.srcSet} sizes={selection.size === 'large' ? '90vw' : selection.size === 'medium' ? '(max-width: 700px) 85vw, 60vw' : '(max-width: 700px) 72vw, 30vw'} width={selection.image.width} height={selection.image.height} alt={selection.image.alt} loading="lazy" decoding="async"/>
+          {selection.alternateImage && <img className="portfolio-image rotating-alternate" src={selection.alternateImage.src} srcSet={selection.alternateImage.srcSet} sizes="90vw" width={selection.alternateImage.width} height={selection.alternateImage.height} alt="" aria-hidden="true" loading="lazy" decoding="async"/>}
+        </div>
         <div className="curated-caption"><span className="project-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{selection.title}</h3><p>{selection.subtitle}</p></div><span aria-hidden="true">↗</span></div>
       </a>
     ))}</div>

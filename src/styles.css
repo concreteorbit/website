@@ -340,3 +340,10 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .project-end{border-color:var(--lab-line)}.project-end>div a{color:var(--lab-accent)}
 @media(max-width:800px){.header{height:70px}.fullbleed-hero .hero-image{height:calc(100svh - 70px);min-height:690px}.fullbleed-hero .homepage-hero-photo{height:61%}.fullbleed-hero .portfolio-image{transform:none}.fullbleed-hero-copy{top:8%;max-width:none}.fullbleed-hero-brand{margin-bottom:23px}.fullbleed-hero-brand span+span{display:none}.fullbleed-hero-copy h1{font-size:clamp(34px,9vw,52px)}.hero-axis{bottom:18px}.work .section-heading{align-items:flex-start}.section-note{display:none}.curated-image{height:auto;aspect-ratio:16/10}.curated-image .portfolio-image{object-fit:cover}.why,.founder{grid-template-columns:1fr;gap:55px}.founder-image-placeholder{width:min(70vw,310px)}.project-frame:nth-child(n){width:100%}.detail-heading h1{font-size:clamp(42px,13vw,76px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.curated-image .portfolio-image{transition:none}}
+
+/* Selected work alternates between the macro and campaign hero every 30 seconds. */
+.rotating-work-image .portfolio-image{position:absolute;inset:0;transition:opacity 1.2s ease,transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
+.rotating-work-image .rotating-primary{opacity:1}
+.rotating-work-image .rotating-alternate{opacity:0}
+.rotating-work-image.show-alternate .rotating-primary{opacity:0}
+.rotating-work-image.show-alternate .rotating-alternate{opacity:1}
