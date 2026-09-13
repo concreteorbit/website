@@ -1,4 +1,4 @@
-import { projects } from './projects';
+import { projects } from './projectData';
 
 // Homepage art direction is separate from the complete campaign image sets.
 export const selectedWork = [
