@@ -354,3 +354,18 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .curated-work .rotating-work-image .rotating-alternate{object-fit:contain;background:#000}
 .curated-work .curated-card:hover .rotating-alternate{transform:none}
 @media(max-width:800px){.curated-work .curated-image{height:auto;aspect-ratio:16/10}}
+
+/* Desktop homepage hero: crop the surrounding black space while keeping the full Trace bottle visible. */
+@media(min-width:801px){
+  .fullbleed-hero .hero-image{
+    height:auto;
+    min-height:760px;
+    max-height:none;
+    aspect-ratio:16/10;
+  }
+  .fullbleed-hero .portfolio-image{
+    object-fit:cover;
+    object-position:center;
+    transform:translateX(8%);
+  }
+}
