@@ -369,3 +369,17 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
     transform:translateX(8%);
   }
 }
+
+/* Commercial context: recognizable work up front and factual case-study information. */
+.featured-strip{min-height:92px;display:grid;grid-template-columns:1fr 3fr;align-items:center;gap:32px;border-bottom:1px solid var(--lab-line);background:var(--lab-panel)}
+.featured-strip span{font:9px 'Space Grotesk',sans-serif;letter-spacing:1.7px;color:var(--lab-accent)}
+.featured-strip p{margin:0;font:500 clamp(11px,1.1vw,14px) 'Space Grotesk',sans-serif;line-height:1.8;letter-spacing:1.15px;color:#bcc5cb}
+.project-information{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(55px,9vw,145px);row-gap:56px}
+.project-information>div{padding-top:20px;border-top:1px solid var(--lab-line)}
+.project-information p{max-width:560px;font-size:14px;line-height:1.85;margin-bottom:0}
+.project-information>div:nth-child(3) p,.project-information>div:nth-child(4) p{font-family:'Space Grotesk',sans-serif;font-size:12px;line-height:1.9;letter-spacing:.35px}
+@media(max-width:700px){
+  .featured-strip{min-height:105px;grid-template-columns:1fr;gap:10px;padding-top:24px;padding-bottom:24px}
+  .featured-strip p{font-size:10px;line-height:2}
+  .project-information{grid-template-columns:1fr;gap:34px}
+}
