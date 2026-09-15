@@ -15,10 +15,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'harrys', name: 'HARRY’S', brand: 'Harry’s', tone: 'slate',
-    brief: 'Build a compact image series around one grooming product, with clear hero frames, close packaging detail and flexible negative space.',
-    approach: 'Deep blue and near-black keep the palette restrained. Directional light picks out the lettering, texture and shape of the tube, while the angled frames give it a more sculptural presence.',
+    brief: 'I wanted to see how far one tube could carry a small campaign. The goal was to make Harry’s Taming Cream feel less like an everyday bathroom product and more like an object with weight and attitude.',
+    approach: 'I kept the set nearly black and used a narrow blue light to trace the lettering, texture and shape of the tube. Straight, floating and extreme-close frames gave the series a mix of clear product views and more graphic details.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Upright hero · Angled hero · Macro details · Copy-space variations',
+    deliverables: 'Upright and angled heroes · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/harrys-tilt-hero-1920.webp', alt: 'Harry’s Taming Cream floating at an angle against a black background.', width: 6962, height: 3853 },
     gallery: [
       { src: '/images/projects/harrys-extreme-macro-1920.webp', alt: 'Extreme close-up of the Harry’s lettering and blue packaging texture.', width: 5504, height: 3072 },
@@ -30,8 +30,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'method', name: 'METHOD', brand: 'Method', tone: 'clay',
-    brief: 'Create a short body-care image set that keeps the packaging recognizable while giving an everyday product more energy and texture.',
-    approach: 'Saturated color, water and tight crops bring out the form of the bottle and the tactile details of the packaging.',
+    brief: 'Method already has a bright, recognizable personality. I wanted to keep that energy while pushing the bottle into something wetter, closer and more tactile.',
+    approach: 'I leaned into saturated color, water and tight crops. The wider frame keeps the product easy to read, while the close images let the pump, label and surface details do more of the work.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Campaign hero · Product close-up · Packaging detail',
     cover: { src: '/images/projects/method-1-2000.webp', alt: 'Method body care campaign image.', width: 5504, height: 3072 },
@@ -42,10 +42,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'trace', name: 'TRACE', brand: 'Trace', tone: 'slate',
-    brief: 'Create an energetic product series for Trace 40,000 Volts, with a readable bottle hero and supporting details built around hydration.',
-    approach: 'Water droplets and electric-blue light give the bottle its charge while keeping the label, material and product silhouette clear.',
+    brief: 'The name “40,000 Volts” gave me the starting point. I wanted the bottle to feel charged and physical, but still clear enough that the product and label could lead the image.',
+    approach: 'Water droplets bring in the hydration story and electric-blue light gives the bottle its energy. I kept the background black so the shape, label and wet surface stay easy to read.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Campaign hero · Label close-up · Supporting product detail',
+    deliverables: 'Campaign hero · Label close-up · Supporting product frame',
     cover: { src: '/images/projects/trace-1-2000.webp', alt: 'Trace 40,000 Volts electrolyte concentrate covered in water droplets.', width: 5504, height: 3072 },
     gallery: [
       { src: '/images/projects/trace-2-2000.webp', alt: 'Close-up of the Trace electrolyte bottle.', width: 5504, height: 3072 },
@@ -54,10 +54,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'trace-magnesium-glycinate', name: 'TRACE MAGNESIUM GLYCINATE', brand: 'Trace', tone: 'slate',
-    brief: 'Develop a complete product image set that can move from a clean hero to close material detail and layouts with room for campaign copy.',
-    approach: 'The camera moves close to the ribbed lid, printed type and cool-blue reflections. Deep blacks keep the series calm and cinematic, matching the product’s nighttime positioning.',
+    brief: 'For Magnesium Glycinate, I wanted a quieter kind of energy. The series needed clean product heroes, close material details and frames with enough room for campaign copy.',
+    approach: 'I moved close to the ribbed lid, printed type and cool-blue reflections, then pulled back for the more useful hero compositions. Deep blacks keep everything calm and cinematic, which felt right for a nighttime product.',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Upright hero · Angled hero · Macro details · Copy-space variations',
+    deliverables: 'Upright and angled heroes · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/trace-magnesium-glycinate-tilt-hero-1920.webp', alt: 'Trace Magnesium Glycinate floating at an angle against black.', width: 5504, height: 3072 },
     gallery: [
       { src: '/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp', alt: 'Extreme close-up of the Trace Magnesium Glycinate lettering, label and lid.', width: 5504, height: 3072 },
@@ -69,8 +69,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'sports-research', name: 'SPORTS RESEARCH', brand: 'Sports Research', tone: 'olive',
-    brief: 'Create a focused set for Sleep Complex that balances straightforward product recognition with a quieter nighttime mood.',
-    approach: 'Clean product views establish the bottle first. Dark surfaces, controlled reflections and close label details bring in the performance and sleep cues without overcrowding the frame.',
+    brief: 'Sleep Complex called for a slower, quieter mood. I wanted the images to feel restful without losing the directness and clarity expected from a performance supplement.',
+    approach: 'I started with clean product views, then used dark surfaces, controlled reflections and close label details to build the nighttime feeling. The restraint keeps the bottle recognizable and the frame from becoming too busy.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Campaign hero · Secondary product view · Label close-up',
     cover: { src: '/images/projects/sports-research-1-2000.webp', alt: 'Sports Research Sleep Complex campaign image.', width: 5504, height: 3072 },
@@ -81,10 +81,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'cremo', name: 'CREMO', brand: 'Cremo', tone: 'slate',
-    brief: 'Build a varied body-wash image set with a clear wet hero, dry product views, close packaging detail and room for campaign messaging.',
-    approach: 'Rich amber color meets cool blue edge light and water. Tight compositions bring out the paper label, typography and droplets while the wider frames keep the bottle unmistakable.',
+    brief: 'The amber bottle and cream label already give Cremo a lot of character. I wanted to build on that with a set that could move between a clean hero, a wet shower moment and tighter fragrance details.',
+    approach: 'I paired the warm bottle with a cool blue edge light, then added water for the fresher frames. The close compositions bring out the paper label, typography and droplets; the wider ones leave the product clear and give copy somewhere to live.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Wet hero · Dry hero · Macro detail · Copy-space frame · Angled variation',
+    deliverables: 'Wet and dry heroes · Macro detail · Copy-space frame · Angled variation',
     cover: { src: '/images/projects/cremo-wet-hero-960.webp', alt: 'Cremo Italian Bergamot Body Wash upright against black with water droplets and blue edge light.', width: 1678, height: 937 },
     gallery: [
       { src: '/images/projects/cremo-dry-space-1920.webp', alt: 'Cremo Italian Bergamot Body Wash with a reflection and black copy space.', width: 2132, height: 1476 },

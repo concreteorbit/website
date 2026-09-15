@@ -383,3 +383,15 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .featured-strip p{font-size:10px;line-height:2}
   .project-information{grid-template-columns:1fr;gap:34px}
 }
+
+/* Final engagement model: make the hiring paths and next step explicit. */
+.partner-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,5vw,80px);padding-left:0;margin-top:clamp(52px,6vw,82px);margin-bottom:46px}
+.partner-options>div{padding-top:23px;border-top:1px solid var(--lab-line)}
+.partner-options p{max-width:360px;font-size:14px;line-height:1.8}
+.pricing-note{max-width:720px;margin:0 0 78px;color:#aeb6bc;font-size:14px;line-height:1.8}
+.estimate-note{margin:8px 0 0;font:9px 'Space Grotesk',sans-serif;letter-spacing:1.35px;line-height:1.7;color:var(--lab-muted)}
+@media(max-width:800px){
+  .partner-options{grid-template-columns:1fr;gap:28px;margin-top:42px;margin-bottom:38px}
+  .partner-options p{max-width:520px}
+  .pricing-note{margin-bottom:52px}
+}
