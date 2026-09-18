@@ -70,24 +70,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'sports-research', name: 'SPORTS RESEARCH', brand: 'Sports Research', tone: 'olive',
-    brief: 'Sleep Complex called for a slower, quieter mood. I wanted the images to feel restful without losing the directness and clarity expected from a performance supplement.',
-    approach: 'I started with clean product views, then used dark surfaces, controlled reflections and close label details to build the nighttime feeling. The restraint keeps the bottle recognizable and the frame from becoming too busy.',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Campaign hero · Secondary product view · Label close-up',
-    cover: { src: '/images/projects/sports-research-1-2000.webp', alt: 'Sports Research Sleep Complex campaign image.', width: 5504, height: 3072 },
-    gallery: [
-      { src: '/images/projects/sports-research-2-2000.webp', alt: 'Sports Research Sleep Complex product view.', width: 5504, height: 3072 },
-      { src: '/images/projects/sports-research-3-2000.webp', alt: 'Close-up of the Sports Research Sleep Complex label.', width: 5152, height: 2876 },
-    ],
-  },
-  {
     slug: 'cremo', name: 'CREMO', brand: 'Cremo', tone: 'slate',
     brief: 'The amber bottle and cream label already give Cremo a lot of character. I wanted to build on that with a set that could move between a clean hero, a wet shower moment and tighter fragrance details.',
     approach: 'I paired the warm bottle with a cool blue edge light, then added water for the fresher frames. The close compositions bring out the paper label, typography and droplets; the wider ones leave the product clear and give copy somewhere to live.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
     deliverables: 'Wet and dry heroes · Macro detail · Copy-space frame · Angled variation',
-    cover: { src: '/images/projects/cremo-wet-hero-960.webp', alt: 'Cremo Italian Bergamot Body Wash upright against black with water droplets and blue edge light.', width: 1678, height: 937 },
+    cover: { src: '/images/projects/cremo-wet-hero-corrected-1678.jpg', alt: 'Cremo Italian Bergamot Body Wash upright against black with water droplets and blue edge light.', width: 1678, height: 937 },
     gallery: [
       { src: '/images/projects/cremo-dry-space-1920.webp', alt: 'Cremo Italian Bergamot Body Wash with a reflection and black copy space.', width: 2132, height: 1476 },
       { src: '/images/projects/cremo-slight-macro-1920.webp', alt: 'Close-up of the Cremo Italian Bergamot label, amber bottle and water droplets.', width: 5504, height: 3072 },
