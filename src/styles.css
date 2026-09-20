@@ -421,8 +421,13 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .browser-mockup{border:1px solid #26313a;background:#090c10;box-shadow:0 26px 70px rgba(0,0,0,.35)}
 .browser-bar{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #26313a;color:#77818a;font:8px 'Space Grotesk',sans-serif;letter-spacing:1px;text-transform:uppercase}
 .browser-dots{letter-spacing:5px;color:#4c5b65}
+.website-slider-controls{display:flex;align-items:center;gap:10px}
+.website-slider-controls button{display:grid;place-items:center;width:25px;height:25px;padding:0;border:1px solid #39444d;background:transparent;color:#c8d0d5;font:12px/1 'Space Grotesk',sans-serif;cursor:pointer;transition:border-color .2s ease,color .2s ease,background .2s ease}
+.website-slider-controls button:hover,.website-slider-controls button:focus-visible{border-color:#91a3af;background:#121920;color:#fff;outline:none}
 .website-concept{position:relative;aspect-ratio:16/8.8;overflow:hidden;background:#000}
 .website-concept>img{display:block;width:100%;height:100%;object-fit:cover}
+.website-banner-image{animation:website-banner-in .55s ease both}
+@keyframes website-banner-in{from{opacity:.25}to{opacity:1}}
 .concept-nav{position:absolute;z-index:2;left:4%;right:4%;top:5%;display:flex;justify-content:space-between;color:#f7f7f2;font:500 9px 'Space Grotesk',sans-serif;letter-spacing:1px}
 .concept-nav span:last-child{font-size:7px;color:#b9b9b4}
 .concept-copy{position:absolute;z-index:2;right:6%;top:50%;width:34%;transform:translateY(-44%);color:#f7f7f2}
@@ -505,14 +510,16 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 /* Finished placement examples. */
 .application-label p{max-width:520px;text-transform:none;line-height:1.6}
 .concept-copy p,.advertisement-copy p{display:none}
-.website-concept-trace-magnesium-glycinate>img{filter:brightness(.9);object-position:center}
-.website-concept-trace-magnesium-glycinate .concept-copy{left:auto;right:6%;top:50%;bottom:auto;width:34%;transform:translateY(-44%);text-shadow:0 2px 18px rgba(0,0,0,.85)}
-.website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:470px;font-size:clamp(25px,3.5vw,57px);line-height:1.02}
+.website-concept-trace-magnesium-glycinate>img{position:absolute;inset:0;width:100%;filter:brightness(.86);object-position:center}
+.website-concept-trace-magnesium-glycinate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.43) 23%,rgba(0,0,0,.08) 43%,transparent 59%);pointer-events:none}
+.website-concept-trace-magnesium-glycinate .concept-copy{left:4.5%;right:auto;top:23%;bottom:auto;width:32%;transform:none;text-shadow:0 2px 18px rgba(0,0,0,.72)}
+.website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:340px;font-size:clamp(24px,2.7vw,46px);line-height:1.04}
+.website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1>img{object-position:center;transform:scale(1.06)}
+.website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1::after{background:linear-gradient(90deg,rgba(0,0,0,.24) 0%,rgba(0,0,0,.06) 38%,transparent 58%)}
+.website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1 .concept-copy{top:50%;width:30%;transform:translateY(-50%);text-shadow:0 2px 18px rgba(0,0,0,.84)}
 .website-concept-harrys::after{background:linear-gradient(270deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.27) 35%,transparent 64%)}
-.application-controls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--lab-line);font:9px 'Space Grotesk',sans-serif;letter-spacing:1.3px;color:var(--lab-muted)}
-.application-controls>div{display:flex;gap:8px}
-.application-controls button{display:grid;width:42px;height:38px;place-items:center;border:1px solid #2a343c;background:transparent;color:var(--lab-white);font-size:17px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
-.application-controls button:hover,.application-controls button:focus-visible{border-color:var(--lab-accent);background:#0d151a;color:var(--lab-accent);outline:none}
+.advertisement-concept-trace .advertisement-copy{left:auto;right:6%;width:31%}
+.advertisement-concept-trace-magnesium-glycinate>img{object-position:66% center;transform:scale(1.1);transform-origin:68% center}
 
 @media(max-width:800px){
   #contact{scroll-margin-top:84px}
@@ -523,12 +530,15 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .website-concept{aspect-ratio:4/5.35;background:#05070a}
   .website-concept>img{position:absolute;inset:0 0 auto;width:100%;height:61%;object-fit:cover;object-position:center}
   .website-concept::before{content:'';position:absolute;z-index:1;inset:39% 0 0;background:linear-gradient(180deg,transparent 0%,rgba(5,7,10,.88) 24%,#05070a 43%);pointer-events:none}
+  .website-concept-trace-magnesium-glycinate::after{display:none}
+  .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1>img{object-fit:contain;object-position:right top;transform:translateX(22%) scale(1.42);transform-origin:right top}
   .website-concept-harrys::after{display:none}
   .concept-nav{top:4%}
   .concept-copy,.website-concept-trace-magnesium-glycinate .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
   .concept-copy h4,.website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:420px;margin:13px 0;font-size:clamp(29px,9.5vw,44px)}
   .mock-button{margin-top:13px}
   .advertisement-copy p{display:none}
+  .advertisement-concept-trace-magnesium-glycinate>img{object-fit:contain;object-position:right bottom;transform:translateX(16%) scale(1.25);transform-origin:right bottom}
 }
 
 @media(max-width:600px){

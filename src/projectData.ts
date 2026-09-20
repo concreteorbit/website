@@ -58,13 +58,12 @@ export const projects: Project[] = [
   {
     slug: 'trace-magnesium-glycinate', name: 'TRACE MAGNESIUM GLYCINATE', brand: 'Trace', tone: 'slate',
     brief: 'For Magnesium Glycinate, I wanted a quieter kind of energy. The series needed clean product heroes, close material details and frames with enough room for campaign copy.',
-    approach: 'I moved close to the ribbed lid, printed type and cool-blue reflections, then pulled back for the more useful hero compositions. Deep blacks keep everything calm and cinematic, which felt right for a nighttime product.',
+    approach: 'I moved close to the ribbed lid, printed type and cool-blue reflections, then built the wider frames around the angled product. Deep blacks keep everything calm and cinematic, which felt right for a nighttime product.',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Upright and angled heroes · Macro details · Copy-space layouts',
+    deliverables: 'Angled hero · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/trace-magnesium-glycinate-tilt-hero-1920.webp', alt: 'Trace Magnesium Glycinate floating at an angle against black.', width: 5504, height: 3072 },
     gallery: [
       { src: '/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp', alt: 'Extreme close-up of the Trace Magnesium Glycinate lettering, label and lid.', width: 5504, height: 3072 },
-      { src: '/images/projects/trace-magnesium-glycinate-straight-hero-1920.webp', alt: 'Trace Magnesium Glycinate upright in blue light.', width: 5504, height: 3072 },
       { src: '/images/projects/trace-magnesium-glycinate-slight-macro-1920.webp', alt: 'Close-up of the Trace Magnesium Glycinate label.', width: 5504, height: 3072 },
       { src: '/images/projects/trace-magnesium-glycinate-straight-space-1920.webp', alt: 'Trace Magnesium Glycinate upright with black copy space.', width: 8446, height: 5466 },
       { src: '/images/projects/trace-magnesium-glycinate-tilt-space-1920.webp', alt: 'Trace Magnesium Glycinate angled against black negative space.', width: 7517, height: 3506 },

@@ -63,39 +63,40 @@ function Home() {
 
 type ApplicationSettings = {
   bannerIndex: number;
+  adIndex: number | 'cover';
   socialIndex: number;
   websiteHeadline: string;
+  adHeadline: string;
   socialCaption: string;
-  ads: { imageIndex: number; headline: string }[];
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
-  harrys: { bannerIndex: 3, socialIndex: 2, websiteHeadline: 'Taming Cream, seen differently.', socialCaption: 'A closer look at the tube, finish and lettering.', ads: [{ imageIndex: 4, headline: 'Shape. Texture. Detail.' }, { imageIndex: 3, headline: 'Taming Cream, in focus.' }, { imageIndex: 0, headline: 'Seen up close.' }] },
-  phils: { bannerIndex: 1, socialIndex: 3, websiteHeadline: 'A clean first look.', socialCaption: 'The bottle, the droplets and the details that give this image its character.', ads: [{ imageIndex: 2, headline: 'Clean starts here.' }, { imageIndex: 0, headline: 'Closer to the details.' }, { imageIndex: 1, headline: 'A clean first look.' }] },
-  trace: { bannerIndex: 0, socialIndex: 1, websiteHeadline: '40,000 Volts, up close.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.', ads: [{ imageIndex: 2, headline: 'Blue light. Water. Energy.' }, { imageIndex: 0, headline: '40,000 Volts, up close.' }, { imageIndex: 1, headline: 'A closer look at 40,000 Volts.' }] },
-  'trace-magnesium-glycinate': { bannerIndex: 3, socialIndex: 2, websiteHeadline: 'Magnesium, brought closer.', socialCaption: 'A close product study built around cool light and label detail.', ads: [{ imageIndex: 4, headline: 'Night in a new light.' }, { imageIndex: 3, headline: 'A quieter kind of close-up.' }, { imageIndex: 0, headline: 'Magnesium, brought closer.' }] },
+  harrys: { bannerIndex: 3, adIndex: 4, socialIndex: 0, websiteHeadline: 'Taming Cream, seen differently.', adHeadline: 'Shape. Texture. Detail.', socialCaption: 'A close study of the lettering, finish and blue packaging texture.' },
+  phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
+  trace: { bannerIndex: 0, adIndex: 0, socialIndex: 1, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
+  'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 3, socialIndex: 1, websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {
+  const [bannerSlide, setBannerSlide] = useState(0);
   const settings = applicationSettings[project.slug];
-  const [activeAd, setActiveAd] = useState(0);
   if (!settings) return null;
-  const bannerImage = project.gallery[settings.bannerIndex];
-  const ad = settings.ads[activeAd];
-  const adImage = project.gallery[ad.imageIndex];
+  const hasBannerSlider = project.slug === 'trace-magnesium-glycinate';
+  const bannerImages = hasBannerSlider ? [project.gallery[0], project.gallery[3]] : [project.gallery[settings.bannerIndex]];
+  const activeBannerSlide = bannerSlide % bannerImages.length;
+  const bannerImage = bannerImages[activeBannerSlide];
+  const adImage = settings.adIndex === 'cover' ? project.cover : project.gallery[settings.adIndex];
   const socialImage = project.gallery[settings.socialIndex];
   const titleId = `${project.slug}-applications-title`;
-  const showPreviousAd = () => setActiveAd(current => (current - 1 + settings.ads.length) % settings.ads.length);
-  const showNextAd = () => setActiveAd(current => (current + 1) % settings.ads.length);
 
   return <section className="campaign-applications" aria-labelledby={titleId}>
     <div className="application-heading"><span className="eyebrow">PLACEMENT EXAMPLES</span><h2 id={titleId}>How it could<br/>work for you.</h2><p>These independent concept applications show how the photographs could carry a website, an ad and a social post. They are layout studies, not published client work.</p></div>
     <article className="application-block">
       <div className="application-label"><span>01</span><div><h3>Website Banner</h3><p>A wide composition with room for navigation, a headline and CTA.</p></div></div>
       <div className="browser-mockup">
-        <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span><span>Website placement</span></div>
-        <div className={`website-concept website-concept-${project.slug}`}>
-          <img src={bannerImage.src} alt={`${project.name} copy-space photograph shown in a website banner example.`} width={bannerImage.width} height={bannerImage.height} loading="lazy" decoding="async"/>
+        <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span>{hasBannerSlider ? <div className="website-slider-controls"><span>Website placement</span><button type="button" onClick={() => setBannerSlide(current => (current - 1 + bannerImages.length) % bannerImages.length)} aria-label="Previous Magnesium website banner">←</button><span aria-live="polite">{activeBannerSlide + 1} / {bannerImages.length}</span><button type="button" onClick={() => setBannerSlide(current => (current + 1) % bannerImages.length)} aria-label="Next Magnesium website banner">→</button></div> : <span>Website placement</span>}</div>
+        <div className={`website-concept website-concept-${project.slug} website-concept-banner-slide-${activeBannerSlide}`}>
+          <img key={bannerImage.src} className="website-banner-image" src={bannerImage.src} alt={`${project.name} product photograph shown in website banner option ${activeBannerSlide + 1}.`} width={bannerImage.width} height={bannerImage.height} loading="lazy" decoding="async"/>
           <div className="concept-nav"><span>{project.name}</span><span>Product · Story · Shop</span></div>
           <div className="concept-copy"><span>PRODUCT CAMPAIGN</span><h4>{settings.websiteHeadline}</h4><span className="mock-button">EXPLORE THE PRODUCT</span></div>
         </div>
@@ -105,14 +106,13 @@ function CampaignApplications({ project }: { project: Project }) {
       <div className="application-label"><span>02</span><div><h3>Advertisements</h3><p>Campaign photographs shown as finished ad layouts.</p></div></div>
       <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
         <img src={adImage.src} alt={`${project.name} product photograph shown in an advertisement example.`} width={adImage.width} height={adImage.height} loading="lazy" decoding="async"/>
-        <div className="advertisement-copy"><span>{project.name} / PRODUCT CAMPAIGN</span><h4>{ad.headline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
+        <div className="advertisement-copy"><span>{project.name} / PRODUCT CAMPAIGN</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
       </div>
-      <div className="application-controls"><span>{String(activeAd + 1).padStart(2, '0')} / {String(settings.ads.length).padStart(2, '0')}</span><div><button type="button" onClick={showPreviousAd} aria-label={`Previous ${project.name} advertisement`}>←</button><button type="button" onClick={showNextAd} aria-label={`Next ${project.name} advertisement`}>→</button></div></div>
     </article>
     <article className="application-block">
       <div className="application-label"><span>03</span><div><h3>Social</h3><p>A close crop shown in a brand post.</p></div></div>
       <div className="social-post-concept">
-        <div className="social-post-image"><img src={socialImage.src} alt={`${project.name} slight macro photograph shown in a social post example.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
+        <div className="social-post-image"><img src={socialImage.src} alt={`${project.name} close product detail shown in a social post example.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
         <div className="social-post-panel">
           <div className="social-profile"><span className="social-avatar">{project.name.charAt(0)}</span><div><strong>{project.name}</strong><small>Product campaign</small></div><span aria-hidden="true">•••</span></div>
           <div className="social-caption"><strong>{project.name}</strong><p>{settings.socialCaption}</p></div>
