@@ -71,4 +71,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'CGI', '3D', 'Compositing', 'Campaign Development'];
+export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Generative Image Development', 'Image Finishing', 'Campaign Development'];

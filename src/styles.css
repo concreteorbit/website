@@ -547,3 +547,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .contact textarea{min-height:112px}
   .offer-summary-list{margin-top:28px}
 }
+
+.process-disclosure{max-width:760px;margin:34px 0 0;color:var(--muted);font-size:11px;line-height:1.8}
+.privacy-note{font-size:9px;line-height:1.65;color:#85877d;margin:18px 0 0}
+.privacy-note a{text-decoration:underline;text-underline-offset:3px}
