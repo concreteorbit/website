@@ -433,9 +433,12 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-trace-magnesium-glycinate>img{filter:brightness(.82);object-position:center}
 .website-concept-trace-magnesium-glycinate .concept-copy{left:5.5%;right:auto;top:auto;bottom:7%;width:38%;transform:none;text-shadow:0 2px 18px rgba(0,0,0,.85)}
 .website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:470px;font-size:clamp(25px,3vw,48px);line-height:1.02}
+.website-concept-harrys::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.34) 33%,transparent 62%);pointer-events:none}
+.website-concept-harrys .concept-copy{right:5.5%;width:34%;text-shadow:0 2px 18px rgba(0,0,0,.9)}
 .advertisement-concept{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #171f26;background:#000}
 .advertisement-concept>img{width:100%;height:100%;display:block;object-fit:cover}
 .advertisement-copy{position:absolute;z-index:2;left:6%;top:50%;width:31%;transform:translateY(-50%);color:#f3f5f2}
+.advertisement-concept-harrys .advertisement-copy{left:auto;right:6%;width:32%}
 .social-post-concept{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);max-width:1180px;margin:0 auto;border:1px solid #2b3036;background:#1c2026;overflow:hidden}
 .social-post-image{aspect-ratio:1/1;min-height:0;background:#000;overflow:hidden}
 .social-post-image img{display:block;width:100%;height:100%;object-fit:cover}
@@ -471,6 +474,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .advertisement-concept>img{object-position:center}
   .advertisement-copy{left:7%;top:8%;width:62%;transform:none}
   .advertisement-copy p{max-width:240px}
+  .advertisement-concept-harrys .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
+  .advertisement-concept-harrys .advertisement-copy p{margin-left:auto}
 }
 @media(max-width:600px){
   .offer-grid{grid-template-columns:1fr}
@@ -478,4 +483,57 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .social-post-concept{grid-template-columns:1fr}
   .social-post-panel{min-height:310px;border-top:1px solid #2b3036;border-left:0}
   .project-end>div a{font-size:32px}
+}
+
+/* Shared inquiry and campaign scope. */
+#contact{scroll-margin-top:100px}
+.contact-context{min-width:0}
+.contact-email{margin:22px 0 0;color:var(--lab-muted);font-size:12px;line-height:1.7}
+.contact-email a{color:var(--lab-white);border-bottom:1px solid var(--lab-accent);padding-bottom:2px}
+.campaign-offer{margin-top:clamp(55px,6vw,85px);padding-top:24px;border-top:1px solid var(--lab-line)}
+.campaign-offer h3{max-width:520px;margin:19px 0 18px;font:500 clamp(27px,3vw,43px)/1.04 'Space Grotesk',sans-serif;letter-spacing:-.045em}
+.campaign-offer>p{max-width:550px;color:var(--lab-muted);font-size:13px;line-height:1.75}
+.offer-summary-list{margin-top:36px}
+.offer-summary-list>div{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:17px 0;border-top:1px solid var(--lab-line)}
+.offer-summary-list>div>span{font:9px 'Space Grotesk',sans-serif;letter-spacing:1.2px;color:var(--lab-accent)}
+.offer-summary-list p{margin:0;color:#b7bec3;font-size:12px;line-height:1.7}
+.offer-summary-list strong{color:var(--lab-white);font-weight:500}
+.offer-summary-note{margin-top:23px!important;font-size:11px!important}
+.campaign-contact{border-top:1px solid var(--lab-line);align-items:start}
+.campaign-contact form{position:sticky;top:112px}
+
+/* Finished placement examples. */
+.application-label p{max-width:520px;text-transform:none;line-height:1.6}
+.concept-copy p,.advertisement-copy p{display:none}
+.website-concept-trace-magnesium-glycinate>img{filter:brightness(.9);object-position:center}
+.website-concept-trace-magnesium-glycinate .concept-copy{left:auto;right:6%;top:50%;bottom:auto;width:34%;transform:translateY(-44%);text-shadow:0 2px 18px rgba(0,0,0,.85)}
+.website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:470px;font-size:clamp(25px,3.5vw,57px);line-height:1.02}
+.website-concept-harrys::after{background:linear-gradient(270deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.27) 35%,transparent 64%)}
+.application-controls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--lab-line);font:9px 'Space Grotesk',sans-serif;letter-spacing:1.3px;color:var(--lab-muted)}
+.application-controls>div{display:flex;gap:8px}
+.application-controls button{display:grid;width:42px;height:38px;place-items:center;border:1px solid #2a343c;background:transparent;color:var(--lab-white);font-size:17px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.application-controls button:hover,.application-controls button:focus-visible{border-color:var(--lab-accent);background:#0d151a;color:var(--lab-accent);outline:none}
+
+@media(max-width:800px){
+  #contact{scroll-margin-top:84px}
+  .contact{grid-template-columns:1fr;gap:50px;padding-top:90px;padding-bottom:90px}
+  .campaign-contact form{position:static}
+  .campaign-offer{margin-top:50px}
+  .campaign-offer h3{font-size:clamp(27px,8vw,40px)}
+  .website-concept{aspect-ratio:4/5.35;background:#05070a}
+  .website-concept>img{position:absolute;inset:0 0 auto;width:100%;height:61%;object-fit:cover;object-position:center}
+  .website-concept::before{content:'';position:absolute;z-index:1;inset:39% 0 0;background:linear-gradient(180deg,transparent 0%,rgba(5,7,10,.88) 24%,#05070a 43%);pointer-events:none}
+  .website-concept-harrys::after{display:none}
+  .concept-nav{top:4%}
+  .concept-copy,.website-concept-trace-magnesium-glycinate .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
+  .concept-copy h4,.website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:420px;margin:13px 0;font-size:clamp(29px,9.5vw,44px)}
+  .mock-button{margin-top:13px}
+  .advertisement-copy p{display:none}
+}
+
+@media(max-width:600px){
+  .contact .form-row{grid-template-columns:1fr;gap:0}
+  .contact form label{margin-bottom:24px}
+  .contact textarea{min-height:112px}
+  .offer-summary-list{margin-top:28px}
 }
