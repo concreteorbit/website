@@ -15,6 +15,8 @@ pnpm build
 - Campaign data and image sets live in `src/projectData.ts`.
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
+- The live campaign set is Trace Magnesium Glycinate, Phil's, Harry's and Trace 40,000 Volts.
+- Each campaign page includes website, ad and social placement examples.
 - Featured brand work is labeled as independent study work and should remain factually identified that way.
 
 ## Inquiry form

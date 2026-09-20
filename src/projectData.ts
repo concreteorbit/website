@@ -36,7 +36,7 @@ export const projects: Project[] = [
     deliverables: 'Straight and angled heroes · Macro details · Copy-space layout',
     cover: { src: '/images/projects/phils-hero-2000.jpg', alt: 'Phil’s Daily Facial Cleanser upright against black and covered in water droplets.', width: 2000, height: 1116 },
     gallery: [
-      { src: '/images/projects/phils-extreme-macro-2000.jpg', alt: 'Extreme close-up of the Phil’s Daily Facial Cleanser label and wet paper bottle.', width: 2000, height: 1116 },
+      { src: '/images/projects/phils-extreme-macro-2000.jpg', alt: 'Extreme close-up of the Phil’s Daily Facial Cleanser label and water droplets across the bottle.', width: 2000, height: 1116 },
       { src: '/images/projects/phils-copyspace-2000.jpg', alt: 'Phil’s Daily Facial Cleanser upright with black copy space.', width: 2000, height: 1136 },
       { src: '/images/projects/phils-tilt-2000.jpg', alt: 'Phil’s Daily Facial Cleanser angled against black and covered in water droplets.', width: 2000, height: 1116 },
       { src: '/images/projects/phils-slight-macro-2000.jpg', alt: 'Close-up of the Phil’s Daily Facial Cleanser bottle, ribbed cap and water droplets.', width: 2000, height: 1116 },
@@ -68,20 +68,6 @@ export const projects: Project[] = [
       { src: '/images/projects/trace-magnesium-glycinate-slight-macro-1920.webp', alt: 'Close-up of the Trace Magnesium Glycinate label.', width: 5504, height: 3072 },
       { src: '/images/projects/trace-magnesium-glycinate-straight-space-1920.webp', alt: 'Trace Magnesium Glycinate upright with black copy space.', width: 8446, height: 5466 },
       { src: '/images/projects/trace-magnesium-glycinate-tilt-space-1920.webp', alt: 'Trace Magnesium Glycinate angled against black negative space.', width: 7517, height: 3506 },
-    ],
-  },
-  {
-    slug: 'cremo', name: 'CREMO', brand: 'Cremo', tone: 'slate',
-    brief: 'The amber bottle and cream label already give Cremo a lot of character. I wanted to build on that with a set that could move between a clean hero, a wet shower moment and tighter fragrance details.',
-    approach: 'I paired the warm bottle with a cool blue edge light, then added water for the fresher frames. The close compositions bring out the paper label, typography and droplets; the wider ones leave the product clear and give copy somewhere to live.',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Wet and dry heroes · Macro detail · Copy-space frame · Angled variation',
-    cover: { src: '/images/projects/cremo-wet-hero-corrected-1678.jpg', alt: 'Cremo Italian Bergamot Body Wash upright against black with water droplets and blue edge light.', width: 1678, height: 937 },
-    gallery: [
-      { src: '/images/projects/cremo-dry-space-1920.webp', alt: 'Cremo Italian Bergamot Body Wash with a reflection and black copy space.', width: 2132, height: 1476 },
-      { src: '/images/projects/cremo-slight-macro-1920.webp', alt: 'Close-up of the Cremo Italian Bergamot label, amber bottle and water droplets.', width: 5504, height: 3072 },
-      { src: '/images/projects/cremo-dry-hero-960.webp', alt: 'Straight dry hero image of Cremo Italian Bergamot Body Wash.', width: 1672, height: 941 },
-      { src: '/images/projects/cremo-wet-tilt-1920.webp', alt: 'Cremo Italian Bergamot Body Wash angled against black with water droplets and blue edge light.', width: 5504, height: 3072 },
     ],
   },
 ];
