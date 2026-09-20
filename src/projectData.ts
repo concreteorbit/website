@@ -47,9 +47,10 @@ export const projects: Project[] = [
     brief: 'The name “40,000 Volts” gave me the starting point. I wanted the bottle to feel charged and physical, but still clear enough that the product and label could lead the image.',
     approach: 'Water droplets bring in the hydration story and electric-blue light gives the bottle its energy. I kept the background black so the shape, label and wet surface stay easy to read.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Campaign hero · Label close-up · Supporting product frame',
+    deliverables: 'Campaign hero · Copy-space hero · Label close-up · Supporting product frame',
     cover: { src: '/images/projects/trace-1-2000.webp', alt: 'Trace 40,000 Volts electrolyte concentrate covered in water droplets.', width: 5504, height: 3072 },
     gallery: [
+      { src: '/images/projects/trace-copy-space-2000.jpg', alt: 'Trace 40,000 Volts electrolyte concentrate with generous black copy space.', width: 2000, height: 1211 },
       { src: '/images/projects/trace-2-2000.webp', alt: 'Close-up of the Trace electrolyte bottle.', width: 5504, height: 3072 },
       { src: '/images/projects/trace-3-2000.webp', alt: 'Trace electrolyte concentrate campaign detail.', width: 5504, height: 3072 },
     ],

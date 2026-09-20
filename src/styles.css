@@ -396,3 +396,74 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .partner-options p{max-width:520px}
   .pricing-note{margin-bottom:52px}
 }
+
+/* Clear positioning, campaign scope and campaign applications. */
+.hero-project-cta{display:inline-flex;align-items:center;gap:18px;margin-top:28px;padding:12px 0;border-bottom:1px solid rgba(101,215,255,.7);font:600 10px 'Space Grotesk',sans-serif;letter-spacing:1.25px;text-transform:uppercase;color:var(--lab-white)}
+.hero-project-cta span{font-size:17px;color:var(--lab-accent)}
+.offer-intro{max-width:650px;margin:34px 0 0;color:#aeb6bc;font-size:14px;line-height:1.85}
+.offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(22px,3vw,48px);margin:clamp(55px,7vw,90px) 0 55px}
+.offer-grid>div{border-top:1px solid var(--lab-line);padding-top:22px}
+.offer-grid strong{display:block;margin-bottom:34px;font:500 22px 'Space Grotesk',sans-serif;color:var(--lab-accent)}
+.offer-grid span{display:block;min-height:34px;font:500 10px 'Space Grotesk',sans-serif;letter-spacing:1.25px;line-height:1.5}
+.offer-grid p{margin:15px 0 0;color:var(--lab-muted);font-size:13px;line-height:1.75}
+.campaign-reference{margin-top:30px!important;color:var(--lab-accent)!important;font:9px 'Space Grotesk',sans-serif!important;letter-spacing:1.3px;line-height:1.6!important}
+.project-positioning{margin:18px 0 0!important;color:var(--lab-muted)!important;font-size:12px!important;letter-spacing:.2px}
+.campaign-applications{margin-top:clamp(110px,13vw,200px);padding-top:clamp(80px,9vw,140px);border-top:1px solid var(--lab-line)}
+.application-heading{display:grid;grid-template-columns:1fr 2fr;column-gap:clamp(40px,8vw,130px);align-items:start;margin-bottom:clamp(80px,10vw,150px)}
+.application-heading .eyebrow{grid-row:1 / 3}
+.application-heading h2{margin:0;font:500 clamp(38px,5vw,78px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.055em}
+.application-heading>p{max-width:520px;margin:28px 0 0;color:var(--lab-muted);font-size:14px;line-height:1.8}
+.application-block{margin-top:clamp(90px,11vw,170px)}
+.application-label{display:flex;gap:24px;align-items:flex-start;margin-bottom:28px;padding-top:16px;border-top:1px solid var(--lab-line)}
+.application-label>span{font:9px 'Space Grotesk',sans-serif;color:var(--lab-accent);letter-spacing:1.4px}
+.application-label h3{margin:0;font:500 18px 'Space Grotesk',sans-serif;letter-spacing:.2px}
+.application-label p{margin:7px 0 0;color:var(--lab-muted);font-size:10px;text-transform:uppercase;letter-spacing:1.1px}
+.browser-mockup{border:1px solid #26313a;background:#090c10;box-shadow:0 26px 70px rgba(0,0,0,.35)}
+.browser-bar{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #26313a;color:#77818a;font:8px 'Space Grotesk',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.browser-dots{letter-spacing:5px;color:#4c5b65}
+.website-concept{position:relative;aspect-ratio:16/8.8;overflow:hidden;background:#000}
+.website-concept>img{display:block;width:100%;height:100%;object-fit:cover}
+.concept-nav{position:absolute;z-index:2;left:4%;right:4%;top:5%;display:flex;justify-content:space-between;color:#f7f7f2;font:500 9px 'Space Grotesk',sans-serif;letter-spacing:1px}
+.concept-nav span:last-child{font-size:7px;color:#b9b9b4}
+.concept-copy{position:absolute;z-index:2;right:6%;top:50%;width:34%;transform:translateY(-44%);color:#f7f7f2}
+.concept-copy>span,.advertisement-copy>span{font:500 7px 'Space Grotesk',sans-serif;letter-spacing:1.5px;color:#bfc5c8}
+.concept-copy h4,.advertisement-copy h4{margin:16px 0;font:500 clamp(28px,4.1vw,67px)/.98 'Space Grotesk',sans-serif;letter-spacing:-.055em}
+.concept-copy p,.advertisement-copy p{max-width:330px;color:#b8bdc0;font-size:clamp(9px,1vw,13px);line-height:1.7}
+.concept-copy button,.advertisement-copy button{margin-top:16px;padding:11px 15px;border:1px solid #e8ebec;background:transparent;color:#fff;font:600 7px 'Space Grotesk',sans-serif;letter-spacing:1.1px}
+.advertisement-concept{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #171f26;background:#000}
+.advertisement-concept>img{width:100%;height:100%;display:block;object-fit:cover}
+.advertisement-copy{position:absolute;z-index:2;left:6%;top:50%;width:31%;transform:translateY(-50%);color:#f3f5f2}
+.social-concept{max-width:1120px;margin:0 auto;border:1px solid #242d35;background:#0a0d11;padding:clamp(14px,2.5vw,32px)}
+.social-header{display:flex;justify-content:space-between;gap:18px;padding:0 0 20px;color:#b7c0c5;font:8px 'Space Grotesk',sans-serif;letter-spacing:1.25px}
+.social-header strong{color:#f3f5f2;font-weight:500}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.social-grid>img,.macro-pair{width:100%;aspect-ratio:1;object-fit:cover;background:#000}
+.macro-pair{display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.macro-pair img{width:100%;height:100%;object-fit:cover}
+.project-end{margin-top:clamp(90px,11vw,170px);padding-top:clamp(70px,8vw,120px);border-top:1px solid var(--lab-line)}
+
+@media(max-width:800px){
+  .hero-project-cta{margin-top:20px}
+  .offer-grid{grid-template-columns:1fr 1fr}
+  .application-heading{grid-template-columns:1fr;gap:28px}
+  .application-heading .eyebrow{grid-row:auto}
+  .application-heading>p{margin-top:0}
+  .website-concept{aspect-ratio:4/5}
+  .website-concept>img{object-position:37% center}
+  .concept-nav span:last-child{display:none}
+  .concept-copy{right:6%;top:auto;bottom:7%;width:50%;transform:none}
+  .concept-copy h4,.advertisement-copy h4{font-size:clamp(28px,8vw,44px)}
+  .concept-copy p{display:none}
+  .advertisement-concept{aspect-ratio:4/5}
+  .advertisement-concept>img{object-position:center}
+  .advertisement-copy{left:7%;top:8%;width:62%;transform:none}
+  .advertisement-copy p{max-width:240px}
+}
+@media(max-width:600px){
+  .offer-grid{grid-template-columns:1fr}
+  .offer-grid strong{margin-bottom:18px}
+  .social-header{flex-direction:column}
+  .social-grid{grid-template-columns:1fr}
+  .social-grid>img,.macro-pair{aspect-ratio:1}
+  .project-end>div a{font-size:32px}
+}
