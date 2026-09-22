@@ -56,7 +56,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Brands explored through independent product studies"><span>INDEPENDENT PRODUCT STUDIES</span><p>TRACE · PHIL’S · HARRY’S</p></section>
+    <section className="featured-strip section-pad" aria-label="Brands explored through independent product studies"><span>INDEPENDENT PRODUCT STUDIES</span><p>TRACE · PHIL’S · HARRY’S · EO</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
@@ -75,6 +75,7 @@ const applicationSettings: Record<string, ApplicationSettings> = {
   phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
   trace: { bannerIndex: 0, adIndex: 0, socialIndex: 1, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
   'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 3, socialIndex: 1, websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
+  eo: { bannerIndex: 3, adIndex: 4, socialIndex: 1, websiteHeadline: 'French lavender, in a new light.', adHeadline: 'Blue light. Water. EO.', socialCaption: 'A close look at the wet label, curved bottle and cool blue light.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {

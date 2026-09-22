@@ -69,6 +69,21 @@ export const projects: Project[] = [
       { src: '/images/projects/trace-magnesium-glycinate-tilt-space-1920.webp', alt: 'Trace Magnesium Glycinate angled against black negative space.', width: 7517, height: 3506 },
     ],
   },
+  {
+    slug: 'eo', name: 'EO', brand: 'EO', tone: 'slate',
+    brief: 'The bottle already had a strong blue graphic system, so I built the campaign around it. I wanted the shower gel to feel cool, tactile and immediate, with enough range for a clear product hero, copy space and close details.',
+    approach: 'I kept the set black, worked with narrow blue light and covered the bottle in water so the label and glass carried the frame. The wider images hold the full product cleanly; the closer crops turn the droplets, type and curved bottle into the visual.',
+    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
+    cover: { src: '/images/projects/eo-hero-1920.webp', alt: 'EO calming French lavender shower gel upright against black with blue light and water droplets.', width: 1920, height: 1072 },
+    gallery: [
+      { src: '/images/projects/eo-extreme-macro-1920.webp', alt: 'Extreme close-up of the EO shower gel label and water droplets in blue light.', width: 1920, height: 1072 },
+      { src: '/images/projects/eo-slight-macro-1920.webp', alt: 'Close view of the EO shower gel bottle, pump and wet label.', width: 1920, height: 1072 },
+      { src: '/images/projects/eo-tilt-hero-1920.webp', alt: 'EO shower gel floating at an angle against a black background.', width: 1920, height: 1072 },
+      { src: '/images/projects/eo-hero-space-1920.webp', alt: 'EO shower gel upright with generous black copy space.', width: 1920, height: 1031 },
+      { src: '/images/projects/eo-tilt-space-1920.webp', alt: 'EO shower gel angled beside deep black copy space.', width: 1920, height: 1147 },
+    ],
+  },
 ];
 
 export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Generative Image Development', 'Image Finishing', 'Campaign Development'];
