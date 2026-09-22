@@ -7,6 +7,7 @@ export const selectedWork = [
   { slug: 'harrys', galleryIndex: 0, title: 'HARRY’S', subtitle: 'Taming Cream', size: 'large', alt: 'Macro product photograph of Harry’s Taming Cream packaging.' },
   { slug: 'trace', galleryIndex: 1, title: 'TRACE', subtitle: '40,000 Volts · Electrolytes', size: 'large', alt: 'Slight macro of Trace 40,000 Volts branding with water droplets on deep blue packaging.' },
   { slug: 'eo', galleryIndex: 1, title: 'EO', subtitle: 'French Lavender Shower Gel', size: 'large', alt: 'Slight macro of the EO shower gel bottle with water droplets in blue light.' },
+  { slug: 'acure-shampoo', galleryIndex: 1, title: 'ACURE', subtitle: 'Daily Workout Shampoo', size: 'large', alt: 'Slight macro of the ACURE Daily Workout Shampoo tube covered in water droplets.' },
 ].map(selection => {
   const project = projects.find(project => project.slug === selection.slug)!;
   return {
