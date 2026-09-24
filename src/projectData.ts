@@ -14,21 +14,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'harrys', name: 'HARRY’S', brand: 'Harry’s', tone: 'slate',
-    brief: 'I wanted to see how far one tube could carry a small campaign. The goal was to make Harry’s Taming Cream feel less like an everyday bathroom product and more like an object with weight and attitude.',
-    approach: 'I kept the set nearly black and used a narrow blue light to trace the lettering, texture and shape of the tube. Straight, floating and extreme-close frames gave the series a mix of clear product views and more graphic details.',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Upright and angled heroes · Macro details · Copy-space layouts',
-    cover: { src: '/images/projects/harrys-tilt-hero-1920.webp', alt: 'Harry’s Taming Cream floating at an angle against a black background.', width: 6962, height: 3853 },
-    gallery: [
-      { src: '/images/projects/harrys-extreme-macro-1920.webp', alt: 'Extreme close-up of the Harry’s lettering and blue packaging texture.', width: 5504, height: 3072 },
-      { src: '/images/projects/harrys-straight-hero-1920.webp', alt: 'Harry’s Taming Cream upright in restrained blue light.', width: 5504, height: 3072 },
-      { src: '/images/projects/harrys-slight-macro-1920.webp', alt: 'Close-up of the Harry’s label and packaging.', width: 5504, height: 3072 },
-      { src: '/images/projects/harrys-straight-space-1920.webp', alt: 'Harry’s Taming Cream upright with deep black negative space.', width: 7524, height: 4092 },
-      { src: '/images/projects/harrys-tilt-space-1920.webp', alt: 'Harry’s Taming Cream angled against black negative space.', width: 7578, height: 3697 },
-    ],
-  },
-  {
     slug: 'phils', name: 'PHIL’S', brand: 'Phil’s', tone: 'slate',
     brief: 'I wanted the cleanser to feel tactile and stripped back. The contrast between the white bottle and deep black space keeps the packaging graphic, while the water gives it the feeling of something just used at the sink.',
     approach: 'I used a hard side light with controlled falloff to bring out the paper texture, ribbed cap and droplets without flattening the white bottle. The wider frames keep the full product clear; the close crops turn the label and wet surface into the visual story.',
@@ -97,6 +82,36 @@ export const projects: Project[] = [
       { src: '/images/projects/acure-shampoo-tilt-hero-1920.webp', alt: 'ACURE Daily Workout Shampoo floating at an angle against black.', width: 1920, height: 1072 },
       { src: '/images/projects/acure-shampoo-hero-space-1920.webp', alt: 'ACURE Daily Workout Shampoo upright beside generous black copy space.', width: 2560, height: 1462 },
       { src: '/images/projects/acure-shampoo-tilt-space-1920.webp', alt: 'ACURE Daily Workout Shampoo angled beside black copy space.', width: 2560, height: 1406 },
+    ],
+  },
+  {
+    slug: 'acure-body-wash', name: 'ACURE BODY WASH', brand: 'ACURE', tone: 'slate',
+    brief: 'The silver bottle shifts from near black to bright metallic detail depending on the light. I built the series around that contrast, using water to make the surface feel immediate and physical.',
+    approach: 'A hard side light traces the pump, curved bottle and vertical ACURE type while the rest falls into shadow. The straight and angled frames keep the full product clear, and the close views turn the wet metallic packaging into the subject.',
+    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
+    cover: { src: '/images/projects/acure-body-wash-hero-1920.jpg', alt: 'ACURE Body Wash Oil upright against black with silver light and water droplets.', width: 1920, height: 1072 },
+    gallery: [
+      { src: '/images/projects/acure-body-wash-extreme-macro-1920.jpg', alt: 'Extreme close-up of the wet metallic ACURE Body Wash Oil bottle and vertical lettering.', width: 1920, height: 1072 },
+      { src: '/images/projects/acure-body-wash-slight-macro-1920.jpg', alt: 'Close view of the ACURE Body Wash Oil label, silver bottle and water droplets.', width: 1920, height: 1072 },
+      { src: '/images/projects/acure-body-wash-tilt-hero-1920.jpg', alt: 'ACURE Body Wash Oil floating at an angle against black.', width: 1920, height: 1072 },
+      { src: '/images/projects/acure-body-wash-hero-space-2560.jpg', alt: 'ACURE Body Wash Oil upright beside generous black copy space.', width: 2560, height: 1356 },
+      { src: '/images/projects/acure-body-wash-tilt-space-2560.jpg', alt: 'ACURE Body Wash Oil angled beside deep black copy space.', width: 2560, height: 1396 },
+    ],
+  },
+  {
+    slug: 'om-lions-mane', name: 'OM LION’S MANE', brand: 'OM', tone: 'slate',
+    brief: 'The orange label is simple and recognizable, so I kept the campaign direct. The goal was to give the bottle more scale and presence while preserving the plainspoken character of the packaging.',
+    approach: 'I used a focused light against black to separate the white bottle and hold the warmth of the orange label. The wider frames establish the product, while the two close views bring the printed type, label texture and container shape forward.',
+    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
+    cover: { src: '/images/projects/om-hero-1920.jpg', alt: 'OM Lion’s Mane mushroom capsules upright against a black background.', width: 1920, height: 1200 },
+    gallery: [
+      { src: '/images/projects/om-extreme-macro-1920.jpg', alt: 'Extreme close-up of the orange OM Lion’s Mane label and white bottle.', width: 1920, height: 1072 },
+      { src: '/images/projects/om-slight-macro-1920.jpg', alt: 'Close view of the OM Lion’s Mane label, type and bottle cap.', width: 1920, height: 1072 },
+      { src: '/images/projects/om-tilt-hero-1920.jpg', alt: 'OM Lion’s Mane supplement bottle angled against black.', width: 1920, height: 1200 },
+      { src: '/images/projects/om-hero-space-2560.jpg', alt: 'OM Lion’s Mane bottle upright beside generous black copy space.', width: 2560, height: 1544 },
+      { src: '/images/projects/om-tilt-space-2560.jpg', alt: 'OM Lion’s Mane bottle angled beside deep black copy space.', width: 2560, height: 1632 },
     ],
   },
 ];
