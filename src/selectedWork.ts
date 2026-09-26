@@ -2,8 +2,6 @@ import { projects, type PortfolioImage } from './projectData';
 
 type HomepageSelection = {
   slug: string;
-  primaryIndex?: number;
-  alternateIndex?: number;
   title: string;
   subtitle: string;
   size: string;
@@ -18,7 +16,6 @@ const homepageSelections: HomepageSelection[] = [
   { slug: 'eo', title: 'EO', subtitle: 'French Lavender Shower Gel', size: 'large', alt: 'Extreme macro of the EO shower gel label and water droplets in blue light.' },
   { slug: 'om-lions-mane', title: 'OM', subtitle: 'Lion’s Mane', size: 'large', alt: 'Extreme macro of the orange OM Lion’s Mane label and white bottle.' },
   { slug: 'acure-body-wash', title: 'ACURE', subtitle: 'Body Wash Oil', size: 'large', alt: 'Extreme macro of the metallic ACURE Body Wash Oil bottle covered in water.' },
-  { slug: 'trace', primaryIndex: 2, alternateIndex: 1, title: 'TRACE', subtitle: '40,000 Volts · Electrolytes', size: 'large', alt: 'Extreme macro of Trace 40,000 Volts branding and water droplets on deep blue packaging.' },
 ];
 
 export const selectedWork = homepageSelections.map(selection => {
@@ -26,7 +23,7 @@ export const selectedWork = homepageSelections.map(selection => {
   return {
     ...selection,
     project,
-    image: { ...project.gallery[selection.primaryIndex ?? 0], alt: selection.alt } as PortfolioImage,
-    alternateImage: project.gallery[selection.alternateIndex ?? 1],
+    image: { ...project.gallery[0], alt: selection.alt } as PortfolioImage,
+    alternateImage: project.gallery[1],
   };
 });

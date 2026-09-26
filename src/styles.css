@@ -350,12 +350,12 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .rotating-work-image.show-alternate .rotating-primary{opacity:0}
 .rotating-work-image.show-alternate .rotating-alternate{opacity:1}
 
-/* Each homepage campaign occupies at least 70% of the desktop viewport. */
-.curated-work .curated-image{height:clamp(620px,78svh,1080px);min-height:70svh}
+/* Each homepage campaign occupies at least 80% of the viewport. */
+.curated-work .curated-image{height:clamp(680px,84svh,1160px);min-height:80svh}
 .curated-work .rotating-work-image .rotating-primary{object-fit:cover}
 .curated-work .rotating-work-image .rotating-alternate{object-fit:cover;background:#000}
 .curated-work .curated-card:hover .rotating-alternate{transform:none}
-@media(max-width:800px){.curated-work .curated-image{height:70svh;min-height:520px;aspect-ratio:auto}}
+@media(max-width:800px){.curated-work .curated-image{height:80svh;min-height:560px;aspect-ratio:auto}}
 
 /* Desktop homepage hero: crop the surrounding black space while keeping the full Trace bottle visible. */
 @media(min-width:801px){

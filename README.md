@@ -15,7 +15,7 @@ pnpm build
 - Campaign data and image sets live in `src/projectData.ts`.
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
-- The homepage campaign set is ACURE Shampoo, Trace Magnesium Glycinate, EO, OM Lion's Mane, ACURE Body Wash and Trace 40,000 Volts.
+- The homepage campaign set is ACURE Shampoo, Trace Magnesium Glycinate, EO, OM Lion's Mane and ACURE Body Wash.
 - Each campaign page includes website, ad and social placement examples.
 - Featured brand work is labeled as independent study work and should remain factually identified that way.
 
