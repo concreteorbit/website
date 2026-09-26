@@ -15,8 +15,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'phils', name: 'PHIL’S', brand: 'Phil’s', tone: 'slate',
-    brief: 'I wanted the cleanser to feel tactile and stripped back. The contrast between the white bottle and deep black space keeps the packaging graphic, while the water gives it the feeling of something just used at the sink.',
-    approach: 'I used a hard side light with controlled falloff to bring out the paper texture, ribbed cap and droplets without flattening the white bottle. The wider frames keep the full product clear; the close crops turn the label and wet surface into the visual story.',
+    brief: 'A white cleanser bottle, hard side light, water and deep black space.',
+    approach: 'Clear product views are paired with tight texture and label details.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight and angled heroes · Macro details · Copy-space layout',
     cover: { src: '/images/projects/phils-hero-2000.jpg', alt: 'Phil’s Daily Facial Cleanser upright against black and covered in water droplets.', width: 2000, height: 1116 },
@@ -29,8 +29,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'trace', name: 'TRACE', brand: 'Trace', tone: 'slate',
-    brief: 'The name “40,000 Volts” gave me the starting point. I wanted the bottle to feel charged and physical, but still clear enough that the product and label could lead the image.',
-    approach: 'Water droplets bring in the hydration story and electric-blue light gives the bottle its energy. I kept the background black so the shape, label and wet surface stay easy to read.',
+    brief: 'Electric-blue light and water give Trace a charged, graphic presence.',
+    approach: 'The series moves between product views, copy space and close packaging details.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
     deliverables: 'Campaign hero · Copy-space hero · Label close-up · Supporting product frame',
     cover: { src: '/images/projects/trace-1-2000.webp', alt: 'Trace 40,000 Volts electrolyte concentrate covered in water droplets.', width: 5504, height: 3072 },
@@ -42,8 +42,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'trace-magnesium-glycinate', name: 'TRACE MAGNESIUM GLYCINATE', brand: 'Trace', tone: 'slate',
-    brief: 'For Magnesium Glycinate, I wanted a quieter kind of energy. The series needed clean product heroes, close material details and frames with enough room for campaign copy.',
-    approach: 'I moved close to the ribbed lid, printed type and cool-blue reflections, then built the wider frames around the angled product. Deep blacks keep everything calm and cinematic, which felt right for a nighttime product.',
+    brief: 'Cool-blue reflections and deep black space give the bottle a quieter mood.',
+    approach: 'Angled heroes, close label details and copy-space compositions complete the set.',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
     deliverables: 'Angled hero · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/trace-magnesium-glycinate-tilt-hero-1920.webp', alt: 'Trace Magnesium Glycinate floating at an angle against black.', width: 5504, height: 3072 },
@@ -56,8 +56,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'eo', name: 'EO', brand: 'EO', tone: 'slate',
-    brief: 'The bottle already had a strong blue graphic system, so I built the campaign around it. I wanted the shower gel to feel cool, tactile and immediate, with enough range for a clear product hero, copy space and close details.',
-    approach: 'I kept the set black, worked with narrow blue light and covered the bottle in water so the label and glass carried the frame. The wider images hold the full product cleanly; the closer crops turn the droplets, type and curved bottle into the visual.',
+    brief: 'Blue light, wet glass and black space bring the shower gel packaging forward.',
+    approach: 'Straight and angled heroes are paired with macros and copy-space frames.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/eo-hero-1920.webp', alt: 'EO calming French lavender shower gel upright against black with blue light and water droplets.', width: 1920, height: 1072 },
@@ -71,8 +71,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'acure-shampoo', name: 'ACURE SHAMPOO', brand: 'ACURE', tone: 'slate',
-    brief: 'The turquoise tube and oversized vertical logo already felt energetic. I built the campaign around that color, using water and deep black space to make the shampoo feel immediate without losing the packaging.',
-    approach: 'I used controlled side light to hold the shape of the tube and bring out the droplets across its surface. The full-product frames keep the bottle clear, while the close views turn the type, color and water into the visual.',
+    brief: 'Turquoise packaging, water and deep black contrast carry the series.',
+    approach: 'Full-product heroes sit beside close views and copy-space compositions.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/acure-shampoo-hero-1920.webp', alt: 'ACURE Daily Workout Shampoo upright against black with turquoise light and water droplets.', width: 1920, height: 1072 },
@@ -86,8 +86,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'acure-body-wash', name: 'ACURE BODY WASH', brand: 'ACURE', tone: 'slate',
-    brief: 'The silver bottle shifts from near black to bright metallic detail depending on the light. I built the series around that contrast, using water to make the surface feel immediate and physical.',
-    approach: 'A hard side light traces the pump, curved bottle and vertical ACURE type while the rest falls into shadow. The straight and angled frames keep the full product clear, and the close views turn the wet metallic packaging into the subject.',
+    brief: 'Hard side light turns the wet silver bottle into a bright metallic form.',
+    approach: 'Straight and angled heroes are paired with macros and copy-space frames.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/acure-body-wash-hero-1920.jpg', alt: 'ACURE Body Wash Oil upright against black with silver light and water droplets.', width: 1920, height: 1072 },
@@ -101,8 +101,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'om-lions-mane', name: 'OM LION’S MANE', brand: 'OM', tone: 'slate',
-    brief: 'The orange label is simple and recognizable, so I kept the campaign direct. The goal was to give the bottle more scale and presence while preserving the plainspoken character of the packaging.',
-    approach: 'I used a focused light against black to separate the white bottle and hold the warmth of the orange label. The wider frames establish the product, while the two close views bring the printed type, label texture and container shape forward.',
+    brief: 'Focused light holds the warm orange label against deep black space.',
+    approach: 'Full-product views, tight label details and copy-space frames complete the set.',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight and angled heroes · Macro details · Copy-space layouts',
     cover: { src: '/images/projects/om-hero-1920.jpg', alt: 'OM Lion’s Mane mushroom capsules upright against a black background.', width: 1920, height: 1200 },
