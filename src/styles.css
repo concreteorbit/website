@@ -323,6 +323,7 @@ body{background:var(--lab-bg);color:var(--lab-white)}
 .work .section-heading h2{font-size:clamp(37px,4.7vw,74px);line-height:1.02;letter-spacing:-.052em;margin:24px 0 0;font-weight:500}
 .section-note{color:var(--lab-muted)!important;text-align:right;margin:0!important}
 .curated-work .curated-grid{gap:clamp(76px,10vw,155px)}
+.curated-work .curated-card:first-child .curated-image{height:min(92svh,1100px)}
 .curated-card{position:relative}.curated-image{height:min(74svh,850px);border:1px solid #151c23;position:relative}.curated-image:before,.project-frame:before{content:'';position:absolute;z-index:2;width:13px;height:13px;left:12px;top:12px;border-left:1px solid rgba(101,215,255,.6);border-top:1px solid rgba(101,215,255,.6);pointer-events:none}
 .curated-image .portfolio-image{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}.curated-card:hover .portfolio-image{transform:scale(1.018);filter:brightness(1.06)}
 .curated-caption{align-items:flex-start;padding-top:15px;border-top:1px solid var(--lab-line);margin-top:10px}.project-number{font:9px 'Space Grotesk',sans-serif!important;color:var(--lab-accent)!important;min-width:40px;padding-top:2px}.curated-caption h3{font:500 13px 'Space Grotesk',sans-serif;letter-spacing:1.1px}.curated-caption p{font-size:10px;color:var(--lab-muted);letter-spacing:.35px}.curated-caption>span:last-child{color:var(--lab-accent)}
@@ -338,23 +339,23 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .curated-project>.portfolio-image{margin-top:38px;max-height:88svh;border:1px solid #151c23}.project-information{border-bottom:1px solid var(--lab-line);padding:clamp(75px,9vw,130px) 0}.project-information p{color:var(--lab-muted);font-size:13px}
 .curated-project .campaign-sequence{display:flex;flex-direction:column;gap:clamp(75px,9vw,140px);padding-top:clamp(90px,11vw,170px)}.project-frame{position:relative;width:100%;padding-top:27px}.project-frame:nth-child(3n+2){width:72%;align-self:flex-start}.project-frame:nth-child(3n+3){width:72%;align-self:flex-end}.project-frame:before{top:39px}.project-frame .portfolio-image{display:block;width:100%;height:auto;max-height:88svh;object-fit:contain;background:#000}.frame-index{position:absolute;top:0;left:0;font:8px 'Space Grotesk',sans-serif;letter-spacing:1.4px;color:var(--lab-muted)}
 .project-end{border-color:var(--lab-line)}.project-end>div a{color:var(--lab-accent)}
-@media(max-width:800px){.header{height:70px}.fullbleed-hero .hero-image{height:calc(100svh - 70px);min-height:690px}.fullbleed-hero .homepage-hero-photo{height:61%}.fullbleed-hero .portfolio-image{transform:none}.fullbleed-hero-copy{top:8%;max-width:none}.fullbleed-hero-brand{margin-bottom:23px}.fullbleed-hero-brand span+span{display:none}.fullbleed-hero-copy h1{font-size:clamp(34px,9vw,52px)}.hero-axis{bottom:18px}.work .section-heading{align-items:flex-start}.section-note{display:none}.curated-image{height:auto;aspect-ratio:16/10}.curated-image .portfolio-image{object-fit:cover}.why,.founder{grid-template-columns:1fr;gap:55px}.founder-image-placeholder{width:min(70vw,310px)}.project-frame:nth-child(n){width:100%}.detail-heading h1{font-size:clamp(42px,13vw,76px)}}
+@media(max-width:800px){.header{height:70px}.fullbleed-hero .hero-image{height:calc(100svh - 70px);min-height:690px}.fullbleed-hero .homepage-hero-photo{height:61%}.fullbleed-hero .portfolio-image{transform:none}.fullbleed-hero-copy{top:8%;max-width:none}.fullbleed-hero-brand{margin-bottom:23px}.fullbleed-hero-brand span+span{display:none}.fullbleed-hero-copy h1{font-size:clamp(34px,9vw,52px)}.hero-axis{bottom:18px}.work .section-heading{align-items:flex-start}.section-note{display:none}.curated-image{height:auto;aspect-ratio:16/10}.curated-work .curated-card:first-child .curated-image{height:auto}.curated-image .portfolio-image{object-fit:cover}.why,.founder{grid-template-columns:1fr;gap:55px}.founder-image-placeholder{width:min(70vw,310px)}.project-frame:nth-child(n){width:100%}.detail-heading h1{font-size:clamp(42px,13vw,76px)}}
 @media(max-width:600px){.founder-label{flex-direction:column;align-items:flex-start;width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.curated-image .portfolio-image{transition:none}}
 
-/* Selected work alternates between the macro and campaign hero every 30 seconds. */
+/* Selected work alternates between the extreme and slight macro every 30 seconds. */
 .rotating-work-image .portfolio-image{position:absolute;inset:0;transition:opacity 1.2s ease,transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
 .rotating-work-image .rotating-primary{opacity:1}
 .rotating-work-image .rotating-alternate{opacity:0}
 .rotating-work-image.show-alternate .rotating-primary{opacity:0}
 .rotating-work-image.show-alternate .rotating-alternate{opacity:1}
 
-/* Homepage hero phase: a taller frame and contain sizing keep every full product visible. */
-.curated-work .curated-image{height:min(86svh,1020px)}
+/* Each homepage campaign occupies at least 70% of the desktop viewport. */
+.curated-work .curated-image{height:clamp(620px,78svh,1080px);min-height:70svh}
 .curated-work .rotating-work-image .rotating-primary{object-fit:cover}
-.curated-work .rotating-work-image .rotating-alternate{object-fit:contain;background:#000}
+.curated-work .rotating-work-image .rotating-alternate{object-fit:cover;background:#000}
 .curated-work .curated-card:hover .rotating-alternate{transform:none}
-@media(max-width:800px){.curated-work .curated-image{height:auto;aspect-ratio:16/10}}
+@media(max-width:800px){.curated-work .curated-image{height:70svh;min-height:520px;aspect-ratio:auto}}
 
 /* Desktop homepage hero: crop the surrounding black space while keeping the full Trace bottle visible. */
 @media(min-width:801px){
@@ -438,14 +439,11 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-trace-magnesium-glycinate>img{filter:brightness(.82);object-position:center}
 .website-concept-trace-magnesium-glycinate .concept-copy{left:5.5%;right:auto;top:auto;bottom:7%;width:38%;transform:none;text-shadow:0 2px 18px rgba(0,0,0,.85)}
 .website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:470px;font-size:clamp(25px,3vw,48px);line-height:1.02}
-.website-concept-harrys::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.34) 33%,transparent 62%);pointer-events:none}
-.website-concept-harrys .concept-copy{right:5.5%;width:34%;text-shadow:0 2px 18px rgba(0,0,0,.9)}
 .website-concept-eo::after,.website-concept-acure-shampoo::after,.website-concept-acure-body-wash::after,.website-concept-om-lions-mane::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.34) 34%,transparent 60%);pointer-events:none}
 .website-concept-eo .concept-copy,.website-concept-acure-shampoo .concept-copy,.website-concept-acure-body-wash .concept-copy,.website-concept-om-lions-mane .concept-copy{left:5.5%;right:auto;width:34%;text-shadow:0 2px 18px rgba(0,0,0,.9)}
 .advertisement-concept{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #171f26;background:#000}
 .advertisement-concept>img{width:100%;height:100%;display:block;object-fit:cover}
 .advertisement-copy{position:absolute;z-index:2;left:6%;top:50%;width:31%;transform:translateY(-50%);color:#f3f5f2}
-.advertisement-concept-harrys .advertisement-copy{left:auto;right:6%;width:32%}
 .advertisement-concept-eo .advertisement-copy,.advertisement-concept-acure-shampoo .advertisement-copy,.advertisement-concept-acure-body-wash .advertisement-copy,.advertisement-concept-om-lions-mane .advertisement-copy{left:auto;right:6%;width:32%;text-align:right}
 .social-post-concept{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);max-width:1180px;margin:0 auto;border:1px solid #2b3036;background:#1c2026;overflow:hidden}
 .social-post-image{aspect-ratio:1/1;min-height:0;background:#000;overflow:hidden}
@@ -482,12 +480,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .advertisement-concept>img{object-position:center}
   .advertisement-copy{left:7%;top:8%;width:62%;transform:none}
   .advertisement-copy p{max-width:240px}
-  .advertisement-concept-harrys .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
-  .advertisement-concept-harrys .advertisement-copy p{margin-left:auto}
   .advertisement-concept-eo .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
   .advertisement-concept-acure-shampoo .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
-  .advertisement-concept-acure-body-wash .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
-  .advertisement-concept-om-lions-mane .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
+  .advertisement-concept-acure-body-wash .advertisement-copy,.advertisement-concept-om-lions-mane .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
 }
 @media(max-width:600px){
   .offer-grid{grid-template-columns:1fr}
@@ -524,7 +519,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1>img{object-position:center;transform:scale(1.06)}
 .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1::after{background:linear-gradient(90deg,rgba(0,0,0,.24) 0%,rgba(0,0,0,.06) 38%,transparent 58%)}
 .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1 .concept-copy{top:50%;width:30%;transform:translateY(-50%);text-shadow:0 2px 18px rgba(0,0,0,.84)}
-.website-concept-harrys::after{background:linear-gradient(270deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.27) 35%,transparent 64%)}
 .advertisement-concept-trace .advertisement-copy{left:auto;right:6%;width:31%}
 .advertisement-concept-trace-magnesium-glycinate>img{object-position:66% center;transform:scale(1.1);transform-origin:68% center}
 
@@ -539,11 +533,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .website-concept::before{content:'';position:absolute;z-index:1;inset:39% 0 0;background:linear-gradient(180deg,transparent 0%,rgba(5,7,10,.88) 24%,#05070a 43%);pointer-events:none}
   .website-concept-trace-magnesium-glycinate::after{display:none}
   .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1>img{object-fit:contain;object-position:right top;transform:translateX(22%) scale(1.42);transform-origin:right top}
-  .website-concept-harrys::after{display:none}
   .website-concept-eo::after{display:none}
   .website-concept-acure-shampoo::after{display:none}
-  .website-concept-acure-body-wash::after{display:none}
-  .website-concept-om-lions-mane::after{display:none}
+  .website-concept-acure-body-wash::after,.website-concept-om-lions-mane::after{display:none}
   .concept-nav{top:4%}
   .concept-copy,.website-concept-trace-magnesium-glycinate .concept-copy,.website-concept-eo .concept-copy,.website-concept-acure-shampoo .concept-copy,.website-concept-acure-body-wash .concept-copy,.website-concept-om-lions-mane .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
   .concept-copy h4,.website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:420px;margin:13px 0;font-size:clamp(29px,9.5vw,44px)}
