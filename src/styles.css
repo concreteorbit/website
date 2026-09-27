@@ -343,18 +343,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 @media(max-width:600px){.founder-label{flex-direction:column;align-items:flex-start;width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.curated-image .portfolio-image{transition:none}}
 
-/* Selected work alternates between the extreme and slight macro every 30 seconds. */
-.rotating-work-image .portfolio-image{position:absolute;inset:0;transition:opacity 1.2s ease,transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
-.rotating-work-image .rotating-primary{opacity:1}
-.rotating-work-image .rotating-alternate{opacity:0}
-.rotating-work-image.show-alternate .rotating-primary{opacity:0}
-.rotating-work-image.show-alternate .rotating-alternate{opacity:1}
-
 /* Each homepage campaign occupies at least 80% of the viewport. */
 .curated-work .curated-image{height:clamp(680px,84svh,1160px);min-height:80svh}
-.curated-work .rotating-work-image .rotating-primary{object-fit:cover}
-.curated-work .rotating-work-image .rotating-alternate{object-fit:cover;background:#000}
-.curated-work .curated-card:hover .rotating-alternate{transform:none}
+.curated-work .curated-image .portfolio-image{object-fit:cover}
 @media(max-width:800px){.curated-work .curated-image{height:80svh;min-height:560px;aspect-ratio:auto}}
 
 /* Desktop homepage hero: crop the surrounding black space while keeping the full Trace bottle visible. */
@@ -521,6 +512,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1 .concept-copy{top:50%;width:30%;transform:translateY(-50%);text-shadow:0 2px 18px rgba(0,0,0,.84)}
 .advertisement-concept-trace .advertisement-copy{left:auto;right:6%;width:31%}
 .advertisement-concept-trace-magnesium-glycinate>img{object-position:66% center;transform:scale(1.1);transform-origin:68% center}
+.advertisement-concept-trace-magnesium-glycinate .advertisement-copy{left:auto;right:6%;width:31%;text-align:right}
 
 @media(max-width:800px){
   #contact{scroll-margin-top:84px}
@@ -542,6 +534,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .mock-button{margin-top:13px}
   .advertisement-copy p{display:none}
   .advertisement-concept-trace-magnesium-glycinate>img{object-fit:contain;object-position:right bottom;transform:translateX(16%) scale(1.25);transform-origin:right bottom}
+  .advertisement-concept-trace-magnesium-glycinate .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
 }
 
 @media(max-width:600px){

@@ -8,8 +8,7 @@ type HomepageSelection = {
   alt: string;
 };
 
-// Homepage order is intentional. Each project begins on its extreme macro
-// and changes to its slight macro after 30 seconds.
+// Homepage order is intentional. Each project displays its extreme macro.
 const homepageSelections: HomepageSelection[] = [
   { slug: 'acure-shampoo', title: 'ACURE', subtitle: 'Daily Workout Shampoo', size: 'large', alt: 'Extreme macro of the ACURE shampoo tube covered in water droplets.' },
   { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'large', alt: 'Extreme macro of Trace Magnesium Glycinate lettering, blue label texture and ribbed lid.' },
@@ -24,6 +23,5 @@ export const selectedWork = homepageSelections.map(selection => {
     ...selection,
     project,
     image: { ...project.gallery[0], alt: selection.alt } as PortfolioImage,
-    alternateImage: project.gallery[1],
   };
 });
