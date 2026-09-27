@@ -33,7 +33,7 @@ function Studio() {
     <section id="studio" className="philosophy section-pad">
       <span className="eyebrow">CINEMATIC PRODUCT IMAGERY</span>
       <h2>THE PRODUCT SETS<br/>THE DIRECTION.<br/><em>EVERY TIME.</em><Orbit/></h2>
-      <div className="philosophy-bottom"><p>I bring a defined visual language—deep contrast, controlled light and close material detail—to supplements, skincare and body care.</p></div>
+      <div className="philosophy-bottom"><p>I bring a defined visual language of deep contrast, controlled light and close material detail to supplements, skincare and body care.</p></div>
     </section>
     <section className="why section-pad">
       <div className="studio-intro"><span className="eyebrow">THE PROCESS</span><h2>Clear from inquiry<br/>to delivery.</h2><p>You work directly with me throughout the project. Scope, schedule, review points, usage and delivery are confirmed before production begins.</p></div>
@@ -152,7 +152,7 @@ function CampaignApplications({ project }: { project: Project }) {
     </article>
     <article className="application-block">
       <div className="application-label"><span>03</span><div><h3>Social</h3><p>A close crop shown in a brand post.</p></div></div>
-      <div className="social-post-concept">
+      <div className={`social-post-concept social-post-concept-${project.slug}`}>
         <div className="social-post-image"><img src={socialImage.src} alt={`${project.name} close product detail shown in a social post example.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
         <div className="social-post-panel">
           <div className="social-profile"><span className="social-avatar">{project.name.charAt(0)}</span><div><strong>{project.name}</strong><small>Product campaign</small></div><span aria-hidden="true">•••</span></div>
@@ -171,7 +171,7 @@ function ProjectPage({ project }: { project: Project }) {
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
     <div className="detail-heading"><div><span className="eyebrow">INDEPENDENT STUDY / PRODUCT IMAGERY</span><h1>{project.name}</h1><p className="project-positioning">Cinematic product imagery for wellness brands.</p></div><p>{project.brand}</p></div>
     <ImageFrame image={project.cover} tone={project.tone} label={`${project.name} / HERO`} priority/>
-    <div className="project-information"><div><span className="eyebrow">THE LOOK</span><p>{project.brief}</p></div><div><span className="eyebrow">THE IMAGE SET</span><p>{project.approach}</p></div><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">FRAMES IN THE SERIES</span><p>{project.deliverables}</p></div></div>
+    <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
     <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">FRAME / {String(index + 1).padStart(2, '0')}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
     <CampaignApplications project={project}/>
     <div className="project-end"><div><span className="eyebrow">WANT THIS VISUAL SYSTEM FOR YOUR PRODUCT?</span><a href="#contact">REQUEST A CAMPAIGN ESTIMATE →</a></div><a href="/#work">← PROJECT INDEX</a></div>
