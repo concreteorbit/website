@@ -498,7 +498,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .offer-summary-list strong{color:var(--lab-white);font-weight:500}
 .offer-summary-note{margin-top:23px!important;font-size:11px!important}
 .campaign-contact{border-top:1px solid var(--lab-line);align-items:start}
-.campaign-contact form{position:sticky;top:112px}
+.campaign-contact .email-inquiry{position:sticky;top:112px}
 
 /* Finished placement examples. */
 .application-label p{max-width:520px;text-transform:none;line-height:1.6}
@@ -517,7 +517,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 @media(max-width:800px){
   #contact{scroll-margin-top:84px}
   .contact{grid-template-columns:1fr;gap:50px;padding-top:90px;padding-bottom:90px}
-  .campaign-contact form{position:static}
+  .campaign-contact .email-inquiry{position:static}
   .campaign-offer{margin-top:50px}
   .campaign-offer h3{font-size:clamp(27px,8vw,40px)}
   .website-concept{aspect-ratio:4/5.35;background:#05070a}
@@ -547,3 +547,20 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .process-disclosure{max-width:760px;margin:34px 0 0;color:var(--muted);font-size:11px;line-height:1.8}
 .privacy-note{font-size:9px;line-height:1.65;color:#85877d;margin:18px 0 0}
 .privacy-note a{text-decoration:underline;text-underline-offset:3px}
+
+/* Direct project inquiry replaces the external submission form. */
+.email-inquiry{align-self:start;padding:30px 0 0;border-top:1px solid var(--lab-line)}
+.email-inquiry h3{max-width:520px;margin:28px 0 20px;font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,4.2vw,62px);font-weight:500;line-height:1.03;letter-spacing:-.045em}
+.email-inquiry>p{max-width:520px;margin:0;color:var(--lab-muted);font-size:13px;line-height:1.85}
+.email-inquiry-prompts{display:flex;flex-wrap:wrap;gap:0;margin:42px 0 24px;border-top:1px solid var(--lab-line);border-bottom:1px solid var(--lab-line)}
+.email-inquiry-prompts span{flex:1;padding:15px 12px 15px 0;font:9px 'Space Grotesk',sans-serif;letter-spacing:1.25px;color:var(--lab-muted)}
+.email-inquiry-prompts span+span{padding-left:16px;border-left:1px solid var(--lab-line)}
+.email-project-button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:22px 24px;background:var(--lab-accent);color:#031016;font:600 10px 'Space Grotesk',sans-serif;letter-spacing:1.3px;transition:background .2s,color .2s}
+.email-project-button:hover{background:#a8eaff}
+.email-project-button span{font-size:19px;line-height:1}
+.email-address{display:inline-block;margin-top:22px;padding-bottom:3px;border-bottom:1px solid rgba(101,215,255,.65);font:11px 'Space Grotesk',sans-serif;letter-spacing:.35px;color:var(--lab-white)}
+
+@media(max-width:800px){
+  .email-inquiry{margin-top:10px}
+  .email-inquiry h3{font-size:clamp(34px,10vw,50px)}
+}

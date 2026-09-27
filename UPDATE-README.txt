@@ -2,13 +2,15 @@ CONCRETE ORBIT — COMPLETE FINAL WEBSITE
 
 This folder is the complete GitHub-ready website source.
 
-Final corrections included:
-- Trace Magnesium advertisement uses the tilt-hero copy-space photograph.
-- The tilted product appears on the right and advertisement text sits in the open space on the left.
-- The new straight hero remains the campaign cover and first campaign image.
-- Superseded Trace Magnesium straight-hero assets were deleted.
-- Homepage campaign images remain fixed on each extreme macro with no timed change.
-- All existing pages, campaigns, styling, form corrections and required assets are included.
+Final updates included:
+- The broken submission form and Formspree dependency were removed.
+- Start a Project now uses a direct EMAIL PROJECT DETAILS button.
+- The email opens with prompts for the brand, product, placements, timeline and project details.
+- No campaign price is displayed publicly; projects are described as individually scoped.
+- Trace Magnesium advertisement uses the tilt-hero copy-space photograph, with text opposite the product.
+- The new Trace Magnesium straight hero remains the campaign cover.
+- Homepage campaign images remain fixed on each extreme macro.
+- All existing pages, campaigns, styling and required assets are included.
 
 To update GitHub:
 1. Extract this ZIP.

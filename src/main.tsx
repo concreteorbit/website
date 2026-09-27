@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ValidationError, useForm } from '@formspree/react';
 import { createRoot } from 'react-dom/client';
 import { capabilities, projects } from './projectData';
 import type { PortfolioImage, Project } from './projectData';
@@ -47,7 +46,34 @@ function Studio() {
 
 function CampaignOfferSummary({ project }: { project: Project }) { return <div className="campaign-offer"><span className="eyebrow">COMMISSION A CAMPAIGN</span><h3>A campaign set for your product.</h3><p>You can commission a campaign with the same visual discipline for your own supplement, skincare or body care product.</p><div className="offer-summary-list"><div><span>01</span><p><strong>One product</strong> and one creative direction.</p></div><div><span>02</span><p><strong>Six master images:</strong> a lead hero, an alternate hero, slight and extreme macro views, plus copy space versions of both heroes.</p></div><div><span>03</span><p><strong>Adaptations:</strong> one wide website crop and agreed social crops made from selected finished images.</p></div></div><p className="offer-summary-note">Master images are the finished campaign photographs. Adaptations are crops made from selected masters. Advertising copy and graphic layouts can be scoped separately.</p><p className="campaign-reference">CAMPAIGN REFERENCE / {project.name}</p></div>; }
 
-function Contact({ project }: { project?: Project }) { const [state, handleSubmit] = useForm('xbgjzjge'); const succeeded = state.succeeded || Boolean(state.result); const campaignSlug = new URLSearchParams(window.location.search).get('campaign'); const referredProject = project ?? projects.find(item => item.slug === campaignSlug); return <section id="contact" className={`contact section-pad${project ? ' campaign-contact' : ''}`}><div className="contact-context"><div className="contact-heading"><h2>START A<br/>PROJECT <span>↗</span></h2><p>Share the product, where the images will be used and when you need them. If you are still shaping the brief, I can help work out the right image set.</p></div>{project && <CampaignOfferSummary project={project}/>}</div><form action="https://formspree.io/f/xbgjzjge" method="POST" onSubmit={handleSubmit}>{referredProject && <input key={referredProject.slug} type="hidden" name="Campaign reference" defaultValue={referredProject.name}/>}<div className="form-row"><label>Name <span>*</span><input name="name" autoComplete="name" required placeholder="Your name"/></label><label>Company<input name="company" autoComplete="organization" placeholder="Brand or agency"/></label></div><label>Email <span>*</span><input name="email" type="email" autoComplete="email" required placeholder="you@company.com"/></label><ValidationError prefix="Email" field="email" errors={state.errors} className="form-status"/><label>What are you looking to create? <span>*</span><textarea name="message" required rows={3} placeholder="Tell me about the product, where the images will be used and what you already know…"/></label><ValidationError prefix="Project" field="message" errors={state.errors} className="form-status"/><div className="form-row"><label>When do you need it?<input name="timeline" placeholder="Launch date or ideal timeline"/></label><label>Estimated budget<select name="budget" defaultValue=""><option value="" disabled>Select a range</option><option>Under $5,000</option><option>$5,000 to $10,000</option><option>$10,000 to $25,000</option><option>$25,000 to $50,000</option><option>$50,000+</option><option>Let’s discuss</option></select></label></div><p className="estimate-note">NEXT: RECOMMENDED SCOPE · ESTIMATE · PRODUCTION PLAN</p><button className="submit" type="submit" disabled={state.submitting}>{state.submitting ? 'SENDING…' : 'REQUEST AN ESTIMATE'} <span>→</span></button>{succeeded && <p className="form-status" role="status">Thanks, your note is in. I’ll review the details and be in touch soon.</p>}{!succeeded && <ValidationError errors={state.errors} className="form-status"/>}<p className="contact-email">Prefer email? <a href="mailto:hello@concreteorbit.com">hello@concreteorbit.com</a></p><p className="privacy-note">When you submit this form, Concrete Orbit uses the information you provide to evaluate and respond to your inquiry, prepare an estimate and maintain related business records. Submissions are processed by Formspree. Concrete Orbit does not sell inquiry information. To request access, correction or deletion, email <a href="mailto:hello@concreteorbit.com">hello@concreteorbit.com</a>.</p></form></section>; }
+function Contact({ project }: { project?: Project }) {
+  const campaignSlug = new URLSearchParams(window.location.search).get('campaign');
+  const referredProject = project ?? projects.find(item => item.slug === campaignSlug);
+  const subject = referredProject ? `Project inquiry — ${referredProject.name}` : 'Project inquiry — Concrete Orbit';
+  const body = [
+    referredProject ? `Campaign reference: ${referredProject.name}` : '',
+    'Brand / company:',
+    'Product:',
+    'Intended placements:',
+    'Timeline:',
+    'Project details:',
+  ].filter(Boolean).join('\n\n');
+  const emailHref = `mailto:hello@concreteorbit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  return <section id="contact" className={`contact section-pad${project ? ' campaign-contact' : ''}`}>
+    <div className="contact-context">
+      <div className="contact-heading"><h2>START A<br/>PROJECT <span>↗</span></h2><p>Share the product, where the images will be used and when you need them. If you are still shaping the brief, I can help work out the right image set.</p></div>
+      {project && <CampaignOfferSummary project={project}/>}</div>
+    <div className="email-inquiry">
+      <span className="eyebrow">PROJECT INQUIRIES</span>
+      <h3>Tell me what you’re creating.</h3>
+      <p>Include the product, intended placements, timeline and any scope already defined. Each project is scoped individually.</p>
+      <div className="email-inquiry-prompts"><span>PRODUCT</span><span>PLACEMENTS</span><span>TIMELINE</span></div>
+      <a className="email-project-button" href={emailHref}>EMAIL PROJECT DETAILS <span>→</span></a>
+      <a className="email-address" href="mailto:hello@concreteorbit.com">hello@concreteorbit.com</a>
+    </div>
+  </section>;
+}
 
 function Footer() { return <footer className="section-pad"><div className="footer-top"><a className="wordmark" href="/">concrete orbit</a><p>Based in Washington, DC.<br/>Working worldwide.</p><a href="#top">Back to top ↑</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Concrete Orbit</span><a href="https://www.instagram.com/concreteorbitvisuals/" target="_blank" rel="noopener noreferrer" aria-label="Concrete Orbit on Instagram (opens in a new tab)" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24}}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></footer>; }
 
