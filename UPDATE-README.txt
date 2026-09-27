@@ -1,13 +1,14 @@
-CONCRETE ORBIT — COMPLETE GITHUB UPDATE
+CONCRETE ORBIT — COMPLETE CORRECTED WEBSITE
 
-This folder is the complete website source.
+This folder is the complete GitHub-ready website source.
 
-Included in this update:
-- Trace Magnesium advertisement text moved to the right of the product.
-- Homepage campaign images remain on each campaign's extreme macro with no timed image change.
-- Trace Magnesium straight hero and copy-space images updated.
-- Contact form corrected for reliable Formspree submission.
-- All existing site pages, campaigns, styling, and assets included.
+Final corrections included:
+- The Trace Magnesium advertisement uses the NEW straight-hero copy-space photograph.
+- Advertisement text sits in the empty space to the right of the product.
+- The NEW straight hero is the campaign cover and first campaign image.
+- The superseded Trace Magnesium straight-hero assets were deleted.
+- Homepage campaign images remain fixed on each extreme macro with no timed change.
+- All existing pages, campaigns, styling, form corrections and required assets are included.
 
 To update GitHub:
 1. Extract this ZIP.
