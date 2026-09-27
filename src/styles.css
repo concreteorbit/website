@@ -512,7 +512,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-trace-magnesium-glycinate.website-concept-banner-slide-1 .concept-copy{top:50%;width:30%;transform:translateY(-50%);text-shadow:0 2px 18px rgba(0,0,0,.84)}
 .advertisement-concept-trace .advertisement-copy{left:auto;right:6%;width:31%}
 .advertisement-concept-trace-magnesium-glycinate>img{object-position:66% center;transform:scale(1.1);transform-origin:68% center}
-.advertisement-concept-trace-magnesium-glycinate .advertisement-copy{left:auto;right:6%;width:31%;text-align:right}
+.advertisement-concept-trace-magnesium-glycinate .advertisement-copy{left:6%;right:auto;width:31%;text-align:left}
 
 @media(max-width:800px){
   #contact{scroll-margin-top:84px}
@@ -534,7 +534,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .mock-button{margin-top:13px}
   .advertisement-copy p{display:none}
   .advertisement-concept-trace-magnesium-glycinate>img{object-fit:contain;object-position:right bottom;transform:translateX(16%) scale(1.25);transform-origin:right bottom}
-  .advertisement-concept-trace-magnesium-glycinate .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
+  .advertisement-concept-trace-magnesium-glycinate .advertisement-copy{left:7%;right:auto;top:9%;width:68%;text-align:left}
 }
 
 @media(max-width:600px){

@@ -1,12 +1,12 @@
-CONCRETE ORBIT — COMPLETE CORRECTED WEBSITE
+CONCRETE ORBIT — COMPLETE FINAL WEBSITE
 
 This folder is the complete GitHub-ready website source.
 
 Final corrections included:
-- The Trace Magnesium advertisement uses the NEW straight-hero copy-space photograph.
-- Advertisement text sits in the empty space to the right of the product.
-- The NEW straight hero is the campaign cover and first campaign image.
-- The superseded Trace Magnesium straight-hero assets were deleted.
+- Trace Magnesium advertisement uses the tilt-hero copy-space photograph.
+- The tilted product appears on the right and advertisement text sits in the open space on the left.
+- The new straight hero remains the campaign cover and first campaign image.
+- Superseded Trace Magnesium straight-hero assets were deleted.
 - Homepage campaign images remain fixed on each extreme macro with no timed change.
 - All existing pages, campaigns, styling, form corrections and required assets are included.
 
