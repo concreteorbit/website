@@ -62,15 +62,13 @@ function Contact({ project }: { project?: Project }) {
 
   return <section id="contact" className={`contact section-pad${project ? ' campaign-contact' : ''}`}>
     <div className="contact-context">
-      <div className="contact-heading"><h2>START A<br/>PROJECT <span>↗</span></h2><p>Share the product, where the images will be used and when you need them. If you are still shaping the brief, I can help work out the right image set.</p></div>
+      <div className="contact-heading"><h2>START A<br/>PROJECT <span>↗</span></h2><p>For campaign commissions and project inquiries.</p></div>
       {project && <CampaignOfferSummary project={project}/>}</div>
     <div className="email-inquiry">
       <span className="eyebrow">PROJECT INQUIRIES</span>
-      <h3>Tell me what you’re creating.</h3>
-      <p>Include the product, intended placements, timeline and any scope already defined. Each project is scoped individually.</p>
-      <div className="email-inquiry-prompts"><span>PRODUCT</span><span>PLACEMENTS</span><span>TIMELINE</span></div>
-      <a className="email-project-button" href={emailHref}>EMAIL PROJECT DETAILS <span>→</span></a>
-      <a className="email-address" href="mailto:hello@concreteorbit.com">hello@concreteorbit.com</a>
+      <h3>Let’s get started.</h3>
+      <p>Send the product, intended placements and timeline. If the brief is still taking shape, that’s enough.</p>
+      <a className="email-address" href={emailHref}>hello@concreteorbit.com</a>
     </div>
   </section>;
 }
