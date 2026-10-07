@@ -60,19 +60,6 @@ function Studio() {
 function CampaignOfferSummary({ project }: { project: Project }) { return <div className="campaign-offer"><span className="eyebrow">COMMISSION A CAMPAIGN</span><h3>A campaign set for your product.</h3><p>You can commission a campaign with the same visual discipline for your own supplement, skincare or body care product.</p><div className="offer-summary-list"><div><span>01</span><p><strong>One product</strong> and one creative direction.</p></div><div><span>02</span><p><strong>Six master images:</strong> a lead hero, an alternate hero, slight and extreme macro views, plus copy space versions of both heroes.</p></div><div><span>03</span><p><strong>Adaptations:</strong> one wide website crop and agreed social crops made from selected finished images.</p></div></div><p className="offer-summary-note">Master images are the finished campaign photographs. Adaptations are crops made from selected masters. Advertising copy and graphic layouts can be scoped separately.</p><p className="campaign-reference">CAMPAIGN REFERENCE / {project.name}</p></div>; }
 
 function Contact({ project }: { project?: Project }) {
-  const campaignSlug = new URLSearchParams(window.location.search).get('campaign');
-  const referredProject = project ?? projects.find(item => item.slug === campaignSlug);
-  const subject = referredProject ? `Project inquiry — ${referredProject.name}` : 'Project inquiry — Concrete Orbit';
-  const body = [
-    referredProject ? `Campaign reference: ${referredProject.name}` : '',
-    'Brand / company:',
-    'Product:',
-    'Intended placements:',
-    'Timeline:',
-    'Project details:',
-  ].filter(Boolean).join('\n\n');
-  const emailHref = `mailto:hello@concreteorbit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
   return <section id="contact" className={`contact section-pad${project ? ' campaign-contact' : ''}`}>
     <div className="contact-context">
       <div className="contact-heading"><h2>START A<br/>PROJECT <span>↗</span></h2><p>For campaign commissions and project inquiries.</p></div>
@@ -81,7 +68,7 @@ function Contact({ project }: { project?: Project }) {
       <span className="eyebrow">PROJECT INQUIRIES</span>
       <h3>Let’s get started.</h3>
       <p>Send the product, intended placements and timeline. If the brief is still taking shape, that’s enough.</p>
-      <a className="email-address" href={emailHref}>hello@concreteorbit.com</a>
+      <p className="email-address">hello@concreteorbit.com</p>
     </div>
   </section>;
 }
