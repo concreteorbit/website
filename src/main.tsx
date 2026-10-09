@@ -53,21 +53,19 @@ function Studio() {
       <div className="principles">{steps.map(([title, copy], i) => <div className="principle" key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div>
     </section>
     <section className="founder section-pad"><div className="founder-label"><Orbit/><img className="founder-image-placeholder" src="/images/simon-founder-portrait-1200.webp" srcSet="/images/simon-founder-portrait-800.webp 800w, /images/simon-founder-portrait-1200.webp 1200w" sizes="(max-width: 600px) 230px, 280px" width={3915} height={3910} alt="Simon Jackson, Founder and Creative Director of Concrete Orbit" loading="lazy" decoding="async"/><span className="eyebrow">FOUNDER / CREATIVE DIRECTOR</span></div><div><h2>I make the work<br/>and lead the project.</h2><p>I’m Simon Jackson, the photographer and creative director behind Concrete Orbit.</p><div className="founder-name">SIMON JACKSON<span>Founder + Creative Director</span><p className="founder-approach">I built the studio around a hands-on process: developing the visual idea, photographing the product and carrying the image through its final finish.</p></div></div></section>
-    <section className="partners section-pad"><span className="eyebrow">PRODUCT CAMPAIGN SET / INITIAL SCOPE</span><h2>One product.<br/>One clear direction.</h2><p className="offer-intro">A focused set for a product launch, refresh or content push. You get six finished images that feel like one campaign, plus selected crops for the places they need to run.</p><div className="offer-grid"><div><strong>01</strong><span>TWO HERO COMPOSITIONS</span><p>A lead hero and an alternate angle that establish the campaign.</p></div><div><strong>02</strong><span>TWO DETAIL VIEWS</span><p>A slight macro and an extreme macro that bring the product closer.</p></div><div><strong>03</strong><span>TWO COPY SPACE HEROES</span><p>Copy space versions of both hero compositions, built for placement.</p></div><div><strong>+</strong><span>READY FOR PLACEMENT</span><p>One wide website crop and agreed social crops from selected images.</p></div></div><p className="pricing-note">The six master images are the finished campaign photographs. The website and social adaptations are crops made from selected masters. Advertising copy and graphic layouts can be scoped separately.</p><div className="capabilities"><span className="eyebrow">SUPPORTING CAPABILITIES</span><p>{capabilities.join(' · ')}</p></div><p className="process-disclosure">Concrete Orbit combines original product photography, compositing, selective generative tools and detailed image finishing. Every final image is reviewed and refined for product, color and packaging accuracy.</p></section>
+    <section className="partners section-pad"><span className="eyebrow">PRODUCT CAMPAIGN SET / INITIAL SCOPE</span><h2>One product.<br/>One clear direction.</h2><p className="offer-intro">A focused set for a product launch, refresh or content push. You get six finished images that feel like one campaign, plus selected crops for the places they need to run.</p><div className="offer-grid"><div><strong>01</strong><span>TWO HERO COMPOSITIONS</span><p>A lead hero and an alternate angle that establish the campaign.</p></div><div><strong>02</strong><span>TWO DETAIL VIEWS</span><p>A slight macro and an extreme macro that bring the product closer.</p></div><div><strong>03</strong><span>TWO COPY-SPACE COMPOSITIONS</span><p>Two compositions with room for campaign messaging.</p></div><div><strong>+</strong><span>READY FOR PLACEMENT</span><p>One wide website crop and agreed social crops from selected images.</p></div></div><p className="pricing-note">The six master images are the finished campaign photographs. The website and social adaptations are crops made from selected masters. Advertising copy and graphic layouts can be scoped separately.</p><div className="capabilities"><span className="eyebrow">SUPPORTING CAPABILITIES</span><p>{capabilities.join(' · ')}</p></div><p className="process-disclosure">Concrete Orbit combines original product photography, compositing, selective generative tools and detailed image finishing. Every final image is reviewed and refined for product, color and packaging accuracy.</p></section>
   </>;
 }
 
-function CampaignOfferSummary({ project }: { project: Project }) { return <div className="campaign-offer"><span className="eyebrow">COMMISSION A CAMPAIGN</span><h3>A campaign set for your product.</h3><p>You can commission a campaign with the same visual discipline for your own supplement, skincare or body care product.</p><div className="offer-summary-list"><div><span>01</span><p><strong>One product</strong> and one creative direction.</p></div><div><span>02</span><p><strong>Six master images:</strong> a lead hero, an alternate hero, slight and extreme macro views, plus copy space versions of both heroes.</p></div><div><span>03</span><p><strong>Adaptations:</strong> one wide website crop and agreed social crops made from selected finished images.</p></div></div><p className="offer-summary-note">Master images are the finished campaign photographs. Adaptations are crops made from selected masters. Advertising copy and graphic layouts can be scoped separately.</p><p className="campaign-reference">CAMPAIGN REFERENCE / {project.name}</p></div>; }
-
-function Contact({ project }: { project?: Project }) {
-  return <section id="contact" className={`contact section-pad${project ? ' campaign-contact' : ''}`}>
+function Contact() {
+  return <section id="contact" className="contact contact-simple section-pad">
     <div className="contact-context">
-      <div className="contact-heading"><h2>START A<br/>PROJECT <span>↗</span></h2><p>For campaign commissions and project inquiries.</p></div>
-      {project && <CampaignOfferSummary project={project}/>}</div>
-    <div className="email-inquiry">
       <span className="eyebrow">PROJECT INQUIRIES</span>
-      <h3>Let’s get started.</h3>
-      <p>Send the product, intended placements and timeline. If the brief is still taking shape, that’s enough.</p>
+      <div className="contact-heading"><h2>START A<br/>PROJECT <span>↓</span></h2></div>
+    </div>
+    <div className="email-inquiry">
+      <h3>Tell me what you’re creating.</h3>
+      <p>Send your product, idea, intended placements and timeline. I’ll turn it into a clear campaign plan and estimate.</p>
       <p className="email-address">hello@concreteorbit.com</p>
     </div>
   </section>;
@@ -92,7 +90,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>TRACE · PHIL’S · EO · ACURE · OM</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>BEFORE · TRACE · PHIL’S · EO · ACURE · OM</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
@@ -173,9 +171,8 @@ function ProjectPage({ project }: { project: Project }) {
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
     <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">FRAME / {String(index + 1).padStart(2, '0')}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
     <CampaignApplications project={project}/>
-    <div className="project-end"><div><span className="eyebrow">WANT THIS VISUAL SYSTEM FOR YOUR PRODUCT?</span><a href="#contact" onClick={scrollToContact}>REQUEST A CAMPAIGN ESTIMATE →</a></div><a href="/#work">← PROJECT INDEX</a></div>
   </section>
-  <Contact project={project}/>
+  <Contact/>
   </>;
 }
 

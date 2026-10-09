@@ -567,8 +567,61 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .email-inquiry h3{max-width:520px;margin:28px 0 20px;font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,4.2vw,62px);font-weight:500;line-height:1.03;letter-spacing:-.045em}
 .email-inquiry>p{max-width:520px;margin:0;color:var(--lab-muted);font-size:13px;line-height:1.85}
 .email-address{display:inline-block;margin:34px 0 0;font:500 clamp(16px,1.7vw,23px) 'Space Grotesk',sans-serif;letter-spacing:-.015em;color:var(--lab-white);user-select:text}
+.contact-simple{border-top:1px solid var(--lab-line);align-items:start}
+.contact-simple .contact-heading h2{margin-top:28px}
+.contact-simple .email-inquiry{position:static}
 
 @media(max-width:800px){
   .email-inquiry{margin-top:10px}
   .email-inquiry h3{font-size:clamp(34px,10vw,50px)}
+}
+
+/* Mobile portfolio images retain their full composition at one consistent width. */
+@media(max-width:800px){
+  .curated-work .curated-image,
+  .curated-work .curated-card:first-child .curated-image{
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:auto;
+    overflow:hidden;
+  }
+  .curated-work .curated-image .portfolio-image{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:none;
+    aspect-ratio:auto;
+    object-fit:contain;
+    object-position:center;
+    transform:none;
+  }
+  .curated-project>.portfolio-image{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+  }
+  .curated-project .campaign-sequence{
+    display:flex;
+    flex-direction:column;
+    gap:clamp(34px,10vw,54px);
+  }
+  .curated-project .project-frame:nth-child(n){
+    width:100%;
+    margin:0;
+    align-self:stretch;
+  }
+  .curated-project .project-frame .portfolio-image{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+  }
+  .contact-simple{grid-template-columns:1fr;gap:42px}
+  .contact-simple .email-inquiry{margin-top:0}
 }
