@@ -12,6 +12,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'before-toothpaste', name: 'BEFORE', brand: 'Before', tone: 'slate',
+    services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
+    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space compositions',
+    cover: { src: '/images/projects/before-hero-1920.webp', alt: 'Before SuperMint toothpaste upright against black in cool blue light and covered in water droplets.', width: 1920, height: 1072 },
+    gallery: [
+      { src: '/images/projects/before-extreme-macro-1920.webp', alt: 'Extreme close-up of the Before SuperMint toothpaste tube, lettering and water droplets.', width: 1920, height: 911 },
+      { src: '/images/projects/before-slight-macro-1920.webp', alt: 'Close view of the Before SuperMint toothpaste tube in cool blue light.', width: 1920, height: 1072 },
+      { src: '/images/projects/before-tilt-hero-1920.webp', alt: 'Before SuperMint toothpaste floating at an angle against black.', width: 1920, height: 1072 },
+      { src: '/images/projects/before-slight-macro-copy-space-1920.webp', alt: 'Before SuperMint toothpaste beside generous black copy space.', width: 1920, height: 1072 },
+      { src: '/images/projects/before-tilt-hero-copy-space-2560.webp', alt: 'Before SuperMint toothpaste angled beside deep black copy space.', width: 2560, height: 1309 },
+    ],
+  },
+  {
     slug: 'phils', name: 'PHIL’S', brand: 'Phil’s', tone: 'slate',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',

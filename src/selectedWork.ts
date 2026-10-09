@@ -10,6 +10,7 @@ type HomepageSelection = {
 
 // Homepage order is intentional. Each project displays its extreme macro.
 const homepageSelections: HomepageSelection[] = [
+  { slug: 'before-toothpaste', title: 'BEFORE', subtitle: 'SuperMint Toothpaste', size: 'large', alt: 'Extreme macro of the Before SuperMint toothpaste tube covered in water droplets.' },
   { slug: 'acure-shampoo', title: 'ACURE', subtitle: 'Daily Workout Shampoo', size: 'large', alt: 'Extreme macro of the ACURE shampoo tube covered in water droplets.' },
   { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'large', alt: 'Extreme macro of Trace Magnesium Glycinate lettering, blue label texture and ribbed lid.' },
   { slug: 'eo', title: 'EO', subtitle: 'French Lavender Shower Gel', size: 'large', alt: 'Extreme macro of the EO shower gel label and water droplets in blue light.' },

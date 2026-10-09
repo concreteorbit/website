@@ -432,12 +432,18 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-trace-magnesium-glycinate>img{filter:brightness(.82);object-position:center}
 .website-concept-trace-magnesium-glycinate .concept-copy{left:5.5%;right:auto;top:auto;bottom:7%;width:38%;transform:none;text-shadow:0 2px 18px rgba(0,0,0,.85)}
 .website-concept-trace-magnesium-glycinate .concept-copy h4{max-width:470px;font-size:clamp(25px,3vw,48px);line-height:1.02}
+.website-concept-before-toothpaste::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.4) 22%,rgba(0,0,0,.08) 42%,transparent 58%);pointer-events:none}
+.website-concept-before-toothpaste>img{object-position:center}
+.website-concept-before-toothpaste .concept-copy{left:4.5%;right:auto;top:50%;width:31%;transform:translateY(-45%);text-shadow:0 2px 18px rgba(0,0,0,.82)}
+.website-concept-before-toothpaste .concept-copy h4{max-width:390px;font-size:clamp(25px,3vw,49px);line-height:1.02}
 .website-concept-eo::after,.website-concept-acure-shampoo::after,.website-concept-acure-body-wash::after,.website-concept-om-lions-mane::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.34) 34%,transparent 60%);pointer-events:none}
 .website-concept-eo .concept-copy,.website-concept-acure-shampoo .concept-copy,.website-concept-acure-body-wash .concept-copy,.website-concept-om-lions-mane .concept-copy{left:5.5%;right:auto;width:34%;text-shadow:0 2px 18px rgba(0,0,0,.9)}
 .advertisement-concept{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #171f26;background:#000}
 .advertisement-concept>img{width:100%;height:100%;display:block;object-fit:cover}
 .advertisement-copy{position:absolute;z-index:2;left:6%;top:50%;width:31%;transform:translateY(-50%);color:#f3f5f2}
 .advertisement-concept-eo .advertisement-copy,.advertisement-concept-acure-shampoo .advertisement-copy,.advertisement-concept-acure-body-wash .advertisement-copy,.advertisement-concept-om-lions-mane .advertisement-copy{left:auto;right:6%;width:32%;text-align:right}
+.advertisement-concept-before-toothpaste>img{object-fit:cover;object-position:center}
+.advertisement-concept-before-toothpaste .advertisement-copy{left:auto;right:6%;width:31%;text-align:right}
 .social-post-concept{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);max-width:1180px;margin:0 auto;border:1px solid #2b3036;background:#1c2026;overflow:hidden}
 .social-post-image{aspect-ratio:1/1;min-height:0;background:#000;overflow:hidden}
 .social-post-image img{display:block;width:100%;height:100%;object-fit:cover}
@@ -470,6 +476,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .concept-copy p{display:none}
   .website-concept-trace-magnesium-glycinate .concept-copy{left:7%;right:auto;bottom:7%;width:72%}
   .website-concept-trace-magnesium-glycinate .concept-copy h4{font-size:clamp(27px,8vw,42px)}
+  .website-concept-before-toothpaste::after{display:none}
+  .website-concept-before-toothpaste>img{object-position:66% center}
+  .website-concept-before-toothpaste .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
   .advertisement-concept{aspect-ratio:4/5}
   .advertisement-concept>img{object-position:center}
   .advertisement-copy{left:7%;top:8%;width:62%;transform:none}
@@ -477,6 +486,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .advertisement-concept-eo .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
   .advertisement-concept-acure-shampoo .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
   .advertisement-concept-acure-body-wash .advertisement-copy,.advertisement-concept-om-lions-mane .advertisement-copy{left:auto;right:7%;top:9%;width:68%;text-align:right}
+  .advertisement-concept-before-toothpaste>img{object-fit:contain;object-position:left bottom;transform:translateX(-8%) scale(1.18);transform-origin:left bottom}
+  .advertisement-concept-before-toothpaste .advertisement-copy{left:auto;right:7%;top:9%;width:64%;text-align:right}
 }
 @media(max-width:600px){
   .offer-grid{grid-template-columns:1fr}

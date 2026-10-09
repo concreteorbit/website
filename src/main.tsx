@@ -107,6 +107,7 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'before-toothpaste': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
   trace: { bannerIndex: 0, adIndex: 0, socialIndex: 1, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
   'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
