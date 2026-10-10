@@ -368,8 +368,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .featured-strip span{font:9px 'Space Grotesk',sans-serif;letter-spacing:1.7px;color:var(--lab-accent)}
 .featured-strip p{margin:0;font:500 clamp(11px,1.1vw,14px) 'Space Grotesk',sans-serif;line-height:1.8;letter-spacing:1.15px;color:#bcc5cb}
 .project-study-label{font-size:9px;letter-spacing:1.45px;color:#78838c}
-.project-study-note{display:block;margin-top:18px;font:500 8px/1.5 'Space Grotesk',sans-serif;letter-spacing:1px;text-transform:uppercase;color:#59636b}
-.project-study-note-bottom{margin:clamp(80px,9vw,130px) 0 0;padding-top:16px;border-top:1px solid rgba(32,41,50,.55);font:500 7px/1.5 'Space Grotesk',sans-serif;letter-spacing:.9px;text-transform:uppercase;color:#4f5961}
+.project-study-note-bottom{margin:clamp(80px,9vw,130px) 0 0;padding-top:14px;border-top:1px solid rgba(32,41,50,.45);font:500 6px/1.5 'Space Grotesk',sans-serif;letter-spacing:.75px;text-transform:uppercase;color:#485159}
 .project-information{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(55px,9vw,145px);row-gap:56px}
 .project-information>div{padding-top:20px;border-top:1px solid var(--lab-line)}
 .project-information p{max-width:560px;font-size:14px;line-height:1.85;margin-bottom:0}

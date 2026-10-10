@@ -21,9 +21,9 @@ export const projects: Project[] = [
       { src: '/images/projects/mt-angel-slight-macro-1920.webp', alt: 'Close view of the Mt. Angel Vitamins Joint Solution bottle in cool blue light.', width: 1920, height: 1263 },
       { src: '/images/projects/mt-angel-tilt-hero-1920.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle floating at an angle against black.', width: 1920, height: 1071 },
       { src: '/images/projects/mt-angel-dramatic-tilt-hero-1920.webp', alt: 'Dramatic cinematic angle of the Mt. Angel Vitamins Joint Solution bottle against black.', width: 1920, height: 1072 },
-      { src: '/images/projects/mt-angel-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright beside generous black copy space.', width: 2560, height: 1623 },
+      { src: '/images/projects/mt-angel-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright beside generous black copy space.', width: 2560, height: 1662 },
       { src: '/images/projects/mt-angel-slight-macro-copy-space-2560.webp', alt: 'Close view of the Mt. Angel Vitamins Joint Solution bottle beside black copy space.', width: 2560, height: 1684 },
-      { src: '/images/projects/mt-angel-tilt-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle angled beside deep black copy space.', width: 2560, height: 1518 },
+      { src: '/images/projects/mt-angel-tilt-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle angled beside deep black copy space.', width: 2560, height: 1429 },
     ],
   },
   {
