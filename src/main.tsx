@@ -175,11 +175,12 @@ function ProjectPage({ project }: { project: Project }) {
   return <>
   <section className="project-detail section-pad curated-project">
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
-    <div className="detail-heading"><div><span className="eyebrow project-study-label">INDEPENDENT PRODUCT STUDY</span><h1>{project.name}</h1><p className="project-positioning">Cinematic product imagery for wellness brands.</p></div><p>{project.brand}</p></div>
+    <div className="detail-heading"><div><h1>{project.name}</h1><p className="project-positioning">Cinematic product imagery for wellness brands.</p></div><p>{project.brand}</p></div>
     <ImageFrame image={project.cover} tone={project.tone} label={`${project.name} / HERO`} priority/>
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
     <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">FRAME / {String(index + 1).padStart(2, '0')}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
     <CampaignApplications project={project}/>
+    <p className="project-study-note-bottom">Independent product study.</p>
   </section>
   <Contact/>
   </>;
