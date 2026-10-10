@@ -15,7 +15,7 @@ pnpm build
 - Campaign data and image sets live in `src/projectData.ts`.
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
-- The homepage campaign set is Before SuperMint Toothpaste, ACURE Shampoo, Trace Magnesium Glycinate, EO, OM Lion's Mane and ACURE Body Wash.
+- The homepage campaign set begins with Mt. Angel Vitamins Joint Solution, followed by Before SuperMint Toothpaste, ACURE Shampoo, Trace Magnesium Glycinate, EO, OM Lion's Mane and ACURE Body Wash.
 - Each campaign page includes website, ad and social placement examples.
 - Featured brand work is labeled as independent study work and should remain factually identified that way.
 

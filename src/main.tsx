@@ -90,7 +90,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>BEFORE · TRACE · PHIL’S · EO · ACURE · OM</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>MT. ANGEL · BEFORE · TRACE · PHIL’S · EO · ACURE · OM</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
@@ -98,6 +98,7 @@ function Home() {
 type ApplicationSettings = {
   bannerIndex: number;
   adIndex: number | 'cover';
+  adIndexes?: Array<number | 'cover'>;
   socialIndex: number;
   websiteHeadline: string;
   adHeadline: string;
@@ -105,6 +106,7 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'mt-angel-joint-solution': { bannerIndex: 0, adIndex: 5, adIndexes: [5, 4], socialIndex: 3, websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
   'before-toothpaste': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
   trace: { bannerIndex: 0, adIndex: 0, socialIndex: 1, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
@@ -117,13 +119,17 @@ const applicationSettings: Record<string, ApplicationSettings> = {
 
 function CampaignApplications({ project }: { project: Project }) {
   const [bannerSlide, setBannerSlide] = useState(0);
+  const [adSlide, setAdSlide] = useState(0);
   const settings = applicationSettings[project.slug];
   if (!settings) return null;
   const hasBannerSlider = false;
   const bannerImages = [project.gallery[settings.bannerIndex]];
   const activeBannerSlide = bannerSlide % bannerImages.length;
   const bannerImage = bannerImages[activeBannerSlide];
-  const adImage = settings.adIndex === 'cover' ? project.cover : project.gallery[settings.adIndex];
+  const adIndexes = settings.adIndexes ?? [settings.adIndex];
+  const activeAdSlide = adSlide % adIndexes.length;
+  const activeAdIndex = adIndexes[activeAdSlide];
+  const adImage = activeAdIndex === 'cover' ? project.cover : project.gallery[activeAdIndex];
   const socialImage = project.gallery[settings.socialIndex];
   const titleId = `${project.slug}-applications-title`;
 
@@ -142,9 +148,12 @@ function CampaignApplications({ project }: { project: Project }) {
     </article>
     <article className="application-block">
       <div className="application-label"><span>02</span><div><h3>Advertisements</h3><p>Campaign photographs shown as finished ad layouts.</p></div></div>
-      <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
-        <img src={adImage.src} alt={`${project.name} product photograph shown in an advertisement example.`} width={adImage.width} height={adImage.height} loading="lazy" decoding="async"/>
-        <div className="advertisement-copy"><span>{project.name} / PRODUCT CAMPAIGN</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
+      <div className="advertisement-shell">
+        {adIndexes.length > 1 && <div className="advertisement-slider-controls"><span>Advertisement option</span><div><button type="button" onClick={() => setAdSlide(current => (current - 1 + adIndexes.length) % adIndexes.length)} aria-label={`Previous ${project.name} advertisement`}>←</button><span aria-live="polite">{activeAdSlide + 1} / {adIndexes.length}</span><button type="button" onClick={() => setAdSlide(current => (current + 1) % adIndexes.length)} aria-label={`Next ${project.name} advertisement`}>→</button></div></div>}
+        <div className={`advertisement-concept advertisement-concept-${project.slug} advertisement-concept-slide-${activeAdSlide}`}>
+          <img key={adImage.src} src={adImage.src} alt={`${project.name} product photograph shown in advertisement option ${activeAdSlide + 1}.`} width={adImage.width} height={adImage.height} loading="lazy" decoding="async"/>
+          <div className="advertisement-copy"><span>{project.name} / PRODUCT CAMPAIGN</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
+        </div>
       </div>
     </article>
     <article className="application-block">

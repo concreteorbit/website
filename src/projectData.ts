@@ -12,6 +12,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'mt-angel-joint-solution', name: 'JOINT SOLUTION', brand: 'Mt. Angel Vitamins', tone: 'slate',
+    services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
+    deliverables: 'Straight hero · Angled hero · Dramatic angle · Slight macro · Extreme macro · Three copy-space compositions',
+    cover: { src: '/images/projects/mt-angel-hero-1920.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright against black in cool blue light.', width: 1920, height: 1217 },
+    gallery: [
+      { src: '/images/projects/mt-angel-extreme-macro-1920.webp', alt: 'Extreme close-up of the Mt. Angel Vitamins Joint Solution label, amber bottle and ribbed cap.', width: 1920, height: 1072 },
+      { src: '/images/projects/mt-angel-slight-macro-1920.webp', alt: 'Close view of the Mt. Angel Vitamins Joint Solution bottle in cool blue light.', width: 1920, height: 1263 },
+      { src: '/images/projects/mt-angel-tilt-hero-1920.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle floating at an angle against black.', width: 1920, height: 1071 },
+      { src: '/images/projects/mt-angel-dramatic-tilt-hero-1920.webp', alt: 'Dramatic cinematic angle of the Mt. Angel Vitamins Joint Solution bottle against black.', width: 1920, height: 1072 },
+      { src: '/images/projects/mt-angel-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright beside generous black copy space.', width: 2560, height: 1623 },
+      { src: '/images/projects/mt-angel-slight-macro-copy-space-2560.webp', alt: 'Close view of the Mt. Angel Vitamins Joint Solution bottle beside black copy space.', width: 2560, height: 1684 },
+      { src: '/images/projects/mt-angel-tilt-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle angled beside deep black copy space.', width: 2560, height: 1518 },
+    ],
+  },
+  {
     slug: 'before-toothpaste', name: 'BEFORE', brand: 'Before', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
     deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space compositions',

@@ -625,3 +625,26 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .contact-simple{grid-template-columns:1fr;gap:42px}
   .contact-simple .email-inquiry{margin-top:0}
 }
+
+/* Mt. Angel campaign placement previews and two-option ad carousel. */
+.advertisement-slider-controls{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border:1px solid #26313a;border-bottom:0;background:#090c10;color:#77818a;font:8px 'Space Grotesk',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.advertisement-slider-controls>div{display:flex;align-items:center;gap:10px}
+.advertisement-slider-controls button{display:grid;place-items:center;width:25px;height:25px;padding:0;border:1px solid #39444d;background:transparent;color:#c8d0d5;font:12px/1 'Space Grotesk',sans-serif;cursor:pointer;transition:border-color .2s ease,color .2s ease,background .2s ease}
+.advertisement-slider-controls button:hover,.advertisement-slider-controls button:focus-visible{border-color:#91a3af;background:#121920;color:#fff;outline:none}
+.advertisement-slider-controls+.advertisement-concept{border-top:0}
+.advertisement-concept>img{animation:website-banner-in .55s ease both}
+.website-concept-mt-angel-joint-solution::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.38) 25%,rgba(0,0,0,.05) 46%,transparent 65%);pointer-events:none}
+.website-concept-mt-angel-joint-solution>img{object-position:center}
+.website-concept-mt-angel-joint-solution .concept-copy{left:4.5%;right:auto;top:50%;width:32%;transform:translateY(-44%);text-shadow:0 2px 18px rgba(0,0,0,.9)}
+.website-concept-mt-angel-joint-solution .concept-copy h4{max-width:410px;font-size:clamp(24px,3vw,49px);line-height:1.02}
+.advertisement-concept-mt-angel-joint-solution>img{object-fit:cover;object-position:center}
+.advertisement-concept-mt-angel-joint-solution .advertisement-copy{left:auto;right:6%;width:31%;text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.9)}
+.social-post-concept-mt-angel-joint-solution .social-post-image img{object-position:55% center}
+
+@media(max-width:800px){
+  .website-concept-mt-angel-joint-solution::after{display:none}
+  .website-concept-mt-angel-joint-solution>img{object-position:center top}
+  .website-concept-mt-angel-joint-solution .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
+  .advertisement-concept-mt-angel-joint-solution>img{object-position:center}
+  .advertisement-concept-mt-angel-joint-solution .advertisement-copy{left:auto;right:7%;top:8%;width:54%;transform:none;text-align:right}
+}
