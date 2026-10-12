@@ -37,7 +37,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   const [active] = useTimedSlide(2, 30000);
   const image = selection.images[active % selection.images.length];
   const project = selection.project;
-  return <article className={`homepage-campaign homepage-campaign-${active === 0 ? 'full' : 'split'}`}>
+  return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-${active === 0 ? 'full' : 'split'}`}>
     <div className="homepage-campaign-stage">
       <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 800px) 100vw, 94vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
@@ -133,12 +133,12 @@ type ApplicationSettings = {
 const applicationSettings: Record<string, ApplicationSettings> = {
   'alice-mushroom-chocolate': { bannerIndex: 0, bannerIndexes: [0, 1], bannerIntervalMs: 30000, adIndex: 8, adIndexes: [8, 7], socialIndex: 5, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
   'mt-angel-joint-solution': { bannerIndex: 0, adIndex: 5, adIndexes: [5, 4], socialIndex: 'cover', websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
-  'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
+  'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 'cover'], socialIndex: 'cover', websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 0, adIndex: 1, socialIndex: 'cover', websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
   trace: { bannerIndex: 2, adIndex: 0, socialIndex: 'cover', websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
   'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
-  eo: { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'French lavender, in a new light.', adHeadline: 'Blue light. Water. EO.', socialCaption: 'A close look at the wet label, curved bottle and cool blue light.' },
-  'acure-shampoo': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'The daily clean, brought closer.', adHeadline: 'Water. Light. ACURE.', socialCaption: 'A close study of the turquoise tube, water droplets and vertical ACURE type.' },
+  eo: { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 5, websiteHeadline: 'French lavender, in a new light.', adHeadline: 'Blue light. Water. EO.', socialCaption: 'A dramatic tilted product view built around the wet label, curved bottle and cool blue light.' },
+  'acure-shampoo': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 2, websiteHeadline: 'The daily clean, brought closer.', adHeadline: 'Water. Light. ACURE.', socialCaption: 'A dramatic tilted study of the turquoise tube, water droplets and vertical ACURE type.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {

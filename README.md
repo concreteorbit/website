@@ -20,6 +20,8 @@ pnpm build
 - Campaign pages present the complete image set as a large scrolling sequence before the placement examples, with quiet labels that identify each composition.
 - In the Alice placement examples, the website banner alternates between Focus and Sleep every 30 seconds. The advertisement carousel uses the Focus slight macro with copy space and the Sleep hero with copy space, with layout text placed in the open black area. The social post uses the straight hero.
 - Each campaign page follows the same placement structure: a macro website banner, copy-space advertising layouts and a straight-hero social post.
+- Alice and Mt. Angel retain their approved placement treatments. Before, Trace Magnesium, EO and ACURE use an extreme macro website banner, a slight-macro copy-space advertisement followed by a straight-hero copy-space option, and a straight or dramatic tilted hero for social.
+- The corrected EO, ACURE Shampoo and Trace Magnesium files supplied on October 12, 2026 replace their earlier versions. Advertisement text is positioned per slide to remain in the photographed negative space.
 - Featured brand work is labeled as independent study work and should remain factually identified that way.
 
 ## Inquiry form

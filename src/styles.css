@@ -789,3 +789,83 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 }
 
 @media(prefers-reduced-motion:reduce){.homepage-campaign-image{animation:none}}
+
+/* Final placement mapping: copy stays in each photograph's negative space. */
+.homepage-campaign-trace-magnesium-glycinate.homepage-campaign-full .homepage-campaign-info{
+  top:24%;
+  transform:none;
+}
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy,
+.advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-0 .advertisement-copy{
+  left:6%;
+  right:auto;
+  width:31%;
+  text-align:left;
+}
+.advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-1 .advertisement-copy{
+  left:auto;
+  right:6%;
+  width:31%;
+  text-align:right;
+}
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
+  left:6%;
+  right:auto;
+  width:29%;
+  text-align:left;
+}
+.advertisement-concept-eo.advertisement-concept-slide-0 .advertisement-copy,
+.advertisement-concept-acure-shampoo.advertisement-concept-slide-0 .advertisement-copy{
+  left:auto;
+  right:6%;
+  width:31%;
+  text-align:right;
+}
+.advertisement-concept-eo.advertisement-concept-slide-1 .advertisement-copy,
+.advertisement-concept-acure-shampoo.advertisement-concept-slide-1 .advertisement-copy{
+  left:6%;
+  right:auto;
+  width:31%;
+  text-align:left;
+}
+.advertisement-concept-before-toothpaste>img,
+.advertisement-concept-eo>img,
+.advertisement-concept-acure-shampoo>img,
+.advertisement-concept-trace-magnesium-glycinate>img{
+  object-position:center;
+  transform:none;
+}
+.advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-0>img{object-fit:contain}
+.social-post-concept-eo .social-post-image img{object-position:left center}
+
+@media(max-width:800px){
+  .homepage-campaign-trace-magnesium-glycinate.homepage-campaign-full .homepage-campaign-info{
+    top:auto;
+    bottom:7%;
+    transform:none;
+  }
+  .advertisement-concept-before-toothpaste>img,
+  .advertisement-concept-eo>img,
+  .advertisement-concept-acure-shampoo>img,
+  .advertisement-concept-trace-magnesium-glycinate>img{
+    object-fit:contain;
+    object-position:center;
+    transform:none;
+  }
+  .advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy,
+  .advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy,
+  .advertisement-concept-eo.advertisement-concept-slide-0 .advertisement-copy,
+  .advertisement-concept-eo.advertisement-concept-slide-1 .advertisement-copy,
+  .advertisement-concept-acure-shampoo.advertisement-concept-slide-0 .advertisement-copy,
+  .advertisement-concept-acure-shampoo.advertisement-concept-slide-1 .advertisement-copy,
+  .advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-0 .advertisement-copy,
+  .advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-1 .advertisement-copy{
+    left:7%;
+    right:7%;
+    top:auto;
+    bottom:7%;
+    width:auto;
+    transform:none;
+    text-align:left;
+  }
+}
