@@ -21,13 +21,29 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
 }
 function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span>↗</span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 700px) 100vw, 90vw" alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
+function useTimedSlide(count: number, intervalMs?: number) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    setActive(0);
+    if (!intervalMs || count < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const timer = window.setInterval(() => setActive(current => (current + 1) % count), intervalMs);
+    return () => window.clearInterval(timer);
+  }, [count, intervalMs]);
+
+  return [active, setActive] as const;
+}
+function RotatingImages({ images, intervalMs, sizes }: { images: PortfolioImage[]; intervalMs: number; sizes: string }) {
+  const [active] = useTimedSlide(images.length, intervalMs);
+  return <>{images.map((image, index) => <img className={`portfolio-image rotating-image${index === active ? ' is-active' : ''}`} src={image.src} srcSet={image.srcSet} sizes={sizes} width={image.width} height={image.height} alt={index === active ? image.alt : ''} aria-hidden={index === active ? undefined : true} loading="lazy" decoding="async" key={image.src}/>)}</>;
+}
 function Work() {
   return <section id="work" className="work section-pad curated-work">
     <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Selected product<br/>campaigns.</h2></div><p className="section-note">HERO / DETAIL / COPY SPACE<br/>WASHINGTON, DC · WORLDWIDE</p></div>
     <div className="curated-grid">{selectedWork.map((selection, i) => (
       <a className={`curated-card curated-card-${i + 1} curated-${selection.size}`} href={`/work/${selection.slug}`} key={selection.slug}>
-        <div className="curated-image">
-          <img className="portfolio-image" src={selection.image.src} srcSet={selection.image.srcSet} sizes={selection.size === 'large' ? '90vw' : selection.size === 'medium' ? '(max-width: 700px) 85vw, 60vw' : '(max-width: 700px) 72vw, 30vw'} width={selection.image.width} height={selection.image.height} alt={selection.image.alt} loading="lazy" decoding="async"/>
+        <div className={`curated-image${selection.alternateImage ? ' has-rotation' : ''}`}>
+          {selection.alternateImage ? <RotatingImages images={[selection.image, selection.alternateImage]} intervalMs={15000} sizes="90vw"/> : <img className="portfolio-image" src={selection.image.src} srcSet={selection.image.srcSet} sizes={selection.size === 'large' ? '90vw' : selection.size === 'medium' ? '(max-width: 700px) 85vw, 60vw' : '(max-width: 700px) 72vw, 30vw'} width={selection.image.width} height={selection.image.height} alt={selection.image.alt} loading="lazy" decoding="async"/>}
         </div>
         <div className="curated-caption"><span className="project-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{selection.title}</h3><p>{selection.subtitle}</p></div><span aria-hidden="true">↗</span></div>
       </a>
@@ -90,13 +106,15 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>MT. ANGEL · BEFORE · TRACE · PHIL’S · EO · ACURE · OM</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE · TRACE · PHIL’S · EO · ACURE · OM</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
 
 type ApplicationSettings = {
   bannerIndex: number;
+  bannerIndexes?: number[];
+  bannerIntervalMs?: number;
   adIndex: number | 'cover';
   adIndexes?: Array<number | 'cover'>;
   socialIndex: number;
@@ -106,6 +124,7 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'alice-mushroom-chocolate': { bannerIndex: 0, bannerIndexes: [0, 1], bannerIntervalMs: 30000, adIndex: 2, socialIndex: 5, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
   'mt-angel-joint-solution': { bannerIndex: 0, adIndex: 5, adIndexes: [5, 4], socialIndex: 3, websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
   'before-toothpaste': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
@@ -118,14 +137,14 @@ const applicationSettings: Record<string, ApplicationSettings> = {
 };
 
 function CampaignApplications({ project }: { project: Project }) {
-  const [bannerSlide, setBannerSlide] = useState(0);
-  const [adSlide, setAdSlide] = useState(0);
   const settings = applicationSettings[project.slug];
+  const bannerIndexes = settings?.bannerIndexes ?? (settings ? [settings.bannerIndex] : []);
+  const [bannerSlide, setBannerSlide] = useTimedSlide(bannerIndexes.length, settings?.bannerIntervalMs);
+  const [adSlide, setAdSlide] = useState(0);
   if (!settings) return null;
-  const hasBannerSlider = false;
-  const bannerImages = [project.gallery[settings.bannerIndex]];
+  const hasBannerSlider = bannerIndexes.length > 1;
+  const bannerImages = bannerIndexes.map(index => project.gallery[index]);
   const activeBannerSlide = bannerSlide % bannerImages.length;
-  const bannerImage = bannerImages[activeBannerSlide];
   const adIndexes = settings.adIndexes ?? [settings.adIndex];
   const activeAdSlide = adSlide % adIndexes.length;
   const activeAdIndex = adIndexes[activeAdSlide];
@@ -138,9 +157,9 @@ function CampaignApplications({ project }: { project: Project }) {
     <article className="application-block">
       <div className="application-label"><span>01</span><div><h3>Website Banner</h3><p>A wide composition with room for navigation, a headline and CTA.</p></div></div>
       <div className="browser-mockup">
-        <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span>{hasBannerSlider ? <div className="website-slider-controls"><span>Website placement</span><button type="button" onClick={() => setBannerSlide(current => (current - 1 + bannerImages.length) % bannerImages.length)} aria-label="Previous Magnesium website banner">←</button><span aria-live="polite">{activeBannerSlide + 1} / {bannerImages.length}</span><button type="button" onClick={() => setBannerSlide(current => (current + 1) % bannerImages.length)} aria-label="Next Magnesium website banner">→</button></div> : <span>Website placement</span>}</div>
+        <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span>{hasBannerSlider ? <div className="website-slider-controls"><span>Website placement</span><button type="button" onClick={() => setBannerSlide(current => (current - 1 + bannerImages.length) % bannerImages.length)} aria-label={`Previous ${project.name} website banner`}>←</button><span aria-live="polite">{activeBannerSlide + 1} / {bannerImages.length}</span><button type="button" onClick={() => setBannerSlide(current => (current + 1) % bannerImages.length)} aria-label={`Next ${project.name} website banner`}>→</button></div> : <span>Website placement</span>}</div>
         <div className={`website-concept website-concept-${project.slug} website-concept-banner-slide-${activeBannerSlide}`}>
-          <img key={bannerImage.src} className="website-banner-image" src={bannerImage.src} alt={`${project.name} product photograph shown in website banner option ${activeBannerSlide + 1}.`} width={bannerImage.width} height={bannerImage.height} loading="lazy" decoding="async"/>
+          {bannerImages.map((image, index) => <img key={image.src} className={`website-banner-image rotating-image${index === activeBannerSlide ? ' is-active' : ''}`} src={image.src} srcSet={image.srcSet} sizes="90vw" alt={index === activeBannerSlide ? `${project.name} product photograph shown in website banner option ${activeBannerSlide + 1}.` : ''} aria-hidden={index === activeBannerSlide ? undefined : true} width={image.width} height={image.height} loading="lazy" decoding="async"/>)}
           <div className="concept-nav"><span>{project.name}</span><span>Product · Story · Shop</span></div>
           <div className="concept-copy"><span>PRODUCT CAMPAIGN</span><h4>{settings.websiteHeadline}</h4><span className="mock-button">EXPLORE THE PRODUCT</span></div>
         </div>
@@ -172,13 +191,16 @@ function CampaignApplications({ project }: { project: Project }) {
 }
 
 function ProjectPage({ project }: { project: Project }) {
+  const imagePairs = project.pairedGallery;
   return <>
   <section className="project-detail section-pad curated-project">
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
     <div className="detail-heading"><div><h1>{project.name}</h1><p className="project-positioning">Cinematic product imagery for wellness brands.</p></div><p>{project.brand}</p></div>
-    <ImageFrame image={project.cover} tone={project.tone} label={`${project.name} / HERO`} priority/>
+    {imagePairs ? <div className="alice-lead-pair" aria-label={`${project.name} Focus and Sleep straight hero photographs`}>
+      {[imagePairs[0].focus, imagePairs[0].sleep].map((image, index) => <figure key={image.src}><figcaption>{index === 0 ? 'FOCUS' : 'SLEEP'} / STRAIGHT HERO</figcaption><ImageFrame image={image} label={image.alt} priority/></figure>)}
+    </div> : <ImageFrame image={project.cover} tone={project.tone} label={`${project.name} / HERO`} priority/>}
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
-    <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">FRAME / {String(index + 1).padStart(2, '0')}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
+    {imagePairs ? <div className="alice-paired-gallery">{imagePairs.slice(1).map((pair, index) => <section className="alice-pair" aria-labelledby={`alice-pair-${index}`} key={pair.label}><div className="alice-pair-heading"><span>PAIR / {String(index + 2).padStart(2, '0')}</span><h2 id={`alice-pair-${index}`}>{pair.label}</h2></div><div className="alice-pair-images"><figure><figcaption>FOCUS</figcaption><ImageFrame image={pair.focus} label={pair.focus.alt}/></figure><figure><figcaption>SLEEP</figcaption><ImageFrame image={pair.sleep} label={pair.sleep.alt}/></figure></div></section>)}</div> : <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">FRAME / {String(index + 1).padStart(2, '0')}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>}
     <CampaignApplications project={project}/>
     <p className="project-study-note-bottom">Independent product study.</p>
   </section>

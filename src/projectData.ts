@@ -1,4 +1,5 @@
 export type PortfolioImage = { src: string; alt: string; width: number; height: number; srcSet?: string };
+export type ProjectImagePair = { label: string; focus: PortfolioImage; sleep: PortfolioImage };
 export type Project = {
   slug: string;
   name: string;
@@ -7,10 +8,30 @@ export type Project = {
   deliverables: string;
   cover: PortfolioImage;
   gallery: PortfolioImage[];
+  pairedGallery?: ProjectImagePair[];
   tone: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: 'alice-mushroom-chocolate', name: 'ALICE', brand: 'Focus + Sleep', tone: 'slate',
+    services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
+    deliverables: 'Two product variants · Two heroes · Two copy-space heroes · Two slight macros · Two extreme macros',
+    cover: { src: '/images/projects/alice-focus-hero-1920.webp', srcSet: '/images/projects/alice-focus-hero-1200.webp 1200w, /images/projects/alice-focus-hero-1920.webp 1376w', alt: 'Cream Alice Focus mushroom chocolate tin shown straight against black.', width: 1376, height: 768 },
+    gallery: [
+      { src: '/images/projects/alice-focus-extreme-macro-1920.webp', srcSet: '/images/projects/alice-focus-extreme-macro-1200.webp 1200w, /images/projects/alice-focus-extreme-macro-1920.webp 1376w', alt: 'Extreme macro of the cream Alice Focus mushroom chocolate tin.', width: 1376, height: 768 },
+      { src: '/images/projects/alice-sleep-extreme-macro-1920.webp', srcSet: '/images/projects/alice-sleep-extreme-macro-1200.webp 1200w, /images/projects/alice-sleep-extreme-macro-1920.webp 1376w', alt: 'Extreme macro of the black Alice Sleep mushroom chocolate tin.', width: 1376, height: 768 },
+      { src: '/images/projects/alice-focus-slight-macro-1920.webp', srcSet: '/images/projects/alice-focus-slight-macro-1200.webp 1071w', alt: 'Slight macro of the cream Alice Focus mushroom chocolate tin.', width: 1071, height: 481 },
+      { src: '/images/projects/alice-sleep-slight-macro-1920.webp', srcSet: '/images/projects/alice-sleep-slight-macro-1200.webp 1200w, /images/projects/alice-sleep-slight-macro-1920.webp 1920w', alt: 'Slight macro of the black Alice Sleep mushroom chocolate tin.', width: 1920, height: 850 },
+      { src: '/images/projects/alice-focus-hero-1920.webp', srcSet: '/images/projects/alice-focus-hero-1200.webp 1200w, /images/projects/alice-focus-hero-1920.webp 1376w', alt: 'Cream Alice Focus mushroom chocolate tin shown straight against black.', width: 1376, height: 768 },
+      { src: '/images/projects/alice-sleep-hero-1920.webp', srcSet: '/images/projects/alice-sleep-hero-1200.webp 1200w, /images/projects/alice-sleep-hero-1920.webp 1920w', alt: 'Black Alice Sleep mushroom chocolate tin shown straight against black.', width: 1920, height: 1072 },
+      { src: '/images/projects/alice-focus-hero-copy-space-1920.webp', srcSet: '/images/projects/alice-focus-hero-copy-space-1200.webp 1200w, /images/projects/alice-focus-hero-copy-space-1920.webp 1324w', alt: 'Cream Alice Focus mushroom chocolate tin beside black copy space.', width: 1324, height: 768 },
+      { src: '/images/projects/alice-sleep-hero-copy-space-1920.webp', srcSet: '/images/projects/alice-sleep-hero-copy-space-1200.webp 1200w, /images/projects/alice-sleep-hero-copy-space-1920.webp 1920w', alt: 'Black Alice Sleep mushroom chocolate tin beside black copy space.', width: 1920, height: 1072 },
+      { src: '/images/projects/alice-focus-slight-macro-copy-space-1920.webp', srcSet: '/images/projects/alice-focus-slight-macro-copy-space-1200.webp 1071w', alt: 'Slight macro of the cream Alice Focus tin with black copy space.', width: 1071, height: 481 },
+      { src: '/images/projects/alice-sleep-slight-macro-copy-space-1920.webp', srcSet: '/images/projects/alice-sleep-slight-macro-copy-space-1200.webp 1200w, /images/projects/alice-sleep-slight-macro-copy-space-1920.webp 1920w', alt: 'Slight macro of the black Alice Sleep tin with black copy space.', width: 1920, height: 790 },
+    ],
+    pairedGallery: [],
+  },
   {
     slug: 'mt-angel-joint-solution', name: 'JOINT SOLUTION', brand: 'Mt. Angel Vitamins', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
@@ -128,5 +149,16 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+const alice = projects.find(project => project.slug === 'alice-mushroom-chocolate');
+if (alice) {
+  alice.pairedGallery = [
+    { label: 'Straight hero', focus: alice.gallery[4], sleep: alice.gallery[5] },
+    { label: 'Hero + copy space', focus: alice.gallery[6], sleep: alice.gallery[7] },
+    { label: 'Slight macro', focus: alice.gallery[2], sleep: alice.gallery[3] },
+    { label: 'Slight macro + copy space', focus: alice.gallery[8], sleep: alice.gallery[9] },
+    { label: 'Extreme macro', focus: alice.gallery[0], sleep: alice.gallery[1] },
+  ];
+}
 
 export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Generative Image Development', 'Image Finishing', 'Campaign Development'];
