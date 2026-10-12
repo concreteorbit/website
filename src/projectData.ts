@@ -122,32 +122,6 @@ export const projects: Project[] = [
       { src: '/images/projects/acure-shampoo-tilt-space-1920.webp', alt: 'ACURE Daily Workout Shampoo angled beside black copy space.', width: 2560, height: 1406 },
     ],
   },
-  {
-    slug: 'acure-body-wash', name: 'ACURE BODY WASH', brand: 'ACURE', tone: 'slate',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space heroes',
-    cover: { src: '/images/projects/acure-body-wash-hero-1920.jpg', alt: 'ACURE Body Wash Oil upright against black with silver light and water droplets.', width: 1920, height: 1072 },
-    gallery: [
-      { src: '/images/projects/acure-body-wash-extreme-macro-1920.jpg', alt: 'Extreme close-up of the wet metallic ACURE Body Wash Oil bottle and vertical lettering.', width: 1920, height: 1072 },
-      { src: '/images/projects/acure-body-wash-slight-macro-1920.jpg', alt: 'Close view of the ACURE Body Wash Oil label, silver bottle and water droplets.', width: 1920, height: 1072 },
-      { src: '/images/projects/acure-body-wash-tilt-hero-1920.jpg', alt: 'ACURE Body Wash Oil floating at an angle against black.', width: 1920, height: 1072 },
-      { src: '/images/projects/acure-body-wash-hero-space-2560.jpg', alt: 'ACURE Body Wash Oil upright beside generous black copy space.', width: 2560, height: 1356 },
-      { src: '/images/projects/acure-body-wash-tilt-space-2560.jpg', alt: 'ACURE Body Wash Oil angled beside deep black copy space.', width: 2560, height: 1396 },
-    ],
-  },
-  {
-    slug: 'om-lions-mane', name: 'OM LION’S MANE', brand: 'OM', tone: 'slate',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space heroes',
-    cover: { src: '/images/projects/om-hero-1920.jpg', alt: 'OM Lion’s Mane mushroom capsules upright against a black background.', width: 1920, height: 1200 },
-    gallery: [
-      { src: '/images/projects/om-extreme-macro-1920.jpg', alt: 'Extreme close-up of the orange OM Lion’s Mane label and white bottle.', width: 1920, height: 1072 },
-      { src: '/images/projects/om-slight-macro-1920.jpg', alt: 'Close view of the OM Lion’s Mane label, type and bottle cap.', width: 1920, height: 1072 },
-      { src: '/images/projects/om-tilt-hero-1920.jpg', alt: 'OM Lion’s Mane supplement bottle angled against black.', width: 1920, height: 1200 },
-      { src: '/images/projects/om-hero-space-2560.jpg', alt: 'OM Lion’s Mane bottle upright beside generous black copy space.', width: 2560, height: 1544 },
-      { src: '/images/projects/om-tilt-space-2560.jpg', alt: 'OM Lion’s Mane bottle angled beside deep black copy space.', width: 2560, height: 1632 },
-    ],
-  },
 ];
 
 const alice = projects.find(project => project.slug === 'alice-mushroom-chocolate');

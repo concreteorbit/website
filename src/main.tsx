@@ -33,22 +33,28 @@ function useTimedSlide(count: number, intervalMs?: number) {
 
   return [active, setActive] as const;
 }
-function RotatingImages({ images, intervalMs, sizes }: { images: PortfolioImage[]; intervalMs: number; sizes: string }) {
-  const [active] = useTimedSlide(images.length, intervalMs);
-  const image = images[active];
-  return <img className="portfolio-image homepage-rotating-image" src={image.src} srcSet={image.srcSet} sizes={sizes} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>;
+function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
+  const [active] = useTimedSlide(2, 30000);
+  const image = selection.images[active % selection.images.length];
+  const project = selection.project;
+  return <article className={`homepage-campaign homepage-campaign-${active === 0 ? 'full' : 'split'}`}>
+    <div className="homepage-campaign-stage">
+      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 800px) 100vw, 94vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
+      <div className="homepage-campaign-info">
+        <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
+        <h3>{selection.title}</h3>
+        <p className="homepage-campaign-product">{selection.subtitle}</p>
+        <p className="homepage-campaign-services">{project.services.join(' · ')}</p>
+        <a className="homepage-campaign-link" href={`/work/${selection.slug}`}>VIEW CAMPAIGN <span>↗</span></a>
+      </div>
+      <div className="homepage-campaign-state" aria-hidden="true"><span>{active + 1} / 2</span><span>{active === 0 ? 'EXTREME MACRO' : 'SLIGHT MACRO'}</span></div>
+    </div>
+  </article>;
 }
 function Work() {
   return <section id="work" className="work section-pad curated-work">
     <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Selected product<br/>campaigns.</h2></div><p className="section-note">HERO / DETAIL / COPY SPACE<br/>WASHINGTON, DC · WORLDWIDE</p></div>
-    <div className="curated-grid">{selectedWork.map((selection, i) => (
-      <a className={`curated-card curated-card-${i + 1} curated-${selection.size}`} href={`/work/${selection.slug}`} key={selection.slug}>
-        <div className="curated-image has-rotation">
-          <RotatingImages images={selection.images} intervalMs={15000} sizes="90vw"/>
-        </div>
-        <div className="curated-caption"><span className="project-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{selection.title}</h3><p>{selection.subtitle}</p></div><span aria-hidden="true">↗</span></div>
-      </a>
-    ))}</div>
+    <div className="homepage-campaign-list">{selectedWork.map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div>
   </section>;
 }
 function Studio() {
@@ -107,7 +113,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE · TRACE · PHIL’S · EO · ACURE · OM</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE · TRACE · EO · ACURE</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
@@ -133,8 +139,6 @@ const applicationSettings: Record<string, ApplicationSettings> = {
   'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
   eo: { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'French lavender, in a new light.', adHeadline: 'Blue light. Water. EO.', socialCaption: 'A close look at the wet label, curved bottle and cool blue light.' },
   'acure-shampoo': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'The daily clean, brought closer.', adHeadline: 'Water. Light. ACURE.', socialCaption: 'A close study of the turquoise tube, water droplets and vertical ACURE type.' },
-  'acure-body-wash': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Body wash, in a new light.', adHeadline: 'Silver. Water. ACURE.', socialCaption: 'A close look at the metallic bottle, vertical type and water across the surface.' },
-  'om-lions-mane': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Lion’s Mane, brought into focus.', adHeadline: 'A clearer view of OM.', socialCaption: 'A close product study built around the orange label, printed type and simple white bottle.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {

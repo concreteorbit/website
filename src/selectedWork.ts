@@ -11,14 +11,12 @@ type HomepageSelection = {
 
 // Homepage order is intentional. Each project displays its extreme macro.
 const homepageSelections: HomepageSelection[] = [
-  { slug: 'alice-mushroom-chocolate', title: 'ALICE', subtitle: 'Focus + Sleep', size: 'large', alt: 'Alice Focus and Sleep mushroom chocolate campaign details.', imageIndexes: [0, 1, 2, 3] },
+  { slug: 'alice-mushroom-chocolate', title: 'ALICE', subtitle: 'Focus + Sleep', size: 'large', alt: 'Alice Focus and Sleep mushroom chocolate campaign details.', imageIndexes: [0, 3] },
   { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'large', alt: 'Extreme macro of the Mt. Angel Vitamins Joint Solution label and amber bottle.' },
   { slug: 'before-toothpaste', title: 'BEFORE', subtitle: 'SuperMint Toothpaste', size: 'large', alt: 'Extreme macro of the Before SuperMint toothpaste tube covered in water droplets.' },
   { slug: 'acure-shampoo', title: 'ACURE', subtitle: 'Daily Workout Shampoo', size: 'large', alt: 'Extreme macro of the ACURE shampoo tube covered in water droplets.' },
   { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'large', alt: 'Extreme macro of Trace Magnesium Glycinate lettering, blue label texture and ribbed lid.' },
   { slug: 'eo', title: 'EO', subtitle: 'French Lavender Shower Gel', size: 'large', alt: 'Extreme macro of the EO shower gel label and water droplets in blue light.' },
-  { slug: 'om-lions-mane', title: 'OM', subtitle: 'Lion’s Mane', size: 'large', alt: 'Extreme macro of the orange OM Lion’s Mane label and white bottle.' },
-  { slug: 'acure-body-wash', title: 'ACURE', subtitle: 'Body Wash Oil', size: 'large', alt: 'Extreme macro of the metallic ACURE Body Wash Oil bottle covered in water.' },
 ];
 
 export const selectedWork = homepageSelections.map(selection => {
