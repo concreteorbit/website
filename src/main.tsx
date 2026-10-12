@@ -35,15 +35,16 @@ function useTimedSlide(count: number, intervalMs?: number) {
 }
 function RotatingImages({ images, intervalMs, sizes }: { images: PortfolioImage[]; intervalMs: number; sizes: string }) {
   const [active] = useTimedSlide(images.length, intervalMs);
-  return <>{images.map((image, index) => <img className={`portfolio-image rotating-image${index === active ? ' is-active' : ''}`} src={image.src} srcSet={image.srcSet} sizes={sizes} width={image.width} height={image.height} alt={index === active ? image.alt : ''} aria-hidden={index === active ? undefined : true} loading="lazy" decoding="async" key={image.src}/>)}</>;
+  const image = images[active];
+  return <img className="portfolio-image homepage-rotating-image" src={image.src} srcSet={image.srcSet} sizes={sizes} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>;
 }
 function Work() {
   return <section id="work" className="work section-pad curated-work">
     <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Selected product<br/>campaigns.</h2></div><p className="section-note">HERO / DETAIL / COPY SPACE<br/>WASHINGTON, DC · WORLDWIDE</p></div>
     <div className="curated-grid">{selectedWork.map((selection, i) => (
       <a className={`curated-card curated-card-${i + 1} curated-${selection.size}`} href={`/work/${selection.slug}`} key={selection.slug}>
-        <div className={`curated-image${selection.alternateImage ? ' has-rotation' : ''}`}>
-          {selection.alternateImage ? <RotatingImages images={[selection.image, selection.alternateImage]} intervalMs={15000} sizes="90vw"/> : <img className="portfolio-image" src={selection.image.src} srcSet={selection.image.srcSet} sizes={selection.size === 'large' ? '90vw' : selection.size === 'medium' ? '(max-width: 700px) 85vw, 60vw' : '(max-width: 700px) 72vw, 30vw'} width={selection.image.width} height={selection.image.height} alt={selection.image.alt} loading="lazy" decoding="async"/>}
+        <div className="curated-image has-rotation">
+          <RotatingImages images={selection.images} intervalMs={15000} sizes="90vw"/>
         </div>
         <div className="curated-caption"><span className="project-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{selection.title}</h3><p>{selection.subtitle}</p></div><span aria-hidden="true">↗</span></div>
       </a>
@@ -117,7 +118,7 @@ type ApplicationSettings = {
   bannerIntervalMs?: number;
   adIndex: number | 'cover';
   adIndexes?: Array<number | 'cover'>;
-  socialIndex: number;
+  socialIndex: number | 'cover';
   websiteHeadline: string;
   adHeadline: string;
   socialCaption: string;
@@ -125,15 +126,15 @@ type ApplicationSettings = {
 
 const applicationSettings: Record<string, ApplicationSettings> = {
   'alice-mushroom-chocolate': { bannerIndex: 0, bannerIndexes: [0, 1], bannerIntervalMs: 30000, adIndex: 8, adIndexes: [8, 7], socialIndex: 5, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
-  'mt-angel-joint-solution': { bannerIndex: 0, adIndex: 5, adIndexes: [5, 4], socialIndex: 3, websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
-  'before-toothpaste': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
-  phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
-  trace: { bannerIndex: 0, adIndex: 0, socialIndex: 1, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
-  'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
-  eo: { bannerIndex: 3, adIndex: 4, socialIndex: 1, websiteHeadline: 'French lavender, in a new light.', adHeadline: 'Blue light. Water. EO.', socialCaption: 'A close look at the wet label, curved bottle and cool blue light.' },
-  'acure-shampoo': { bannerIndex: 3, adIndex: 4, socialIndex: 1, websiteHeadline: 'The daily clean, brought closer.', adHeadline: 'Water. Light. ACURE.', socialCaption: 'A close study of the turquoise tube, water droplets and vertical ACURE type.' },
-  'acure-body-wash': { bannerIndex: 3, adIndex: 4, socialIndex: 1, websiteHeadline: 'Body wash, in a new light.', adHeadline: 'Silver. Water. ACURE.', socialCaption: 'A close look at the metallic bottle, vertical type and water across the surface.' },
-  'om-lions-mane': { bannerIndex: 3, adIndex: 4, socialIndex: 1, websiteHeadline: 'Lion’s Mane, brought into focus.', adHeadline: 'A clearer view of OM.', socialCaption: 'A close product study built around the orange label, printed type and simple white bottle.' },
+  'mt-angel-joint-solution': { bannerIndex: 0, adIndex: 5, adIndexes: [5, 4], socialIndex: 'cover', websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
+  'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
+  phils: { bannerIndex: 0, adIndex: 1, socialIndex: 'cover', websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
+  trace: { bannerIndex: 2, adIndex: 0, socialIndex: 'cover', websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
+  'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
+  eo: { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'French lavender, in a new light.', adHeadline: 'Blue light. Water. EO.', socialCaption: 'A close look at the wet label, curved bottle and cool blue light.' },
+  'acure-shampoo': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'The daily clean, brought closer.', adHeadline: 'Water. Light. ACURE.', socialCaption: 'A close study of the turquoise tube, water droplets and vertical ACURE type.' },
+  'acure-body-wash': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Body wash, in a new light.', adHeadline: 'Silver. Water. ACURE.', socialCaption: 'A close look at the metallic bottle, vertical type and water across the surface.' },
+  'om-lions-mane': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Lion’s Mane, brought into focus.', adHeadline: 'A clearer view of OM.', socialCaption: 'A close product study built around the orange label, printed type and simple white bottle.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {
@@ -149,7 +150,7 @@ function CampaignApplications({ project }: { project: Project }) {
   const activeAdSlide = adSlide % adIndexes.length;
   const activeAdIndex = adIndexes[activeAdSlide];
   const adImage = activeAdIndex === 'cover' ? project.cover : project.gallery[activeAdIndex];
-  const socialImage = project.gallery[settings.socialIndex];
+  const socialImage = settings.socialIndex === 'cover' ? project.cover : project.gallery[settings.socialIndex];
   const titleId = `${project.slug}-applications-title`;
 
   return <section className="campaign-applications" aria-labelledby={titleId}>
@@ -190,6 +191,18 @@ function CampaignApplications({ project }: { project: Project }) {
   </section>;
 }
 
+function photoTypeLabel(src: string) {
+  const name = src.toLowerCase();
+  if (name.includes('extreme-macro')) return 'EXTREME MACRO';
+  if (name.includes('slight-macro-copy') || (name.includes('slight-macro') && (name.includes('space') || name.includes('copy')))) return 'SLIGHT MACRO + COPY SPACE';
+  if (name.includes('slight-macro')) return 'SLIGHT MACRO';
+  if (name.includes('dramatic')) return 'DRAMATIC ANGLE';
+  if ((name.includes('tilt') || name.includes('angled')) && name.includes('space')) return 'ANGLED HERO + COPY SPACE';
+  if (name.includes('tilt') || name.includes('angled')) return 'ANGLED HERO';
+  if (name.includes('copy-space') || name.includes('copyspace') || name.includes('hero-space') || name.includes('straight-copy')) return 'HERO + COPY SPACE';
+  return 'CAMPAIGN DETAIL';
+}
+
 function ProjectPage({ project }: { project: Project }) {
   const imagePairs = project.pairedGallery;
   return <>
@@ -200,7 +213,7 @@ function ProjectPage({ project }: { project: Project }) {
       {[imagePairs[0].focus, imagePairs[0].sleep].map((image, index) => <figure key={image.src}><figcaption>{index === 0 ? 'FOCUS' : 'SLEEP'} / STRAIGHT HERO</figcaption><ImageFrame image={image} label={image.alt} priority/></figure>)}
     </div> : <ImageFrame image={project.cover} tone={project.tone} label={`${project.name} / HERO`} priority/>}
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
-    {imagePairs ? <div className="alice-paired-gallery">{imagePairs.slice(1).map((pair, index) => <section className="alice-pair" aria-labelledby={`alice-pair-${index}`} key={pair.label}><div className="alice-pair-heading"><span>PAIR / {String(index + 2).padStart(2, '0')}</span><h2 id={`alice-pair-${index}`}>{pair.label}</h2></div><div className="alice-pair-images"><figure><figcaption>FOCUS</figcaption><ImageFrame image={pair.focus} label={pair.focus.alt}/></figure><figure><figcaption>SLEEP</figcaption><ImageFrame image={pair.sleep} label={pair.sleep.alt}/></figure></div></section>)}</div> : <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">FRAME / {String(index + 1).padStart(2, '0')}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>}
+    {imagePairs ? <div className="alice-paired-gallery">{imagePairs.slice(1).map((pair, index) => <section className="alice-pair" aria-labelledby={`alice-pair-${index}`} key={pair.label}><div className="alice-pair-heading"><span>PAIR / {String(index + 2).padStart(2, '0')}</span><h2 id={`alice-pair-${index}`}>{pair.label}</h2></div><div className="alice-pair-images"><figure><figcaption>FOCUS</figcaption><ImageFrame image={pair.focus} label={pair.focus.alt}/></figure><figure><figcaption>SLEEP</figcaption><ImageFrame image={pair.sleep} label={pair.sleep.alt}/></figure></div></section>)}</div> : <div className="project-grid campaign-sequence">{project.gallery.map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 1).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>}
     <CampaignApplications project={project}/>
     <p className="project-study-note-bottom">Independent product study.</p>
   </section>

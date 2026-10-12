@@ -16,9 +16,10 @@ pnpm build
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
 - The homepage campaign set begins with Alice Focus + Sleep, followed by Mt. Angel Vitamins Joint Solution, Before SuperMint Toothpaste, ACURE Shampoo, Trace Magnesium Glycinate, EO, OM Lion's Mane and ACURE Body Wash.
-- The Alice homepage card alternates between the Sleep and Focus extreme macros every 15 seconds. Its case-study page keeps the variants as separate photographs in five matched pairs.
+- Every homepage campaign card alternates between its extreme and slight macro photographs every 15 seconds. Alice cycles through both Focus and Sleep variants in both macro compositions.
+- Campaign pages present the complete image set as a large scrolling sequence before the placement examples, with quiet labels that identify each composition.
 - In the Alice placement examples, the website banner alternates between Focus and Sleep every 30 seconds. The advertisement carousel uses the Focus slight macro with copy space and the Sleep hero with copy space, with layout text placed in the open black area. The social post uses the straight hero.
-- Each campaign page includes website, ad and social placement examples.
+- Each campaign page follows the same placement structure: a macro website banner, copy-space advertising layouts and a straight-hero social post.
 - Featured brand work is labeled as independent study work and should remain factually identified that way.
 
 ## Inquiry form

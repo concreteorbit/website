@@ -6,13 +6,12 @@ type HomepageSelection = {
   subtitle: string;
   size: string;
   alt: string;
-  alternateIndex?: number;
-  alternateAlt?: string;
+  imageIndexes?: number[];
 };
 
 // Homepage order is intentional. Each project displays its extreme macro.
 const homepageSelections: HomepageSelection[] = [
-  { slug: 'alice-mushroom-chocolate', title: 'ALICE', subtitle: 'Focus + Sleep', size: 'large', alt: 'Extreme macro of the black Alice Sleep mushroom chocolate tin.', alternateIndex: 0, alternateAlt: 'Extreme macro of the cream Alice Focus mushroom chocolate tin.' },
+  { slug: 'alice-mushroom-chocolate', title: 'ALICE', subtitle: 'Focus + Sleep', size: 'large', alt: 'Alice Focus and Sleep mushroom chocolate campaign details.', imageIndexes: [0, 1, 2, 3] },
   { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'large', alt: 'Extreme macro of the Mt. Angel Vitamins Joint Solution label and amber bottle.' },
   { slug: 'before-toothpaste', title: 'BEFORE', subtitle: 'SuperMint Toothpaste', size: 'large', alt: 'Extreme macro of the Before SuperMint toothpaste tube covered in water droplets.' },
   { slug: 'acure-shampoo', title: 'ACURE', subtitle: 'Daily Workout Shampoo', size: 'large', alt: 'Extreme macro of the ACURE shampoo tube covered in water droplets.' },
@@ -24,11 +23,10 @@ const homepageSelections: HomepageSelection[] = [
 
 export const selectedWork = homepageSelections.map(selection => {
   const project = projects.find(project => project.slug === selection.slug)!;
-  const primaryImage = selection.alternateIndex === undefined ? project.gallery[0] : project.gallery[1];
+  const imageIndexes = selection.imageIndexes ?? [0, 1];
   return {
     ...selection,
     project,
-    image: { ...primaryImage, alt: selection.alt } as PortfolioImage,
-    alternateImage: selection.alternateIndex === undefined ? undefined : { ...project.gallery[selection.alternateIndex], alt: selection.alternateAlt ?? project.gallery[selection.alternateIndex].alt } as PortfolioImage,
+    images: imageIndexes.map(index => ({ ...project.gallery[index], alt: project.gallery[index].alt || selection.alt })) as PortfolioImage[],
   };
 });
