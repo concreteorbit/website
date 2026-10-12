@@ -124,7 +124,7 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
-  'alice-mushroom-chocolate': { bannerIndex: 0, bannerIndexes: [0, 1], bannerIntervalMs: 30000, adIndex: 2, socialIndex: 5, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
+  'alice-mushroom-chocolate': { bannerIndex: 0, bannerIndexes: [0, 1], bannerIntervalMs: 30000, adIndex: 8, adIndexes: [8, 7], socialIndex: 5, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
   'mt-angel-joint-solution': { bannerIndex: 0, adIndex: 5, adIndexes: [5, 4], socialIndex: 3, websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
   'before-toothpaste': { bannerIndex: 0, adIndex: 4, socialIndex: 1, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 1, adIndex: 2, socialIndex: 3, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },

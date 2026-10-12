@@ -594,6 +594,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 26%,rgba(0,0,0,.08) 47%,transparent 65%);pointer-events:none}
 .website-concept-alice-mushroom-chocolate .concept-copy{left:4.5%;right:auto;top:50%;width:33%;transform:translateY(-45%);text-shadow:0 2px 18px rgba(0,0,0,.92)}
 .website-concept-alice-mushroom-chocolate .concept-copy h4{font-size:clamp(25px,3vw,49px);line-height:1.02}
+.advertisement-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,transparent 40%,rgba(0,0,0,.14) 62%,rgba(0,0,0,.5) 100%);pointer-events:none}
+.advertisement-concept-alice-mushroom-chocolate>img{object-position:center}
 .advertisement-concept-alice-mushroom-chocolate .advertisement-copy{left:auto;right:5.5%;width:31%;text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.92)}
 .social-post-concept-alice-mushroom-chocolate .social-post-image img{object-position:center}
 
@@ -605,7 +607,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .alice-paired-gallery{gap:70px}
   .website-concept-alice-mushroom-chocolate::after{display:none}
   .website-concept-alice-mushroom-chocolate .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
-  .advertisement-concept-alice-mushroom-chocolate .advertisement-copy{left:7%;right:auto;top:8%;width:70%;text-align:left}
+  .advertisement-concept-alice-mushroom-chocolate>img{object-fit:contain;object-position:center;transform:none}
+  .advertisement-concept-alice-mushroom-chocolate .advertisement-copy{left:auto;right:7%;top:50%;width:46%;transform:translateY(-50%);text-align:right}
 }
 
 @media(max-width:800px){
