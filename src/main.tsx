@@ -34,10 +34,9 @@ function useTimedSlide(count: number, intervalMs?: number) {
   return [active, setActive] as const;
 }
 function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
-  const [active] = useTimedSlide(2, 30000);
-  const image = selection.images[active % selection.images.length];
+  const image = selection.images[0];
   const project = selection.project;
-  return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-${active === 0 ? 'full' : 'split'}`}>
+  return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full`}>
     <div className="homepage-campaign-stage">
       <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 800px) 100vw, 94vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
@@ -47,7 +46,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
         <p className="homepage-campaign-services">{project.services.join(' · ')}</p>
         <a className="homepage-campaign-link" href={`/work/${selection.slug}`}>VIEW CAMPAIGN <span>↗</span></a>
       </div>
-      <div className="homepage-campaign-state" aria-hidden="true"><span>{active + 1} / 2</span><span>{active === 0 ? 'EXTREME MACRO' : 'SLIGHT MACRO'}</span></div>
+      <div className="homepage-campaign-state" aria-hidden="true"><span>EXTREME MACRO</span></div>
     </div>
   </article>;
 }
@@ -102,12 +101,11 @@ function Home() {
   return <>
     <section className="hero section-pad fullbleed-hero">
       <div className={`hero-image homepage-hero-stage homepage-hero-stage-${heroSlide}`}>
-        <picture className={`homepage-hero-photo homepage-hero-slide ${heroSlide === 0 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 0}>
-          <source media="(max-width: 800px)" srcSet="/images/trace-hero-spacious-mobile-640.webp 640w, /images/trace-hero-spacious-mobile-960.webp 960w" sizes="100vw"/>
-          <img className="portfolio-image" src="/images/trace-hero-spacious-1920.webp" srcSet="/images/trace-hero-spacious-1280.webp 1280w, /images/trace-hero-spacious-1920.webp 1920w, /images/trace-hero-spacious-2560.webp 2560w" sizes="100vw" width={5504} height={3072} alt="Trace 40,000 Volts electrolyte concentrate bottle covered in water droplets, lit in deep blue against a black background." loading="eager" fetchPriority="high" decoding="async"/>
+        <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro ${heroSlide === 0 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 0}>
+          <img className="portfolio-image" src="/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme macro of the Trace Magnesium Glycinate label and ribbed cap in deep blue light." loading="eager" fetchPriority="high" decoding="async"/>
         </picture>
-        <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro ${heroSlide === 1 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 1}>
-          <img className="portfolio-image" src="/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme macro of the Trace Magnesium Glycinate label and ribbed cap in deep blue light." loading="eager" decoding="async"/>
+        <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro homepage-hero-acure ${heroSlide === 1 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 1}>
+          <img className="portfolio-image" src="/images/projects/acure-shampoo-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme macro of the ACURE shampoo tube covered in water droplets and illuminated in cyan light." loading="eager" decoding="async"/>
         </picture>
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
