@@ -322,7 +322,7 @@ body{background:var(--lab-bg);color:var(--lab-white)}
 .wordmark{font-size:23px;letter-spacing:-1.35px}.navigation{font-family:'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:1.25px;font-size:9px;gap:34px}.nav-cta{border:0;border-left:1px solid var(--lab-line);border-radius:0;padding:8px 0 8px 30px}.nav-cta span{color:var(--lab-accent)}
 .fullbleed-hero .hero-image{height:calc(100svh - 82px);min-height:680px;max-height:none;border-bottom:1px solid var(--lab-line)}
 .fullbleed-hero .portfolio-image{transform:scale(1.16) translateX(13%);filter:saturate(.94) contrast(1.04)}
-.fullbleed-hero-copy{left:clamp(20px,4vw,68px);top:54%;max-width:45%}
+.fullbleed-hero-copy{left:clamp(20px,4vw,68px);top:38%;max-width:45%}
 .fullbleed-hero-brand{display:flex;gap:22px;align-items:center;font-family:'DM Sans',sans-serif;font-size:8px;line-height:1;letter-spacing:1.7px;color:var(--lab-muted);margin-bottom:35px}.fullbleed-hero-brand span+span{padding-left:22px;border-left:1px solid var(--lab-line);color:var(--lab-accent)}
 .fullbleed-hero-copy h1{font-size:clamp(38px,4.5vw,72px);font-weight:500;line-height:1.02;letter-spacing:-.058em;max-width:650px}
 .fullbleed-hero-description{font-size:12px;line-height:1.75;color:#aeb6bc;max-width:330px;margin-top:27px}
@@ -704,6 +704,31 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   display:flex;
   flex-direction:column;
   gap:clamp(75px,9vw,140px);
+}
+.project-lead-frame{
+  position:relative;
+  width:100%;
+  padding-top:20px;
+  border-top:1px solid var(--lab-line);
+}
+.project-lead-frame:before{
+  content:'';
+  position:absolute;
+  z-index:2;
+  width:13px;
+  height:13px;
+  left:12px;
+  top:32px;
+  border-left:1px solid rgba(101,215,255,.6);
+  border-top:1px solid rgba(101,215,255,.6);
+  pointer-events:none;
+}
+.project-lead-frame .portfolio-image{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background:#000;
 }
 .curated-project .campaign-sequence .project-frame:nth-child(n){
   width:100%;
