@@ -96,33 +96,6 @@ export const projects: Project[] = [
       { src: '/images/projects/trace-magnesium-glycinate-straight-hero-copy-space-correct-1920.jpg', srcSet: '/images/projects/trace-magnesium-glycinate-straight-hero-copy-space-correct-1200.jpg 1200w, /images/projects/trace-magnesium-glycinate-straight-hero-copy-space-correct-1920.jpg 1920w', alt: 'Trace Magnesium Glycinate upright beside generous black copy space with brighter balanced blue light.', width: 1920, height: 1159 },
     ],
   },
-  {
-    slug: 'eo', name: 'EO', brand: 'EO', tone: 'slate',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Three copy-space compositions',
-    cover: { src: '/images/projects/eo-hero-1920.webp', alt: 'EO calming French lavender shower gel upright against black with blue light and water droplets.', width: 1920, height: 1072 },
-    gallery: [
-      { src: '/images/projects/eo-extreme-macro-1920.webp', alt: 'Extreme close-up of the EO shower gel label and water droplets in blue light.', width: 1920, height: 1072 },
-      { src: '/images/projects/eo-slight-macro-1920.webp', alt: 'Close view of the EO shower gel bottle, pump and wet label.', width: 1920, height: 1072 },
-      { src: '/images/projects/eo-tilt-hero-1920.webp', alt: 'EO shower gel floating at an angle against a black background.', width: 1920, height: 1072 },
-      { src: '/images/projects/eo-slight-macro-copy-space-correct-1920.jpg', srcSet: '/images/projects/eo-slight-macro-copy-space-correct-1200.jpg 1200w, /images/projects/eo-slight-macro-copy-space-correct-1920.jpg 1920w', alt: 'EO shower gel slight macro beside generous black copy space.', width: 1920, height: 1163 },
-      { src: '/images/projects/eo-hero-space-1920.webp', alt: 'EO shower gel upright with generous black copy space.', width: 2560, height: 1375 },
-      { src: '/images/projects/eo-tilt-hero-copy-space-correct-1920.jpg', srcSet: '/images/projects/eo-tilt-hero-copy-space-correct-1200.jpg 1200w, /images/projects/eo-tilt-hero-copy-space-correct-1920.jpg 1920w', alt: 'EO shower gel in a dramatic tilted hero composition beside black copy space.', width: 1920, height: 1218 },
-    ],
-  },
-  {
-    slug: 'acure-shampoo', name: 'ACURE SHAMPOO', brand: 'ACURE', tone: 'slate',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space heroes',
-    cover: { src: '/images/projects/acure-shampoo-hero-1920.webp', alt: 'ACURE Daily Workout Shampoo upright against black with turquoise light and water droplets.', width: 1920, height: 1072 },
-    gallery: [
-      { src: '/images/projects/acure-shampoo-extreme-macro-1920.webp', alt: 'Extreme close-up of the ACURE shampoo tube and water droplets.', width: 1920, height: 1072 },
-      { src: '/images/projects/acure-shampoo-slight-macro-correct-1920.jpg', srcSet: '/images/projects/acure-shampoo-slight-macro-correct-1200.jpg 1200w, /images/projects/acure-shampoo-slight-macro-correct-1920.jpg 1920w', alt: 'Corrected close view of the ACURE Daily Workout Shampoo tube and wet turquoise packaging.', width: 1920, height: 1215 },
-      { src: '/images/projects/acure-shampoo-tilt-hero-1920.webp', alt: 'ACURE Daily Workout Shampoo floating at an angle against black.', width: 1920, height: 1072 },
-      { src: '/images/projects/acure-shampoo-slight-macro-copy-space-correct-1920.jpg', srcSet: '/images/projects/acure-shampoo-slight-macro-copy-space-correct-1200.jpg 1200w, /images/projects/acure-shampoo-slight-macro-copy-space-correct-1920.jpg 1920w', alt: 'ACURE Daily Workout Shampoo slight macro beside generous black copy space.', width: 1920, height: 1215 },
-      { src: '/images/projects/acure-shampoo-hero-space-1920.webp', alt: 'ACURE Daily Workout Shampoo upright beside generous black copy space.', width: 2560, height: 1462 },
-    ],
-  },
 ];
 
 const alice = projects.find(project => project.slug === 'alice-mushroom-chocolate');
@@ -137,3 +110,4 @@ if (alice) {
 }
 
 export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Generative Image Development', 'Image Finishing', 'Campaign Development'];
+
