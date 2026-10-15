@@ -97,12 +97,17 @@ function Contact() {
 function Footer() { return <footer className="section-pad"><div className="footer-top"><a className="wordmark" href="/">concrete orbit</a><p>Based in Washington, DC.<br/>Working worldwide.</p><a href="#top">Back to top ↑</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Concrete Orbit</span><a href="https://www.instagram.com/concreteorbitvisuals/" target="_blank" rel="noopener noreferrer" aria-label="Concrete Orbit on Instagram (opens in a new tab)" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24}}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></footer>; }
 
 function Home() {
+  const [heroSlide] = useTimedSlide(2, 30000);
+
   return <>
     <section className="hero section-pad fullbleed-hero">
-      <div className="hero-image">
-        <picture className="homepage-hero-photo">
+      <div className={`hero-image homepage-hero-stage homepage-hero-stage-${heroSlide}`}>
+        <picture className={`homepage-hero-photo homepage-hero-slide ${heroSlide === 0 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 0}>
           <source media="(max-width: 800px)" srcSet="/images/trace-hero-spacious-mobile-640.webp 640w, /images/trace-hero-spacious-mobile-960.webp 960w" sizes="100vw"/>
           <img className="portfolio-image" src="/images/trace-hero-spacious-1920.webp" srcSet="/images/trace-hero-spacious-1280.webp 1280w, /images/trace-hero-spacious-1920.webp 1920w, /images/trace-hero-spacious-2560.webp 2560w" sizes="100vw" width={5504} height={3072} alt="Trace 40,000 Volts electrolyte concentrate bottle covered in water droplets, lit in deep blue against a black background." loading="eager" fetchPriority="high" decoding="async"/>
+        </picture>
+        <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro ${heroSlide === 1 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 1}>
+          <img className="portfolio-image" src="/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme macro of the Trace Magnesium Glycinate label and ribbed cap in deep blue light." loading="eager" decoding="async"/>
         </picture>
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
@@ -113,7 +118,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE · TRACE</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
@@ -136,7 +141,6 @@ const applicationSettings: Record<string, ApplicationSettings> = {
   'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 'cover'], socialIndex: 'cover', websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 0, adIndex: 1, socialIndex: 'cover', websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
   trace: { bannerIndex: 2, adIndex: 0, socialIndex: 'cover', websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
-  'trace-magnesium-glycinate': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 'cover', websiteHeadline: 'Magnesium, brought closer.', adHeadline: 'Night in a new light.', socialCaption: 'A close product study built around cool light, type and packaging texture.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {
