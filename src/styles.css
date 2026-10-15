@@ -228,7 +228,7 @@ footer{padding-top:48px;padding-bottom:32px}
 .fullbleed-hero .homepage-hero-slide{position:absolute;inset:0;display:block;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease;z-index:0}
 .fullbleed-hero .homepage-hero-slide.is-active{opacity:1;z-index:1}
 .fullbleed-hero .homepage-hero-macro .portfolio-image{transform:none;object-fit:cover;object-position:center}
-.homepage-hero-stage::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.34) 29%,transparent 58%);opacity:0;transition:opacity 1.2s ease}
+.homepage-hero-stage::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.34) 29%,transparent 58%);opacity:1}
 .homepage-hero-stage-1::after{opacity:1}
 .fullbleed-hero-copy,.hero-axis{z-index:3}
 .fullbleed-hero-copy{left:5%;top:53%;max-width:44%}
