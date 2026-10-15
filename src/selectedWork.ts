@@ -14,7 +14,6 @@ const homepageSelections: HomepageSelection[] = [
   { slug: 'alice-mushroom-chocolate', title: 'ALICE', subtitle: 'Focus + Sleep', size: 'large', alt: 'Alice Focus and Sleep mushroom chocolate campaign details.', imageIndexes: [0, 3] },
   { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'large', alt: 'Extreme macro of the Mt. Angel Vitamins Joint Solution label and amber bottle.' },
   { slug: 'before-toothpaste', title: 'BEFORE', subtitle: 'SuperMint Toothpaste', size: 'large', alt: 'Extreme macro of the Before SuperMint toothpaste tube covered in water droplets.' },
-  { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'large', alt: 'Extreme macro of Trace Magnesium Glycinate lettering, blue label texture and ribbed lid.' },
 ];
 
 export const selectedWork = homepageSelections.map(selection => {
