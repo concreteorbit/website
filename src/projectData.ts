@@ -83,19 +83,6 @@ export const projects: Project[] = [
       { src: '/images/projects/trace-3-2000.webp', alt: 'Trace electrolyte concentrate campaign detail.', width: 5504, height: 3072 },
     ],
   },
-  {
-    slug: 'trace-magnesium-glycinate', name: 'TRACE MAGNESIUM GLYCINATE', brand: 'Trace', tone: 'slate',
-    services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space heroes',
-    cover: { src: '/images/projects/trace-magnesium-glycinate-straight-hero-correct-1920.jpg', srcSet: '/images/projects/trace-magnesium-glycinate-straight-hero-correct-1200.jpg 1200w, /images/projects/trace-magnesium-glycinate-straight-hero-correct-1920.jpg 1920w', alt: 'Trace Magnesium Glycinate upright against black with brighter balanced blue light.', width: 1920, height: 1159 },
-    gallery: [
-      { src: '/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp', alt: 'Extreme close-up of the Trace Magnesium Glycinate lettering, label and lid.', width: 5504, height: 3072 },
-      { src: '/images/projects/trace-magnesium-glycinate-slight-macro-1920.webp', alt: 'Close-up of the Trace Magnesium Glycinate label.', width: 5504, height: 3072 },
-      { src: '/images/projects/trace-magnesium-glycinate-tilt-hero-1920.webp', alt: 'Trace Magnesium Glycinate floating at an angle against black.', width: 5504, height: 3072 },
-      { src: '/images/projects/trace-magnesium-glycinate-slight-macro-copy-space-correct-1920.jpg', srcSet: '/images/projects/trace-magnesium-glycinate-slight-macro-copy-space-correct-1200.jpg 1200w, /images/projects/trace-magnesium-glycinate-slight-macro-copy-space-correct-1920.jpg 1920w', alt: 'Trace Magnesium Glycinate slight macro beside generous black copy space.', width: 1920, height: 712 },
-      { src: '/images/projects/trace-magnesium-glycinate-straight-hero-copy-space-correct-1920.jpg', srcSet: '/images/projects/trace-magnesium-glycinate-straight-hero-copy-space-correct-1200.jpg 1200w, /images/projects/trace-magnesium-glycinate-straight-hero-copy-space-correct-1920.jpg 1920w', alt: 'Trace Magnesium Glycinate upright beside generous black copy space with brighter balanced blue light.', width: 1920, height: 1159 },
-    ],
-  },
 ];
 
 const alice = projects.find(project => project.slug === 'alice-mushroom-chocolate');
