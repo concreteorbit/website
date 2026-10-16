@@ -131,11 +131,26 @@ type ApplicationSettings = {
   adIndex: number | 'cover';
   adIndexes?: Array<number | 'cover'>;
   websiteHeadline: string;
+  websiteHeadlines?: string[];
   adHeadline: string;
+  adHeadlines?: string[];
+  bannerLabels?: string[];
+  adLabels?: string[];
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
-  'alice-mushroom-chocolate': { bannerIndex: 6, bannerIndexes: [6, 7], bannerIntervalMs: 30000, adIndex: 6, adIndexes: [6, 8], websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.' },
+  'alice-mushroom-chocolate': {
+    bannerIndex: 0,
+    bannerIndexes: [0, 1],
+    adIndex: 6,
+    adIndexes: [6, 7],
+    websiteHeadline: 'Daily focus, brought closer.',
+    websiteHeadlines: ['Daily focus, brought closer.', 'Nightly sleep, brought closer.'],
+    adHeadline: 'Daily bites for focus.',
+    adHeadlines: ['Daily bites for focus.', 'Nightly bites for deep sleep.'],
+    bannerLabels: ['ALICE / FOCUS', 'ALICE / SLEEP'],
+    adLabels: ['ALICE / FOCUS', 'ALICE / SLEEP'],
+  },
   'mt-angel-joint-solution': { bannerIndex: 6, bannerIndexes: [6, 0], bannerIntervalMs: 30000, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
   'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 'cover', adIndexes: ['cover', 3], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
   phils: { bannerIndex: 0, adIndex: 1, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.' },
@@ -155,6 +170,10 @@ function CampaignApplications({ project }: { project: Project }) {
   const activeAdSlide = adSlide % adIndexes.length;
   const activeAdIndex = adIndexes[activeAdSlide];
   const adImage = activeAdIndex === 'cover' ? project.cover : project.gallery[activeAdIndex];
+  const websiteHeadline = settings.websiteHeadlines?.[activeBannerSlide] ?? settings.websiteHeadline;
+  const adHeadline = settings.adHeadlines?.[activeAdSlide] ?? settings.adHeadline;
+  const bannerLabel = settings.bannerLabels?.[activeBannerSlide] ?? project.name;
+  const adLabel = settings.adLabels?.[activeAdSlide] ?? project.name;
   const titleId = `${project.slug}-applications-title`;
 
   return <section className="campaign-applications" aria-labelledby={titleId}>
@@ -165,8 +184,8 @@ function CampaignApplications({ project }: { project: Project }) {
         <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span>{hasBannerSlider ? <div className="website-slider-controls"><span>Website placement</span><button type="button" onClick={() => setBannerSlide(current => (current - 1 + bannerImages.length) % bannerImages.length)} aria-label={`Previous ${project.name} website banner`}>←</button><span aria-live="polite">{activeBannerSlide + 1} / {bannerImages.length}</span><button type="button" onClick={() => setBannerSlide(current => (current + 1) % bannerImages.length)} aria-label={`Next ${project.name} website banner`}>→</button></div> : <span>Website placement</span>}</div>
         <div className={`website-concept website-concept-${project.slug} website-concept-banner-slide-${activeBannerSlide}`}>
           {bannerImages.map((image, index) => <img key={image.src} className={`website-banner-image rotating-image${index === activeBannerSlide ? ' is-active' : ''}`} src={image.src} srcSet={image.srcSet} sizes="90vw" alt={index === activeBannerSlide ? `${project.name} product photograph shown in website banner option ${activeBannerSlide + 1}.` : ''} aria-hidden={index === activeBannerSlide ? undefined : true} width={image.width} height={image.height} loading="lazy" decoding="async"/>)}
-          <div className="concept-nav"><span>{project.name}</span><span>Product · Story · Shop</span></div>
-          <div className="concept-copy"><span>PRODUCT CAMPAIGN</span><h4>{settings.websiteHeadline}</h4><span className="mock-button">EXPLORE THE PRODUCT</span></div>
+          <div className="concept-nav"><span>{bannerLabel}</span><span>Product · Story · Shop</span></div>
+          <div className="concept-copy"><span>{bannerLabel} / PRODUCT CAMPAIGN</span><h4>{websiteHeadline}</h4><span className="mock-button">EXPLORE THE PRODUCT</span></div>
         </div>
       </div>
     </article>
@@ -176,7 +195,7 @@ function CampaignApplications({ project }: { project: Project }) {
         {adIndexes.length > 1 && <div className="advertisement-slider-controls"><span>Advertisement option</span><div><button type="button" onClick={() => setAdSlide(current => (current - 1 + adIndexes.length) % adIndexes.length)} aria-label={`Previous ${project.name} advertisement`}>←</button><span aria-live="polite">{activeAdSlide + 1} / {adIndexes.length}</span><button type="button" onClick={() => setAdSlide(current => (current + 1) % adIndexes.length)} aria-label={`Next ${project.name} advertisement`}>→</button></div></div>}
         <div className={`advertisement-concept advertisement-concept-${project.slug} advertisement-concept-slide-${activeAdSlide}`}>
           <img key={adImage.src} src={adImage.src} alt={`${project.name} product photograph shown in advertisement option ${activeAdSlide + 1}.`} width={adImage.width} height={adImage.height} loading="lazy" decoding="async"/>
-          <div className="advertisement-copy"><span>{project.name} / PRODUCT CAMPAIGN</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
+          <div className="advertisement-copy"><span>{adLabel} / PRODUCT CAMPAIGN</span><h4>{adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
         </div>
       </div>
     </article>
