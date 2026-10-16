@@ -35,6 +35,7 @@
     min-height:700px;
   }
 }
+
 @media(max-width:800px){
   .split-hero .hero-image{
     width:100%;
@@ -942,6 +943,59 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
     width:auto;
     transform:none;
     text-align:left;
+  }
+}
+
+/* MT. ANGEL and BEFORE placement sequences. Website banners rotate from the
+   angled copy-space hero to the extreme macro; advertisements pair a straight
+   hero with the slight macro. */
+.website-concept-mt-angel-joint-solution::after{
+  background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.4) 24%,rgba(0,0,0,.08) 44%,transparent 62%);
+}
+.website-concept-mt-angel-joint-solution .concept-copy{
+  left:4.5%;
+  right:auto;
+  text-align:left;
+}
+.website-concept-mt-angel-joint-solution.website-concept-banner-slide-1::after{
+  background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.42) 25%,rgba(0,0,0,.08) 45%,transparent 64%);
+}
+
+.website-concept-before-toothpaste.website-concept-banner-slide-0::after{
+  background:linear-gradient(270deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.42) 24%,rgba(0,0,0,.08) 44%,transparent 62%);
+}
+.website-concept-before-toothpaste.website-concept-banner-slide-0 .concept-copy{
+  left:auto;
+  right:4.5%;
+  text-align:right;
+}
+.website-concept-before-toothpaste.website-concept-banner-slide-1::after{
+  background:linear-gradient(90deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.4) 24%,rgba(0,0,0,.08) 44%,transparent 62%);
+}
+.website-concept-before-toothpaste.website-concept-banner-slide-1 .concept-copy{
+  left:4.5%;
+  right:auto;
+  text-align:left;
+}
+
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-0>img{
+  transform:translateX(-18%);
+}
+
+@media(max-width:800px){
+  .website-concept-mt-angel-joint-solution .concept-copy,
+  .website-concept-before-toothpaste.website-concept-banner-slide-0 .concept-copy,
+  .website-concept-before-toothpaste.website-concept-banner-slide-1 .concept-copy{
+    left:7%;
+    right:7%;
+    top:auto;
+    bottom:7%;
+    width:auto;
+    transform:none;
+    text-align:left;
+  }
+  .advertisement-concept-before-toothpaste.advertisement-concept-slide-0>img{
+    transform:none;
   }
 }
 
