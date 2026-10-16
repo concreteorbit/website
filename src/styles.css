@@ -982,6 +982,24 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   transform:translateX(-18%);
 }
 
+/* ALICE uses the extreme macros as website placements and the copy-space
+   heroes as the only advertising placements. */
+.website-concept-alice-mushroom-chocolate::after{
+  background:linear-gradient(90deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.52) 25%,rgba(0,0,0,.12) 45%,transparent 64%);
+}
+.website-concept-alice-mushroom-chocolate .concept-copy{
+  left:4.5%;
+  right:auto;
+  width:31%;
+  text-align:left;
+}
+.advertisement-concept-alice-mushroom-chocolate .advertisement-copy{
+  left:auto;
+  right:5.5%;
+  width:31%;
+  text-align:right;
+}
+
 @media(max-width:800px){
   .website-concept-mt-angel-joint-solution .concept-copy,
   .website-concept-before-toothpaste.website-concept-banner-slide-0 .concept-copy,
@@ -996,6 +1014,15 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   }
   .advertisement-concept-before-toothpaste.advertisement-concept-slide-0>img{
     transform:none;
+  }
+  .website-concept-alice-mushroom-chocolate .concept-copy{
+    left:7%;
+    right:7%;
+    top:auto;
+    bottom:7%;
+    width:auto;
+    transform:none;
+    text-align:left;
   }
 }
 
