@@ -96,5 +96,5 @@ if (alice) {
   ];
 }
 
-export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Generative Image Development', 'Image Finishing', 'Campaign Development'];
+export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Image Finishing', 'Campaign Development'];
 
