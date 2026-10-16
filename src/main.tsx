@@ -130,18 +130,16 @@ type ApplicationSettings = {
   bannerIntervalMs?: number;
   adIndex: number | 'cover';
   adIndexes?: Array<number | 'cover'>;
-  socialIndex: number | 'cover';
   websiteHeadline: string;
   adHeadline: string;
-  socialCaption: string;
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
-  'alice-mushroom-chocolate': { bannerIndex: 6, bannerIndexes: [6, 7], bannerIntervalMs: 30000, adIndex: 6, adIndexes: [6, 7], socialIndex: 2, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
-  'mt-angel-joint-solution': { bannerIndex: 4, adIndex: 5, adIndexes: [5, 6], socialIndex: 6, websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
-  'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 0, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
-  phils: { bannerIndex: 0, adIndex: 1, socialIndex: 'cover', websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
-  trace: { bannerIndex: 2, adIndex: 0, socialIndex: 'cover', websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
+  'alice-mushroom-chocolate': { bannerIndex: 6, bannerIndexes: [6, 7], bannerIntervalMs: 30000, adIndex: 6, adIndexes: [6, 8], websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.' },
+  'mt-angel-joint-solution': { bannerIndex: 4, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
+  'before-toothpaste': { bannerIndex: 0, adIndex: 4, adIndexes: [4, 3], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
+  phils: { bannerIndex: 0, adIndex: 1, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.' },
+  trace: { bannerIndex: 2, adIndex: 0, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.' },
 };
 
 function CampaignApplications({ project }: { project: Project }) {
@@ -157,11 +155,10 @@ function CampaignApplications({ project }: { project: Project }) {
   const activeAdSlide = adSlide % adIndexes.length;
   const activeAdIndex = adIndexes[activeAdSlide];
   const adImage = activeAdIndex === 'cover' ? project.cover : project.gallery[activeAdIndex];
-  const socialImage = settings.socialIndex === 'cover' ? project.cover : project.gallery[settings.socialIndex];
   const titleId = `${project.slug}-applications-title`;
 
   return <section className="campaign-applications" aria-labelledby={titleId}>
-    <div className="application-heading"><span className="eyebrow">PLACEMENT EXAMPLES</span><h2 id={titleId}>How it could<br/>work for you.</h2><p>Concept applications showing how the photographs could carry a website, an ad and a social post.</p></div>
+    <div className="application-heading"><span className="eyebrow">PLACEMENT EXAMPLES</span><h2 id={titleId}>How it could<br/>work for you.</h2><p>Concept applications showing how the photographs could carry a website and two advertising layouts.</p></div>
     <article className="application-block">
       <div className="application-label"><span>01</span><div><h3>Website Banner</h3><p>A wide composition with room for navigation, a headline and CTA.</p></div></div>
       <div className="browser-mockup">
@@ -173,9 +170,8 @@ function CampaignApplications({ project }: { project: Project }) {
         </div>
       </div>
     </article>
-    <div className="application-secondary-grid">
     <article className="application-block">
-      <div className="application-label"><span>02</span><div><h3>Advertisements</h3><p>Campaign photographs shown as finished ad layouts.</p></div></div>
+      <div className="application-label"><span>02</span><div><h3>Advertisements</h3><p>A hero and a closer detail, each composed with room for campaign copy.</p></div></div>
       <div className="advertisement-shell">
         {adIndexes.length > 1 && <div className="advertisement-slider-controls"><span>Advertisement option</span><div><button type="button" onClick={() => setAdSlide(current => (current - 1 + adIndexes.length) % adIndexes.length)} aria-label={`Previous ${project.name} advertisement`}>←</button><span aria-live="polite">{activeAdSlide + 1} / {adIndexes.length}</span><button type="button" onClick={() => setAdSlide(current => (current + 1) % adIndexes.length)} aria-label={`Next ${project.name} advertisement`}>→</button></div></div>}
         <div className={`advertisement-concept advertisement-concept-${project.slug} advertisement-concept-slide-${activeAdSlide}`}>
@@ -184,19 +180,6 @@ function CampaignApplications({ project }: { project: Project }) {
         </div>
       </div>
     </article>
-    <article className="application-block">
-      <div className="application-label"><span>03</span><div><h3>Social</h3><p>A close crop shown in a brand post.</p></div></div>
-      <div className={`social-post-concept social-post-concept-${project.slug}`}>
-        <div className="social-post-image"><img src={socialImage.src} alt={`${project.name} close product detail shown in a social post example.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
-        <div className="social-post-panel">
-          <div className="social-profile"><span className="social-avatar">{project.name.charAt(0)}</span><div><strong>{project.name}</strong><small>Product campaign</small></div><span aria-hidden="true">•••</span></div>
-          <div className="social-caption"><strong>{project.name}</strong><p>{settings.socialCaption}</p></div>
-          <div className="social-actions" aria-hidden="true"><span>♡</span><span>○</span><span>↗</span><span>□</span></div>
-          <p className="social-note">Social placement preview</p>
-        </div>
-      </div>
-    </article>
-    </div>
   </section>;
 }
 
