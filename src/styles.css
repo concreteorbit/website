@@ -421,12 +421,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .application-heading h2{margin:0;font:500 clamp(38px,5vw,78px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.055em}
 .application-heading>p{max-width:520px;margin:28px 0 0;color:var(--lab-muted);font-size:14px;line-height:1.8}
 .application-block{margin-top:clamp(90px,11vw,170px)}
-.application-secondary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);margin-top:clamp(90px,11vw,170px)}
-.application-secondary-grid .application-block{min-width:0;margin-top:0}
-.application-secondary-grid .application-label{min-height:92px}
-.application-secondary-grid .advertisement-concept{aspect-ratio:4/5}
-.application-secondary-grid .social-post-concept{grid-template-columns:1fr;max-width:none}
-.application-secondary-grid .social-post-panel{min-height:245px;border-top:1px solid #2b3036;border-left:0}
 .application-label{display:flex;gap:24px;align-items:flex-start;margin-bottom:28px;padding-top:16px;border-top:1px solid var(--lab-line)}
 .application-label>span{font:9px 'Space Grotesk',sans-serif;color:var(--lab-accent);letter-spacing:1.4px}
 .application-label h3{margin:0;font:500 18px 'Space Grotesk',sans-serif;letter-spacing:.2px}
@@ -486,8 +480,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .application-heading{grid-template-columns:1fr;gap:28px}
   .application-heading .eyebrow{grid-row:auto}
   .application-heading>p{margin-top:0}
-  .application-secondary-grid{grid-template-columns:1fr;gap:70px}
-  .application-secondary-grid .application-label{min-height:0}
   .website-concept{aspect-ratio:4/5}
   .website-concept>img{object-position:37% center}
   .concept-nav span:last-child{display:none}
@@ -610,8 +602,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .alice-pair-heading h2{margin:0;font:500 clamp(20px,2.2vw,34px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.035em}
 .alice-pair-images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
 
-.website-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 26%,rgba(0,0,0,.08) 47%,transparent 65%);pointer-events:none}
-.website-concept-alice-mushroom-chocolate .concept-copy{left:4.5%;right:auto;top:50%;width:33%;transform:translateY(-45%);text-shadow:0 2px 18px rgba(0,0,0,.92)}
+.website-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 26%,rgba(0,0,0,.08) 47%,transparent 65%);pointer-events:none}
+.website-concept-alice-mushroom-chocolate .concept-copy{left:auto;right:4.5%;top:50%;width:33%;transform:translateY(-45%);text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.92)}
 .website-concept-alice-mushroom-chocolate .concept-copy h4{font-size:clamp(25px,3vw,49px);line-height:1.02}
 .advertisement-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,transparent 40%,rgba(0,0,0,.14) 62%,rgba(0,0,0,.5) 100%);pointer-events:none}
 .advertisement-concept-alice-mushroom-chocolate>img{object-position:center}
@@ -692,9 +684,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .advertisement-slider-controls button:hover,.advertisement-slider-controls button:focus-visible{border-color:#91a3af;background:#121920;color:#fff;outline:none}
 .advertisement-slider-controls+.advertisement-concept{border-top:0}
 .advertisement-concept>img{animation:website-banner-in .55s ease both}
-.website-concept-mt-angel-joint-solution::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.38) 25%,rgba(0,0,0,.05) 46%,transparent 65%);pointer-events:none}
+.website-concept-mt-angel-joint-solution::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.38) 25%,rgba(0,0,0,.05) 46%,transparent 65%);pointer-events:none}
 .website-concept-mt-angel-joint-solution>img{object-position:center}
-.website-concept-mt-angel-joint-solution .concept-copy{left:4.5%;right:auto;top:50%;width:32%;transform:translateY(-44%);text-shadow:0 2px 18px rgba(0,0,0,.9)}
+.website-concept-mt-angel-joint-solution .concept-copy{left:auto;right:4.5%;top:50%;width:32%;transform:translateY(-44%);text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.9)}
 .website-concept-mt-angel-joint-solution .concept-copy h4{max-width:410px;font-size:clamp(24px,3vw,49px);line-height:1.02}
 .advertisement-concept-mt-angel-joint-solution>img{object-fit:cover;object-position:center}
 .advertisement-concept-mt-angel-joint-solution .advertisement-copy{left:auto;right:6%;width:31%;text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.9)}
@@ -905,6 +897,44 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .advertisement-concept-acure-shampoo.advertisement-concept-slide-1 .advertisement-copy,
   .advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-0 .advertisement-copy,
   .advertisement-concept-trace-magnesium-glycinate.advertisement-concept-slide-1 .advertisement-copy{
+    left:7%;
+    right:7%;
+    top:auto;
+    bottom:7%;
+    width:auto;
+    transform:none;
+    text-align:left;
+  }
+}
+
+/* Two focused placement types: website and a two-image advertising sequence. */
+.advertisement-concept-alice-mushroom-chocolate>img,
+.advertisement-concept-mt-angel-joint-solution>img,
+.advertisement-concept-before-toothpaste>img{
+  object-fit:contain;
+  object-position:center;
+  transform:none;
+}
+.advertisement-concept-alice-mushroom-chocolate .advertisement-copy,
+.advertisement-concept-mt-angel-joint-solution .advertisement-copy,
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy{
+  left:auto;
+  right:6%;
+  width:31%;
+  text-align:right;
+}
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
+  left:6%;
+  right:auto;
+  width:31%;
+  text-align:left;
+}
+
+@media(max-width:800px){
+  .advertisement-concept-alice-mushroom-chocolate .advertisement-copy,
+  .advertisement-concept-mt-angel-joint-solution .advertisement-copy,
+  .advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy,
+  .advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
     left:7%;
     right:7%;
     top:auto;
