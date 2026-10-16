@@ -6,6 +6,7 @@ export type Project = {
   brand: string;
   services: string[];
   deliverables: string;
+  direction: string;
   cover: PortfolioImage;
   gallery: PortfolioImage[];
   pairedGallery?: ProjectImagePair[];
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     slug: 'alice-mushroom-chocolate', name: 'ALICE', brand: 'Focus + Sleep', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
     deliverables: 'Two product variants · Two heroes · Two copy-space heroes · Two slight macros · Two extreme macros',
+    direction: 'A paired campaign balancing daytime focus and nighttime calm across two contrasting finishes.',
     cover: { src: '/images/projects/alice-focus-hero-1920.webp', srcSet: '/images/projects/alice-focus-hero-1200.webp 1200w, /images/projects/alice-focus-hero-1920.webp 1376w', alt: 'Cream Alice Focus mushroom chocolate tin shown straight against black.', width: 1376, height: 768 },
     gallery: [
       { src: '/images/projects/alice-focus-extreme-macro-1920.webp', srcSet: '/images/projects/alice-focus-extreme-macro-1200.webp 1200w, /images/projects/alice-focus-extreme-macro-1920.webp 1376w', alt: 'Extreme macro of the cream Alice Focus mushroom chocolate tin.', width: 1376, height: 768 },
@@ -35,7 +37,8 @@ export const projects: Project[] = [
   {
     slug: 'mt-angel-joint-solution', name: 'JOINT SOLUTION', brand: 'Mt. Angel Vitamins', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Dramatic angle · Slight macro · Extreme macro · Three copy-space compositions',
+    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',
+    direction: 'A low-key product study giving an amber supplement bottle greater weight, precision and presence.',
     cover: { src: '/images/projects/mt-angel-hero-1920.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright against black in cool blue light.', width: 1920, height: 1217 },
     gallery: [
       { src: '/images/projects/mt-angel-extreme-macro-1920.webp', alt: 'Extreme close-up of the Mt. Angel Vitamins Joint Solution label, amber bottle and ribbed cap.', width: 1920, height: 1072 },
@@ -51,6 +54,7 @@ export const projects: Project[] = [
     slug: 'before-toothpaste', name: 'BEFORE', brand: 'Before', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
     deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',
+    direction: 'A cool, tactile campaign using water and close detail to make oral care feel clean and premium.',
     cover: { src: '/images/projects/before-hero-1920.webp', alt: 'Before SuperMint toothpaste upright against black in cool blue light and covered in water droplets.', width: 1920, height: 1072 },
     gallery: [
       { src: '/images/projects/before-extreme-macro-1920.webp', alt: 'Extreme close-up of the Before SuperMint toothpaste tube, lettering and water droplets.', width: 1920, height: 911 },
@@ -64,6 +68,7 @@ export const projects: Project[] = [
     slug: 'phils', name: 'PHIL’S', brand: 'Phil’s', tone: 'slate',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',
+    direction: 'A restrained body-care study built around clean form, condensation and deep contrast.',
     cover: { src: '/images/projects/phils-hero-2000.jpg', alt: 'Phil’s Daily Facial Cleanser upright against black and covered in water droplets.', width: 2000, height: 1116 },
     gallery: [
       { src: '/images/projects/phils-extreme-macro-2000.jpg', alt: 'Extreme close-up of the Phil’s Daily Facial Cleanser label and water droplets across the bottle.', width: 2000, height: 1116 },
@@ -76,6 +81,7 @@ export const projects: Project[] = [
     slug: 'trace', name: 'TRACE', brand: 'Trace', tone: 'slate',
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
     deliverables: 'Hero · Copy-space hero · Two detail views',
+    direction: 'A high-contrast supplement study using water, scale and electric blue light to create impact.',
     cover: { src: '/images/projects/trace-1-2000.webp', alt: 'Trace 40,000 Volts electrolyte concentrate covered in water droplets.', width: 5504, height: 3072 },
     gallery: [
       { src: '/images/projects/trace-copy-space-2000.jpg', alt: 'Trace 40,000 Volts electrolyte concentrate with generous black copy space.', width: 2000, height: 1211 },
