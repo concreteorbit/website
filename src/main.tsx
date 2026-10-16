@@ -137,9 +137,9 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
-  'alice-mushroom-chocolate': { bannerIndex: 6, bannerIndexes: [6, 7], bannerIntervalMs: 30000, adIndex: 8, adIndexes: [8, 9], socialIndex: 7, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
+  'alice-mushroom-chocolate': { bannerIndex: 6, bannerIndexes: [6, 7], bannerIntervalMs: 30000, adIndex: 6, adIndexes: [6, 7], socialIndex: 2, websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.', socialCaption: 'Two Alice rituals photographed as one coordinated campaign: Focus in cream and Sleep in black.' },
   'mt-angel-joint-solution': { bannerIndex: 4, adIndex: 5, adIndexes: [5, 6], socialIndex: 6, websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.', socialCaption: 'A dramatic product study built around cool light, deep contrast and the Joint Solution bottle.' },
-  'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 2, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
+  'before-toothpaste': { bannerIndex: 0, adIndex: 3, adIndexes: [3, 4], socialIndex: 0, websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.', socialCaption: 'A close product study built around cool light, water and the Before wordmark.' },
   phils: { bannerIndex: 0, adIndex: 1, socialIndex: 'cover', websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.', socialCaption: 'The bottle, the droplets and the details that give this image its character.' },
   trace: { bannerIndex: 2, adIndex: 0, socialIndex: 'cover', websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.', socialCaption: 'A tight crop built around the label, droplets and electric blue finish.' },
 };
@@ -173,6 +173,7 @@ function CampaignApplications({ project }: { project: Project }) {
         </div>
       </div>
     </article>
+    <div className="application-secondary-grid">
     <article className="application-block">
       <div className="application-label"><span>02</span><div><h3>Advertisements</h3><p>Campaign photographs shown as finished ad layouts.</p></div></div>
       <div className="advertisement-shell">
@@ -195,6 +196,7 @@ function CampaignApplications({ project }: { project: Project }) {
         </div>
       </div>
     </article>
+    </div>
   </section>;
 }
 
@@ -237,14 +239,13 @@ function ProjectPage({ project }: { project: Project }) {
   return <>
   <section className="project-detail section-pad curated-project">
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
-    <div className="detail-heading"><div><h1>{project.name}</h1><p className="project-positioning">Product campaign imagery for wellness brands.</p></div><p>{project.brand}</p></div>
+    <div className="detail-heading"><div><span className="project-study-note-top">INDEPENDENT PRODUCT STUDY</span><h1>{project.name}</h1><p className="project-positioning">{project.direction}</p></div><p>{project.brand}</p></div>
     {imagePairs && orderedPairs[0] ? <div className="alice-lead-pair" aria-label={`${project.name} Focus and Sleep extreme macro photographs`}>
       {[orderedPairs[0].focus, orderedPairs[0].sleep].map((image, index) => <figure key={image.src}><figcaption>{index === 0 ? 'FOCUS' : 'SLEEP'} / EXTREME MACRO</figcaption><ImageFrame image={image} label={image.alt} priority/></figure>)}
     </div> : leadImage ? <div className="project-lead-frame"><span className="frame-index">01 / {photoTypeLabel(leadImage.src)}</span><ImageFrame image={leadImage} tone={project.tone} label={leadImage.alt} priority/></div> : null}
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
     {imagePairs ? <div className="alice-paired-gallery">{orderedPairs.slice(1).map((pair, index) => <section className="alice-pair" aria-labelledby={`alice-pair-${index}`} key={pair.label}><div className="alice-pair-heading"><span>PAIR / {String(index + 2).padStart(2, '0')}</span><h2 id={`alice-pair-${index}`}>{pair.label === 'Straight hero' ? 'Hero' : pair.label}</h2></div><div className="alice-pair-images"><figure><figcaption>FOCUS</figcaption><ImageFrame image={pair.focus} label={pair.focus.alt}/></figure><figure><figcaption>SLEEP</figcaption><ImageFrame image={pair.sleep} label={pair.sleep.alt}/></figure></div></section>)}</div> : <div className="project-grid campaign-sequence">{showcaseImages.slice(1).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 2).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>}
     <CampaignApplications project={project}/>
-    <p className="project-study-note-bottom">Independent product study.</p>
   </section>
   <Contact/>
   </>;
