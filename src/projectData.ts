@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     slug: 'before-toothpaste', name: 'BEFORE', brand: 'Before', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Two copy-space compositions',
+    deliverables: 'Straight hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',
     cover: { src: '/images/projects/before-hero-1920.webp', alt: 'Before SuperMint toothpaste upright against black in cool blue light and covered in water droplets.', width: 1920, height: 1072 },
     gallery: [
       { src: '/images/projects/before-extreme-macro-1920.webp', alt: 'Extreme close-up of the Before SuperMint toothpaste tube, lettering and water droplets.', width: 1920, height: 911 },
