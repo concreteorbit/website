@@ -136,8 +136,8 @@ type ApplicationSettings = {
 
 const applicationSettings: Record<string, ApplicationSettings> = {
   'alice-mushroom-chocolate': { bannerIndex: 6, bannerIndexes: [6, 7], bannerIntervalMs: 30000, adIndex: 6, adIndexes: [6, 8], websiteHeadline: 'Focus by day. Sleep by night.', adHeadline: 'A closer look at the ritual.' },
-  'mt-angel-joint-solution': { bannerIndex: 4, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
-  'before-toothpaste': { bannerIndex: 0, adIndex: 4, adIndexes: [4, 3], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
+  'mt-angel-joint-solution': { bannerIndex: 6, bannerIndexes: [6, 0], bannerIntervalMs: 30000, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
+  'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 'cover', adIndexes: ['cover', 3], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
   phils: { bannerIndex: 0, adIndex: 1, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.' },
   trace: { bannerIndex: 2, adIndex: 0, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.' },
 };
