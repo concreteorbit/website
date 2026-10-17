@@ -119,7 +119,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE · PHIL’S</p></section>
     <Work/><Offer/><Studio/><Contact/>
   </>;
 }
@@ -142,8 +142,8 @@ const applicationSettings: Record<string, ApplicationSettings> = {
   'alice-mushroom-chocolate': {
     bannerIndex: 0,
     bannerIndexes: [0, 1],
-    adIndex: 6,
-    adIndexes: [6, 7],
+    adIndex: 4,
+    adIndexes: [4, 5],
     websiteHeadline: 'Daily focus, brought closer.',
     websiteHeadlines: ['Daily focus, brought closer.', 'Nightly sleep, brought closer.'],
     adHeadline: 'Daily bites for focus.',
@@ -152,8 +152,8 @@ const applicationSettings: Record<string, ApplicationSettings> = {
     adLabels: ['ALICE / FOCUS', 'ALICE / SLEEP'],
   },
   'mt-angel-joint-solution': { bannerIndex: 6, bannerIndexes: [6, 0], bannerIntervalMs: 30000, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
-  'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 'cover', adIndexes: ['cover', 3], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
-  phils: { bannerIndex: 0, adIndex: 1, websiteHeadline: 'A clean first look.', adHeadline: 'Clean starts here.' },
+  'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
+  'phils-daily-facial-cleanser': { bannerIndex: 3, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'Clean, brought closer.', adHeadline: 'A better way to begin.' },
   trace: { bannerIndex: 2, adIndex: 0, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.' },
 };
 
@@ -233,7 +233,7 @@ function campaignShowcaseImages(project: Project) {
 
 function ProjectPage({ project }: { project: Project }) {
   const imagePairs = project.pairedGallery;
-  const orderedPairs = imagePairs ? ['Extreme macro', 'Slight macro', 'Straight hero']
+  const orderedPairs = imagePairs ? ['Extreme macro', 'Slight macro', 'Hero + copy space']
     .map(label => imagePairs.find(pair => pair.label === label))
     .filter((pair): pair is ProjectImagePair => Boolean(pair)) : [];
   const showcaseImages = campaignShowcaseImages(project);
@@ -246,7 +246,7 @@ function ProjectPage({ project }: { project: Project }) {
       {[orderedPairs[0].focus, orderedPairs[0].sleep].map((image, index) => <figure key={image.src}><figcaption>{index === 0 ? 'FOCUS' : 'SLEEP'} / EXTREME MACRO</figcaption><ImageFrame image={image} label={image.alt} priority/></figure>)}
     </div> : leadImage ? <div className="project-lead-frame"><span className="frame-index">01 / {photoTypeLabel(leadImage.src)}</span><ImageFrame image={leadImage} tone={project.tone} label={leadImage.alt} priority/></div> : null}
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
-    {imagePairs ? <div className="alice-paired-gallery">{orderedPairs.slice(1).map((pair, index) => <section className="alice-pair" aria-labelledby={`alice-pair-${index}`} key={pair.label}><div className="alice-pair-heading"><span>PAIR / {String(index + 2).padStart(2, '0')}</span><h2 id={`alice-pair-${index}`}>{pair.label === 'Straight hero' ? 'Hero' : pair.label}</h2></div><div className="alice-pair-images"><figure><figcaption>FOCUS</figcaption><ImageFrame image={pair.focus} label={pair.focus.alt}/></figure><figure><figcaption>SLEEP</figcaption><ImageFrame image={pair.sleep} label={pair.sleep.alt}/></figure></div></section>)}</div> : <div className="project-grid campaign-sequence">{showcaseImages.slice(1).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 2).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>}
+    {imagePairs ? <div className="alice-paired-gallery">{orderedPairs.slice(1).map((pair, index) => <section className="alice-pair" aria-labelledby={`alice-pair-${index}`} key={pair.label}><div className="alice-pair-heading"><span>PAIR / {String(index + 2).padStart(2, '0')}</span><h2 id={`alice-pair-${index}`}>{pair.label}</h2></div><div className="alice-pair-images"><figure><figcaption>FOCUS</figcaption><ImageFrame image={pair.focus} label={pair.focus.alt}/></figure><figure><figcaption>SLEEP</figcaption><ImageFrame image={pair.sleep} label={pair.sleep.alt}/></figure></div></section>)}</div> : <div className="project-grid campaign-sequence">{showcaseImages.slice(1).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 2).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>}
     <CampaignApplications project={project}/>
   </section>
   <Contact/>
@@ -255,4 +255,3 @@ function ProjectPage({ project }: { project: Project }) {
 
 function App() { const path = window.location.pathname.replace(/\/$/, '') || '/'; const project = projects.find(p => path === `/work/${p.slug}`); useEffect(() => { const title = project ? `${project.name} | Concrete Orbit` : path === '/' ? 'Concrete Orbit | Five-Image Product Campaigns for Wellness Brands' : 'Page not found | Concrete Orbit'; document.title = title; document.querySelector('meta[property="og:title"]')?.setAttribute('content', title); if (project) document.querySelector('meta[name="description"]')?.setAttribute('content', `${project.name}: an independent product photography study by Concrete Orbit.`); }, [project, path]); useEffect(() => { const id = decodeURIComponent(window.location.hash.slice(1)); if (!id) return; const scrollToTarget = () => document.getElementById(id)?.scrollIntoView({ block: 'start' }); const frame = window.requestAnimationFrame(scrollToTarget); const timers = [250, 1000, 2500].map(delay => window.setTimeout(scrollToTarget, delay)); const pendingImages = Array.from(document.images).filter(image => !image.complete); pendingImages.forEach(image => image.addEventListener('load', scrollToTarget)); window.addEventListener('load', scrollToTarget, { once: true }); return () => { window.cancelAnimationFrame(frame); timers.forEach(timer => window.clearTimeout(timer)); pendingImages.forEach(image => image.removeEventListener('load', scrollToTarget)); window.removeEventListener('load', scrollToTarget); }; }, [path]); const contactHref = path === '/' || project ? '#contact' : '/#contact'; return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header contactHref={contactHref}/><main id="main">{path === '/' ? <Home/> : project ? <ProjectPage project={project}/> : <section className="not-found section-pad"><span className="eyebrow">404 / OUT OF ORBIT</span><h1>Nothing here. Yet.</h1><a href="/">Return to the studio →</a></section>}</main><Footer/></>; }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
-

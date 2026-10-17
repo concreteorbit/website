@@ -911,31 +911,39 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 /* Two focused placement types: website and a two-image advertising sequence. */
 .advertisement-concept-alice-mushroom-chocolate>img,
 .advertisement-concept-mt-angel-joint-solution>img,
-.advertisement-concept-before-toothpaste>img{
+.advertisement-concept-before-toothpaste>img,
+.advertisement-concept-phils-daily-facial-cleanser>img{
   object-fit:contain;
   object-position:center;
   transform:none;
 }
 .advertisement-concept-alice-mushroom-chocolate .advertisement-copy,
 .advertisement-concept-mt-angel-joint-solution .advertisement-copy,
-.advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy{
+.advertisement-concept-phils-daily-facial-cleanser .advertisement-copy{
   left:auto;
   right:6%;
   width:31%;
   text-align:right;
 }
-.advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy{
   left:6%;
   right:auto;
   width:31%;
   text-align:left;
+}
+.advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
+  left:auto;
+  right:6%;
+  width:31%;
+  text-align:right;
 }
 
 @media(max-width:800px){
   .advertisement-concept-alice-mushroom-chocolate .advertisement-copy,
   .advertisement-concept-mt-angel-joint-solution .advertisement-copy,
   .advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy,
-  .advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
+  .advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy,
+  .advertisement-concept-phils-daily-facial-cleanser .advertisement-copy{
     left:7%;
     right:7%;
     top:auto;
@@ -947,8 +955,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 }
 
 /* MT. ANGEL and BEFORE placement sequences. Website banners rotate from the
-   angled copy-space hero to the extreme macro; advertisements pair a straight
-   hero with the slight macro. */
+   angled copy-space hero to the extreme macro; advertisements use copy-space
+   compositions so campaign text remains outside the product. */
 .website-concept-mt-angel-joint-solution::after{
   background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.4) 24%,rgba(0,0,0,.08) 44%,transparent 62%);
 }
@@ -978,10 +986,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   text-align:left;
 }
 
-.advertisement-concept-before-toothpaste.advertisement-concept-slide-0>img{
-  transform:translateX(-18%);
-}
-
 /* ALICE uses the extreme macros as website placements and the copy-space
    heroes as the only advertising placements. */
 .website-concept-alice-mushroom-chocolate::after{
@@ -1000,6 +1004,29 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   text-align:right;
 }
 
+/* Phil's keeps the photographed bottle at left and places every campaign
+   message in the intentional black copy space at right. */
+.website-concept-phils-daily-facial-cleanser::after{
+  content:'';
+  position:absolute;
+  z-index:1;
+  inset:0;
+  background:linear-gradient(270deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.38) 27%,rgba(0,0,0,.06) 47%,transparent 65%);
+  pointer-events:none;
+}
+.website-concept-phils-daily-facial-cleanser>img,
+.advertisement-concept-phils-daily-facial-cleanser>img{
+  object-fit:contain;
+  object-position:center;
+}
+.website-concept-phils-daily-facial-cleanser .concept-copy{
+  left:auto;
+  right:4.5%;
+  width:32%;
+  text-align:right;
+  text-shadow:0 2px 18px rgba(0,0,0,.9);
+}
+
 @media(max-width:800px){
   .website-concept-mt-angel-joint-solution .concept-copy,
   .website-concept-before-toothpaste.website-concept-banner-slide-0 .concept-copy,
@@ -1012,9 +1039,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
     transform:none;
     text-align:left;
   }
-  .advertisement-concept-before-toothpaste.advertisement-concept-slide-0>img{
-    transform:none;
-  }
   .website-concept-alice-mushroom-chocolate .concept-copy{
     left:7%;
     right:7%;
@@ -1024,5 +1048,21 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
     transform:none;
     text-align:left;
   }
+  .website-concept-phils-daily-facial-cleanser::after{
+    display:none;
+  }
+  .website-concept-phils-daily-facial-cleanser>img,
+  .advertisement-concept-phils-daily-facial-cleanser>img{
+    object-fit:contain;
+    object-position:center;
+  }
+  .website-concept-phils-daily-facial-cleanser .concept-copy{
+    left:7%;
+    right:7%;
+    top:auto;
+    bottom:7%;
+    width:auto;
+    transform:none;
+    text-align:right;
+  }
 }
-

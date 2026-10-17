@@ -14,6 +14,7 @@ const homepageSelections: HomepageSelection[] = [
   { slug: 'alice-mushroom-chocolate', title: 'ALICE', subtitle: 'Focus + Sleep', size: 'large', alt: 'Alice Focus and Sleep mushroom chocolate campaign details.', imageIndexes: [0, 3] },
   { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'large', alt: 'Extreme macro of the Mt. Angel Vitamins Joint Solution label and amber bottle.' },
   { slug: 'before-toothpaste', title: 'BEFORE', subtitle: 'SuperMint Toothpaste', size: 'large', alt: 'Extreme macro of the Before SuperMint toothpaste tube covered in water droplets.' },
+  { slug: 'phils-daily-facial-cleanser', title: 'PHIL’S', subtitle: 'Daily Facial Cleanser', size: 'large', alt: 'Extreme macro of Phil’s Daily Facial Cleanser covered in water droplets.' },
 ];
 
 export const selectedWork = homepageSelections.map(selection => {
@@ -25,4 +26,3 @@ export const selectedWork = homepageSelections.map(selection => {
     images: imageIndexes.map(index => ({ ...project.gallery[index], alt: project.gallery[index].alt || selection.alt })) as PortfolioImage[],
   };
 });
-
