@@ -74,6 +74,10 @@ export const projects: Project[] = [
       { src: '/images/projects/phils-tilt-hero-2000.jpg', srcSet: '/images/projects/phils-tilt-hero-1200.jpg 1200w, /images/projects/phils-tilt-hero-2000.jpg 1376w', alt: 'Phil’s Daily Facial Cleanser angled against black with wide copy space.', width: 1376, height: 768 },
       { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1116 },
       { src: '/images/projects/phils-hero-2000.jpg', srcSet: '/images/projects/phils-hero-1200.jpg 1200w, /images/projects/phils-hero-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser presented upright against deep black.', width: 2000, height: 1116 },
+      // Placement-only derivatives used to demonstrate advertising layouts;
+      // these are not additional masters in the five-image offer.
+      { src: '/images/projects/phils-slight-macro-copy-space-2000.jpg', srcSet: '/images/projects/phils-slight-macro-copy-space-1200.jpg 1200w, /images/projects/phils-slight-macro-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser slight macro at left with black advertising copy space at right.', width: 2000, height: 1271 },
+      { src: '/images/projects/phils-tilt-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-tilt-hero-copy-space-1200.jpg 1200w, /images/projects/phils-tilt-hero-copy-space-2000.jpg 1376w', alt: 'Phil’s Daily Facial Cleanser tilted at right with black advertising copy space at left.', width: 1376, height: 768 },
     ],
   },
   {

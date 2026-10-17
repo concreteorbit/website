@@ -153,7 +153,7 @@ const applicationSettings: Record<string, ApplicationSettings> = {
   },
   'mt-angel-joint-solution': { bannerIndex: 6, bannerIndexes: [6, 0], bannerIntervalMs: 30000, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
   'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
-  'phils-daily-facial-cleanser': { bannerIndex: 3, bannerIndexes: [3, 0], bannerIntervalMs: 30000, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'Clean, brought closer.', adHeadline: 'A better way to begin.' },
+  'phils-daily-facial-cleanser': { bannerIndex: 3, bannerIndexes: [3, 0], bannerIntervalMs: 30000, adIndex: 5, adIndexes: [5, 6], websiteHeadline: 'Clean, brought closer.', adHeadline: 'A better way to begin.' },
   trace: { bannerIndex: 2, adIndex: 0, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.' },
 };
 
