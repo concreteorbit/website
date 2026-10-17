@@ -15,13 +15,11 @@ pnpm build
 - Campaign data and image sets live in `src/projectData.ts`.
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
-- The homepage campaign set includes Alice Focus + Sleep, Mt. Angel Vitamins Joint Solution, Before SuperMint Toothpaste, ACURE Shampoo, Trace Magnesium Glycinate and EO.
-- Every homepage campaign appears as a large editorial panel that alternates every 30 seconds between a full-image extreme macro and a split-layout slight macro. The overlay identifies the actual campaign, product and services rather than presenting fictional advertising copy.
-- Campaign pages present the complete image set as a large scrolling sequence before the placement examples, with quiet labels that identify each composition.
-- In the Alice placement examples, the website banner alternates between Focus and Sleep every 30 seconds. The advertisement carousel uses the Focus slight macro with copy space and the Sleep hero with copy space, with layout text placed in the open black area. The social post uses the straight hero.
-- Each campaign page follows the same placement structure: a macro website banner, copy-space advertising layouts and a straight-hero social post.
-- Alice and Mt. Angel retain their approved placement treatments. Before, Trace Magnesium, EO and ACURE use an extreme macro website banner, a slight-macro copy-space advertisement followed by a straight-hero copy-space option, and a straight or dramatic tilted hero for social.
-- The corrected EO, ACURE Shampoo and Trace Magnesium files supplied on October 12, 2026 replace their earlier versions. Advertisement text is positioned per slide to remain in the photographed negative space.
+- The homepage presents four selected campaigns: Alice Focus + Sleep, Mt. Angel Vitamins Joint Solution, Before SuperMint Toothpaste and Phil’s Daily Facial Cleanser.
+- Every homepage campaign opens on its extreme macro and links to a dedicated campaign page.
+- Campaign pages lead with an extreme macro, then a slight macro and angled hero before the placement examples.
+- Campaign pages keep the public sequence focused on the extreme macro, slight macro and angled hero. Additional hero and copy-space photographs support the placement examples.
+- Every campaign ends with a website banner and a two-option advertising presentation. Campaign text stays in the photographed negative space, away from the product.
 - Featured brand work is labeled as independent study work and should remain factually identified that way.
 
 ## Inquiry form

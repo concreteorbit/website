@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     slug: 'mt-angel-joint-solution', name: 'JOINT SOLUTION', brand: 'Mt. Angel Vitamins', tone: 'slate',
     services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Angled hero · Slight macro · Extreme macro · Copy-space hero · Copy-space detail',
+    deliverables: 'Hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',
     direction: 'A low-key product study giving an amber supplement bottle greater weight, precision and presence.',
     cover: { src: '/images/projects/mt-angel-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright beside generous black copy space.', width: 2560, height: 1662 },
     gallery: [
@@ -67,13 +67,13 @@ export const projects: Project[] = [
     services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Angled hero · Slight macro · Extreme macro · Copy-space hero · Copy-space detail',
     direction: 'A restrained skincare study built around clean form, condensation and deep contrast.',
-    cover: { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1241 },
+    cover: { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1116 },
     gallery: [
-      { src: '/images/projects/phils-extreme-macro-2000.jpg', srcSet: '/images/projects/phils-extreme-macro-1200.jpg 1031w', alt: 'Extreme close-up of the Phil’s Daily Facial Cleanser label, ribbed cap and water droplets.', width: 1031, height: 575 },
+      { src: '/images/projects/phils-extreme-macro-2000.jpg', srcSet: '/images/projects/phils-extreme-macro-1200.jpg 1200w, /images/projects/phils-extreme-macro-2000.jpg 1376w', alt: 'Extreme close-up of the Phil’s Daily Facial Cleanser label, ribbed cap and water droplets.', width: 1376, height: 768 },
       { src: '/images/projects/phils-slight-macro-2000.jpg', srcSet: '/images/projects/phils-slight-macro-1200.jpg 1200w, /images/projects/phils-slight-macro-2000.jpg 2000w', alt: 'Close view of the Phil’s Daily Facial Cleanser bottle, ribbed cap and water droplets.', width: 2000, height: 1271 },
-      { src: '/images/projects/phils-tilt-hero-2000.jpg', srcSet: '/images/projects/phils-tilt-hero-1200.jpg 1200w, /images/projects/phils-tilt-hero-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser angled against black with wide copy space.', width: 2000, height: 1125 },
-      { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1241 },
-      { src: '/images/projects/phils-slight-macro-copy-space-2000.jpg', srcSet: '/images/projects/phils-slight-macro-copy-space-1200.jpg 1200w, /images/projects/phils-slight-macro-copy-space-2000.jpg 2000w', alt: 'Close view of Phil’s Daily Facial Cleanser beside black copy space.', width: 2000, height: 1402 },
+      { src: '/images/projects/phils-tilt-hero-2000.jpg', srcSet: '/images/projects/phils-tilt-hero-1200.jpg 1200w, /images/projects/phils-tilt-hero-2000.jpg 1376w', alt: 'Phil’s Daily Facial Cleanser angled against black with wide copy space.', width: 1376, height: 768 },
+      { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1116 },
+      { src: '/images/projects/phils-hero-2000.jpg', srcSet: '/images/projects/phils-hero-1200.jpg 1200w, /images/projects/phils-hero-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser presented upright against deep black.', width: 2000, height: 1116 },
     ],
   },
   {

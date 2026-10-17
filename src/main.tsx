@@ -79,7 +79,7 @@ function Studio() {
 }
 
 function Offer() {
-  return <section className="partners section-pad"><span className="eyebrow">THE FIVE-IMAGE PRODUCT CAMPAIGN</span><h2>Five images.<br/>One clear direction.</h2><p className="offer-intro">A focused set for a product launch, refresh or content push. You get five finished images that feel like one campaign, plus selected crops for the places they need to run.</p><div className="offer-grid"><div><strong>01</strong><span>TWO HERO COMPOSITIONS</span><p>A lead hero and a tilted hero that establish the campaign.</p></div><div><strong>02</strong><span>TWO DETAIL VIEWS</span><p>A slight macro and an extreme macro that bring the product closer.</p></div><div><strong>03</strong><span>ONE COPY-SPACE COMPOSITION</span><p>One composition with room for campaign messaging.</p></div><div><strong>+</strong><span>READY FOR PLACEMENT</span><p>One wide website crop and agreed social crops from selected images.</p></div></div><p className="pricing-note">The five master images are the finished campaign photographs. The website and social adaptations are crops made from selected masters. Advertising copy and graphic layouts can be scoped separately.</p><div className="capabilities"><span className="eyebrow">SUPPORTING CAPABILITIES</span><p>{capabilities.join(' · ')}</p></div></section>;
+  return <section className="partners section-pad"><span className="eyebrow">THE FIVE-IMAGE PRODUCT CAMPAIGN</span><h2>Five images.<br/>One clear direction.</h2><p className="offer-intro">A focused set for a product launch, refresh or content push. You get five finished images that feel like one campaign, plus selected crops for the places they need to run.</p><div className="offer-grid"><div><strong>01</strong><span>ONE ANGLED HERO</span><p>A clear, complete product view that establishes the campaign.</p></div><div><strong>02</strong><span>TWO DETAIL VIEWS</span><p>A slight macro and an extreme macro that bring the product closer.</p></div><div><strong>03</strong><span>TWO COPY-SPACE COMPOSITIONS</span><p>A hero and closer detail composed with room for campaign messaging.</p></div><div><strong>+</strong><span>READY FOR PLACEMENT</span><p>Agreed website and social crops prepared from selected images.</p></div></div><p className="pricing-note">The five master images are the finished campaign photographs. Placement examples show how selected copy-space images can carry website and advertising layouts. Copywriting and graphic production can be scoped separately.</p><div className="capabilities"><span className="eyebrow">SUPPORTING CAPABILITIES</span><p>{capabilities.join(' · ')}</p></div></section>;
 }
 
 function Contact() {
@@ -91,7 +91,7 @@ function Contact() {
     <div className="email-inquiry">
       <h3>Tell me what you’re creating.</h3>
       <p>Send your product, idea, intended placements and timeline. I’ll turn it into a clear campaign plan and estimate.</p>
-      <p className="email-address">hello@concreteorbit.com</p>
+      <a className="email-address" href="mailto:hello@concreteorbit.com">hello@concreteorbit.com</a>
     </div>
   </section>;
 }
@@ -105,10 +105,10 @@ function Home() {
     <section className="hero section-pad fullbleed-hero">
       <div className={`hero-image homepage-hero-stage homepage-hero-stage-${heroSlide}`}>
         <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro ${heroSlide === 0 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 0}>
-          <img className="portfolio-image" src="/images/projects/trace-magnesium-glycinate-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme macro of the Trace Magnesium Glycinate label and ribbed cap in deep blue light." loading="eager" fetchPriority="high" decoding="async"/>
+          <img className="portfolio-image" src="/images/projects/mt-angel-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme close-up of the Mt. Angel Vitamins Joint Solution label, amber bottle and ribbed cap." loading="eager" fetchPriority="high" decoding="async"/>
         </picture>
-        <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro homepage-hero-acure ${heroSlide === 1 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 1}>
-          <img className="portfolio-image" src="/images/projects/acure-shampoo-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme macro of the ACURE shampoo tube covered in water droplets and illuminated in cyan light." loading="eager" decoding="async"/>
+        <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro homepage-hero-phils ${heroSlide === 1 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 1}>
+          <img className="portfolio-image" src="/images/projects/phils-extreme-macro-2000.jpg" srcSet="/images/projects/phils-extreme-macro-1200.jpg 1200w, /images/projects/phils-extreme-macro-2000.jpg 1376w" sizes="100vw" width={1376} height={768} alt="Extreme close-up of the Phil’s Daily Facial Cleanser label, ribbed cap and water droplets." loading="eager" decoding="async"/>
         </picture>
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
@@ -153,7 +153,7 @@ const applicationSettings: Record<string, ApplicationSettings> = {
   },
   'mt-angel-joint-solution': { bannerIndex: 6, bannerIndexes: [6, 0], bannerIntervalMs: 30000, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
   'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
-  'phils-daily-facial-cleanser': { bannerIndex: 3, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'Clean, brought closer.', adHeadline: 'A better way to begin.' },
+  'phils-daily-facial-cleanser': { bannerIndex: 3, bannerIndexes: [3, 0], bannerIntervalMs: 30000, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'Clean, brought closer.', adHeadline: 'A better way to begin.' },
   trace: { bannerIndex: 2, adIndex: 0, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.' },
 };
 
