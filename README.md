@@ -15,7 +15,7 @@ pnpm build
 - Campaign data and image sets live in `src/projectData.ts`.
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
-- The homepage presents four selected campaigns: Alice Focus + Sleep, Mt. Angel Vitamins Joint Solution, Before SuperMint Toothpaste and Phil’s Daily Facial Cleanser.
+- The homepage presents three selected campaigns: Alice Focus + Sleep, Mt. Angel Vitamins Joint Solution and Phil’s Daily Facial Cleanser.
 - Every homepage campaign opens on its extreme macro and links to a dedicated campaign page.
 - Campaign pages lead with an extreme macro, then a slight macro and angled hero before the placement examples.
 - Campaign pages keep the public sequence focused on the extreme macro, slight macro and angled hero. Additional hero and copy-space photographs support the placement examples.
