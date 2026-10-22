@@ -119,7 +119,7 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · BEFORE · PHIL’S</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product studies"><span>SELECTED PRODUCT STUDIES</span><p>ALICE · MT. ANGEL · PHIL’S</p></section>
     <Work/><Offer/><Studio/><Contact/>
   </>;
 }
@@ -152,7 +152,6 @@ const applicationSettings: Record<string, ApplicationSettings> = {
     adLabels: ['ALICE / FOCUS', 'ALICE / SLEEP'],
   },
   'mt-angel-joint-solution': { bannerIndex: 6, bannerIndexes: [6, 0], bannerIntervalMs: 30000, adIndex: 4, adIndexes: [4, 5], websiteHeadline: 'Joint support, brought into focus.', adHeadline: 'Movement starts here.' },
-  'before-toothpaste': { bannerIndex: 4, bannerIndexes: [4, 0], bannerIntervalMs: 30000, adIndex: 3, adIndexes: [3, 4], websiteHeadline: 'A closer look at clean.', adHeadline: 'Clean, brought closer.' },
   'phils-daily-facial-cleanser': { bannerIndex: 3, bannerIndexes: [3, 0], bannerIntervalMs: 30000, adIndex: 5, adIndexes: [5, 6], websiteHeadline: 'Clean, brought closer.', adHeadline: 'A better way to begin.' },
   trace: { bannerIndex: 2, adIndex: 0, websiteHeadline: '40,000 Volts, up close.', adHeadline: 'Blue light. Water. Energy.' },
 };
