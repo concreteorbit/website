@@ -108,7 +108,7 @@ function Home() {
           <img className="portfolio-image" src="/images/projects/mt-angel-extreme-macro-1920.webp" sizes="100vw" width={1920} height={1072} alt="Extreme close-up of the Mt. Angel Vitamins Joint Solution label, amber bottle and ribbed cap." loading="eager" fetchPriority="high" decoding="async"/>
         </picture>
         <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro homepage-hero-phils ${heroSlide === 1 ? 'is-active' : ''}`} aria-hidden={heroSlide !== 1}>
-          <img className="portfolio-image" src="/images/projects/phils-extreme-macro-2000.jpg" srcSet="/images/projects/phils-extreme-macro-1200.jpg 1200w, /images/projects/phils-extreme-macro-2000.jpg 1376w" sizes="100vw" width={1376} height={768} alt="Extreme close-up of the Phil’s Daily Facial Cleanser label, ribbed cap and water droplets." loading="eager" decoding="async"/>
+          <img className="portfolio-image" src="/images/projects/phils-extreme-macro-replacement-1678.jpg" srcSet="/images/projects/phils-extreme-macro-replacement-1200.jpg 1200w, /images/projects/phils-extreme-macro-replacement-1678.jpg 1678w" sizes="100vw" width={1678} height={937} alt="Extreme close-up of the Phil’s Daily Facial Cleanser label, ribbed cap and water droplets." loading="eager" decoding="async"/>
         </picture>
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
