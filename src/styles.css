@@ -583,7 +583,7 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .contact-simple .contact-heading h2{margin-top:28px}
 .contact-simple .email-inquiry{position:static}
 
-/* Alice Focus + Sleep: paired campaign views and timed product-variant transitions. */
+/* Timed homepage image transitions. */
 .curated-image.has-rotation{overflow:hidden}
 .curated-image.has-rotation .homepage-rotating-image{position:static;opacity:1;visibility:visible;animation:homepage-image-in .8s ease both}
 @keyframes homepage-image-in{from{opacity:.2}to{opacity:1}}
@@ -593,35 +593,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .website-concept .website-banner-image.rotating-image.is-active{opacity:1;visibility:visible;transition:opacity 1.1s ease}
 .website-concept .website-banner-image.rotating-image{animation:none}
 
-.alice-lead-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
-.alice-lead-pair figure,.alice-pair figure{min-width:0;margin:0}
-.alice-lead-pair figcaption,.alice-pair figcaption{margin:0 0 11px;font:8px 'Space Grotesk',sans-serif;letter-spacing:1.45px;color:var(--lab-muted)}
-.alice-lead-pair .portfolio-image,.alice-pair .portfolio-image{display:block;width:100%;height:auto;object-fit:contain;background:#000}
-.alice-paired-gallery{display:flex;flex-direction:column;gap:clamp(80px,10vw,155px)}
-.alice-pair{padding-top:17px;border-top:1px solid var(--lab-line)}
-.alice-pair-heading{display:grid;grid-template-columns:1fr 2fr;gap:28px;align-items:baseline;margin-bottom:34px}
-.alice-pair-heading>span{font:8px 'Space Grotesk',sans-serif;letter-spacing:1.45px;color:var(--lab-accent)}
-.alice-pair-heading h2{margin:0;font:500 clamp(20px,2.2vw,34px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.035em}
-.alice-pair-images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
-
-.website-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 26%,rgba(0,0,0,.08) 47%,transparent 65%);pointer-events:none}
-.website-concept-alice-mushroom-chocolate .concept-copy{left:auto;right:4.5%;top:50%;width:33%;transform:translateY(-45%);text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.92)}
-.website-concept-alice-mushroom-chocolate .concept-copy h4{font-size:clamp(25px,3vw,49px);line-height:1.02}
-.advertisement-concept-alice-mushroom-chocolate::after{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,transparent 40%,rgba(0,0,0,.14) 62%,rgba(0,0,0,.5) 100%);pointer-events:none}
-.advertisement-concept-alice-mushroom-chocolate>img{object-position:center}
-.advertisement-concept-alice-mushroom-chocolate .advertisement-copy{left:auto;right:5.5%;width:31%;text-align:right;text-shadow:0 2px 18px rgba(0,0,0,.92)}
-.social-post-concept-alice-mushroom-chocolate .social-post-image img{object-position:center}
-
 @media(max-width:800px){
   .curated-work .curated-image.has-rotation{height:auto;min-height:0;aspect-ratio:16/9}
   .curated-work .curated-image.has-rotation .homepage-rotating-image{display:block;position:static;width:100%;height:auto;max-height:none;opacity:1;visibility:visible;object-fit:contain}
-  .alice-lead-pair,.alice-pair-images{grid-template-columns:1fr;gap:34px}
-  .alice-pair-heading{grid-template-columns:1fr;gap:12px;margin-bottom:28px}
-  .alice-paired-gallery{gap:70px}
-  .website-concept-alice-mushroom-chocolate::after{display:none}
-  .website-concept-alice-mushroom-chocolate .concept-copy{left:7%;right:7%;top:auto;bottom:7%;width:auto;transform:none;text-align:left;text-shadow:none}
-  .advertisement-concept-alice-mushroom-chocolate>img{object-fit:contain;object-position:center;transform:none}
-  .advertisement-concept-alice-mushroom-chocolate .advertisement-copy{left:auto;right:7%;top:50%;width:46%;transform:translateY(-50%);text-align:right}
 }
 
 @media(max-width:800px){
@@ -748,21 +722,11 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   object-fit:contain;
   object-position:center;
 }
-.curated-project .frame-index,
-.alice-lead-pair figcaption,
-.alice-pair figcaption{
+.curated-project .frame-index{
   color:#6f7c85;
   font:500 7px 'Space Grotesk',sans-serif;
   letter-spacing:1.55px;
 }
-.alice-pair-heading>span{color:#6f7c85}
-.alice-pair-heading h2{
-  color:#aab3b9;
-  font-size:clamp(15px,1.5vw,21px);
-  font-weight:500;
-  letter-spacing:-.02em;
-}
-
 @media(max-width:800px){
   .curated-project .campaign-sequence{gap:clamp(52px,13vw,78px)}
   .curated-project .campaign-sequence .project-frame:nth-child(n){padding-top:14px}
@@ -910,7 +874,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 }
 
 /* Two focused placement types: website and a two-image advertising sequence. */
-.advertisement-concept-alice-mushroom-chocolate>img,
 .advertisement-concept-mt-angel-joint-solution>img,
 .advertisement-concept-before-toothpaste>img,
 .advertisement-concept-phils-daily-facial-cleanser>img{
@@ -918,7 +881,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   object-position:center;
   transform:none;
 }
-.advertisement-concept-alice-mushroom-chocolate .advertisement-copy,
 .advertisement-concept-mt-angel-joint-solution .advertisement-copy,
 .advertisement-concept-phils-daily-facial-cleanser .advertisement-copy{
   left:auto;
@@ -952,7 +914,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 }
 
 @media(max-width:800px){
-  .advertisement-concept-alice-mushroom-chocolate .advertisement-copy,
   .advertisement-concept-mt-angel-joint-solution .advertisement-copy,
   .advertisement-concept-before-toothpaste.advertisement-concept-slide-0 .advertisement-copy,
   .advertisement-concept-before-toothpaste.advertisement-concept-slide-1 .advertisement-copy{
@@ -1017,24 +978,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   text-align:left;
 }
 
-/* ALICE uses the extreme macros as website placements and the copy-space
-   heroes as the only advertising placements. */
-.website-concept-alice-mushroom-chocolate::after{
-  background:linear-gradient(90deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.52) 25%,rgba(0,0,0,.12) 45%,transparent 64%);
-}
-.website-concept-alice-mushroom-chocolate .concept-copy{
-  left:4.5%;
-  right:auto;
-  width:31%;
-  text-align:left;
-}
-.advertisement-concept-alice-mushroom-chocolate .advertisement-copy{
-  left:auto;
-  right:5.5%;
-  width:31%;
-  text-align:right;
-}
-
 /* Phil's keeps the photographed bottle at left and places every campaign
    message in the intentional black copy space at right. */
 .website-concept-phils-daily-facial-cleanser::after{
@@ -1086,15 +1029,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
     transform:none;
     text-align:left;
   }
-  .website-concept-alice-mushroom-chocolate .concept-copy{
-    left:7%;
-    right:7%;
-    top:auto;
-    bottom:7%;
-    width:auto;
-    transform:none;
-    text-align:left;
-  }
   .website-concept-phils-daily-facial-cleanser::after{
     display:none;
   }
@@ -1117,4 +1051,104 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
     right:7%;
     text-align:left;
   }
+}
+
+/* 2026 campaign system: five finished images and three clear placements. */
+.five-image-offer{grid-template-columns:repeat(5,minmax(0,1fr))}
+.five-image-offer>div{min-width:0}
+.five-image-offer span{min-height:0}
+.five-image-offer p{line-height:1.45}
+
+.detail-heading h1{max-width:100%;font-size:clamp(44px,8vw,132px);overflow-wrap:anywhere}
+.project-information{margin-bottom:clamp(72px,9vw,132px)}
+
+.website-concept{
+  display:grid;
+  grid-template-columns:minmax(0,1.65fr) minmax(280px,.85fr);
+  aspect-ratio:16/8.8;
+  background:#030405;
+}
+.website-concept::before,
+.website-concept::after{display:none!important}
+.website-concept>.website-banner-image{
+  position:static!important;
+  inset:auto!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:0;
+  object-fit:cover!important;
+  object-position:center!important;
+  filter:none!important;
+  transform:none!important;
+}
+.website-copy-panel{position:relative;display:flex;flex-direction:column;min-width:0;padding:6% 8% 8%;border-left:1px solid #20272c;background:#05070a;color:#f7f7f2}
+.website-copy-panel .concept-nav{position:static;display:flex;gap:16px;justify-content:space-between;color:#f7f7f2}
+.website-copy-panel .concept-copy{position:static;width:auto;margin:auto 0;transform:none;text-align:left;text-shadow:none}
+.website-copy-panel .concept-copy h4{max-width:410px;font-size:clamp(28px,3.7vw,61px)}
+
+.advertisement-concept{aspect-ratio:auto;min-height:0}
+.advertisement-concept::before,
+.advertisement-concept::after{display:none!important}
+.advertisement-concept>img{
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:none!important;
+  transform:none!important;
+}
+.advertisement-concept .advertisement-copy,
+.advertisement-concept-phils-daily-facial-cleanser .advertisement-copy,
+.advertisement-concept-mt-angel-joint-solution .advertisement-copy,
+.advertisement-concept-trace-magnesium-glycinate .advertisement-copy{
+  left:auto!important;
+  right:5.5%!important;
+  top:50%!important;
+  bottom:auto!important;
+  width:34%!important;
+  transform:translateY(-50%)!important;
+  text-align:right!important;
+  text-shadow:0 2px 20px rgba(0,0,0,.95)!important;
+}
+.advertisement-copy h4{font-size:clamp(26px,3.8vw,61px)}
+
+.social-application-block{padding-bottom:clamp(20px,4vw,55px)}
+.instagram-preview{max-width:620px;margin:0 auto;border:1px solid #2d3033;border-radius:8px;overflow:hidden;background:#0d0d0d;color:#f5f5f5;box-shadow:0 28px 80px rgba(0,0,0,.34)}
+.instagram-header{display:flex;align-items:center;gap:11px;height:58px;padding:0 15px;font:600 11px 'Space Grotesk',sans-serif}
+.instagram-avatar{width:31px;height:31px;border:1px solid #555;border-radius:50%;background:radial-gradient(circle at 35% 30%,#65d7ff 0 12%,#26323a 13% 40%,#050505 41%)}
+.instagram-more{margin-left:auto;letter-spacing:2px}
+.instagram-image{aspect-ratio:1/1;overflow:hidden;background:#000}
+.instagram-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.instagram-actions{display:flex;align-items:center;gap:17px;padding:13px 15px 4px;font:400 27px/1 sans-serif}
+.instagram-actions span:last-child{margin-left:auto}
+.instagram-caption{margin:0;padding:9px 15px 19px;color:#ededed;font-size:11px;line-height:1.6}
+.instagram-caption strong{margin-right:5px;font-family:'Space Grotesk',sans-serif}
+
+@media(max-width:1050px){
+  .five-image-offer{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media(max-width:800px){
+  .website-concept{display:grid;grid-template-columns:1fr;aspect-ratio:auto}
+  .website-concept>.website-banner-image{height:auto!important;aspect-ratio:16/10;object-fit:cover!important}
+  .website-copy-panel{min-height:310px;padding:25px 7% 34px;border-top:1px solid #20272c;border-left:0}
+  .website-copy-panel .concept-copy{margin:auto 0 0}
+  .website-copy-panel .concept-copy h4{font-size:clamp(34px,10vw,52px)}
+  .advertisement-concept .advertisement-copy,
+  .advertisement-concept-phils-daily-facial-cleanser .advertisement-copy,
+  .advertisement-concept-mt-angel-joint-solution .advertisement-copy,
+  .advertisement-concept-trace-magnesium-glycinate .advertisement-copy{
+    right:5%!important;
+    top:50%!important;
+    width:40%!important;
+    transform:translateY(-50%)!important;
+  }
+  .advertisement-copy h4{font-size:clamp(21px,6.4vw,38px)}
+}
+
+@media(max-width:600px){
+  .five-image-offer{grid-template-columns:1fr}
+  .instagram-preview{border-radius:0}
 }

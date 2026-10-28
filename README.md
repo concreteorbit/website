@@ -15,12 +15,11 @@ pnpm build
 - Campaign data and image sets live in `src/projectData.ts`.
 - Homepage campaign selections live in `src/selectedWork.ts`.
 - Optimized website assets live in `public/images`.
-- The homepage presents three selected campaigns: Alice Focus + Sleep, Mt. Angel Vitamins Joint Solution and Phil’s Daily Facial Cleanser.
+- The homepage presents four selected campaigns: Trace Magnesium Glycinate, Trace Electrolytes, Mt. Angel Vitamins Joint Solution and Phil’s Daily Facial Cleanser.
 - Every homepage campaign opens on its extreme macro and links to a dedicated campaign page.
-- Campaign pages lead with an extreme macro, then a slight macro and angled hero before the placement examples.
-- Campaign pages keep the public sequence focused on the extreme macro, slight macro and angled hero. Additional hero and copy-space photographs support the placement examples.
-- Every campaign ends with a website banner and a two-option advertising presentation. Campaign text stays in the photographed negative space, away from the product.
-- Featured brand work is labeled as independent study work and should remain factually identified that way.
+- Each campaign contains the same five-image system: hero, hero with copy space, slight macro, messaging macro and extreme macro.
+- Every campaign ends with three practical placement examples: an extreme-macro website banner, a copy-space advertisement and a slight-macro Instagram preview.
+- Advertisement copy stays in the photographed negative space and never overlaps the product.
 
 ## Inquiry form
 

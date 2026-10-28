@@ -1,5 +1,11 @@
-export type PortfolioImage = { src: string; alt: string; width: number; height: number; srcSet?: string };
-export type ProjectImagePair = { label: string; focus: PortfolioImage; sleep: PortfolioImage };
+export type PortfolioImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  srcSet?: string;
+};
+
 export type Project = {
   slug: string;
   name: string;
@@ -9,85 +15,107 @@ export type Project = {
   direction: string;
   cover: PortfolioImage;
   gallery: PortfolioImage[];
-  pairedGallery?: ProjectImagePair[];
   tone: string;
+  socialHandle: string;
+};
+
+function campaignImage(
+  campaign: string,
+  shot: string,
+  width: number,
+  height: number,
+  alt: string,
+): PortfolioImage {
+  return {
+    src: `/images/projects/${campaign}-${shot}-2560.webp`,
+    srcSet: `/images/projects/${campaign}-${shot}-1200.webp 1200w, /images/projects/${campaign}-${shot}-2560.webp ${width}w`,
+    alt,
+    width,
+    height,
+  };
+}
+
+const traceMagnesium = {
+  extreme: campaignImage('trace-magnesium', 'extreme-macro', 2560, 1429, 'Extreme macro of the Trace Magnesium Glycinate label and ribbed cap in electric blue light.'),
+  slight: campaignImage('trace-magnesium', 'slight-macro', 2560, 1347, 'Close product view of Trace Magnesium Glycinate against black.'),
+  macro: campaignImage('trace-magnesium', 'macro', 2560, 1410, 'Messaging macro of the Trace Magnesium Glycinate product name and benefits.'),
+  hero: campaignImage('trace-magnesium', 'hero', 2560, 1514, 'Trace Magnesium Glycinate hero photograph against black.'),
+  heroCopy: campaignImage('trace-magnesium', 'hero-copy', 2560, 1419, 'Trace Magnesium Glycinate hero with clear black copy space.'),
+};
+
+const traceElectrolytes = {
+  extreme: campaignImage('trace-electrolytes', 'extreme-macro', 2560, 1429, 'Extreme macro of the wet Trace 40,000 Volts bottle and logo.'),
+  slight: campaignImage('trace-electrolytes', 'slight-macro', 2560, 1429, 'Close product view of Trace 40,000 Volts covered in water droplets.'),
+  macro: campaignImage('trace-electrolytes', 'macro', 2560, 1429, 'Messaging macro of the Trace Electrolyte Concentrate product benefits.'),
+  hero: campaignImage('trace-electrolytes', 'hero', 2560, 1429, 'Trace 40,000 Volts electrolyte concentrate hero photograph against black.'),
+  heroCopy: campaignImage('trace-electrolytes', 'hero-copy', 2560, 1429, 'Trace 40,000 Volts hero with clear black copy space.'),
+};
+
+const mtAngelJoint = {
+  extreme: campaignImage('mt-angel-joint', 'extreme-macro', 2560, 1429, 'Extreme macro of the Joint Solution ingredient messaging and amber bottle.'),
+  slight: campaignImage('mt-angel-joint', 'slight-macro', 2560, 1684, 'Close product view of Mt. Angel Vitamins Joint Solution.'),
+  macro: campaignImage('mt-angel-joint', 'macro', 2560, 1429, 'Messaging macro of the Mt. Angel Vitamins name and Joint Solution label.'),
+  hero: campaignImage('mt-angel-joint', 'hero', 2560, 1623, 'Mt. Angel Vitamins Joint Solution hero photograph against black.'),
+  heroCopy: campaignImage('mt-angel-joint', 'hero-copy', 2560, 1662, 'Mt. Angel Vitamins Joint Solution hero with clear black copy space.'),
+};
+
+const phils = {
+  extreme: campaignImage('phils', 'extreme-macro', 1678, 937, 'Extreme macro of the wet Phil’s Daily Facial Cleanser label.'),
+  slight: campaignImage('phils', 'slight-macro', 2560, 1627, 'Close product view of Phil’s Daily Facial Cleanser covered in water droplets.'),
+  macro: campaignImage('phils', 'macro', 1678, 937, 'Messaging macro of the Phil’s packaging claims and ingredients.'),
+  hero: campaignImage('phils', 'hero', 2560, 1429, 'Phil’s Daily Facial Cleanser hero photograph against black.'),
+  heroCopy: campaignImage('phils', 'hero-copy', 2560, 1429, 'Phil’s Daily Facial Cleanser hero with clear black copy space.'),
 };
 
 export const projects: Project[] = [
   {
-    slug: 'alice-mushroom-chocolate', name: 'ALICE', brand: 'Focus + Sleep', tone: 'slate',
-    services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Two product variants · Two copy-space heroes · Two slight macros · Two slight macro copy-space views · Two extreme macros',
-    direction: 'A paired campaign balancing daytime focus and nighttime calm across two contrasting finishes.',
-    cover: { src: '/images/projects/alice-focus-hero-copy-space-1920.webp', srcSet: '/images/projects/alice-focus-hero-copy-space-1200.webp 1200w, /images/projects/alice-focus-hero-copy-space-1920.webp 1324w', alt: 'Cream Alice Focus mushroom chocolate tin beside black copy space.', width: 1324, height: 768 },
-    gallery: [
-      { src: '/images/projects/alice-focus-extreme-macro-1920.webp', srcSet: '/images/projects/alice-focus-extreme-macro-1200.webp 1200w, /images/projects/alice-focus-extreme-macro-1920.webp 1376w', alt: 'Extreme macro of the cream Alice Focus mushroom chocolate tin.', width: 1376, height: 768 },
-      { src: '/images/projects/alice-sleep-extreme-macro-1920.webp', srcSet: '/images/projects/alice-sleep-extreme-macro-1200.webp 1200w, /images/projects/alice-sleep-extreme-macro-1920.webp 1376w', alt: 'Extreme macro of the black Alice Sleep mushroom chocolate tin.', width: 1376, height: 768 },
-      { src: '/images/projects/alice-focus-slight-macro-1920.webp', srcSet: '/images/projects/alice-focus-slight-macro-1200.webp 1071w', alt: 'Slight macro of the cream Alice Focus mushroom chocolate tin.', width: 1071, height: 481 },
-      { src: '/images/projects/alice-sleep-slight-macro-1920.webp', srcSet: '/images/projects/alice-sleep-slight-macro-1200.webp 1200w, /images/projects/alice-sleep-slight-macro-1920.webp 1920w', alt: 'Slight macro of the black Alice Sleep mushroom chocolate tin.', width: 1920, height: 850 },
-      { src: '/images/projects/alice-focus-hero-copy-space-1920.webp', srcSet: '/images/projects/alice-focus-hero-copy-space-1200.webp 1200w, /images/projects/alice-focus-hero-copy-space-1920.webp 1324w', alt: 'Cream Alice Focus mushroom chocolate tin beside black copy space.', width: 1324, height: 768 },
-      { src: '/images/projects/alice-sleep-hero-copy-space-1920.webp', srcSet: '/images/projects/alice-sleep-hero-copy-space-1200.webp 1200w, /images/projects/alice-sleep-hero-copy-space-1920.webp 1920w', alt: 'Black Alice Sleep mushroom chocolate tin beside black copy space.', width: 1920, height: 1072 },
-      { src: '/images/projects/alice-focus-slight-macro-copy-space-1920.webp', srcSet: '/images/projects/alice-focus-slight-macro-copy-space-1200.webp 1071w', alt: 'Slight macro of the cream Alice Focus tin with black copy space.', width: 1071, height: 481 },
-      { src: '/images/projects/alice-sleep-slight-macro-copy-space-1920.webp', srcSet: '/images/projects/alice-sleep-slight-macro-copy-space-1200.webp 1200w, /images/projects/alice-sleep-slight-macro-copy-space-1920.webp 1920w', alt: 'Slight macro of the black Alice Sleep tin with black copy space.', width: 1920, height: 790 },
-    ],
-    pairedGallery: [],
+    slug: 'trace-magnesium-glycinate',
+    name: 'MAGNESIUM GLYCINATE',
+    brand: 'Trace Minerals',
+    tone: 'slate',
+    socialHandle: 'traceminerals',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
+    direction: 'Five blue-lit product images built around scale, label detail and controlled contrast.',
+    cover: traceMagnesium.heroCopy,
+    gallery: [traceMagnesium.extreme, traceMagnesium.slight, traceMagnesium.macro, traceMagnesium.hero, traceMagnesium.heroCopy],
   },
   {
-    slug: 'mt-angel-joint-solution', name: 'JOINT SOLUTION', brand: 'Mt. Angel Vitamins', tone: 'slate',
-    services: ['Creative Direction', 'Photography', 'Compositing', 'Image Finishing'],
-    deliverables: 'Hero · Angled hero · Slight macro · Extreme macro · Copy-space hero',
-    direction: 'A low-key product study giving an amber supplement bottle greater weight, precision and presence.',
-    cover: { src: '/images/projects/mt-angel-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright beside generous black copy space.', width: 2560, height: 1662 },
-    gallery: [
-      { src: '/images/projects/mt-angel-extreme-macro-1920.webp', alt: 'Extreme close-up of the Mt. Angel Vitamins Joint Solution label, amber bottle and ribbed cap.', width: 1920, height: 1072 },
-      { src: '/images/projects/mt-angel-slight-macro-1920.webp', alt: 'Close view of the Mt. Angel Vitamins Joint Solution bottle in cool blue light.', width: 1920, height: 1263 },
-      { src: '/images/projects/mt-angel-tilt-hero-1920.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle floating at an angle against black.', width: 1920, height: 1071 },
-      { src: '/images/projects/mt-angel-dramatic-tilt-hero-1920.webp', alt: 'Dramatic cinematic angle of the Mt. Angel Vitamins Joint Solution bottle against black.', width: 1920, height: 1072 },
-      { src: '/images/projects/mt-angel-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle upright beside generous black copy space.', width: 2560, height: 1662 },
-      { src: '/images/projects/mt-angel-slight-macro-copy-space-2560.webp', alt: 'Close view of the Mt. Angel Vitamins Joint Solution bottle beside black copy space.', width: 2560, height: 1684 },
-      { src: '/images/projects/mt-angel-tilt-hero-copy-space-2560.webp', alt: 'Mt. Angel Vitamins Joint Solution bottle angled beside deep black copy space.', width: 2560, height: 1429 },
-    ],
+    slug: 'trace-electrolytes',
+    name: '40,000 VOLTS',
+    brand: 'Trace Minerals',
+    tone: 'slate',
+    socialHandle: 'traceminerals',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
+    direction: 'Five product images using water, electric blue light and tight scale to make hydration feel physical.',
+    cover: traceElectrolytes.heroCopy,
+    gallery: [traceElectrolytes.extreme, traceElectrolytes.slight, traceElectrolytes.macro, traceElectrolytes.hero, traceElectrolytes.heroCopy],
   },
   {
-    slug: 'phils-daily-facial-cleanser', name: 'PHIL’S', brand: 'Daily Facial Cleanser', tone: 'slate',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Angled hero · Slight macro · Extreme macro · Copy-space hero · Copy-space detail',
-    direction: 'A restrained skincare study built around clean form, condensation and deep contrast.',
-    cover: { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1116 },
-    gallery: [
-      { src: '/images/projects/phils-extreme-macro-replacement-1678.jpg', srcSet: '/images/projects/phils-extreme-macro-replacement-1200.jpg 1200w, /images/projects/phils-extreme-macro-replacement-1678.jpg 1678w', alt: 'Extreme close-up of the Phil’s Daily Facial Cleanser label, ribbed cap and water droplets.', width: 1678, height: 937 },
-      { src: '/images/projects/phils-slight-macro-2000.jpg', srcSet: '/images/projects/phils-slight-macro-1200.jpg 1200w, /images/projects/phils-slight-macro-2000.jpg 2000w', alt: 'Close view of the Phil’s Daily Facial Cleanser bottle, ribbed cap and water droplets.', width: 2000, height: 1271 },
-      { src: '/images/projects/phils-tilt-hero-2000.jpg', srcSet: '/images/projects/phils-tilt-hero-1200.jpg 1200w, /images/projects/phils-tilt-hero-2000.jpg 1376w', alt: 'Phil’s Daily Facial Cleanser angled against black with wide copy space.', width: 1376, height: 768 },
-      { src: '/images/projects/phils-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-hero-copy-space-1200.jpg 1200w, /images/projects/phils-hero-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser upright beside generous black copy space.', width: 2000, height: 1116 },
-      { src: '/images/projects/phils-hero-2000.jpg', srcSet: '/images/projects/phils-hero-1200.jpg 1200w, /images/projects/phils-hero-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser presented upright against deep black.', width: 2000, height: 1116 },
-      // Placement-only derivatives used to demonstrate advertising layouts;
-      // these are not additional masters in the five-image offer.
-      { src: '/images/projects/phils-slight-macro-copy-space-2000.jpg', srcSet: '/images/projects/phils-slight-macro-copy-space-1200.jpg 1200w, /images/projects/phils-slight-macro-copy-space-2000.jpg 2000w', alt: 'Phil’s Daily Facial Cleanser slight macro at left with black advertising copy space at right.', width: 2000, height: 1271 },
-      { src: '/images/projects/phils-tilt-hero-copy-space-2000.jpg', srcSet: '/images/projects/phils-tilt-hero-copy-space-1200.jpg 1200w, /images/projects/phils-tilt-hero-copy-space-2000.jpg 1376w', alt: 'Phil’s Daily Facial Cleanser tilted at right with black advertising copy space at left.', width: 1376, height: 768 },
-    ],
+    slug: 'mt-angel-joint-solution',
+    name: 'JOINT SOLUTION',
+    brand: 'Mt. Angel Vitamins',
+    tone: 'slate',
+    socialHandle: 'mtangelvitamins',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
+    direction: 'Five low-key product images built around amber glass, exact highlights and close label detail.',
+    cover: mtAngelJoint.heroCopy,
+    gallery: [mtAngelJoint.extreme, mtAngelJoint.slight, mtAngelJoint.macro, mtAngelJoint.hero, mtAngelJoint.heroCopy],
   },
   {
-    slug: 'trace', name: 'TRACE', brand: 'Trace', tone: 'slate',
-    services: ['Creative Direction', 'Art Direction', 'Photography', 'Compositing'],
-    deliverables: 'Hero · Copy-space hero · Two detail views',
-    direction: 'A high-contrast supplement study using water, scale and electric blue light to create impact.',
-    cover: { src: '/images/projects/trace-1-2000.webp', alt: 'Trace 40,000 Volts electrolyte concentrate covered in water droplets.', width: 5504, height: 3072 },
-    gallery: [
-      { src: '/images/projects/trace-copy-space-2000.jpg', alt: 'Trace 40,000 Volts electrolyte concentrate with generous black copy space.', width: 2000, height: 1211 },
-      { src: '/images/projects/trace-2-2000.webp', alt: 'Close-up of the Trace electrolyte bottle.', width: 5504, height: 3072 },
-      { src: '/images/projects/trace-3-2000.webp', alt: 'Trace electrolyte concentrate campaign detail.', width: 5504, height: 3072 },
-    ],
+    slug: 'phils-daily-facial-cleanser',
+    name: 'PHIL’S',
+    brand: 'Daily Facial Cleanser',
+    tone: 'slate',
+    socialHandle: 'phils',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
+    direction: 'Five black-and-white product images built around clean form, condensation and tactile packaging detail.',
+    cover: phils.heroCopy,
+    gallery: [phils.extreme, phils.slight, phils.macro, phils.hero, phils.heroCopy],
   },
 ];
 
-const alice = projects.find(project => project.slug === 'alice-mushroom-chocolate');
-if (alice) {
-  alice.pairedGallery = [
-    { label: 'Hero + copy space', focus: alice.gallery[4], sleep: alice.gallery[5] },
-    { label: 'Slight macro', focus: alice.gallery[2], sleep: alice.gallery[3] },
-    { label: 'Slight macro + copy space', focus: alice.gallery[6], sleep: alice.gallery[7] },
-    { label: 'Extreme macro', focus: alice.gallery[0], sleep: alice.gallery[1] },
-  ];
-}
-
-export const capabilities = ['Creative Direction', 'Art Direction', 'Photography', 'Compositing', 'Image Finishing', 'Campaign Development'];
+export const capabilities = ['Creative Direction', 'Photography', 'Image Finishing'];
