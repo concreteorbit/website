@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { capabilities, projects } from './projectData';
+import { projects } from './projectData';
 import type { PortfolioImage, Project } from './projectData';
 import './styles.css';
 import { selectedWork } from './selectedWork';
@@ -21,18 +21,14 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
 }
 function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span>↗</span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 700px) 100vw, 90vw" alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
-function useTimedSlide(count: number, intervalMs?: number) {
-  const [active, setActive] = useState(0);
+const acureHomepageHero: PortfolioImage = {
+  src: '/images/acure-home-hero-2560.webp',
+  srcSet: '/images/acure-home-hero-1200.webp 1200w, /images/acure-home-hero-2560.webp 2560w',
+  alt: 'Extreme macro photograph of an ACURE shampoo tube covered in water droplets.',
+  width: 2560,
+  height: 1429,
+};
 
-  useEffect(() => {
-    setActive(0);
-    if (!intervalMs || count < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = window.setInterval(() => setActive(current => (current + 1) % count), intervalMs);
-    return () => window.clearInterval(timer);
-  }, [count, intervalMs]);
-
-  return [active, setActive] as const;
-}
 function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
   const image = selection.images[0];
   const project = selection.project;
@@ -46,7 +42,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
         <p className="homepage-campaign-services">{project.services.join(' · ')}</p>
         <a className="homepage-campaign-link" href={`/work/${selection.slug}`}>VIEW CAMPAIGN <span>↗</span></a>
       </div>
-      <div className="homepage-campaign-state" aria-hidden="true"><span>EXTREME MACRO</span></div>
+      <div className="homepage-campaign-state" aria-hidden="true"><span>{selection.stateLabel}</span></div>
     </div>
   </article>;
 }
@@ -78,10 +74,6 @@ function Studio() {
   </>;
 }
 
-function Offer() {
-  return <section className="partners section-pad"><span className="eyebrow">THE FIVE-IMAGE PRODUCT CAMPAIGN</span><h2>One product.<br/>Five finished images.</h2><p className="offer-intro">A complete visual system built to work across your website, advertising, social and email.</p><div className="offer-grid five-image-offer"><div><strong>01</strong><span>HERO</span><p>The full product.</p></div><div><strong>02</strong><span>COPY-SPACE HERO</span><p>Room for campaign copy.</p></div><div><strong>03</strong><span>SLIGHT MACRO</span><p>Recognize the product.</p></div><div><strong>04</strong><span>MESSAGING MACRO</span><p>Understand the product.</p></div><div><strong>05</strong><span>EXTREME MACRO</span><p>Remember the brand.</p></div></div><div className="capabilities"><span className="eyebrow">CREATED BY CONCRETE ORBIT</span><p>{capabilities.join(' · ')}</p></div></section>;
-}
-
 function Contact() {
   return <section id="contact" className="contact contact-simple section-pad">
     <div className="contact-context">
@@ -99,17 +91,12 @@ function Contact() {
 function Footer() { return <footer className="section-pad"><div className="footer-top"><a className="wordmark" href="/">concrete orbit</a><p>Based in Washington, DC.<br/>Working worldwide.</p><a href="#top">Back to top ↑</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Concrete Orbit</span><a href="https://www.instagram.com/concreteorbitvisuals/" target="_blank" rel="noopener noreferrer" aria-label="Concrete Orbit on Instagram (opens in a new tab)" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24}}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></footer>; }
 
 function Home() {
-  const [heroSlide] = useTimedSlide(selectedWork.length, 12000);
-
   return <>
     <section className="hero section-pad fullbleed-hero">
-      <div className={`hero-image homepage-hero-stage homepage-hero-stage-${heroSlide}`}>
-        {selectedWork.map((selection, index) => {
-          const image = selection.images[0];
-          return <picture className={`homepage-hero-photo homepage-hero-slide homepage-hero-macro ${heroSlide === index ? 'is-active' : ''}`} aria-hidden={heroSlide !== index} key={selection.slug}>
-            <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes="100vw" width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : 'auto'} decoding="async"/>
-          </picture>;
-        })}
+      <div className="hero-image homepage-hero-stage homepage-hero-acure">
+        <picture className="homepage-hero-photo homepage-hero-slide homepage-hero-macro is-active">
+          <img className="portfolio-image" src={acureHomepageHero.src} srcSet={acureHomepageHero.srcSet} sizes="100vw" width={acureHomepageHero.width} height={acureHomepageHero.height} alt={acureHomepageHero.alt} loading="eager" fetchPriority="high" decoding="async"/>
+        </picture>
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
           <h1>One product.<br/>Five images.<br/>One campaign.</h1>
@@ -120,7 +107,7 @@ function Home() {
       </div>
     </section>
     <section className="featured-strip section-pad" aria-label="Selected product campaigns"><span>SELECTED PRODUCT CAMPAIGNS</span><p>TRACE MAGNESIUM · TRACE ELECTROLYTES · MT. ANGEL · PHIL’S</p></section>
-    <Work/><Offer/><Studio/><Contact/>
+    <Work/><Studio/><Contact/>
   </>;
 }
 
@@ -172,8 +159,8 @@ function CampaignApplications({ project }: { project: Project }) {
         <div className={`website-concept website-concept-${project.slug}`}>
           <img className="website-banner-image" src={extremeMacro.src} srcSet={extremeMacro.srcSet} sizes="(max-width: 800px) 100vw, 65vw" alt={`${project.name} extreme macro shown in a website banner.`} width={extremeMacro.width} height={extremeMacro.height} loading="lazy" decoding="async"/>
           <div className="website-copy-panel">
-            <div className="concept-nav"><span>{project.brand}</span><span>Product · Story · Shop</span></div>
-            <div className="concept-copy"><span>{project.name}</span><h4>{settings.websiteHeadline}</h4><span className="mock-button">EXPLORE THE PRODUCT</span></div>
+            <div className="concept-nav"><span>{project.brand}</span><span>EXTREME MACRO</span></div>
+            <div className="concept-copy"><span>CAMPAIGN / 01</span><h4>{project.name}</h4><p>{settings.websiteHeadline}</p><span className="concept-services">CREATIVE DIRECTION · PHOTOGRAPHY · IMAGE FINISHING</span><span className="mock-button">VIEW PRODUCT</span></div>
           </div>
         </div>
       </div>
@@ -191,11 +178,10 @@ function CampaignApplications({ project }: { project: Project }) {
 
     <article className="application-block social-application-block">
       <div className="application-label"><span>03</span><div><h3>Social post</h3><p>The slight macro carries the product into the feed.</p></div></div>
-      <div className="instagram-preview" aria-label={`${project.name} Instagram post preview`}>
-        <div className="instagram-header"><span className="instagram-avatar" aria-hidden="true"/><strong>{project.socialHandle}</strong><span className="instagram-more" aria-hidden="true">•••</span></div>
+      <div className="instagram-preview" aria-label={`${project.name} Instagram post crop preview`}>
+        <div className="instagram-header"><span>POST PREVIEW</span><span className="instagram-more" aria-hidden="true">•••</span></div>
         <div className="instagram-image"><img src={slightMacro.src} srcSet={slightMacro.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${project.name} slight macro shown in an Instagram post.`} width={slightMacro.width} height={slightMacro.height} loading="lazy" decoding="async"/></div>
-        <div className="instagram-actions" aria-hidden="true"><span>♡</span><span>◯</span><span>⌁</span><span>▱</span></div>
-        <p className="instagram-caption"><strong>{project.socialHandle}</strong> {settings.socialCaption}</p>
+        <div className="instagram-actions" aria-hidden="true"><span>♡</span></div>
       </div>
     </article>
   </section>;

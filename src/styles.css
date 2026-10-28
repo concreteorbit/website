@@ -1152,3 +1152,153 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .five-image-offer{grid-template-columns:1fr}
   .instagram-preview{border-radius:0}
 }
+
+/* 2026-10 homepage scale and restrained placement previews. */
+.fullbleed-hero .hero-image{
+  height:calc(100svh - 82px);
+  min-height:720px;
+  max-height:none;
+}
+.fullbleed-hero .homepage-hero-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.fullbleed-hero .homepage-hero-macro .portfolio-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.homepage-hero-acure::after{
+  background:linear-gradient(90deg,rgba(0,0,0,.77) 0%,rgba(0,0,0,.42) 27%,rgba(0,0,0,.06) 50%,transparent 67%);
+}
+.homepage-campaign-stage{min-height:clamp(660px,86svh,1080px)}
+
+.website-concept{
+  position:relative!important;
+  display:block!important;
+  grid-template-columns:none!important;
+  aspect-ratio:16/8.8!important;
+  min-height:0!important;
+  overflow:hidden;
+  background:#020304;
+}
+.website-concept::before{display:none!important}
+.website-concept::after{
+  content:''!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:1!important;
+  inset:0!important;
+  background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 27%,rgba(0,0,0,.12) 52%,transparent 72%)!important;
+  pointer-events:none;
+}
+.website-concept>.website-banner-image{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  filter:none!important;
+  transform:none!important;
+}
+.website-copy-panel{
+  position:absolute!important;
+  z-index:2!important;
+  inset:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0!important;
+  padding:3% 4.5% 4.5%!important;
+  border:0!important;
+  background:transparent!important;
+  color:#f7f7f2!important;
+}
+.website-copy-panel .concept-nav{
+  position:static!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  gap:20px!important;
+  color:#f7f7f2!important;
+}
+.website-copy-panel .concept-copy,
+.website-concept-mt-angel-joint-solution .concept-copy,
+.website-concept-phils-daily-facial-cleanser .concept-copy,
+.website-concept-trace-magnesium-glycinate .concept-copy{
+  position:static!important;
+  width:min(48%,660px)!important;
+  margin:auto 0 0!important;
+  transform:none!important;
+  text-align:left!important;
+  text-shadow:0 2px 20px rgba(0,0,0,.92)!important;
+}
+.website-copy-panel .concept-copy h4{
+  max-width:none!important;
+  margin:13px 0 6px!important;
+  font-size:clamp(34px,5.4vw,88px)!important;
+  line-height:.92!important;
+}
+.website-copy-panel .concept-copy p{
+  margin:0 0 15px;
+  color:#f4f4ef;
+  font:500 clamp(14px,1.7vw,28px)/1.2 'Space Grotesk',sans-serif;
+  letter-spacing:-.02em;
+}
+.concept-services{
+  display:block;
+  margin-top:16px;
+  color:#bcc5ca!important;
+  font-size:6px!important;
+  letter-spacing:1.25px!important;
+}
+.website-copy-panel .mock-button{margin-top:22px}
+
+.instagram-preview{
+  max-width:620px;
+  margin:0 auto;
+  border:1px solid #3a3f43;
+  border-radius:0;
+  overflow:hidden;
+  background:transparent;
+  color:#f5f5f5;
+  box-shadow:none;
+}
+.instagram-header{
+  height:44px;
+  padding:0 13px;
+  border-bottom:1px solid #3a3f43;
+  color:#8d969c;
+  font:500 7px 'Space Grotesk',sans-serif;
+  letter-spacing:1.25px;
+}
+.instagram-more{margin-left:auto}
+.instagram-actions{
+  min-height:48px;
+  padding:9px 13px;
+  border-top:1px solid #3a3f43;
+  font-size:27px;
+}
+
+@media(max-width:800px){
+  .fullbleed-hero .hero-image{height:calc(100svh - 70px);min-height:660px;max-height:none}
+  .fullbleed-hero .homepage-hero-photo,.fullbleed-hero .homepage-hero-macro{inset:0;height:100%;width:100%}
+  .fullbleed-hero .homepage-hero-macro .portfolio-image{object-position:60% center}
+  .homepage-hero-acure::after{background:linear-gradient(180deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.47) 34%,transparent 69%)}
+  .homepage-campaign-stage{min-height:0;aspect-ratio:4/5.25}
+  .website-concept{aspect-ratio:4/5.2!important}
+  .website-concept::after{background:linear-gradient(0deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.53) 37%,transparent 72%)!important}
+  .website-concept>.website-banner-image{height:100%!important;aspect-ratio:auto!important;object-fit:cover!important}
+  .website-copy-panel{min-height:0!important;padding:6% 7% 7%!important}
+  .website-copy-panel .concept-nav span:last-child{display:block}
+  .website-copy-panel .concept-copy,
+  .website-concept-mt-angel-joint-solution .concept-copy,
+  .website-concept-phils-daily-facial-cleanser .concept-copy,
+  .website-concept-trace-magnesium-glycinate .concept-copy{width:86%!important;margin:auto 0 0!important}
+  .website-copy-panel .concept-copy h4{font-size:clamp(36px,11vw,58px)!important}
+  .website-copy-panel .concept-copy p{display:block;font-size:clamp(15px,4.6vw,24px)}
+  .concept-services{display:none}
+}
