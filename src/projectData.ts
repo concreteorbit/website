@@ -25,10 +25,11 @@ function campaignImage(
   width: number,
   height: number,
   alt: string,
+  extension = 'webp',
 ): PortfolioImage {
   return {
-    src: `/images/projects/${campaign}-${shot}-2560.webp`,
-    srcSet: `/images/projects/${campaign}-${shot}-1200.webp 1200w, /images/projects/${campaign}-${shot}-2560.webp ${width}w`,
+    src: `/images/projects/${campaign}-${shot}-2560.${extension}`,
+    srcSet: `/images/projects/${campaign}-${shot}-1200.${extension} 1200w, /images/projects/${campaign}-${shot}-2560.${extension} ${width}w`,
     alt,
     width,
     height,
@@ -67,7 +68,27 @@ const phils = {
   heroCopy: campaignImage('phils', 'hero-copy', 2560, 1429, 'Phil’s Daily Facial Cleanser hero with clear black copy space.'),
 };
 
+const xboxController = {
+  extreme: campaignImage('xbox-controller', 'extreme-macro', 2560, 1429, 'Extreme macro of the Xbox Elite controller thumbstick, buttons and textured grip.', 'jpg'),
+  slight: campaignImage('xbox-controller', 'slight-macro', 2560, 1429, 'Close product view of the Xbox Elite controller face and controls against black.', 'jpg'),
+  macro: campaignImage('xbox-controller', 'macro', 2560, 1429, 'Messaging macro of the Xbox Elite controller rear controls and embossed Xbox mark.', 'jpg'),
+  hero: campaignImage('xbox-controller', 'hero', 2560, 1429, 'Tilted Xbox Elite controller hero photograph emerging from a black background.', 'jpg'),
+  heroCopy: campaignImage('xbox-controller', 'hero-copy', 2560, 1429, 'Straight Xbox Elite controller hero with generous black copy space.', 'jpg'),
+};
+
 export const projects: Project[] = [
+  {
+    slug: 'xbox-elite-controller',
+    name: 'XBOX ELITE',
+    brand: 'Elite Wireless Controller',
+    tone: 'slate',
+    socialHandle: 'xbox',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
+    direction: 'Five black-on-black product images built around sculpted form, tactile materials and controlled reflections.',
+    cover: xboxController.heroCopy,
+    gallery: [xboxController.extreme, xboxController.slight, xboxController.macro, xboxController.hero, xboxController.heroCopy],
+  },
   {
     slug: 'trace-magnesium-glycinate',
     name: 'MAGNESIUM GLYCINATE',

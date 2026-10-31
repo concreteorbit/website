@@ -62,9 +62,9 @@ function Studio() {
 
   return <>
     <section id="studio" className="philosophy section-pad">
-      <span className="eyebrow">CINEMATIC PRODUCT IMAGERY</span>
+      <span className="eyebrow">CINEMATIC PRODUCT PHOTOGRAPHY</span>
       <h2>THE PRODUCT SETS<br/>THE DIRECTION.<br/><em>EVERY TIME.</em><Orbit/></h2>
-      <div className="philosophy-bottom"><p>I bring a defined visual language of deep contrast, controlled light and close material detail to supplements, skincare and body care.</p></div>
+      <div className="philosophy-bottom"><p>I bring a defined visual language of deep contrast, controlled light and close material detail to physical products.</p></div>
     </section>
     <section className="why section-pad">
       <div className="studio-intro"><span className="eyebrow">THE PROCESS</span><h2>Simple from start<br/>to finish.</h2><p>You work directly with me throughout the project.</p></div>
@@ -100,13 +100,13 @@ function Home() {
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
           <h1>One product.<br/>Five images.<br/>One campaign.</h1>
-          <p className="fullbleed-hero-description">Coordinated hero, macro and copy-space images for wellness brands, designed for websites, social and advertising.</p>
+          <p className="fullbleed-hero-description">Cinematic product photography built as coordinated hero, macro and copy-space images for websites, social and advertising.</p>
           <a className="hero-project-cta" href="#contact" onClick={scrollToContact}>Start a project <span>↘</span></a>
         </div>
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product campaigns"><span>SELECTED PRODUCT CAMPAIGNS</span><p>TRACE MAGNESIUM · TRACE ELECTROLYTES · MT. ANGEL · PHIL’S</p></section>
+    <section className="featured-strip section-pad" aria-label="Selected product campaigns"><span>SELECTED PRODUCT CAMPAIGNS</span><p>XBOX ELITE · TRACE MAGNESIUM · TRACE ELECTROLYTES · MT. ANGEL · PHIL’S</p></section>
     <Work/><Studio/><Contact/>
   </>;
 }
@@ -118,6 +118,11 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'xbox-elite-controller': {
+    websiteHeadline: 'Control, brought closer.',
+    adHeadline: 'Built for control.',
+    socialCaption: 'Form, texture and precision in black.',
+  },
   'trace-magnesium-glycinate': {
     websiteHeadline: 'Rest starts here.',
     adHeadline: 'Magnesium, brought into focus.',
@@ -217,5 +222,5 @@ function ProjectPage({ project }: { project: Project }) {
   </>;
 }
 
-function App() { const path = window.location.pathname.replace(/\/$/, '') || '/'; const project = projects.find(p => path === `/work/${p.slug}`); useEffect(() => { const title = project ? `${project.name} | Concrete Orbit` : path === '/' ? 'Concrete Orbit | Five-Image Product Campaigns for Wellness Brands' : 'Page not found | Concrete Orbit'; document.title = title; document.querySelector('meta[property="og:title"]')?.setAttribute('content', title); if (project) document.querySelector('meta[name="description"]')?.setAttribute('content', `${project.name}: a five-image product campaign by Concrete Orbit.`); }, [project, path]); useEffect(() => { const id = decodeURIComponent(window.location.hash.slice(1)); if (!id) return; const scrollToTarget = () => document.getElementById(id)?.scrollIntoView({ block: 'start' }); const frame = window.requestAnimationFrame(scrollToTarget); const timers = [250, 1000, 2500].map(delay => window.setTimeout(scrollToTarget, delay)); const pendingImages = Array.from(document.images).filter(image => !image.complete); pendingImages.forEach(image => image.addEventListener('load', scrollToTarget)); window.addEventListener('load', scrollToTarget, { once: true }); return () => { window.cancelAnimationFrame(frame); timers.forEach(timer => window.clearTimeout(timer)); pendingImages.forEach(image => image.removeEventListener('load', scrollToTarget)); window.removeEventListener('load', scrollToTarget); }; }, [path]); const contactHref = path === '/' || project ? '#contact' : '/#contact'; return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header contactHref={contactHref}/><main id="main">{path === '/' ? <Home/> : project ? <ProjectPage project={project}/> : <section className="not-found section-pad"><span className="eyebrow">404 / OUT OF ORBIT</span><h1>Nothing here. Yet.</h1><a href="/">Return to the studio →</a></section>}</main><Footer/></>; }
+function App() { const path = window.location.pathname.replace(/\/$/, '') || '/'; const project = projects.find(p => path === `/work/${p.slug}`); useEffect(() => { const title = project ? `${project.name} | Concrete Orbit` : path === '/' ? 'Concrete Orbit | Cinematic Product Photography' : 'Page not found | Concrete Orbit'; document.title = title; document.querySelector('meta[property="og:title"]')?.setAttribute('content', title); if (project) document.querySelector('meta[name="description"]')?.setAttribute('content', `${project.name}: a five-image product campaign by Concrete Orbit.`); }, [project, path]); useEffect(() => { const id = decodeURIComponent(window.location.hash.slice(1)); if (!id) return; const scrollToTarget = () => document.getElementById(id)?.scrollIntoView({ block: 'start' }); const frame = window.requestAnimationFrame(scrollToTarget); const timers = [250, 1000, 2500].map(delay => window.setTimeout(scrollToTarget, delay)); const pendingImages = Array.from(document.images).filter(image => !image.complete); pendingImages.forEach(image => image.addEventListener('load', scrollToTarget)); window.addEventListener('load', scrollToTarget, { once: true }); return () => { window.cancelAnimationFrame(frame); timers.forEach(timer => window.clearTimeout(timer)); pendingImages.forEach(image => image.removeEventListener('load', scrollToTarget)); window.removeEventListener('load', scrollToTarget); }; }, [path]); const contactHref = path === '/' || project ? '#contact' : '/#contact'; return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header contactHref={contactHref}/><main id="main">{path === '/' ? <Home/> : project ? <ProjectPage project={project}/> : <section className="not-found section-pad"><span className="eyebrow">404 / OUT OF ORBIT</span><h1>Nothing here. Yet.</h1><a href="/">Return to the studio →</a></section>}</main><Footer/></>; }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
