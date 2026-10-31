@@ -151,20 +151,30 @@ function CampaignApplications({ project }: { project: Project }) {
 
   const extremeMacro = project.gallery[0];
   const slightMacro = project.gallery[1];
+  const messagingMacro = project.gallery[2];
+  const tiltedHero = project.gallery[3];
   const copySpaceHero = project.gallery[4];
+  const isXboxCampaign = project.slug === 'xbox-elite-controller';
+  const websiteImage = isXboxCampaign ? slightMacro : extremeMacro;
+  const advertisementImage = isXboxCampaign ? tiltedHero : copySpaceHero;
+  const socialImage = isXboxCampaign ? messagingMacro : slightMacro;
+  const websiteShotLabel = isXboxCampaign ? 'SLIGHT MACRO' : 'EXTREME MACRO';
+  const websiteDescription = isXboxCampaign ? 'The slight macro becomes the visual anchor.' : 'The extreme macro becomes the visual anchor.';
+  const advertisementDescription = isXboxCampaign ? 'The tilted hero gives the ad a strong focal image with room for the message.' : 'The copy-space hero keeps the product and message separate.';
+  const socialDescription = isXboxCampaign ? 'The trigger macro brings a functional product detail into the feed.' : 'The slight macro carries the product into the feed.';
   const titleId = `${project.slug}-applications-title`;
 
   return <section id="applications" className="campaign-applications" aria-labelledby={titleId}>
     <div className="application-heading"><span className="eyebrow">PLACEMENT EXAMPLES</span><h2 id={titleId}>How it could<br/>work for you.</h2><p>One campaign, ready for the places your brand needs to show up.</p></div>
 
     <article className="application-block">
-      <div className="application-label"><span>01</span><div><h3>Website banner</h3><p>The extreme macro becomes the visual anchor.</p></div></div>
+      <div className="application-label"><span>01</span><div><h3>Website banner</h3><p>{websiteDescription}</p></div></div>
       <div className="browser-mockup">
         <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span><span>Website placement</span></div>
         <div className={`website-concept website-concept-${project.slug}`}>
-          <img className="website-banner-image" src={extremeMacro.src} srcSet={extremeMacro.srcSet} sizes="(max-width: 800px) 100vw, 65vw" alt={`${project.name} extreme macro shown in a website banner.`} width={extremeMacro.width} height={extremeMacro.height} loading="lazy" decoding="async"/>
+          <img className="website-banner-image" src={websiteImage.src} srcSet={websiteImage.srcSet} sizes="(max-width: 800px) 100vw, 65vw" alt={`${websiteImage.alt} Shown in a website banner.`} width={websiteImage.width} height={websiteImage.height} loading="lazy" decoding="async"/>
           <div className="website-copy-panel">
-            <div className="concept-nav"><span>{project.brand}</span><span>EXTREME MACRO</span></div>
+            <div className="concept-nav"><span>{project.brand}</span><span>{websiteShotLabel}</span></div>
             <div className="concept-copy"><span>CAMPAIGN / 01</span><h4>{project.name}</h4><p>{settings.websiteHeadline}</p><span className="concept-services">CREATIVE DIRECTION · PHOTOGRAPHY · IMAGE FINISHING</span><span className="mock-button">VIEW PRODUCT</span></div>
           </div>
         </div>
@@ -172,20 +182,20 @@ function CampaignApplications({ project }: { project: Project }) {
     </article>
 
     <article className="application-block">
-      <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>The copy-space hero keeps the product and message separate.</p></div></div>
+      <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>{advertisementDescription}</p></div></div>
       <div className="advertisement-shell">
         <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
-          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} copy-space hero shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
+          <img src={advertisementImage.src} srcSet={advertisementImage.srcSet} sizes="90vw" alt={`${advertisementImage.alt} Shown as an advertisement.`} width={advertisementImage.width} height={advertisementImage.height} loading="lazy" decoding="async"/>
           <div className="advertisement-copy"><span>{project.brand}</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
         </div>
       </div>
     </article>
 
     <article className="application-block social-application-block">
-      <div className="application-label"><span>03</span><div><h3>Social post</h3><p>The slight macro carries the product into the feed.</p></div></div>
+      <div className="application-label"><span>03</span><div><h3>Social post</h3><p>{socialDescription}</p></div></div>
       <div className="instagram-preview" aria-label={`${project.name} Instagram post crop preview`}>
         <div className="instagram-header"><span>POST PREVIEW</span><span className="instagram-more" aria-hidden="true">•••</span></div>
-        <div className="instagram-image"><img src={slightMacro.src} srcSet={slightMacro.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${project.name} slight macro shown in an Instagram post.`} width={slightMacro.width} height={slightMacro.height} loading="lazy" decoding="async"/></div>
+        <div className="instagram-image"><img src={socialImage.src} srcSet={socialImage.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${socialImage.alt} Shown in an Instagram post crop.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
         <div className="instagram-actions" aria-hidden="true"><span>♡</span></div>
       </div>
     </article>
