@@ -194,6 +194,8 @@ function CampaignApplications({ project }: { project: Project }) {
 
 function photoTypeLabel(src: string) {
   const name = src.toLowerCase();
+  if (name.includes('hoka-ora-back-hero')) return 'OPPOSITE-SIDE HERO';
+  if (name.includes('hoka-ora-slight-macro')) return 'SIDE MACRO';
   if (name.includes('-top-macro-')) return 'TOP MACRO';
   if (name.includes('-heel-macro-')) return 'BACK HEEL MACRO';
   if (name.includes('extreme-macro')) return 'EXTREME MACRO';

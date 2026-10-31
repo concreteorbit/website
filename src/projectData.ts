@@ -79,8 +79,10 @@ const xboxController = {
 const hokaOra = {
   extreme: campaignImage('hoka-ora', 'extreme-macro', 2560, 1440, 'Extreme macro of the HOKA logo and textured ORA Recovery Slide in violet light.'),
   hero: campaignImage('hoka-ora', 'hero', 2560, 1440, 'Front hero photograph of the HOKA ORA Recovery Slide against black.'),
+  slight: campaignImage('hoka-ora', 'slight-macro', 2560, 1440, 'Close side view of the HOKA ORA Recovery Slide showing its upper, logo and sculpted sole.'),
   top: campaignImage('hoka-ora', 'top-macro', 2560, 1440, 'Top macro of the HOKA ORA Recovery Slide footbed, vents and sculpted upper.'),
-  heel: campaignImage('hoka-ora', 'heel-macro', 2560, 1440, 'Back heel macro of the HOKA ORA Recovery Slide showing layered contours and foam texture.'),
+  heel: campaignImage('hoka-ora', 'heel-macro', 2560, 1440, 'Back heel detail of the HOKA ORA Recovery Slide showing layered contours and textured foam.'),
+  backHero: campaignImage('hoka-ora', 'back-hero', 2560, 1440, 'Opposite-side hero photograph of the HOKA ORA Recovery Slide against black.'),
 };
 
 export const projects: Project[] = [
@@ -91,10 +93,10 @@ export const projects: Project[] = [
     tone: 'slate',
     socialHandle: 'hoka',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro',
+    deliverables: 'Extreme macro · Front hero · Side macro · Top macro · Back heel macro · Opposite-side hero',
     direction: 'Sculpted form, textured foam and close material detail in controlled violet light.',
     cover: hokaOra.hero,
-    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel],
+    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.slight, hokaOra.top, hokaOra.heel, hokaOra.backHero],
   },
   {
     slug: 'xbox-elite-controller',
