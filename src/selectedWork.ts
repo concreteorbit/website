@@ -13,6 +13,7 @@ type HomepageSelection = {
 // Homepage order is intentional. Mt. Angel uses the wider messaging macro;
 // the other campaigns lead with their extreme macro.
 const homepageSelections: HomepageSelection[] = [
+  { slug: 'hoka-ora-recovery-slides', title: 'HOKA', subtitle: 'ORA Recovery Slides', size: 'large', alt: 'Extreme macro of the HOKA logo and textured ORA Recovery Slide in violet light.', stateLabel: 'EXTREME MACRO' },
   { slug: 'xbox-elite-controller', title: 'XBOX', subtitle: 'Elite Controller', size: 'large', alt: 'Extreme macro of the Xbox Elite controller in black-on-black light.', stateLabel: 'EXTREME MACRO' },
   { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'large', alt: 'Extreme macro of Trace Magnesium Glycinate in blue light.', stateLabel: 'EXTREME MACRO' },
   { slug: 'trace-electrolytes', title: 'TRACE', subtitle: '40,000 Volts', size: 'large', alt: 'Extreme macro of wet Trace electrolyte concentrate packaging.', stateLabel: 'EXTREME MACRO' },

@@ -76,7 +76,26 @@ const xboxController = {
   heroCopy: campaignImage('xbox-controller', 'hero-copy', 2560, 1429, 'Straight Xbox Elite controller hero with generous black copy space.', 'jpg'),
 };
 
+const hokaOra = {
+  extreme: campaignImage('hoka-ora', 'extreme-macro', 2560, 1440, 'Extreme macro of the HOKA logo and textured ORA Recovery Slide in violet light.'),
+  hero: campaignImage('hoka-ora', 'hero', 2560, 1440, 'Front hero photograph of the HOKA ORA Recovery Slide against black.'),
+  top: campaignImage('hoka-ora', 'top-macro', 2560, 1440, 'Top macro of the HOKA ORA Recovery Slide footbed, vents and sculpted upper.'),
+  heel: campaignImage('hoka-ora', 'heel-macro', 2560, 1440, 'Back heel macro of the HOKA ORA Recovery Slide showing layered contours and foam texture.'),
+};
+
 export const projects: Project[] = [
+  {
+    slug: 'hoka-ora-recovery-slides',
+    name: 'HOKA',
+    brand: 'ORA Recovery Slides',
+    tone: 'slate',
+    socialHandle: 'hoka',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro',
+    direction: 'Sculpted form, textured foam and close material detail in controlled violet light.',
+    cover: hokaOra.hero,
+    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel],
+  },
   {
     slug: 'xbox-elite-controller',
     name: 'XBOX ELITE',
