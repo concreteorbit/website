@@ -81,6 +81,9 @@ const hokaOra = {
   hero: {src: '/images/projects/hoka-locked-hero-2560.webp', srcSet: '/images/projects/hoka-locked-hero-800.webp 800w, /images/projects/hoka-locked-hero-1200.webp 1200w, /images/projects/hoka-locked-hero-1920.webp 1920w, /images/projects/hoka-locked-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Front hero of the HOKA ORA Recovery Slide in violet light.'},
   top: {src: '/images/projects/hoka-locked-top-macro-2560.webp', srcSet: '/images/projects/hoka-locked-top-macro-800.webp 800w, /images/projects/hoka-locked-top-macro-1200.webp 1200w, /images/projects/hoka-locked-top-macro-1920.webp 1920w, /images/projects/hoka-locked-top-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Close overhead view of the sculpted upper and footbed.'},
   heel: {src: '/images/projects/hoka-locked-heel-macro-2560.webp', srcSet: '/images/projects/hoka-locked-heel-macro-800.webp 800w, /images/projects/hoka-locked-heel-macro-1200.webp 1200w, /images/projects/hoka-locked-heel-macro-1920.webp 1920w, /images/projects/hoka-locked-heel-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Macro of the layered heel and textured foam.'},
+  bottomHero: {src: '/images/projects/hoka-locked-bottom-hero-2560.webp', srcSet: '/images/projects/hoka-locked-bottom-hero-800.webp 800w, /images/projects/hoka-locked-bottom-hero-1200.webp 1200w, /images/projects/hoka-locked-bottom-hero-1920.webp 1920w, /images/projects/hoka-locked-bottom-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Outsole hero showing the HOKA mark and tread.'},
+  topHero: {src: '/images/projects/hoka-locked-top-hero-5504.webp', srcSet: '/images/projects/hoka-locked-top-hero-800.webp 800w, /images/projects/hoka-locked-top-hero-1200.webp 1200w, /images/projects/hoka-locked-top-hero-1920.webp 1920w, /images/projects/hoka-locked-top-hero-2560.webp 2560w, /images/projects/hoka-locked-top-hero-5504.webp 5504w', width: 5504, height: 3072, alt: 'Full overhead hero of the HOKA ORA Recovery Slide.'},
+  backHero: {src: '/images/projects/hoka-locked-back-hero-2560.webp', srcSet: '/images/projects/hoka-locked-back-hero-800.webp 800w, /images/projects/hoka-locked-back-hero-1200.webp 1200w, /images/projects/hoka-locked-back-hero-1920.webp 1920w, /images/projects/hoka-locked-back-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Opposite-side hero of the HOKA ORA Recovery Slide.'},
 };
 
 export const projects: Project[] = [
@@ -91,10 +94,10 @@ export const projects: Project[] = [
     tone: 'slate',
     socialHandle: 'hoka',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro',
+    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro · Outsole hero · Top hero · Opposite-side hero',
     direction: 'Sculpted form, textured foam and close material detail in controlled violet light.',
     cover: hokaOra.hero,
-    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel],
+    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel, hokaOra.bottomHero, hokaOra.topHero, hokaOra.backHero],
   },
   {
     slug: 'xbox-elite-controller',

@@ -1305,19 +1305,18 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 
 /* Desktop campaign photographs keep their source proportions rather than filling a tall crop. */
 @media(min-width:801px){
-  .homepage-campaign-stage{min-height:0;aspect-ratio:var(--campaign-ratio,16 / 9);max-width:2560px;margin-inline:auto}
+  .homepage-campaign-stage{min-height:0;aspect-ratio:var(--campaign-ratio,16 / 9);max-width:1280px;margin-inline:auto}
   .homepage-campaign-full .homepage-campaign-image{object-fit:contain}
 }
 
-/* Keep the 2560px HOKA photographs at a restrained viewing size on desktop. */
+/* All desktop campaign photographs share the approved HOKA viewing width. */
 @media(min-width:801px){
- .homepage-campaign-hoka-ora-recovery-slides .homepage-campaign-stage{max-width:1280px}
- .project-hoka-ora-recovery-slides .project-lead-frame,
- .project-hoka-ora-recovery-slides .campaign-sequence{max-width:1280px;margin-inline:auto;width:100%}
+ .curated-project .project-lead-frame,
+ .curated-project .campaign-sequence{max-width:1280px;margin-inline:auto;width:100%}
 }
 
 /* HOKA uses its front hero; keep advertising text outside the photographed product. */
 .advertisement-concept-hoka-ora-recovery-slides{display:flex;flex-direction:column;aspect-ratio:auto!important}
 .advertisement-concept-hoka-ora-recovery-slides>img{position:static!important;display:block;width:100%;height:auto!important;object-fit:contain!important}
 .advertisement-concept-hoka-ora-recovery-slides .advertisement-copy{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;padding:30px 6%!important;background:#020304}
-.project-hoka-ora-recovery-slides .campaign-applications{max-width:1280px;margin-inline:auto}
+.curated-project .campaign-applications{max-width:1280px;margin-inline:auto}
