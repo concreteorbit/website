@@ -156,7 +156,8 @@ function CampaignApplications({ project }: { project: Project }) {
 
   const extremeMacro = project.gallery[0];
   const isHoka = project.slug === 'hoka-ora-recovery-slides';
-  const slightMacro = project.gallery[isHoka ? 2 : 1];
+  const isXbox = project.slug === 'xbox-elite-controller';
+  const socialImage = project.gallery[isXbox ? 3 : isHoka ? 2 : 1];
   const copySpaceHero = project.gallery[isHoka ? 1 : 4];
   const titleId = `${project.slug}-applications-title`;
 
@@ -178,7 +179,7 @@ function CampaignApplications({ project }: { project: Project }) {
     </article>
 
     <article className="application-block">
-      <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>{isHoka ? 'The hero introduces the product, with the message alongside it.' : 'The copy-space hero keeps the product and message separate.'}</p></div></div>
+      <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>The product and message each have their own space.</p></div></div>
       <div className="advertisement-shell">
         <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
           <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} ${isHoka ? 'front hero' : 'copy-space hero'} shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
@@ -188,10 +189,10 @@ function CampaignApplications({ project }: { project: Project }) {
     </article>
 
     <article className="application-block social-application-block">
-      <div className="application-label"><span>03</span><div><h3>Social post</h3><p>The slight macro carries the product into the feed.</p></div></div>
+      <div className="application-label"><span>03</span><div><h3>Social post</h3><p>{isXbox ? 'The tilted hero brings the controller into the feed.' : 'The slight macro carries the product into the feed.'}</p></div></div>
       <div className="instagram-preview" aria-label={`${project.name} Instagram post crop preview`}>
         <div className="instagram-header"><span>POST PREVIEW</span><span className="instagram-more" aria-hidden="true">•••</span></div>
-        <div className="instagram-image"><img src={slightMacro.src} srcSet={slightMacro.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${project.name} slight macro shown in an Instagram post.`} width={slightMacro.width} height={slightMacro.height} loading="lazy" decoding="async"/></div>
+        <div className="instagram-image"><img src={socialImage.src} srcSet={socialImage.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${project.name} ${isXbox ? 'tilted hero' : 'slight macro'} shown in an Instagram post.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
         <div className="instagram-actions" aria-hidden="true"><span>♡</span></div>
       </div>
     </article>
@@ -216,7 +217,9 @@ function photoTypeLabel(src: string) {
 }
 
 function campaignShowcaseImages(project: Project) {
-  return project.gallery;
+  if (project.slug === 'hoka-ora-recovery-slides') return project.gallery;
+  const [extreme, slight, macro, hero, heroCopy] = project.gallery;
+  return [extreme, hero, slight, macro, heroCopy].filter((image): image is PortfolioImage => Boolean(image));
 }
 
 function ProjectPage({ project }: { project: Project }) {
@@ -228,7 +231,11 @@ function ProjectPage({ project }: { project: Project }) {
     <div className="detail-heading"><div><span className="project-study-note-top">PRODUCT CAMPAIGN</span><h1>{project.name}</h1><p className="project-positioning">{project.direction}</p></div><p>{project.brand}</p></div>
     {leadImage ? <div className="project-lead-frame"><span className="frame-index">01 / {photoTypeLabel(leadImage.src)}</span><ImageFrame image={leadImage} tone={project.tone} label={leadImage.alt} priority/></div> : null}
     <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
-    <div className="project-grid campaign-sequence">{showcaseImages.slice(1).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 2).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
+    <div className="project-grid campaign-sequence campaign-edited-sequence">
+      {showcaseImages[1] ? <div className="project-frame campaign-product-hero"><span className="frame-index">02 / {photoTypeLabel(showcaseImages[1].src)}</span><ImageFrame image={showcaseImages[1]} label={showcaseImages[1].alt}/></div> : null}
+      <div className="campaign-detail-pair">{showcaseImages.slice(2, 4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 3).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
+      {showcaseImages.length > 4 ? <div className={`campaign-supporting-views ${showcaseImages.length > 5 ? 'campaign-supporting-trio' : ''}`}>{showcaseImages.slice(4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 5).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div> : null}
+    </div>
     <CampaignApplications project={project}/>
   </section>
   <Contact/>

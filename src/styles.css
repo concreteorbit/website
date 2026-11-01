@@ -1320,3 +1320,21 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .advertisement-concept-hoka-ora-recovery-slides>img{position:static!important;display:block;width:100%;height:auto!important;object-fit:contain!important}
 .advertisement-concept-hoka-ora-recovery-slides .advertisement-copy{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;padding:30px 6%!important;background:#020304}
 .curated-project .campaign-applications{max-width:1280px;margin-inline:auto}
+
+/* Campaign pacing: signature, product reveal, paired details, supporting views. */
+.curated-project .campaign-edited-sequence{display:flex;flex-direction:column;gap:clamp(48px,7vw,100px)}
+.campaign-detail-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,40px);align-items:start}
+.campaign-supporting-views{width:78%;margin-inline:auto}
+.campaign-supporting-trio{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px);align-items:start}
+.curated-project .campaign-edited-sequence .project-frame{min-width:0}
+/* Placement copy occupies its own panel, never the product photograph. */
+.campaign-applications .website-concept,.campaign-applications .advertisement-concept{display:flex!important;flex-direction:column!important;aspect-ratio:auto!important;height:auto!important;min-height:0!important;background:#020304}
+.campaign-applications .website-concept::before,.campaign-applications .website-concept::after,.campaign-applications .advertisement-concept::before,.campaign-applications .advertisement-concept::after{display:none!important}
+.campaign-applications .website-concept>.website-banner-image,.campaign-applications .advertisement-concept>img{position:static!important;inset:auto!important;width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;transform:none!important}
+.campaign-applications .website-copy-panel,.campaign-applications .advertisement-concept .advertisement-copy{position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;padding:clamp(24px,4vw,48px)!important;background:#020304!important;text-align:left!important}
+.campaign-applications .website-copy-panel .concept-copy{width:100%!important;max-width:680px!important;margin:30px 0 0!important;text-shadow:none!important}
+.campaign-applications .website-copy-panel .concept-copy h4{font-size:clamp(30px,4vw,56px)!important;line-height:1.05!important;overflow-wrap:anywhere}
+.campaign-applications .advertisement-copy h4{font-size:clamp(26px,3.5vw,48px)!important;max-width:24ch!important}
+.project-xbox-elite-controller .instagram-image{aspect-ratio:auto!important}
+.project-xbox-elite-controller .instagram-image img{display:block!important;width:100%!important;height:auto!important;object-fit:contain!important}
+@media(max-width:800px){.campaign-detail-pair,.campaign-supporting-trio{grid-template-columns:1fr;gap:44px}.campaign-supporting-views{width:100%}}
