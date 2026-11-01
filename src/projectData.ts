@@ -77,12 +77,10 @@ const xboxController = {
 };
 
 const hokaOra = {
-  extreme: campaignImage('hoka-ora', 'extreme-macro', 2560, 1440, 'Extreme macro of the HOKA logo and textured ORA Recovery Slide in violet light.'),
-  hero: campaignImage('hoka-ora', 'hero', 2560, 1440, 'Front hero photograph of the HOKA ORA Recovery Slide against black.'),
-  slight: campaignImage('hoka-ora', 'slight-macro', 2560, 1440, 'Close side view of the HOKA ORA Recovery Slide showing its upper, logo and sculpted sole.'),
-  top: campaignImage('hoka-ora', 'top-macro', 2560, 1440, 'Top macro of the HOKA ORA Recovery Slide footbed, vents and sculpted upper.'),
-  heel: campaignImage('hoka-ora', 'heel-macro', 2560, 1440, 'Back heel detail of the HOKA ORA Recovery Slide showing layered contours and textured foam.'),
-  backHero: campaignImage('hoka-ora', 'back-hero', 2560, 1440, 'Opposite-side hero photograph of the HOKA ORA Recovery Slide against black.'),
+  extreme: {src: '/images/projects/hoka-locked-extreme-macro-2560.webp', srcSet: '/images/projects/hoka-locked-extreme-macro-800.webp 800w, /images/projects/hoka-locked-extreme-macro-1200.webp 1200w, /images/projects/hoka-locked-extreme-macro-1920.webp 1920w, /images/projects/hoka-locked-extreme-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Extreme macro of the HOKA logo, vents and textured foam.'},
+  hero: {src: '/images/projects/hoka-locked-hero-2560.webp', srcSet: '/images/projects/hoka-locked-hero-800.webp 800w, /images/projects/hoka-locked-hero-1200.webp 1200w, /images/projects/hoka-locked-hero-1920.webp 1920w, /images/projects/hoka-locked-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Front hero of the HOKA ORA Recovery Slide in violet light.'},
+  top: {src: '/images/projects/hoka-locked-top-macro-2560.webp', srcSet: '/images/projects/hoka-locked-top-macro-800.webp 800w, /images/projects/hoka-locked-top-macro-1200.webp 1200w, /images/projects/hoka-locked-top-macro-1920.webp 1920w, /images/projects/hoka-locked-top-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Close overhead view of the sculpted upper and footbed.'},
+  heel: {src: '/images/projects/hoka-locked-heel-macro-2560.webp', srcSet: '/images/projects/hoka-locked-heel-macro-800.webp 800w, /images/projects/hoka-locked-heel-macro-1200.webp 1200w, /images/projects/hoka-locked-heel-macro-1920.webp 1920w, /images/projects/hoka-locked-heel-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Macro of the layered heel and textured foam.'},
 };
 
 export const projects: Project[] = [
@@ -93,10 +91,10 @@ export const projects: Project[] = [
     tone: 'slate',
     socialHandle: 'hoka',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Extreme macro · Front hero · Side macro · Top macro · Back heel macro · Opposite-side hero',
+    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro',
     direction: 'Sculpted form, textured foam and close material detail in controlled violet light.',
     cover: hokaOra.hero,
-    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.slight, hokaOra.top, hokaOra.heel, hokaOra.backHero],
+    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel],
   },
   {
     slug: 'xbox-elite-controller',

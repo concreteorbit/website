@@ -33,7 +33,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   const image = selection.images[0];
   const project = selection.project;
   return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full`}>
-    <div className="homepage-campaign-stage">
+    <div className="homepage-campaign-stage" style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
       <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 800px) 100vw, 94vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
@@ -118,6 +118,11 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'hoka-ora-recovery-slides': {
+    websiteHeadline: 'Recovery, brought closer.',
+    adHeadline: 'A closer look at recovery.',
+    socialCaption: 'Sculpted form. Every detail.',
+  },
   'xbox-elite-controller': {
     websiteHeadline: 'Control, brought closer.',
     adHeadline: 'Built for control.',
@@ -150,8 +155,9 @@ function CampaignApplications({ project }: { project: Project }) {
   if (!settings) return null;
 
   const extremeMacro = project.gallery[0];
-  const slightMacro = project.gallery[1];
-  const copySpaceHero = project.gallery[4];
+  const isHoka = project.slug === 'hoka-ora-recovery-slides';
+  const slightMacro = project.gallery[isHoka ? 2 : 1];
+  const copySpaceHero = project.gallery[isHoka ? 1 : 4];
   const titleId = `${project.slug}-applications-title`;
 
   return <section id="applications" className="campaign-applications" aria-labelledby={titleId}>
@@ -172,10 +178,10 @@ function CampaignApplications({ project }: { project: Project }) {
     </article>
 
     <article className="application-block">
-      <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>The copy-space hero keeps the product and message separate.</p></div></div>
+      <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>{isHoka ? 'The hero introduces the product, with the message alongside it.' : 'The copy-space hero keeps the product and message separate.'}</p></div></div>
       <div className="advertisement-shell">
         <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
-          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} copy-space hero shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
+          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} ${isHoka ? 'front hero' : 'copy-space hero'} shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
           <div className="advertisement-copy"><span>{project.brand}</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
         </div>
       </div>
@@ -194,6 +200,9 @@ function CampaignApplications({ project }: { project: Project }) {
 
 function photoTypeLabel(src: string) {
   const name = src.toLowerCase();
+  if (name.includes('hoka-locked-back-hero')) return 'OPPOSITE-SIDE HERO';
+  if (name.includes('hoka-locked-top-hero')) return 'TOP HERO';
+  if (name.includes('hoka-locked-bottom-hero')) return 'OUTSOLE HERO';
   if (name.includes('hoka-ora-back-hero')) return 'OPPOSITE-SIDE HERO';
   if (name.includes('hoka-ora-slight-macro')) return 'SIDE MACRO';
   if (name.includes('-top-macro-')) return 'TOP MACRO';
@@ -214,7 +223,7 @@ function ProjectPage({ project }: { project: Project }) {
   const showcaseImages = campaignShowcaseImages(project);
   const leadImage = showcaseImages[0];
   return <>
-  <section className="project-detail section-pad curated-project">
+  <section className={`project-detail section-pad curated-project project-${project.slug}`}>
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
     <div className="detail-heading"><div><span className="project-study-note-top">PRODUCT CAMPAIGN</span><h1>{project.name}</h1><p className="project-positioning">{project.direction}</p></div><p>{project.brand}</p></div>
     {leadImage ? <div className="project-lead-frame"><span className="frame-index">01 / {photoTypeLabel(leadImage.src)}</span><ImageFrame image={leadImage} tone={project.tone} label={leadImage.alt} priority/></div> : null}
