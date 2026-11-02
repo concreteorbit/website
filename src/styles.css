@@ -1414,3 +1414,11 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .homepage-work-grid .homepage-campaign-link{font-family:'DM Sans',Arial,sans-serif;font-size:9px;font-weight:400;letter-spacing:.1em;border:0;padding:0;min-height:24px;margin-top:12px;color:#c5cdd1}
 .homepage-work-grid .homepage-campaign-link:hover{color:#fff}
 .studio-moment figcaption{font-family:'DM Sans',Arial,sans-serif;font-size:10px;font-weight:400;letter-spacing:.06em;color:#b5bec4}
+
+/* Keep project identities visible; reveal the desktop invitation on intent. */
+@media(hover:hover) and (pointer:fine){
+ .homepage-work-grid .homepage-campaign-link{opacity:0;transition:opacity .2s ease}
+ .homepage-work-grid .homepage-campaign-stage:hover .homepage-campaign-link,
+ .homepage-work-grid .homepage-campaign-stage:focus-within .homepage-campaign-link{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){.homepage-work-grid .homepage-campaign-link{transition:none}}

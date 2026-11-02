@@ -109,7 +109,7 @@ function Home() {
           <p className="fullbleed-hero-description">Cinematic product photography built as coordinated hero, macro and copy-space images for websites, social and advertising.</p>
           <a className="hero-project-cta" href="#contact" onClick={scrollToContact}>Start a project <span>↘</span></a>
         </div>
-        <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
+        <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span></div>
       </div>
     </section>
     <Work/><InTheStudio/><Studio/><Contact/>
