@@ -33,17 +33,17 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   const image = selection.images[0];
   const project = selection.project;
   return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full`}>
-    <div className="homepage-campaign-stage" style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
+    <a className="homepage-campaign-stage" href={`/work/${selection.slug}`} aria-label={`View ${selection.title} ${selection.subtitle} campaign`} style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
       <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 600px) 100vw, 50vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
         <h3>{selection.title}</h3>
         <p className="homepage-campaign-product">{selection.subtitle}</p>
         <p className="homepage-campaign-services">{project.services.join(' · ')}</p>
-        <a className="homepage-campaign-link" href={`/work/${selection.slug}`}>VIEW CAMPAIGN <span>↗</span></a>
+        <span className="homepage-campaign-link" aria-hidden="true">VIEW CAMPAIGN <span>↗</span></span>
       </div>
       <div className="homepage-campaign-state" aria-hidden="true"><span>{selection.stateLabel}</span></div>
-    </div>
+    </a>
   </article>;
 }
 function Work() {

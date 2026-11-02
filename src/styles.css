@@ -1422,3 +1422,5 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
  .homepage-work-grid .homepage-campaign-stage:focus-within .homepage-campaign-link{opacity:1}
 }
 @media(prefers-reduced-motion:reduce){.homepage-work-grid .homepage-campaign-link{transition:none}}
+.homepage-work-grid a.homepage-campaign-stage{display:block;cursor:pointer}
+.homepage-work-grid a.homepage-campaign-stage:focus-visible{outline:2px solid var(--lab-accent);outline-offset:-3px}
