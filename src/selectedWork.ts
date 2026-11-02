@@ -7,23 +7,21 @@ type HomepageSelection = {
   size: string;
   alt: string;
   imageIndex?: number;
+  image?: PortfolioImage;
   stateLabel?: string;
 };
 
-// Homepage order is intentional. Mt. Angel uses the wider messaging macro;
-// the other campaigns lead with their extreme macro.
+// Four homepage campaigns; all six project routes remain available.
 const homepageSelections: HomepageSelection[] = [
   { slug: 'hoka-ora-recovery-slides', title: 'HOKA', subtitle: 'ORA Recovery Slides', size: 'large', alt: 'Extreme macro of the HOKA logo and textured ORA Recovery Slide in violet light.', stateLabel: 'EXTREME MACRO' },
   { slug: 'xbox-elite-controller', title: 'XBOX', subtitle: 'Elite Controller', size: 'large', alt: 'Extreme macro of the Xbox Elite controller in black-on-black light.', stateLabel: 'EXTREME MACRO' },
   { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'large', alt: 'Extreme macro of Trace Magnesium Glycinate in blue light.', stateLabel: 'EXTREME MACRO' },
-  { slug: 'trace-electrolytes', title: 'TRACE', subtitle: '40,000 Volts', size: 'large', alt: 'Extreme macro of wet Trace electrolyte concentrate packaging.', stateLabel: 'EXTREME MACRO' },
-  { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'large', alt: 'Close messaging macro of the upper half of the Mt. Angel Joint Solution bottle.', imageIndex: 2, stateLabel: 'MESSAGING MACRO' },
-  { slug: 'phils-daily-facial-cleanser', title: 'PHIL’S', subtitle: 'Daily Facial Cleanser', size: 'large', alt: 'Extreme macro of Phil’s Daily Facial Cleanser covered in water droplets.', stateLabel: 'EXTREME MACRO' },
+  { slug: 'trace-electrolytes', title: 'TRACE', subtitle: '40,000 Volts', size: 'large', alt: 'Macro of the Trace Electrolyte Concentrate label and water droplets in blue light.', stateLabel: 'MESSAGING MACRO', image: {src: '/images/trace-electrolytes-home-macro-5504.webp', srcSet: '/images/trace-electrolytes-home-macro-800.webp 800w, /images/trace-electrolytes-home-macro-1200.webp 1200w, /images/trace-electrolytes-home-macro-1920.webp 1920w, /images/trace-electrolytes-home-macro-2560.webp 2560w, /images/trace-electrolytes-home-macro-5504.webp 5504w', width: 5504, height: 3072, alt: 'Macro of the Trace Electrolyte Concentrate label and water droplets in blue light.'} },
 ];
 
 export const selectedWork = homepageSelections.map(selection => {
   const project = projects.find(project => project.slug === selection.slug)!;
-  const image = project.gallery[selection.imageIndex ?? 0];
+  const image = selection.image ?? project.gallery[selection.imageIndex ?? 0];
   return {
     ...selection,
     project,

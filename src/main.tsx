@@ -52,6 +52,30 @@ function Work() {
     <div className="homepage-campaign-list">{selectedWork.map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div>
   </section>;
 }
+const studioMoments = [
+  { key: 'lighting', label: 'Lighting', alt: 'Simon adjusting a large studio softbox.', position: '65% center' },
+  { key: 'product', label: 'On set', alt: 'Simon positioning a product on the studio table.', position: '66% center' },
+  { key: 'editing', label: 'Finishing', alt: 'Simon working on photographs at his laptop.', position: '60% center' },
+];
+function StudioMoment({ moment }: { moment: typeof studioMoments[number] }) {
+  const [color, setColor] = useState(false);
+  return <figure className="studio-moment"><button type="button" className={`studio-moment-photo ${color ? 'is-color' : ''}`} aria-label={`Toggle color: ${moment.label}`} aria-pressed={color} onClick={() => setColor(value => !value)}>
+    <img src={`/images/studio-${moment.key}-mono-1600.webp`} srcSet={`/images/studio-${moment.key}-mono-800.webp 800w, /images/studio-${moment.key}-mono-1600.webp 1600w`} sizes="(max-width:700px) 90vw, 30vw" style={{ objectPosition: moment.position }} width={1600} height={1067} alt={moment.alt} loading="lazy" decoding="async"/>
+    <img className="studio-moment-color" src={`/images/studio-${moment.key}-color-1600.webp`} srcSet={`/images/studio-${moment.key}-color-800.webp 800w, /images/studio-${moment.key}-color-1600.webp 1600w`} sizes="(max-width:700px) 90vw, 30vw" style={{ objectPosition: moment.position }} width={1600} height={1067} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+  </button><figcaption>{moment.label}</figcaption></figure>;
+}
+function InTheStudio() {
+  return <section className="studio-glimpses section-pad" aria-labelledby="studio-glimpses-title"><div className="studio-glimpses-inner"><div className="studio-glimpses-heading"><h2 id="studio-glimpses-title">In the studio.</h2><p>A look behind the images.</p></div><div className="studio-glimpses-grid">{studioMoments.map(moment => <StudioMoment moment={moment} key={moment.key}/>)}</div></div></section>;
+}
+
+function FounderPortrait() {
+  const [showColor, setShowColor] = useState(false);
+  return <button type="button" className={`founder-portrait ${showColor ? 'is-color' : ''}`} aria-label="Toggle founder portrait color" aria-pressed={showColor} onClick={() => setShowColor(value => !value)}>
+    <img className="founder-portrait-mono" src="/images/simon-founder-new-mono-1200.webp" srcSet="/images/simon-founder-new-mono-800.webp 800w, /images/simon-founder-new-mono-1200.webp 1200w" sizes="(max-width:800px) 70vw, 370px" width={3820} height={2547} alt="Simon Jackson, Owner and Creative Director of Concrete Orbit" loading="lazy" decoding="async"/>
+    <img className="founder-portrait-color" src="/images/simon-founder-new-color-1200.webp" srcSet="/images/simon-founder-new-color-800.webp 800w, /images/simon-founder-new-color-1200.webp 1200w" sizes="(max-width:800px) 70vw, 370px" width={3820} height={2547} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+  </button>;
+}
+
 function Studio() {
   const steps = [
     ['PLAN', 'We confirm the product, placements and delivery date.'],
@@ -70,7 +94,7 @@ function Studio() {
       <div className="studio-intro"><span className="eyebrow">THE PROCESS</span><h2>Simple from start<br/>to finish.</h2><p>You work directly with me throughout the project.</p></div>
       <div className="principles">{steps.map(([title, copy], i) => <div className="principle" key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div>
     </section>
-    <section className="founder section-pad"><div className="founder-label"><Orbit/><img className="founder-image-placeholder" src="/images/simon-founder-portrait-1200.webp" srcSet="/images/simon-founder-portrait-800.webp 800w, /images/simon-founder-portrait-1200.webp 1200w" sizes="(max-width: 600px) 230px, 280px" width={3915} height={3910} alt="Simon Jackson, Owner and Creative Director of Concrete Orbit" loading="lazy" decoding="async"/><span className="eyebrow">OWNER / CREATIVE DIRECTOR</span></div><div><h2>I make the work<br/>and lead the project.</h2><p>I’m Simon Jackson, owner and creative director of Concrete Orbit. I develop the direction, shoot the product and finish every image.</p><div className="founder-name">SIMON JACKSON<span>Owner + Creative Director</span></div></div></section>
+    <section className="founder section-pad"><div className="founder-label"><Orbit/><FounderPortrait/><span className="eyebrow">OWNER / CREATIVE DIRECTOR</span></div><div><h2>I make the work<br/>and lead the project.</h2><p>I’m Simon Jackson, owner and creative director of Concrete Orbit. I develop the direction, shoot the product and finish every image.</p><div className="founder-name">SIMON JACKSON<span>Owner + Creative Director</span></div></div></section>
   </>;
 }
 
@@ -106,8 +130,8 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product campaigns"><span>SELECTED PRODUCT CAMPAIGNS</span><p>HOKA ORA · XBOX ELITE · TRACE MAGNESIUM · TRACE ELECTROLYTES · MT. ANGEL · PHIL’S</p></section>
-    <Work/><Studio/><Contact/>
+    <section className="featured-strip section-pad" aria-label="Selected product campaigns"><span>SELECTED PRODUCT CAMPAIGNS</span><p>HOKA ORA · XBOX ELITE · TRACE MAGNESIUM · TRACE ELECTROLYTES</p></section>
+    <Work/><InTheStudio/><Studio/><Contact/>
   </>;
 }
 
