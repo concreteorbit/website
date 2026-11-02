@@ -1400,3 +1400,5 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
  .studio-glimpses-grid{height:auto;min-height:0;grid-template-columns:1fr;gap:6px}
  .studio-moment-photo{height:auto;aspect-ratio:3/2}
 }
+
+@media(min-width:801px){.studio-glimpses-grid{max-height:42vw;min-height:0}}
