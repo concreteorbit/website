@@ -1364,3 +1364,39 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 @media(hover:hover){.studio-moment-photo:hover .studio-moment-color{opacity:1}}
 @media(max-width:700px){.studio-glimpses-grid{grid-template-columns:1fr;gap:30px}.studio-moment-photo{aspect-ratio:3/2}.studio-glimpses-heading{display:block}.studio-glimpses-heading p{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){.studio-moment-photo .studio-moment-color{transition:none}}
+
+/* Homepage chapters: four projects in one screen, then a full studio triptych. */
+.homepage-work-grid{padding:24px 0 0!important;min-height:100svh;display:flex;flex-direction:column}
+.homepage-work-grid>.section-heading{padding:0 3%;margin:0 0 20px!important;align-items:center;gap:16px}
+.homepage-work-grid .section-heading h2{font-size:clamp(24px,3vw,40px);margin:5px 0 0;line-height:1.05}
+.homepage-work-grid .section-note{font-size:8px}
+.homepage-work-grid .homepage-campaign-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:6px;height:calc(100svh - 114px);min-height:560px}
+.homepage-work-grid .homepage-campaign{height:100%;min-width:0;min-height:0}
+.homepage-work-grid .homepage-campaign-stage{height:100%;min-height:0!important;max-width:none;aspect-ratio:auto!important;border:0;margin:0}
+.homepage-work-grid .homepage-campaign-image{object-fit:cover!important;object-position:center}
+.homepage-work-grid .homepage-campaign-full .homepage-campaign-info{left:5%;right:5%;bottom:7%;top:auto;width:auto;transform:none;text-align:left}
+.homepage-work-grid .homepage-campaign-info h3{font-size:clamp(28px,3vw,48px);margin:10px 0 4px}
+.homepage-work-grid .homepage-campaign-product{font-size:clamp(12px,1.3vw,20px);margin:0}
+.homepage-work-grid .homepage-campaign-services,.homepage-work-grid .homepage-campaign-state{display:none}
+.homepage-work-grid .homepage-campaign-link{font-size:9px;margin-top:14px}
+.homepage-work-grid .homepage-campaign-stage::after{background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 70%)}
+.studio-glimpses{padding:26px 0 0;min-height:100svh}
+.studio-glimpses-inner{max-width:none;width:100%}
+.studio-glimpses-heading{padding:0 3%;margin-bottom:24px}
+.studio-glimpses-heading h2{font-size:clamp(28px,3vw,42px)}
+.studio-glimpses-grid{gap:6px;height:calc(100svh - 100px);min-height:560px}
+.studio-moment{position:relative;height:100%}
+.studio-moment-photo{height:100%;aspect-ratio:auto}
+.studio-moment figcaption{position:absolute;bottom:20px;left:24px;margin:0;color:#eee;pointer-events:none;text-shadow:0 1px 8px #000}
+.founder-reversed{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.founder-reversed .founder-label{justify-self:end;align-items:flex-end}
+.founder-reversed .founder-copy{max-width:660px}
+@media(max-width:800px){.founder-reversed{grid-template-columns:1fr}.founder-reversed .founder-label{justify-self:start;align-items:flex-start}}
+@media(max-width:600px){
+ .homepage-work-grid .homepage-campaign-list{height:auto;min-height:0;grid-template-columns:1fr;grid-template-rows:none;gap:6px}
+ .homepage-work-grid .homepage-campaign-stage{height:auto;aspect-ratio:4/3!important;min-height:280px!important}
+ .homepage-work-grid .homepage-campaign-info h3{font-size:32px}
+ .studio-glimpses{min-height:0}
+ .studio-glimpses-grid{height:auto;min-height:0;grid-template-columns:1fr;gap:6px}
+ .studio-moment-photo{height:auto;aspect-ratio:3/2}
+}

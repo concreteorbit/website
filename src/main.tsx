@@ -34,7 +34,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   const project = selection.project;
   return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full`}>
     <div className="homepage-campaign-stage" style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
-      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 800px) 100vw, 94vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
+      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 600px) 100vw, 50vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
         <h3>{selection.title}</h3>
@@ -47,8 +47,8 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   </article>;
 }
 function Work() {
-  return <section id="work" className="work section-pad curated-work">
-    <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Selected product<br/>campaigns.</h2></div><p className="section-note">HERO / MACRO / COPY SPACE<br/>WASHINGTON, DC · WORLDWIDE</p></div>
+  return <section id="work" className="work section-pad curated-work homepage-work-grid">
+    <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Selected campaigns.</h2></div><p className="section-note">HERO / MACRO / COPY SPACE<br/>WASHINGTON, DC · WORLDWIDE</p></div>
     <div className="homepage-campaign-list">{selectedWork.map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div>
   </section>;
 }
@@ -77,25 +77,7 @@ function FounderPortrait() {
 }
 
 function Studio() {
-  const steps = [
-    ['PLAN', 'We confirm the product, placements and delivery date.'],
-    ['SHIP', 'You send the product to the studio.'],
-    ['SHOOT', 'I photograph and finish the five-image campaign.'],
-    ['DELIVER', 'You receive the final images ready to use.'],
-  ];
-
-  return <>
-    <section id="studio" className="philosophy section-pad">
-      <span className="eyebrow">CINEMATIC PRODUCT PHOTOGRAPHY</span>
-      <h2>THE PRODUCT SETS<br/>THE DIRECTION.<br/><em>EVERY TIME.</em><Orbit/></h2>
-      <div className="philosophy-bottom"><p>I bring a defined visual language of deep contrast, controlled light and close material detail to physical products.</p></div>
-    </section>
-    <section className="why section-pad">
-      <div className="studio-intro"><span className="eyebrow">THE PROCESS</span><h2>Simple from start<br/>to finish.</h2><p>You work directly with me throughout the project.</p></div>
-      <div className="principles">{steps.map(([title, copy], i) => <div className="principle" key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div>
-    </section>
-    <section className="founder section-pad"><div className="founder-label"><Orbit/><FounderPortrait/><span className="eyebrow">OWNER / CREATIVE DIRECTOR</span></div><div><h2>I make the work<br/>and lead the project.</h2><p>I’m Simon Jackson, owner and creative director of Concrete Orbit. I develop the direction, shoot the product and finish every image.</p><div className="founder-name">SIMON JACKSON<span>Owner + Creative Director</span></div></div></section>
-  </>;
+  return <section id="studio" className="founder founder-reversed section-pad"><div className="founder-copy"><span className="eyebrow">OWNER / CREATIVE DIRECTOR</span><h2>I make the work<br/>and lead the project.</h2><p>I’m Simon Jackson, owner and creative director of Concrete Orbit. I develop the direction, shoot the product and finish every image.</p><div className="founder-name">SIMON JACKSON<span>Owner + Creative Director</span></div></div><div className="founder-label"><Orbit/><FounderPortrait/></div></section>;
 }
 
 function Contact() {
@@ -130,7 +112,6 @@ function Home() {
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span><span>SCROLL  ↓</span></div>
       </div>
     </section>
-    <section className="featured-strip section-pad" aria-label="Selected product campaigns"><span>SELECTED PRODUCT CAMPAIGNS</span><p>HOKA ORA · XBOX ELITE · TRACE MAGNESIUM · TRACE ELECTROLYTES</p></section>
     <Work/><InTheStudio/><Studio/><Contact/>
   </>;
 }
