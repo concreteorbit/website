@@ -1452,6 +1452,6 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 /* Selected work: one full-width story, two paired stories, one full-width story. */
 @media(min-width:601px){
  .homepage-work-grid .homepage-campaign-trace-magnesium-glycinate{grid-column:1 / -1}
- .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:cover!important;object-position:center}
+ .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}
 }
-@media(max-width:600px){.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:cover!important;object-position:center}}
+@media(max-width:600px){.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}}
