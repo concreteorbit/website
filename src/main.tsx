@@ -34,7 +34,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   const project = selection.project;
   return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full`}>
     <a className="homepage-campaign-stage" href={`/work/${selection.slug}`} aria-label={`View ${selection.title} ${selection.subtitle} campaign`} style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
-      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 600px) 100vw, 50vw" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
+      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={(selection.slug === 'harrys-taming-cream' || selection.slug === 'trace-magnesium-glycinate') ? '100vw' : '(max-width: 600px) 100vw, 50vw'} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
         <h3>{selection.title}</h3>
@@ -123,6 +123,11 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'harrys-taming-cream': {
+    websiteHeadline: 'Texture, brought closer.',
+    adHeadline: 'A natural finish. A closer look.',
+    socialCaption: 'Form, texture and detail in deep navy.',
+  },
   'hoka-ora-recovery-slides': {
     websiteHeadline: 'Recovery, brought closer.',
     adHeadline: 'A closer look at recovery.',
@@ -162,8 +167,9 @@ function CampaignApplications({ project }: { project: Project }) {
   const extremeMacro = project.gallery[0];
   const isHoka = project.slug === 'hoka-ora-recovery-slides';
   const isXbox = project.slug === 'xbox-elite-controller';
-  const socialImage = project.gallery[isXbox ? 3 : isHoka ? 2 : 1];
-  const copySpaceHero = project.gallery[isHoka ? 1 : 4];
+  const isHarrys = project.slug === 'harrys-taming-cream';
+  const socialImage = project.gallery[isXbox ? 3 : (isHoka || isHarrys) ? 2 : 1];
+  const copySpaceHero = isHarrys ? project.cover : project.gallery[isHoka ? 1 : 4];
   const titleId = `${project.slug}-applications-title`;
 
   return <section id="applications" className="campaign-applications" aria-labelledby={titleId}>
@@ -187,7 +193,7 @@ function CampaignApplications({ project }: { project: Project }) {
       <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>The product and message each have their own space.</p></div></div>
       <div className="advertisement-shell">
         <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
-          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} ${isHoka ? 'front hero' : 'copy-space hero'} shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
+          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} ${isHarrys ? 'tilted hero' : isHoka ? 'front hero' : 'copy-space hero'} shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
           <div className="advertisement-copy"><span>{project.brand}</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
         </div>
       </div>
@@ -211,6 +217,9 @@ function photoTypeLabel(src: string) {
   if (name.includes('hoka-locked-bottom-hero')) return 'OUTSOLE HERO';
   if (name.includes('hoka-ora-back-hero')) return 'OPPOSITE-SIDE HERO';
   if (name.includes('hoka-ora-slight-macro')) return 'SIDE MACRO';
+  if (name.includes('-side-macro-')) return 'SIDE MACRO';
+  if (name.includes('-tilted-hero-')) return 'TILTED HERO';
+  if (name.includes('-upright-hero-')) return 'UPRIGHT HERO';
   if (name.includes('-top-macro-')) return 'TOP MACRO';
   if (name.includes('-heel-macro-')) return 'BACK HEEL MACRO';
   if (name.includes('extreme-macro')) return 'EXTREME MACRO';
@@ -222,7 +231,7 @@ function photoTypeLabel(src: string) {
 }
 
 function campaignShowcaseImages(project: Project) {
-  if (project.slug === 'hoka-ora-recovery-slides') return project.gallery;
+  if (project.slug === 'hoka-ora-recovery-slides' || project.slug === 'harrys-taming-cream') return project.gallery;
   const [extreme, slight, macro, hero, heroCopy] = project.gallery;
   return [extreme, hero, slight, macro, heroCopy].filter((image): image is PortfolioImage => Boolean(image));
 }
@@ -239,7 +248,7 @@ function ProjectPage({ project }: { project: Project }) {
     <div className="project-grid campaign-sequence campaign-edited-sequence">
       {showcaseImages[1] ? <div className="project-frame campaign-product-hero"><span className="frame-index">02 / {photoTypeLabel(showcaseImages[1].src)}</span><ImageFrame image={showcaseImages[1]} label={showcaseImages[1].alt}/></div> : null}
       <div className="campaign-detail-pair">{showcaseImages.slice(2, 4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 3).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
-      {showcaseImages.length > 4 ? <div className={`campaign-supporting-views ${showcaseImages.length > 5 ? 'campaign-supporting-trio' : ''}`}>{showcaseImages.slice(4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 5).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div> : null}
+      {showcaseImages.length > 4 ? <div className={`campaign-supporting-views ${showcaseImages.length > 5 ? (project.slug === 'harrys-taming-cream' ? 'campaign-supporting-pair' : 'campaign-supporting-trio') : ''}`}>{showcaseImages.slice(4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 5).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div> : null}
     </div>
     <CampaignApplications project={project}/>
   </section>

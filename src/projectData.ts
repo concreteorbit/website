@@ -86,7 +86,57 @@ const hokaOra = {
   backHero: {src: '/images/projects/hoka-locked-back-hero-2560.webp', srcSet: '/images/projects/hoka-locked-back-hero-800.webp 800w, /images/projects/hoka-locked-back-hero-1200.webp 1200w, /images/projects/hoka-locked-back-hero-1920.webp 1920w, /images/projects/hoka-locked-back-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Opposite-side hero of the HOKA ORA Recovery Slide.'},
 };
 
+const harrysTamingImages: PortfolioImage[] = [
+  {
+    "src": "/images/projects/harrys-final-top-macro-1376.webp",
+    "srcSet": "/images/projects/harrys-final-top-macro-480.webp 480w, /images/projects/harrys-final-top-macro-800.webp 800w, /images/projects/harrys-final-top-macro-1200.webp 1200w, /images/projects/harrys-final-top-macro-1376.webp 1376w",
+    "width": 1376,
+    "height": 768,
+    "alt": "Close view of the Harry’s wordmark, Taming Cream name and sealed tube edge."
+  },
+  {
+    "src": "/images/projects/harrys-final-tilted-hero-1143.webp",
+    "srcSet": "/images/projects/harrys-final-tilted-hero-480.webp 480w, /images/projects/harrys-final-tilted-hero-800.webp 800w, /images/projects/harrys-final-tilted-hero-1143.webp 1143w",
+    "width": 1143,
+    "height": 638,
+    "alt": "Harry’s Taming Cream tilted against black in blue light."
+  },
+  {
+    "src": "/images/projects/harrys-final-slight-macro-1376.webp",
+    "srcSet": "/images/projects/harrys-final-slight-macro-480.webp 480w, /images/projects/harrys-final-slight-macro-800.webp 800w, /images/projects/harrys-final-slight-macro-1200.webp 1200w, /images/projects/harrys-final-slight-macro-1376.webp 1376w",
+    "width": 1376,
+    "height": 768,
+    "alt": "Angled detail of the Harry’s label and navy tube."
+  },
+  {
+    "src": "/images/projects/harrys-final-extreme-macro-1679.webp",
+    "srcSet": "/images/projects/harrys-final-extreme-macro-480.webp 480w, /images/projects/harrys-final-extreme-macro-800.webp 800w, /images/projects/harrys-final-extreme-macro-1200.webp 1200w, /images/projects/harrys-final-extreme-macro-1679.webp 1679w",
+    "width": 1679,
+    "height": 937,
+    "alt": "Extreme macro of Harry’s packaging texture and printed details."
+  },
+  {
+    "src": "/images/projects/harrys-final-side-macro-1376.webp",
+    "srcSet": "/images/projects/harrys-final-side-macro-480.webp 480w, /images/projects/harrys-final-side-macro-800.webp 800w, /images/projects/harrys-final-side-macro-1200.webp 1200w, /images/projects/harrys-final-side-macro-1376.webp 1376w",
+    "width": 1376,
+    "height": 768,
+    "alt": "Side detail of the cap and navy packaging."
+  }
+];
+
 export const projects: Project[] = [
+  {
+    slug: 'harrys-taming-cream',
+    name: 'HARRY’S',
+    brand: 'Taming Cream',
+    tone: 'slate',
+    socialHandle: 'harrys',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Top macro · Tilted hero · Slight macro · Extreme macro · Side macro',
+    direction: 'Sculptural form, deep navy and tactile packaging detail in controlled light.',
+    cover: harrysTamingImages[1],
+    gallery: harrysTamingImages,
+  },
   {
     slug: 'hoka-ora-recovery-slides',
     name: 'HOKA',

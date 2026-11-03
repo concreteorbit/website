@@ -1437,3 +1437,21 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
  .homepage-work-grid .homepage-campaign-full .homepage-campaign-info{left:5%;right:5%;bottom:7%}
  .homepage-work-grid .homepage-campaign-stage::after{background:linear-gradient(0deg,rgba(0,0,0,.68),rgba(0,0,0,.08) 48%,transparent 72%)}
 }
+/* Harry's joins the selected-work index without displacing existing campaigns. */
+@media(min-width:601px){
+ .homepage-work-grid .homepage-campaign-list{height:auto;min-height:0;grid-template-rows:none;grid-auto-rows:clamp(280px,32vw,480px)}
+ .homepage-work-grid .homepage-campaign-harrys-taming-cream{grid-column:1 / -1}
+ .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important}
+}
+.campaign-supporting-pair{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,40px);align-items:start}
+.project-harrys-taming-cream .instagram-image{aspect-ratio:auto!important}
+.project-harrys-taming-cream .instagram-image img{display:block;width:100%;height:auto!important;object-fit:contain!important}
+@media(max-width:800px){.campaign-supporting-pair{grid-template-columns:1fr;gap:44px}}
+@media(max-width:600px){.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important}}
+
+/* Selected work: one full-width story, two paired stories, one full-width story. */
+@media(min-width:601px){
+ .homepage-work-grid .homepage-campaign-trace-magnesium-glycinate{grid-column:1 / -1}
+ .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:cover!important;object-position:center}
+}
+@media(max-width:600px){.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:cover!important;object-position:center}}
