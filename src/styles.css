@@ -1425,11 +1425,15 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .homepage-work-grid a.homepage-campaign-stage{display:block;cursor:pointer}
 .homepage-work-grid a.homepage-campaign-stage:focus-visible{outline:2px solid var(--lab-accent);outline-offset:-3px}
 
-/* Two campaigns per viewport: HOKA/Xbox, followed by the Trace pair. */
+/* Four curated images, framed as one quiet portfolio spread. */
 @media(min-width:601px){
+ .homepage-work-grid{padding:24px 3% 24px!important}
+ .homepage-work-grid>.section-heading{padding:0}
  .homepage-work-grid .homepage-campaign-list{
-  height:auto;
-  min-height:0;
-  grid-template-rows:minmax(560px,calc(100svh - 82px)) minmax(560px,100svh);
+  height:calc(100svh - 106px);min-height:480px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));gap:12px;
  }
+ .homepage-work-grid .homepage-campaign-full .homepage-campaign-info{left:5%;right:5%;bottom:7%}
+ .homepage-work-grid .homepage-campaign-stage::after{background:linear-gradient(0deg,rgba(0,0,0,.68),rgba(0,0,0,.08) 48%,transparent 72%)}
 }
