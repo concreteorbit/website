@@ -1449,9 +1449,29 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 @media(max-width:800px){.campaign-supporting-pair{grid-template-columns:1fr;gap:44px}}
 @media(max-width:600px){.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important}}
 
-/* Selected work: one full-width story, two paired stories, one full-width story. */
+/* Selected work: PS5, Trace and Harry's each fill a page; Xbox and HOKA share the fourth. */
+.homepage-work-grid{padding:24px 0 0!important;min-height:0}
+.homepage-work-grid>.section-heading{padding-inline:3%}
+.homepage-work-grid .homepage-campaign-list{height:auto;min-height:0;grid-template-rows:none;gap:6px}
 @media(min-width:601px){
- .homepage-work-grid .homepage-campaign-trace-magnesium-glycinate{grid-column:1 / -1}
- .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}
+ .homepage-work-grid .homepage-campaign-list{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(480px,calc(100svh - 80px)));grid-auto-rows:auto}
+ .homepage-work-grid .homepage-campaign-feature{grid-column:1 / -1}
+ .homepage-work-grid .homepage-campaign-paired{grid-column:auto}
+ .homepage-work-grid .homepage-campaign-stage{height:100%;aspect-ratio:auto!important}
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-image{object-fit:cover!important;object-position:center}
 }
-@media(max-width:600px){.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}}
+@media(max-width:600px){
+ .homepage-work-grid .homepage-campaign-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:auto}
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-stage{height:max(480px,calc(100svh - 72px));min-height:0!important;aspect-ratio:auto!important}
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-image{object-fit:cover!important;object-position:center}
+ .homepage-work-grid .homepage-campaign-paired .homepage-campaign-stage{height:auto;aspect-ratio:4 / 3!important;min-height:280px!important}
+}
+
+/* PS5 retains all six complete frames and the intentional shadow falloff. */
+.project-playstation-5 .campaign-supporting-pair{display:flex;flex-direction:column;gap:clamp(48px,7vw,100px)}
+.project-playstation-5 .campaign-supporting-pair .project-frame{width:100%}
+.project-playstation-5 .instagram-image{aspect-ratio:auto!important}
+.project-playstation-5 .instagram-image img{display:block;width:100%;height:auto!important;object-fit:contain!important}
+
+/* Preserve the approved complete Harry's homepage frame. */
+.homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}

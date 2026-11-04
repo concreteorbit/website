@@ -124,7 +124,64 @@ const harrysTamingImages: PortfolioImage[] = [
   }
 ];
 
+const ps5Images: PortfolioImage[] = [
+  {
+    "src": "/images/projects/ps5-controller-buttons-macro-3840.webp",
+    "srcSet": "/images/projects/ps5-controller-buttons-macro-480.webp 480w, /images/projects/ps5-controller-buttons-macro-800.webp 800w, /images/projects/ps5-controller-buttons-macro-1200.webp 1200w, /images/projects/ps5-controller-buttons-macro-1920.webp 1920w, /images/projects/ps5-controller-buttons-macro-2560.webp 2560w, /images/projects/ps5-controller-buttons-macro-3840.webp 3840w",
+    "width": 3840,
+    "height": 2160,
+    "alt": "Close view of the DualSense controller face buttons, touchpad and textured charcoal shell."
+  },
+  {
+    "src": "/images/projects/ps5-console-hero-3840.webp",
+    "srcSet": "/images/projects/ps5-console-hero-480.webp 480w, /images/projects/ps5-console-hero-800.webp 800w, /images/projects/ps5-console-hero-1200.webp 1200w, /images/projects/ps5-console-hero-1920.webp 1920w, /images/projects/ps5-console-hero-2560.webp 2560w, /images/projects/ps5-console-hero-3840.webp 3840w",
+    "width": 3840,
+    "height": 2160,
+    "alt": "PlayStation 5 console emerging from black, defined by a restrained highlight and curved panels."
+  },
+  {
+    "src": "/images/projects/ps5-console-logo-macro-3840.webp",
+    "srcSet": "/images/projects/ps5-console-logo-macro-480.webp 480w, /images/projects/ps5-console-logo-macro-800.webp 800w, /images/projects/ps5-console-logo-macro-1200.webp 1200w, /images/projects/ps5-console-logo-macro-1920.webp 1920w, /images/projects/ps5-console-logo-macro-2560.webp 2560w, /images/projects/ps5-console-logo-macro-3840.webp 3840w",
+    "width": 3840,
+    "height": 2160,
+    "alt": "Close view of the PlayStation emblem cut into the textured console panel."
+  },
+  {
+    "src": "/images/projects/ps5-console-upper-slight-macro-3840.webp",
+    "srcSet": "/images/projects/ps5-console-upper-slight-macro-480.webp 480w, /images/projects/ps5-console-upper-slight-macro-800.webp 800w, /images/projects/ps5-console-upper-slight-macro-1200.webp 1200w, /images/projects/ps5-console-upper-slight-macro-1920.webp 1920w, /images/projects/ps5-console-upper-slight-macro-2560.webp 2560w, /images/projects/ps5-console-upper-slight-macro-3840.webp 3840w",
+    "width": 3840,
+    "height": 2160,
+    "alt": "Detail of the PlayStation 5 upper panels, inner body and reflective edges."
+  },
+  {
+    "src": "/images/projects/ps5-controller-hero-3840.webp",
+    "srcSet": "/images/projects/ps5-controller-hero-480.webp 480w, /images/projects/ps5-controller-hero-800.webp 800w, /images/projects/ps5-controller-hero-1200.webp 1200w, /images/projects/ps5-controller-hero-1920.webp 1920w, /images/projects/ps5-controller-hero-2560.webp 2560w, /images/projects/ps5-controller-hero-3840.webp 3840w",
+    "width": 3840,
+    "height": 2160,
+    "alt": "DualSense controller hero with its controls and form revealed through deep shadow."
+  },
+  {
+    "src": "/images/projects/ps5-controller-trigger-macro-3840.webp",
+    "srcSet": "/images/projects/ps5-controller-trigger-macro-480.webp 480w, /images/projects/ps5-controller-trigger-macro-800.webp 800w, /images/projects/ps5-controller-trigger-macro-1200.webp 1200w, /images/projects/ps5-controller-trigger-macro-1920.webp 1920w, /images/projects/ps5-controller-trigger-macro-2560.webp 2560w, /images/projects/ps5-controller-trigger-macro-3840.webp 3840w",
+    "width": 3840,
+    "height": 2160,
+    "alt": "Close view of the DualSense rear triggers, molded shapes and fine material texture."
+  }
+];
+
 export const projects: Project[] = [
+  {
+    slug: 'playstation-5',
+    name: 'PLAYSTATION 5',
+    brand: 'Console + DualSense Controller',
+    tone: 'slate',
+    socialHandle: 'playstation',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Controller button macro · Console hero · Console logo macro · Console upper detail · Controller hero · Controller trigger macro',
+    direction: 'Two forms, one visual language. Sculpted edges, tactile surfaces and deep shadow.',
+    cover: ps5Images[0],
+    gallery: ps5Images,
+  },
   {
     slug: 'harrys-taming-cream',
     name: 'HARRY’S',

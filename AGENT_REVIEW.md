@@ -21,3 +21,12 @@ Claude Code should review:
 
 ## Claude Code Review
 Pending review.
+
+## 2026-11-04 — PS5 campaign
+- Added six approved PS5 console/controller photographs, with the controller button macro as the homepage cover and campaign opening.
+- Added the /work/playstation-5 route and corresponding placement examples.
+- Homepage order: PS5, Trace Magnesium and Harry's as full-page features; Xbox and HOKA paired.
+- Preserved the seven existing campaign records and complete Harry's homepage frame.
+- Images exported as lossless responsive WebP variants; native files checked against approved 4K PNGs.
+- No dependencies, forms, workflow permissions, domain configuration or public pricing changed.
+- Local production build and asset checks completed before publishing; deployment result recorded separately.

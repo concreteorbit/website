@@ -32,9 +32,9 @@ const acureHomepageHero: PortfolioImage = {
 function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
   const image = selection.images[0];
   const project = selection.project;
-  return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full`}>
+  return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full homepage-campaign-${selection.size}`}>
     <a className="homepage-campaign-stage" href={`/work/${selection.slug}`} aria-label={`View ${selection.title} ${selection.subtitle} campaign`} style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
-      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={(selection.slug === 'harrys-taming-cream' || selection.slug === 'trace-magnesium-glycinate') ? '100vw' : '(max-width: 600px) 100vw, 50vw'} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
+      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={selection.size === 'feature' ? '100vw' : '(max-width: 600px) 100vw, 50vw'} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
         <h3>{selection.title}</h3>
@@ -123,6 +123,11 @@ type ApplicationSettings = {
 };
 
 const applicationSettings: Record<string, ApplicationSettings> = {
+  'playstation-5': {
+    websiteHeadline: 'Every detail, considered.',
+    adHeadline: 'Form. Control. Play.',
+    socialCaption: 'Console and controller. One visual language.',
+  },
   'harrys-taming-cream': {
     websiteHeadline: 'Texture, brought closer.',
     adHeadline: 'A natural finish. A closer look.',
@@ -168,21 +173,22 @@ function CampaignApplications({ project }: { project: Project }) {
   const isHoka = project.slug === 'hoka-ora-recovery-slides';
   const isXbox = project.slug === 'xbox-elite-controller';
   const isHarrys = project.slug === 'harrys-taming-cream';
-  const socialImage = project.gallery[isXbox ? 3 : (isHoka || isHarrys) ? 2 : 1];
-  const copySpaceHero = isHarrys ? project.cover : project.gallery[isHoka ? 1 : 4];
+  const isPs5 = project.slug === 'playstation-5';
+  const socialImage = project.gallery[isPs5 ? 4 : isXbox ? 3 : (isHoka || isHarrys) ? 2 : 1];
+  const copySpaceHero = isPs5 ? project.gallery[1] : isHarrys ? project.cover : project.gallery[isHoka ? 1 : 4];
   const titleId = `${project.slug}-applications-title`;
 
   return <section id="applications" className="campaign-applications" aria-labelledby={titleId}>
     <div className="application-heading"><span className="eyebrow">PLACEMENT EXAMPLES</span><h2 id={titleId}>How it could<br/>work for you.</h2><p>One campaign, ready for the places your brand needs to show up.</p></div>
 
     <article className="application-block">
-      <div className="application-label"><span>01</span><div><h3>Website banner</h3><p>The extreme macro becomes the visual anchor.</p></div></div>
+      <div className="application-label"><span>01</span><div><h3>Website banner</h3><p>{isPs5 ? 'The controller button macro becomes the visual anchor.' : 'The extreme macro becomes the visual anchor.'}</p></div></div>
       <div className="browser-mockup">
         <div className="browser-bar"><span className="browser-dots" aria-hidden="true">● ● ●</span><span>Website placement</span></div>
         <div className={`website-concept website-concept-${project.slug}`}>
-          <img className="website-banner-image" src={extremeMacro.src} srcSet={extremeMacro.srcSet} sizes="(max-width: 800px) 100vw, 65vw" alt={`${project.name} extreme macro shown in a website banner.`} width={extremeMacro.width} height={extremeMacro.height} loading="lazy" decoding="async"/>
+          <img className="website-banner-image" src={extremeMacro.src} srcSet={extremeMacro.srcSet} sizes="(max-width: 800px) 100vw, 65vw" alt={`${project.name} ${isPs5 ? 'controller button macro' : 'extreme macro'} shown in a website banner.`} width={extremeMacro.width} height={extremeMacro.height} loading="lazy" decoding="async"/>
           <div className="website-copy-panel">
-            <div className="concept-nav"><span>{project.brand}</span><span>EXTREME MACRO</span></div>
+            <div className="concept-nav"><span>{project.brand}</span><span>{isPs5 ? 'BUTTON MACRO' : 'EXTREME MACRO'}</span></div>
             <div className="concept-copy"><span>CAMPAIGN / 01</span><h4>{project.name}</h4><p>{settings.websiteHeadline}</p><span className="concept-services">CREATIVE DIRECTION · PHOTOGRAPHY · IMAGE FINISHING</span><span className="mock-button">VIEW PRODUCT</span></div>
           </div>
         </div>
@@ -193,17 +199,17 @@ function CampaignApplications({ project }: { project: Project }) {
       <div className="application-label"><span>02</span><div><h3>Advertisement</h3><p>The product and message each have their own space.</p></div></div>
       <div className="advertisement-shell">
         <div className={`advertisement-concept advertisement-concept-${project.slug}`}>
-          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} ${isHarrys ? 'tilted hero' : isHoka ? 'front hero' : 'copy-space hero'} shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
+          <img src={copySpaceHero.src} srcSet={copySpaceHero.srcSet} sizes="90vw" alt={`${project.name} ${isPs5 ? 'console hero' : isHarrys ? 'tilted hero' : isHoka ? 'front hero' : 'copy-space hero'} shown as an advertisement.`} width={copySpaceHero.width} height={copySpaceHero.height} loading="lazy" decoding="async"/>
           <div className="advertisement-copy"><span>{project.brand}</span><h4>{settings.adHeadline}</h4><span className="mock-button">VIEW THE PRODUCT</span></div>
         </div>
       </div>
     </article>
 
     <article className="application-block social-application-block">
-      <div className="application-label"><span>03</span><div><h3>Social post</h3><p>{isXbox ? 'The tilted hero brings the controller into the feed.' : 'The slight macro carries the product into the feed.'}</p></div></div>
+      <div className="application-label"><span>03</span><div><h3>Social post</h3><p>{isPs5 ? 'The controller hero brings the product into the feed.' : isXbox ? 'The tilted hero brings the controller into the feed.' : 'The slight macro carries the product into the feed.'}</p></div></div>
       <div className="instagram-preview" aria-label={`${project.name} Instagram post crop preview`}>
         <div className="instagram-header"><span>POST PREVIEW</span><span className="instagram-more" aria-hidden="true">•••</span></div>
-        <div className="instagram-image"><img src={socialImage.src} srcSet={socialImage.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${project.name} ${isXbox ? 'tilted hero' : 'slight macro'} shown in an Instagram post.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
+        <div className="instagram-image"><img src={socialImage.src} srcSet={socialImage.srcSet} sizes="(max-width: 650px) 100vw, 620px" alt={`${project.name} ${isPs5 ? 'controller hero' : isXbox ? 'tilted hero' : 'slight macro'} shown in an Instagram post.`} width={socialImage.width} height={socialImage.height} loading="lazy" decoding="async"/></div>
         <div className="instagram-actions" aria-hidden="true"><span>♡</span></div>
       </div>
     </article>
@@ -212,6 +218,12 @@ function CampaignApplications({ project }: { project: Project }) {
 
 function photoTypeLabel(src: string) {
   const name = src.toLowerCase();
+  if (name.includes('ps5-controller-buttons-macro')) return 'CONTROLLER / BUTTON MACRO';
+  if (name.includes('ps5-console-hero')) return 'CONSOLE / HERO';
+  if (name.includes('ps5-console-logo-macro')) return 'CONSOLE / LOGO MACRO';
+  if (name.includes('ps5-console-upper-slight-macro')) return 'CONSOLE / UPPER DETAIL';
+  if (name.includes('ps5-controller-hero')) return 'CONTROLLER / HERO';
+  if (name.includes('ps5-controller-trigger-macro')) return 'CONTROLLER / TRIGGER MACRO';
   if (name.includes('hoka-locked-back-hero')) return 'OPPOSITE-SIDE HERO';
   if (name.includes('hoka-locked-top-hero')) return 'TOP HERO';
   if (name.includes('hoka-locked-bottom-hero')) return 'OUTSOLE HERO';
@@ -231,7 +243,7 @@ function photoTypeLabel(src: string) {
 }
 
 function campaignShowcaseImages(project: Project) {
-  if (project.slug === 'hoka-ora-recovery-slides' || project.slug === 'harrys-taming-cream') return project.gallery;
+  if (project.slug === 'hoka-ora-recovery-slides' || project.slug === 'harrys-taming-cream' || project.slug === 'playstation-5') return project.gallery;
   const [extreme, slight, macro, hero, heroCopy] = project.gallery;
   return [extreme, hero, slight, macro, heroCopy].filter((image): image is PortfolioImage => Boolean(image));
 }
@@ -248,7 +260,7 @@ function ProjectPage({ project }: { project: Project }) {
     <div className="project-grid campaign-sequence campaign-edited-sequence">
       {showcaseImages[1] ? <div className="project-frame campaign-product-hero"><span className="frame-index">02 / {photoTypeLabel(showcaseImages[1].src)}</span><ImageFrame image={showcaseImages[1]} label={showcaseImages[1].alt}/></div> : null}
       <div className="campaign-detail-pair">{showcaseImages.slice(2, 4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 3).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
-      {showcaseImages.length > 4 ? <div className={`campaign-supporting-views ${showcaseImages.length > 5 ? (project.slug === 'harrys-taming-cream' ? 'campaign-supporting-pair' : 'campaign-supporting-trio') : ''}`}>{showcaseImages.slice(4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 5).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div> : null}
+      {showcaseImages.length > 4 ? <div className={`campaign-supporting-views ${showcaseImages.length > 5 ? ((project.slug === 'harrys-taming-cream' || project.slug === 'playstation-5') ? 'campaign-supporting-pair' : 'campaign-supporting-trio') : ''}`}>{showcaseImages.slice(4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 5).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div> : null}
     </div>
     <CampaignApplications project={project}/>
   </section>
