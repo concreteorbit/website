@@ -148,21 +148,6 @@ const applicationSettings: Record<string, ApplicationSettings> = {
     adHeadline: 'Magnesium, brought into focus.',
     socialCaption: 'A closer look at the details behind your nightly routine.',
   },
-  'trace-electrolytes': {
-    websiteHeadline: 'Hydration with impact.',
-    adHeadline: '40,000 Volts. Zero subtlety.',
-    socialCaption: 'Hydration made physical.',
-  },
-  'mt-angel-joint-solution': {
-    websiteHeadline: 'Movement starts here.',
-    adHeadline: 'Joint support, brought into focus.',
-    socialCaption: 'The formula, closer.',
-  },
-  'phils-daily-facial-cleanser': {
-    websiteHeadline: 'Clean, brought closer.',
-    adHeadline: 'A better way to begin.',
-    socialCaption: 'Daily cleansing, down to the details.',
-  },
 };
 
 function CampaignApplications({ project }: { project: Project }) {

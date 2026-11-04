@@ -30,3 +30,9 @@ Pending review.
 - Images exported as lossless responsive WebP variants; native files checked against approved 4K PNGs.
 - No dependencies, forms, workflow permissions, domain configuration or public pricing changed.
 - Local production build and asset checks completed before publishing; deployment result recorded separately.
+
+## 2026-11-04 — Retire earlier campaign routes
+- Removed Mt. Angel Joint Solution, Phil’s Daily Facial Cleanser and Trace Electrolytes from the active project router and placement settings.
+- Confirmed Alice is already absent from the active router.
+- Retained PS5, Harry’s, HOKA, Xbox Elite and Trace Magnesium without altering their campaign data or images.
+- TypeScript and Vite production build passed; retired route and active campaign checks passed.

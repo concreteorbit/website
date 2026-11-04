@@ -1,35 +1,35 @@
 # Concrete Orbit
 
-React + TypeScript + Vite portfolio website.
+React, TypeScript and Vite portfolio website.
 
-## Run locally
+## Develop and build
 
-```bash
+```sh
 pnpm install
 pnpm dev
 pnpm build
 ```
 
+Production output: `dist/`. Vercel routing is configured in `vercel.json`; `public/_redirects` provides a fallback for static hosts that support it.
+
 ## Portfolio content
 
-- Campaign data and image sets live in `src/projectData.ts`.
-- Homepage campaign selections live in `src/selectedWork.ts`.
-- Optimized website assets live in `public/images`.
-- The homepage presents four selected campaigns: Trace Magnesium Glycinate, Trace Electrolytes, Mt. Angel Vitamins Joint Solution and Phil’s Daily Facial Cleanser.
-- Every homepage campaign opens on its extreme macro and links to a dedicated campaign page.
-- Each campaign contains the same five-image system: hero, hero with copy space, slight macro, messaging macro and extreme macro.
-- Every campaign ends with three practical placement examples: an extreme-macro website banner, a copy-space advertisement and a slight-macro Instagram preview.
-- Advertisement copy stays in the photographed negative space and never overlaps the product.
+- `src/projectData.ts` contains the five current campaigns and their galleries.
+- `src/selectedWork.ts` selects five homepage campaigns.
+- PS5, Trace Magnesium and Harry's each have a full-page homepage feature. Xbox Elite and HOKA share the final desktop page and stack on mobile.
+- PS5 opens at `/work/playstation-5`. Its homepage cover and opening photograph are the controller button macro.
+- PS5 gallery: controller button macro, console hero, console logo macro, console upper detail, controller hero, and controller trigger macro.
+- PS5 images use the approved finished 4K PNGs, with responsive lossless WebP exports from 480 to 3840 pixels wide. Native-size exports preserve the source pixels exactly.
+- Harry's opens at `/work/harrys-taming-cream`, with its approved five-image gallery and top-macro homepage cover.
+- Campaigns include website, advertisement, and social placement examples. Placement copy stays outside the product photograph.
+- `public/images` contains website image assets.
 
-## Inquiry form
+The active portfolio is PS5, Harry’s, HOKA, Xbox Elite, and Trace Magnesium. The studio photographs, founder hover interaction, and inquiry form are retained.
 
-The inquiry form uses Formspree through `@formspree/react`. Confirm the configured Formspree project remains owned and monitored before publishing. The UI and validation were tested locally; no live submission was sent during the latest review.
+## Validation
 
-Campaign-page inquiry links include a campaign reference in the URL and pass that reference into a hidden form field. All links labeled “Start a project” lead to `/#contact`.
+TypeScript and Vite production build passed. Campaign order, image references, responsive dimensions, and native PS5 image pixels were checked. Local browser preview was unavailable; visual desktop/mobile verification remains outstanding. This package has not been deployed to the live site.
 
-## Publishing checks
+## Retired campaign routes
 
-- Confirm a business email before adding a visible email alternative.
-- Confirm pricing, timing, revision allowance, payment terms and usage rights before publishing those details.
-- No analytics service is currently configured.
-- `vercel.json` and `public/_redirects` preserve direct project routes for supported hosts.
+Mt. Angel Joint Solution, Phil’s Daily Facial Cleanser, and Trace Electrolytes have been removed from active campaign data. Alice was already absent from the active router. Their previous campaign URLs resolve to the site’s not-found page.
