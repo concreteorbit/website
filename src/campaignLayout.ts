@@ -16,19 +16,8 @@ export function campaignShowcaseImages(project: Project): PortfolioImage[] {
   return images;
 }
 
-export function campaignHasMediumPair(project: Project): boolean {
-  return project.slug === 'playstation-5' || project.slug === 'hoka-ora-recovery-slides';
-}
-
-export function campaignImageGroups(images: PortfolioImage[]) {
-  const remaining = images.slice(1);
-  const groups: { medium: PortfolioImage; details: PortfolioImage[]; startIndex: number }[] = [];
-  let startIndex = 2;
-  while (remaining.length) {
-    // An extra detail stays beside its hero instead of creating an orphan row.
-    const group = remaining.splice(0, remaining.length === 4 ? 4 : 3);
-    groups.push({ medium: group[0], details: group.slice(1), startIndex });
-    startIndex += group.length;
-  }
-  return groups;
+export function campaignImageRows(images: PortfolioImage[]): PortfolioImage[][] {
+  const rows: PortfolioImage[][] = [];
+  for (let index = 1; index < images.length; index += 2) rows.push(images.slice(index, index + 2));
+  return rows;
 }

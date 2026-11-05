@@ -4,7 +4,7 @@ import { projects } from './projectData';
 import type { PortfolioImage, Project } from './projectData';
 import './styles.css';
 import { selectedWork } from './selectedWork';
-import { campaignShowcaseImages, campaignImageGroups, campaignHasMediumPair } from './campaignLayout';
+import { campaignShowcaseImages, campaignImageRows } from './campaignLayout';
 
 function Orbit({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="22" stroke="currentColor" strokeWidth="2"/><ellipse cx="50" cy="50" rx="47" ry="17" transform="rotate(-40 50 50)" stroke="currentColor" strokeWidth="2"/></svg>; }
 function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -228,44 +228,26 @@ function photoTypeLabel(src: string) {
   return 'CAMPAIGN IMAGE';
 }
 
-function CampaignPhoto({ image, index, size }: { image: PortfolioImage; index: number; size: 'lead' | 'medium' | 'detail' }) {
-  const sizes = size === 'lead' ? '98vw' : size === 'medium' ? '(max-width: 700px) 96vw, 74vw' : '(max-width: 700px) 47vw, 33vw';
-  return <figure className={`campaign-photo campaign-photo-${size}`}>
+function CampaignPhoto({ image, index, size, wide = false }: { image: PortfolioImage; index: number; size: 'lead' | 'medium'; wide?: boolean }) {
+  const sizes = size === 'lead' || wide ? '98vw' : '(max-width: 700px) 47vw, 49vw';
+  return <figure className={`campaign-photo campaign-photo-${size}${wide ? ' campaign-photo-wide' : ''}`}>
     <ImageFrame image={image} label={image.alt} priority={size === 'lead'} sizes={sizes}/>
     <span className="campaign-photo-number" aria-hidden="true">{String(index).padStart(2, '0')}</span>
     <figcaption className="campaign-photo-accessible-caption">{String(index).padStart(2, '0')} / {photoTypeLabel(image.src)}</figcaption>
   </figure>;
 }
 
-function campaignMosaicStyle(group: ReturnType<typeof campaignImageGroups>[number]): React.CSSProperties {
-  const mediumRatio = group.medium.width / group.medium.height;
-  const detailHeight = group.details.reduce((sum, image) => sum + image.height / image.width, 0);
-  const weight = mediumRatio * detailHeight;
-  return {
-    '--campaign-medium-share': weight / (1 + weight),
-    '--campaign-gap-share': mediumRatio * Math.max(0, group.details.length - 1) / (1 + weight),
-  } as React.CSSProperties;
-}
-
 function ProjectPage({ project }: { project: Project }) {
   const showcaseImages = campaignShowcaseImages(project);
   const leadImage = showcaseImages[0];
-  const hasMediumPair = campaignHasMediumPair(project);
-  const groups = hasMediumPair ? [] : campaignImageGroups(showcaseImages);
+  const rows = campaignImageRows(showcaseImages);
   return <>
   <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
     <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
     <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
-      {hasMediumPair ? <>
-        <div className="campaign-medium-pair" style={{ '--campaign-hero-left': `${showcaseImages[1].width / showcaseImages[1].height}fr`, '--campaign-hero-right': `${showcaseImages[2].width / showcaseImages[2].height}fr` } as React.CSSProperties}>{showcaseImages.slice(1, 3).map((image, index) => <CampaignPhoto image={image} index={index + 2} size="medium" key={image.src}/>)}</div>
-        <div className={`campaign-detail-grid campaign-detail-count-${showcaseImages.length - 3}`}>{showcaseImages.slice(3).map((image, index) => <CampaignPhoto image={image} index={index + 4} size="detail" key={image.src}/>)}</div>
-      </> : null}
-      {groups.map(group => <div className={`campaign-mosaic-row campaign-mosaic-details-${group.details.length}`} style={campaignMosaicStyle(group)} key={group.medium.src}>
-        <CampaignPhoto image={group.medium} index={group.startIndex} size="medium"/>
-        {group.details.length ? <div className="campaign-mosaic-details">{group.details.map((image, index) => <CampaignPhoto image={image} index={group.startIndex + index + 1} size="detail" key={image.src}/>)}</div> : null}
-      </div>)}
+      <div className="campaign-paired-grid">{rows.map((row, rowIndex) => <div className={`campaign-paired-row${row.length === 1 ? ' campaign-paired-row-single' : ''}`} style={{ '--campaign-pair-left': `${row[0].width / row[0].height}fr`, '--campaign-pair-right': row[1] ? `${row[1].width / row[1].height}fr` : '1fr' } as React.CSSProperties} key={row[0].src}>{row.map((image, index) => <CampaignPhoto image={image} index={rowIndex * 2 + index + 2} size="medium" wide={row.length === 1} key={image.src}/>)}</div>)}</div>
     </div>
     <div className="campaign-credits">
       <p className="campaign-credit">Shot by Simon Jackson / Concrete Orbit</p>

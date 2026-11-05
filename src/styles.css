@@ -1491,6 +1491,9 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .campaign-medium-pair{display:grid;grid-template-columns:minmax(0,var(--campaign-hero-left,1fr)) minmax(0,var(--campaign-hero-right,1fr));gap:var(--campaign-grid-gap);align-items:start}
 .campaign-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--campaign-grid-gap);align-items:start}
 .campaign-detail-count-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.campaign-paired-grid{display:flex;flex-direction:column;gap:var(--campaign-grid-gap)}
+.campaign-paired-row{display:grid;grid-template-columns:minmax(0,var(--campaign-pair-left,1fr)) minmax(0,var(--campaign-pair-right,1fr));gap:var(--campaign-grid-gap);align-items:start}
+.campaign-paired-row-single{grid-template-columns:minmax(0,1fr)}
 .compact-project .campaign-credits{width:100%;max-width:none;margin:22px auto 0;padding:16px 0 24px;border-top:1px solid var(--lab-line)}
 .campaign-credit{margin:0 0 12px;color:#a4afb6;font:400 10px/1.6 'DM Sans',Arial,sans-serif;letter-spacing:.02em}
 .campaign-image-guide{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:0;padding:0;color:var(--lab-muted);font:400 9px/1.6 'Space Grotesk',sans-serif;letter-spacing:.04em}

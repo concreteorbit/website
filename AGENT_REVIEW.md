@@ -62,3 +62,10 @@ Pending review.
 - HOKA supporting views fill two generous columns instead of a four-thumbnail strip. The opening photograph still establishes the main hierarchy.
 - Four full-page homepage features and the HOKA top-macro cover remain as requested. Xbox remains available at its direct campaign URL.
 - Source gallery checks, production build and all desktop/mobile browser layout checks passed after this adjustment.
+
+
+## 2026-11-05 — Consistent HOKA format across all campaigns
+- Applied the HOKA gallery structure to all five campaigns: one large opening photograph, followed by paired rows with tight gutters. A final unpaired photograph fills its row.
+- Kept the slight-macro/close-view ordering from the preceding revision. Each pair uses source aspect ratios so its lower edges align without cropping.
+- Preserved the small on-image numbers, matching bottom guide, photographer credit, clean headings and all original image assets.
+- Verified all campaign pages at desktop and phone sizes, including full row coverage, aligned image heights, image order/counts, source proportions and the four-feature homepage test.
