@@ -47,3 +47,11 @@ Pending review.
 - Updated the homepage headline to Cinematic product campaigns.
 - Original photographs, homepage campaign order, inquiry email and navigation preserved.
 - TypeScript, production build and source-gallery checks passed. Isolated browser checks passed for all five campaign routes at 1440px and 390px, including hierarchy, image proportions, numbering, missing images and horizontal overflow.
+
+
+## 2026-11-05 — Page-width galleries and homepage cover test
+- Widened every campaign gallery to the available viewport width with small gutters; medium/detail mosaic columns use source aspect ratios so rows align without cropping photographs.
+- Balanced the two medium hero frames on PS5 and HOKA using their original proportions.
+- Temporarily removed Xbox from homepage selection only. Its route and photographs remain active.
+- HOKA is now a full-page homepage feature using the top macro.
+- Local browser verification covers the four homepage selections, HOKA cover, full-width framing, aligned row bottoms and both desktop and phone layouts.

@@ -229,12 +229,22 @@ function photoTypeLabel(src: string) {
 }
 
 function CampaignPhoto({ image, index, size }: { image: PortfolioImage; index: number; size: 'lead' | 'medium' | 'detail' }) {
-  const sizes = size === 'lead' ? '(min-width: 1423px) 1280px, 90vw' : size === 'medium' ? '(max-width: 700px) 90vw, (min-width: 1423px) 960px, 68vw' : '(max-width: 700px) 44vw, (min-width: 1423px) 430px, 30vw';
+  const sizes = size === 'lead' ? '98vw' : size === 'medium' ? '(max-width: 700px) 96vw, 74vw' : '(max-width: 700px) 47vw, 33vw';
   return <figure className={`campaign-photo campaign-photo-${size}`}>
     <ImageFrame image={image} label={image.alt} priority={size === 'lead'} sizes={sizes}/>
     <span className="campaign-photo-number" aria-hidden="true">{String(index).padStart(2, '0')}</span>
     <figcaption className="campaign-photo-accessible-caption">{String(index).padStart(2, '0')} / {photoTypeLabel(image.src)}</figcaption>
   </figure>;
+}
+
+function campaignMosaicStyle(group: ReturnType<typeof campaignImageGroups>[number]): React.CSSProperties {
+  const mediumRatio = group.medium.width / group.medium.height;
+  const detailHeight = group.details.reduce((sum, image) => sum + image.height / image.width, 0);
+  const weight = mediumRatio * detailHeight;
+  return {
+    '--campaign-medium-share': weight / (1 + weight),
+    '--campaign-gap-share': mediumRatio * Math.max(0, group.details.length - 1) / (1 + weight),
+  } as React.CSSProperties;
 }
 
 function ProjectPage({ project }: { project: Project }) {
@@ -249,10 +259,10 @@ function ProjectPage({ project }: { project: Project }) {
     <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
       {hasHeroPair ? <>
-        <div className="campaign-medium-pair">{showcaseImages.slice(1, 3).map((image, index) => <CampaignPhoto image={image} index={index + 2} size="medium" key={image.src}/>)}</div>
+        <div className="campaign-medium-pair" style={{ '--campaign-hero-left': `${showcaseImages[1].width / showcaseImages[1].height}fr`, '--campaign-hero-right': `${showcaseImages[2].width / showcaseImages[2].height}fr` } as React.CSSProperties}>{showcaseImages.slice(1, 3).map((image, index) => <CampaignPhoto image={image} index={index + 2} size="medium" key={image.src}/>)}</div>
         <div className={`campaign-detail-grid campaign-detail-count-${showcaseImages.length - 3}`}>{showcaseImages.slice(3).map((image, index) => <CampaignPhoto image={image} index={index + 4} size="detail" key={image.src}/>)}</div>
       </> : null}
-      {groups.map(group => <div className={`campaign-mosaic-row campaign-mosaic-details-${group.details.length}`} key={group.medium.src}>
+      {groups.map(group => <div className={`campaign-mosaic-row campaign-mosaic-details-${group.details.length}`} style={campaignMosaicStyle(group)} key={group.medium.src}>
         <CampaignPhoto image={group.medium} index={group.startIndex} size="medium"/>
         {group.details.length ? <div className="campaign-mosaic-details">{group.details.map((image, index) => <CampaignPhoto image={image} index={group.startIndex + index + 1} size="detail" key={image.src}/>)}</div> : null}
       </div>)}
