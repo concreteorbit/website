@@ -4,7 +4,7 @@ import { projects } from './projectData';
 import type { PortfolioImage, Project } from './projectData';
 import './styles.css';
 import { selectedWork } from './selectedWork';
-import { campaignShowcaseImages, campaignImageGroups, campaignHasHeroPair } from './campaignLayout';
+import { campaignShowcaseImages, campaignImageGroups, campaignHasMediumPair } from './campaignLayout';
 
 function Orbit({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="22" stroke="currentColor" strokeWidth="2"/><ellipse cx="50" cy="50" rx="47" ry="17" transform="rotate(-40 50 50)" stroke="currentColor" strokeWidth="2"/></svg>; }
 function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -250,15 +250,15 @@ function campaignMosaicStyle(group: ReturnType<typeof campaignImageGroups>[numbe
 function ProjectPage({ project }: { project: Project }) {
   const showcaseImages = campaignShowcaseImages(project);
   const leadImage = showcaseImages[0];
-  const hasHeroPair = campaignHasHeroPair(project);
-  const groups = hasHeroPair ? [] : campaignImageGroups(showcaseImages);
+  const hasMediumPair = campaignHasMediumPair(project);
+  const groups = hasMediumPair ? [] : campaignImageGroups(showcaseImages);
   return <>
   <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
     <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
     <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
-      {hasHeroPair ? <>
+      {hasMediumPair ? <>
         <div className="campaign-medium-pair" style={{ '--campaign-hero-left': `${showcaseImages[1].width / showcaseImages[1].height}fr`, '--campaign-hero-right': `${showcaseImages[2].width / showcaseImages[2].height}fr` } as React.CSSProperties}>{showcaseImages.slice(1, 3).map((image, index) => <CampaignPhoto image={image} index={index + 2} size="medium" key={image.src}/>)}</div>
         <div className={`campaign-detail-grid campaign-detail-count-${showcaseImages.length - 3}`}>{showcaseImages.slice(3).map((image, index) => <CampaignPhoto image={image} index={index + 4} size="detail" key={image.src}/>)}</div>
       </> : null}

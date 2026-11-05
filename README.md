@@ -21,7 +21,7 @@ Production output: `dist/`. Vercel routing is configured in `vercel.json`; `publ
 - PS5 gallery: controller button macro, console hero, console logo macro, console upper detail, controller hero, and controller trigger macro.
 - PS5 images use the approved finished 4K PNGs, with responsive lossless WebP exports from 480 to 3840 pixels wide. Native-size exports preserve the source pixels exactly.
 - Harry's opens at `/work/harrys-taming-cream`, with its approved five-image gallery and top-macro homepage cover.
-- Campaign pages use a large opening photograph and a compact grid of medium hero views and smaller details. PS5 and HOKA use two medium hero views before their smaller photographs.
+- Campaign pages use a large opening photograph followed by medium slight-macro/close views and supporting photographs. PS5 and HOKA use two medium close views. Supporting images fill their rows rather than being forced into tiny frames.
 - Galleries fill the available page width with small gutters. Medium-and-detail mosaics align their lower edges using the photographs' original aspect ratios.
 - Dedicated copy-space variants stay in the source image records but are omitted from the displayed campaign gallery.
 - Website, advertisement, and social placement examples are temporarily hidden. Their component is retained for a later revision.

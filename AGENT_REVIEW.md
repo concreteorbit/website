@@ -55,3 +55,10 @@ Pending review.
 - Temporarily removed Xbox from homepage selection only. Its route and photographs remain active.
 - HOKA is now a full-page homepage feature using the top macro.
 - Local browser verification covers the four homepage selections, HOKA cover, full-width framing, aligned row bottoms and both desktop and phone layouts.
+
+
+## 2026-11-05 — Slight-macro hierarchy
+- Medium frames now prioritize slight-macro/close product views across all campaigns. The numbered image guide follows the revised display order.
+- HOKA supporting views fill two generous columns instead of a four-thumbnail strip. The opening photograph still establishes the main hierarchy.
+- Four full-page homepage features and the HOKA top-macro cover remain as requested. Xbox remains available at its direct campaign URL.
+- Source gallery checks, production build and all desktop/mobile browser layout checks passed after this adjustment.
