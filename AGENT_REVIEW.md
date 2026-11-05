@@ -36,3 +36,14 @@ Pending review.
 - Confirmed Alice is already absent from the active router.
 - Retained PS5, Harry’s, HOKA, Xbox Elite and Trace Magnesium without altering their campaign data or images.
 - TypeScript and Vite production build passed; retired route and active campaign checks passed.
+
+
+## 2026-11-05 — Compact campaign galleries
+- Rebuilt all five campaign pages with a large opening photograph and a compact hierarchy of medium hero views and small details. PS5 and HOKA use two medium hero views.
+- Omitted dedicated copy-space variants from the visible galleries without deleting their image records or assets.
+- Temporarily removed the application examples from the rendered pages; their source component is retained for future work.
+- Simplified campaign headers to their names and product names. Replaced role/deliverable panels with a small photographer credit and numbered image-name guide, matched to small numbers on the photographs.
+- Updated the homepage introduction to identify Simon as Photographer + Creative Director and kept its short first-person paragraph.
+- Updated the homepage headline to Cinematic product campaigns.
+- Original photographs, homepage campaign order, inquiry email and navigation preserved.
+- TypeScript, production build and source-gallery checks passed. Isolated browser checks passed for all five campaign routes at 1440px and 390px, including hierarchy, image proportions, numbering, missing images and horizontal overflow.

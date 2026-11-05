@@ -12,7 +12,6 @@ export type Project = {
   brand: string;
   services: string[];
   deliverables: string;
-  direction: string;
   cover: PortfolioImage;
   gallery: PortfolioImage[];
   tone: string;
@@ -154,7 +153,6 @@ export const projects: Project[] = [
     socialHandle: 'playstation',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Controller button macro · Console hero · Console logo macro · Console upper detail · Controller hero · Controller trigger macro',
-    direction: 'Two forms, one visual language. Sculpted edges, tactile surfaces and deep shadow.',
     cover: ps5Images[0],
     gallery: ps5Images,
   },
@@ -166,7 +164,6 @@ export const projects: Project[] = [
     socialHandle: 'harrys',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Top macro · Tilted hero · Slight macro · Extreme macro · Side macro',
-    direction: 'Sculptural form, deep navy and tactile packaging detail in controlled light.',
     cover: harrysTamingImages[1],
     gallery: harrysTamingImages,
   },
@@ -178,7 +175,6 @@ export const projects: Project[] = [
     socialHandle: 'hoka',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro · Outsole hero · Top hero · Opposite-side hero',
-    direction: 'Sculpted form, textured foam and close material detail in controlled violet light.',
     cover: hokaOra.hero,
     gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel, hokaOra.bottomHero, hokaOra.topHero, hokaOra.backHero],
   },
@@ -190,7 +186,6 @@ export const projects: Project[] = [
     socialHandle: 'xbox',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
-    direction: 'Five black-on-black product images built around sculpted form, tactile materials and controlled reflections.',
     cover: xboxController.heroCopy,
     gallery: [xboxController.extreme, xboxController.slight, xboxController.macro, xboxController.hero, xboxController.heroCopy],
   },
@@ -202,7 +197,6 @@ export const projects: Project[] = [
     socialHandle: 'traceminerals',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Hero · Copy-space hero · Slight macro · Messaging macro · Extreme macro',
-    direction: 'Five blue-lit product images built around scale, label detail and controlled contrast.',
     cover: traceMagnesium.heroCopy,
     gallery: [traceMagnesium.extreme, traceMagnesium.slight, traceMagnesium.macro, traceMagnesium.hero, traceMagnesium.heroCopy],
   },

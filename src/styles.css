@@ -1475,3 +1475,39 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 
 /* Preserve the approved complete Harry's homepage frame. */
 .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}
+
+/* Compact campaign galleries: opening photograph, then hero and stacked details. */
+.compact-project{padding-top:32px;padding-bottom:0}
+.compact-project .detail-heading{padding-top:clamp(30px,4vw,56px);padding-bottom:28px}
+.compact-project .detail-heading h1{margin:0}
+.compact-project .project-positioning{margin-bottom:0}
+.compact-project .campaign-gallery{display:flex;flex-direction:column;gap:clamp(20px,2vw,28px);width:100%;max-width:1280px;margin-inline:auto}
+.campaign-photo{position:relative;margin:0;min-width:0}
+.campaign-photo .portfolio-image{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#000}
+.campaign-photo-number{position:absolute;top:10px;left:12px;color:#c7d2d9;font:500 9px/1.4 'Space Grotesk',sans-serif;letter-spacing:.1em;text-shadow:0 1px 6px #000}
+.campaign-photo-accessible-caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.campaign-mosaic-row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(12px,1.5vw,22px);align-items:start}
+.campaign-mosaic-details{display:flex;flex-direction:column;gap:clamp(16px,1.5vw,22px);min-width:0}
+.campaign-mosaic-details-3{grid-template-columns:minmax(0,3fr) minmax(0,1fr)}
+.campaign-mosaic-details-0{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+.campaign-medium-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.5vw,22px);align-items:start}
+.campaign-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.5vw,22px);align-items:start}
+.campaign-detail-count-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.compact-project .campaign-credits{width:100%;max-width:1280px;margin:26px auto 0;padding:18px 0 28px;border-top:1px solid var(--lab-line)}
+.campaign-credit{margin:0 0 12px;color:#a4afb6;font:400 10px/1.6 'DM Sans',Arial,sans-serif;letter-spacing:.02em}
+.campaign-image-guide{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:0;padding:0;color:var(--lab-muted);font:400 9px/1.6 'Space Grotesk',sans-serif;letter-spacing:.04em}
+.campaign-image-guide li{display:flex;gap:8px;align-items:baseline}
+.campaign-image-guide li>span:first-child{color:var(--lab-accent);flex-shrink:0}
+.compact-project+.contact{padding-top:clamp(44px,5vw,72px)}
+@media(max-width:700px){
+  .compact-project{padding-top:24px}
+  .compact-project .detail-heading{padding-top:28px;padding-bottom:24px}
+  .compact-project .campaign-gallery{gap:24px}
+  .campaign-mosaic-row{grid-template-columns:minmax(0,1fr);gap:18px}
+  .campaign-medium-pair{grid-template-columns:minmax(0,1fr);gap:24px}
+  .campaign-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
+  .campaign-mosaic-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}
+  .campaign-photo-number{top:8px;left:9px;font-size:9px}
+  .compact-project .campaign-credits{margin-top:22px;padding-bottom:20px}
+  .campaign-image-guide{display:grid;grid-template-columns:1fr;gap:6px}
+}

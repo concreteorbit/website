@@ -21,14 +21,18 @@ Production output: `dist/`. Vercel routing is configured in `vercel.json`; `publ
 - PS5 gallery: controller button macro, console hero, console logo macro, console upper detail, controller hero, and controller trigger macro.
 - PS5 images use the approved finished 4K PNGs, with responsive lossless WebP exports from 480 to 3840 pixels wide. Native-size exports preserve the source pixels exactly.
 - Harry's opens at `/work/harrys-taming-cream`, with its approved five-image gallery and top-macro homepage cover.
-- Campaigns include website, advertisement, and social placement examples. Placement copy stays outside the product photograph.
+- Campaign pages use a large opening photograph and a compact grid of medium hero views and smaller details. PS5 and HOKA use two medium hero views before their smaller photographs.
+- Dedicated copy-space variants stay in the source image records but are omitted from the displayed campaign gallery.
+- Website, advertisement, and social placement examples are temporarily hidden. Their component is retained for a later revision.
+- The introduction identifies Simon as Photographer + Creative Director, with a short first-person paragraph.
+- Campaign headers contain the campaign/product names. A small number on each photograph matches a compact image-name guide and photographer credit below the gallery; the former role/deliverables panels and descriptive taglines are not displayed.
 - `public/images` contains website image assets.
 
 The active portfolio is PS5, Harry’s, HOKA, Xbox Elite, and Trace Magnesium. The studio photographs, founder hover interaction, and inquiry form are retained.
 
 ## Validation
 
-TypeScript and Vite production build passed. Campaign order, image references, responsive dimensions, and native PS5 image pixels were checked. Local browser preview was unavailable; visual desktop/mobile verification remains outstanding. This package has not been deployed to the live site.
+TypeScript and Vite production builds pass. The compact galleries have been checked in an isolated browser at desktop and phone sizes for image counts, proportions, hierarchy, missing assets, horizontal overflow and working inquiry links. Preview screenshots and verification results are saved in the workspace under `output/compact-campaign-layout/`. Publication is tracked through the GitHub Pages workflow.
 
 ## Retired campaign routes
 

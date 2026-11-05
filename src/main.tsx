@@ -4,6 +4,7 @@ import { projects } from './projectData';
 import type { PortfolioImage, Project } from './projectData';
 import './styles.css';
 import { selectedWork } from './selectedWork';
+import { campaignShowcaseImages, campaignImageGroups, campaignHasHeroPair } from './campaignLayout';
 
 function Orbit({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="22" stroke="currentColor" strokeWidth="2"/><ellipse cx="50" cy="50" rx="47" ry="17" transform="rotate(-40 50 50)" stroke="currentColor" strokeWidth="2"/></svg>; }
 function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -20,7 +21,7 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
   window.setTimeout(alignContact, 900);
 }
 function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span>↗</span></a></nav></header>; }
-function ImageFrame({ image, tone = 'hero-tone', label, priority = false }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes="(max-width: 700px) 100vw, 90vw" alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
+function ImageFrame({ image, tone = 'hero-tone', label, priority = false, sizes = '(max-width: 700px) 100vw, 90vw' }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean; sizes?: string }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes={sizes} alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
 const acureHomepageHero: PortfolioImage = {
   src: '/images/acure-home-hero-2560.webp',
   srcSet: '/images/acure-home-hero-1200.webp 1200w, /images/acure-home-hero-2560.webp 2560w',
@@ -71,13 +72,13 @@ function InTheStudio() {
 function FounderPortrait() {
   const [showColor, setShowColor] = useState(false);
   return <button type="button" className={`founder-portrait ${showColor ? 'is-color' : ''}`} aria-label="Toggle founder portrait color" aria-pressed={showColor} onClick={() => setShowColor(value => !value)}>
-    <img className="founder-portrait-mono" src="/images/simon-founder-new-mono-1200.webp" srcSet="/images/simon-founder-new-mono-800.webp 800w, /images/simon-founder-new-mono-1200.webp 1200w" sizes="(max-width:800px) 70vw, 370px" width={3820} height={2547} alt="Simon Jackson, Owner and Creative Director of Concrete Orbit" loading="lazy" decoding="async"/>
+    <img className="founder-portrait-mono" src="/images/simon-founder-new-mono-1200.webp" srcSet="/images/simon-founder-new-mono-800.webp 800w, /images/simon-founder-new-mono-1200.webp 1200w" sizes="(max-width:800px) 70vw, 370px" width={3820} height={2547} alt="Simon Jackson, Photographer and Creative Director of Concrete Orbit" loading="lazy" decoding="async"/>
     <img className="founder-portrait-color" src="/images/simon-founder-new-color-1200.webp" srcSet="/images/simon-founder-new-color-800.webp 800w, /images/simon-founder-new-color-1200.webp 1200w" sizes="(max-width:800px) 70vw, 370px" width={3820} height={2547} alt="" aria-hidden="true" loading="lazy" decoding="async"/>
   </button>;
 }
 
 function Studio() {
-  return <section id="studio" className="founder founder-reversed section-pad"><div className="founder-copy"><span className="eyebrow">OWNER / CREATIVE DIRECTOR</span><h2>I make the work<br/>and lead the project.</h2><p>I’m Simon Jackson, owner and creative director of Concrete Orbit. I develop the direction, shoot the product and finish every image.</p><div className="founder-name">SIMON JACKSON<span>Owner + Creative Director</span></div></div><div className="founder-label"><Orbit/><FounderPortrait/></div></section>;
+  return <section id="studio" className="founder founder-reversed section-pad"><div className="founder-copy"><span className="eyebrow">PHOTOGRAPHER / CREATIVE DIRECTOR</span><p>I’m Simon Jackson, the photographer and creative director behind Concrete Orbit. I develop the direction, shoot the product and finish every image.</p><div className="founder-name">SIMON JACKSON<span>Photographer + Creative Director</span></div></div><div className="founder-label"><Orbit/><FounderPortrait/></div></section>;
 }
 
 function Contact() {
@@ -105,7 +106,7 @@ function Home() {
         </picture>
         <div className="fullbleed-hero-copy">
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
-          <h1>One product.<br/>Five images.<br/>One campaign.</h1>
+          <h1>Cinematic product<br/>campaigns.</h1>
           <p className="fullbleed-hero-description">Cinematic product photography built as coordinated hero, macro and copy-space images for websites, social and advertising.</p>
           <a className="hero-project-cta" href="#contact" onClick={scrollToContact}>Start a project <span>↘</span></a>
         </div>
@@ -227,27 +228,39 @@ function photoTypeLabel(src: string) {
   return 'CAMPAIGN IMAGE';
 }
 
-function campaignShowcaseImages(project: Project) {
-  if (project.slug === 'hoka-ora-recovery-slides' || project.slug === 'harrys-taming-cream' || project.slug === 'playstation-5') return project.gallery;
-  const [extreme, slight, macro, hero, heroCopy] = project.gallery;
-  return [extreme, hero, slight, macro, heroCopy].filter((image): image is PortfolioImage => Boolean(image));
+function CampaignPhoto({ image, index, size }: { image: PortfolioImage; index: number; size: 'lead' | 'medium' | 'detail' }) {
+  const sizes = size === 'lead' ? '(min-width: 1423px) 1280px, 90vw' : size === 'medium' ? '(max-width: 700px) 90vw, (min-width: 1423px) 960px, 68vw' : '(max-width: 700px) 44vw, (min-width: 1423px) 430px, 30vw';
+  return <figure className={`campaign-photo campaign-photo-${size}`}>
+    <ImageFrame image={image} label={image.alt} priority={size === 'lead'} sizes={sizes}/>
+    <span className="campaign-photo-number" aria-hidden="true">{String(index).padStart(2, '0')}</span>
+    <figcaption className="campaign-photo-accessible-caption">{String(index).padStart(2, '0')} / {photoTypeLabel(image.src)}</figcaption>
+  </figure>;
 }
 
 function ProjectPage({ project }: { project: Project }) {
   const showcaseImages = campaignShowcaseImages(project);
   const leadImage = showcaseImages[0];
+  const hasHeroPair = campaignHasHeroPair(project);
+  const groups = hasHeroPair ? [] : campaignImageGroups(showcaseImages);
   return <>
-  <section className={`project-detail section-pad curated-project project-${project.slug}`}>
+  <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
     <a className="back-link" href="/#work">← PROJECT INDEX</a>
-    <div className="detail-heading"><div><span className="project-study-note-top">PRODUCT CAMPAIGN</span><h1>{project.name}</h1><p className="project-positioning">{project.direction}</p></div><p>{project.brand}</p></div>
-    {leadImage ? <div className="project-lead-frame"><span className="frame-index">01 / {photoTypeLabel(leadImage.src)}</span><ImageFrame image={leadImage} tone={project.tone} label={leadImage.alt} priority/></div> : null}
-    <div className="project-information"><div><span className="eyebrow">MY ROLE</span><p>{project.services.join(' · ')}</p></div><div><span className="eyebrow">IMAGES IN THE SET</span><p>{project.deliverables}</p></div></div>
-    <div className="project-grid campaign-sequence campaign-edited-sequence">
-      {showcaseImages[1] ? <div className="project-frame campaign-product-hero"><span className="frame-index">02 / {photoTypeLabel(showcaseImages[1].src)}</span><ImageFrame image={showcaseImages[1]} label={showcaseImages[1].alt}/></div> : null}
-      <div className="campaign-detail-pair">{showcaseImages.slice(2, 4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 3).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div>
-      {showcaseImages.length > 4 ? <div className={`campaign-supporting-views ${showcaseImages.length > 5 ? ((project.slug === 'harrys-taming-cream' || project.slug === 'playstation-5') ? 'campaign-supporting-pair' : 'campaign-supporting-trio') : ''}`}>{showcaseImages.slice(4).map((img, index) => <div className="project-frame" key={img.src}><span className="frame-index">{String(index + 5).padStart(2, '0')} / {photoTypeLabel(img.src)}</span><ImageFrame image={img} label={img.alt}/></div>)}</div> : null}
+    <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
+    <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
+      {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
+      {hasHeroPair ? <>
+        <div className="campaign-medium-pair">{showcaseImages.slice(1, 3).map((image, index) => <CampaignPhoto image={image} index={index + 2} size="medium" key={image.src}/>)}</div>
+        <div className={`campaign-detail-grid campaign-detail-count-${showcaseImages.length - 3}`}>{showcaseImages.slice(3).map((image, index) => <CampaignPhoto image={image} index={index + 4} size="detail" key={image.src}/>)}</div>
+      </> : null}
+      {groups.map(group => <div className={`campaign-mosaic-row campaign-mosaic-details-${group.details.length}`} key={group.medium.src}>
+        <CampaignPhoto image={group.medium} index={group.startIndex} size="medium"/>
+        {group.details.length ? <div className="campaign-mosaic-details">{group.details.map((image, index) => <CampaignPhoto image={image} index={group.startIndex + index + 1} size="detail" key={image.src}/>)}</div> : null}
+      </div>)}
     </div>
-    <CampaignApplications project={project}/>
+    <div className="campaign-credits">
+      <p className="campaign-credit">Shot by Simon Jackson / Concrete Orbit</p>
+      <ol className="campaign-image-guide" aria-label="Photograph index">{showcaseImages.map((image, index) => <li key={image.src}><span>{String(index + 1).padStart(2, '0')}</span><span>{photoTypeLabel(image.src)}</span></li>)}</ol>
+    </div>
   </section>
   <Contact/>
   </>;
