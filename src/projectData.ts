@@ -108,8 +108,8 @@ const ps5Images: PortfolioImage[] = [
     "alt": "Close view of the DualSense controller face buttons, touchpad and textured charcoal shell."
   },
   {
-    "src": "/images/projects/ps5-console-hero-3840.webp",
-    "srcSet": "/images/projects/ps5-console-hero-480.webp 480w, /images/projects/ps5-console-hero-800.webp 800w, /images/projects/ps5-console-hero-1200.webp 1200w, /images/projects/ps5-console-hero-1920.webp 1920w, /images/projects/ps5-console-hero-2560.webp 2560w, /images/projects/ps5-console-hero-3840.webp 3840w",
+    "src": "/images/projects/ps5-console-hero-sony-v2-3840.webp",
+    "srcSet": "/images/projects/ps5-console-hero-sony-v2-480.webp 480w, /images/projects/ps5-console-hero-sony-v2-800.webp 800w, /images/projects/ps5-console-hero-sony-v2-1200.webp 1200w, /images/projects/ps5-console-hero-sony-v2-1920.webp 1920w, /images/projects/ps5-console-hero-sony-v2-2560.webp 2560w, /images/projects/ps5-console-hero-sony-v2-3840.webp 3840w",
     "width": 3840,
     "height": 2160,
     "alt": "PlayStation 5 console emerging from black, defined by a restrained highlight and curved panels."
