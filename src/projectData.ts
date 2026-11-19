@@ -144,7 +144,56 @@ const ps5Images: PortfolioImage[] = [
   }
 ];
 
+const mtAngelJointImages: PortfolioImage[] = [
+  {
+    "src": "/images/projects/mt-angel-joint-extreme-macro-2560.webp",
+    "srcSet": "/images/projects/mt-angel-joint-extreme-macro-480.webp 480w, /images/projects/mt-angel-joint-extreme-macro-960.webp 960w, /images/projects/mt-angel-joint-extreme-macro-1920.webp 1920w, /images/projects/mt-angel-joint-extreme-macro-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Extreme macro of the Joint Solution label and printed ingredient details in cool directional light."
+  },
+  {
+    "src": "/images/projects/mt-angel-joint-slight-macro-2560.webp",
+    "srcSet": "/images/projects/mt-angel-joint-slight-macro-480.webp 480w, /images/projects/mt-angel-joint-slight-macro-960.webp 960w, /images/projects/mt-angel-joint-slight-macro-1920.webp 1920w, /images/projects/mt-angel-joint-slight-macro-2560.webp 2560w",
+    "width": 2560,
+    "height": 1684,
+    "alt": "Close view of the Mt. Angel Vitamins name, bottle neck and Joint Solution label."
+  },
+  {
+    "src": "/images/projects/mt-angel-joint-macro-2560.webp",
+    "srcSet": "/images/projects/mt-angel-joint-macro-480.webp 480w, /images/projects/mt-angel-joint-macro-960.webp 960w, /images/projects/mt-angel-joint-macro-1920.webp 1920w, /images/projects/mt-angel-joint-macro-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Angled macro of the Joint Solution bottle, label texture and cap."
+  },
+  {
+    "src": "/images/projects/mt-angel-joint-upright-hero-2560.webp",
+    "srcSet": "/images/projects/mt-angel-joint-upright-hero-480.webp 480w, /images/projects/mt-angel-joint-upright-hero-960.webp 960w, /images/projects/mt-angel-joint-upright-hero-1920.webp 1920w, /images/projects/mt-angel-joint-upright-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1623,
+    "alt": "Upright Mt. Angel Vitamins Joint Solution bottle outlined against black."
+  },
+  {
+    "src": "/images/projects/mt-angel-joint-tilted-hero-2560.webp",
+    "srcSet": "/images/projects/mt-angel-joint-tilted-hero-480.webp 480w, /images/projects/mt-angel-joint-tilted-hero-960.webp 960w, /images/projects/mt-angel-joint-tilted-hero-1920.webp 1920w, /images/projects/mt-angel-joint-tilted-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Tilted Joint Solution bottle with cool highlights and space around the product."
+  }
+];
+
 export const projects: Project[] = [
+  {
+    slug: 'mt-angel-joint-solution',
+    name: 'MT. ANGEL',
+    brand: 'Joint Solution',
+    tone: 'slate',
+    socialHandle: '',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Extreme macro · Slight macro · Messaging macro · Upright hero · Tilted hero',
+    cover: mtAngelJointImages[0],
+    gallery: mtAngelJointImages,
+  },
   {
     slug: 'playstation-5',
     name: 'PLAYSTATION 5',
