@@ -1477,6 +1477,14 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 .homepage-work-grid .homepage-campaign-harrys-taming-cream .homepage-campaign-image{object-fit:contain!important;object-position:center}
 
 /* Compact campaign galleries: opening photograph, then hero and stacked details. */
+/* Phone homepage: preserve each complete photograph and keep captions below it. */
+@media(max-width:600px){
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-stage{height:auto;min-height:0!important;aspect-ratio:auto!important}
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-image{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain!important}
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-stage::after{display:none}
+ .homepage-work-grid .homepage-campaign-feature .homepage-campaign-info{position:static;width:auto;padding:20px 5% 24px;transform:none;text-shadow:none}
+}
+
 .compact-project{padding:32px clamp(10px,1.25vw,24px) 0;--campaign-grid-gap:clamp(10px,1.1vw,18px)}
 .compact-project .detail-heading{padding-top:clamp(30px,4vw,56px);padding-bottom:28px}
 .compact-project .detail-heading h1{margin:0}
