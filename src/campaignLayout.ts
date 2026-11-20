@@ -3,7 +3,7 @@ import type { PortfolioImage, Project } from './projectData';
 export function campaignShowcaseImages(project: Project): PortfolioImage[] {
   const images = project.gallery.filter(image => !/(?:hero-copy|copy-space|copyspace)/i.test(image.src));
   if (project.slug === 'playstation-5') {
-    return [images[0], images[3], images[5], images[1], images[4], images[2]];
+    return [images[2], images[3], images[5], images[1], images[4], images[0]];
   }
   if (project.slug === 'hoka-ora-recovery-slides') {
     return [images[0], images[2], images[3], images[1], images[5], images[4], images[6]];
@@ -12,7 +12,8 @@ export function campaignShowcaseImages(project: Project): PortfolioImage[] {
     const [signature, slight, macro, hero] = images;
     return [signature, slight, hero, macro].filter((image): image is PortfolioImage => Boolean(image));
   }
-  if (project.slug === 'harrys-taming-cream') return [images[0], images[2], images[1], images[3], images[4]];
+  if (project.slug === 'harrys-taming-cream') return [images[3], images[2], images[1], images[0], images[4]];
+  if (project.slug === 'mt-angel-joint-solution') return [images[1], images[0], images[2], images[3], images[4]];
   return images;
 }
 
