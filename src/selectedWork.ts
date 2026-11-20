@@ -13,11 +13,11 @@ type HomepageSelection = {
 
 // Five full-page homepage features; Xbox remains available at its campaign URL.
 const homepageSelections: HomepageSelection[] = [
-  { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'feature', alt: 'Close view of the Mt. Angel Vitamins name, bottle neck and Joint Solution label.', imageIndex: 1, stateLabel: 'SLIGHT MACRO' },
-  { slug: 'playstation-5', title: 'PLAYSTATION 5', subtitle: 'Console + DualSense Controller', size: 'feature', alt: 'Extreme close view of the PlayStation emblem cut into the textured console panel.', imageIndex: 2, stateLabel: 'CONSOLE LOGO MACRO' },
-  { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'feature', alt: 'Extreme macro of Trace Magnesium Glycinate in blue light.', stateLabel: 'EXTREME MACRO' },
-  { slug: 'harrys-taming-cream', title: 'HARRY’S', subtitle: 'Taming Cream', size: 'feature', alt: 'Extreme macro of Harry’s packaging texture and printed details.', imageIndex: 3, stateLabel: 'EXTREME MACRO' },
-  { slug: 'hoka-ora-recovery-slides', title: 'HOKA', subtitle: 'ORA Recovery Slides', size: 'feature', alt: 'Extreme macro of the HOKA logo, vents and textured foam.', imageIndex: 0, stateLabel: 'EXTREME MACRO' },
+  { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'feature', alt: 'Tilted Mt. Angel Joint Solution bottle with cool highlights against black.', imageIndex: 4, stateLabel: 'TILTED HERO' },
+  { slug: 'playstation-5', title: 'PLAYSTATION 5', subtitle: 'Console + DualSense Controller', size: 'feature', alt: 'PlayStation 5 console hero with curved panels revealed against black.', imageIndex: 1, stateLabel: 'CONSOLE HERO' },
+  { slug: 'trace-magnesium-glycinate', title: 'TRACE', subtitle: 'Magnesium Glycinate', size: 'feature', alt: 'Trace Magnesium Glycinate hero photograph against black.', imageIndex: 3, stateLabel: 'HERO' },
+  { slug: 'harrys-taming-cream', title: 'HARRY’S', subtitle: 'Taming Cream', size: 'feature', alt: 'Tilted hero of Harry’s Taming Cream in dark navy light.', imageIndex: 1, stateLabel: 'TILTED HERO' },
+  { slug: 'hoka-ora-recovery-slides', title: 'HOKA', subtitle: 'ORA Recovery Slides', size: 'feature', alt: 'Angled front hero of the HOKA ORA Recovery Slide in violet light.', imageIndex: 1, stateLabel: 'FRONT HERO' },
 ];
 
 export const selectedWork = homepageSelections.map(selection => {
