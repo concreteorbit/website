@@ -191,7 +191,7 @@ export const projects: Project[] = [
     socialHandle: '',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Extreme macro · Slight macro · Messaging macro · Upright hero · Tilted hero',
-    cover: mtAngelJointImages[1],
+    cover: mtAngelJointImages[0],
     gallery: mtAngelJointImages,
   },
   {
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     socialHandle: 'playstation',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Controller button macro · Console hero · Console logo macro · Console upper detail · Controller hero · Controller trigger macro',
-    cover: ps5Images[2],
+    cover: ps5Images[0],
     gallery: ps5Images,
   },
   {
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     socialHandle: 'harrys',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Top macro · Tilted hero · Slight macro · Extreme macro · Side macro',
-    cover: harrysTamingImages[3],
+    cover: harrysTamingImages[1],
     gallery: harrysTamingImages,
   },
   {
@@ -224,7 +224,7 @@ export const projects: Project[] = [
     socialHandle: 'hoka',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro · Outsole hero · Top hero · Opposite-side hero',
-    cover: hokaOra.extreme,
+    cover: hokaOra.hero,
     gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel, hokaOra.bottomHero, hokaOra.topHero, hokaOra.backHero],
   },
   {
