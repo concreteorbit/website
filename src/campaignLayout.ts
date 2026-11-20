@@ -6,13 +6,14 @@ export function campaignShowcaseImages(project: Project): PortfolioImage[] {
     return [images[0], images[3], images[5], images[1], images[4], images[2]];
   }
   if (project.slug === 'hoka-ora-recovery-slides') {
-    return [images[0], images[2], images[3], images[1], images[5], images[4], images[6]];
+    return [images[1], images[2], images[3], images[0], images[5], images[4], images[6]];
   }
   if (project.slug === 'trace-magnesium-glycinate' || project.slug === 'xbox-elite-controller') {
     const [signature, slight, macro, hero] = images;
     return [signature, slight, hero, macro].filter((image): image is PortfolioImage => Boolean(image));
   }
   if (project.slug === 'harrys-taming-cream') return [images[0], images[2], images[1], images[3], images[4]];
+  if (project.slug === 'mt-angel-joint-solution') return [images[2], images[1], images[0], images[3], images[4]];
   return images;
 }
 

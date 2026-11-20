@@ -53,7 +53,7 @@ const xboxController = {
 
 const hokaOra = {
   extreme: {src: '/images/projects/hoka-locked-extreme-macro-2560.webp', srcSet: '/images/projects/hoka-locked-extreme-macro-800.webp 800w, /images/projects/hoka-locked-extreme-macro-1200.webp 1200w, /images/projects/hoka-locked-extreme-macro-1920.webp 1920w, /images/projects/hoka-locked-extreme-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Extreme macro of the HOKA logo, vents and textured foam.'},
-  hero: {src: '/images/projects/hoka-locked-hero-2560.webp', srcSet: '/images/projects/hoka-locked-hero-800.webp 800w, /images/projects/hoka-locked-hero-1200.webp 1200w, /images/projects/hoka-locked-hero-1920.webp 1920w, /images/projects/hoka-locked-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Front hero of the HOKA ORA Recovery Slide in violet light.'},
+  hero: {"src":"/images/projects/hoka-approved-front-hero-2235.webp","srcSet":"/images/projects/hoka-approved-front-hero-480.webp 480w, /images/projects/hoka-approved-front-hero-960.webp 960w, /images/projects/hoka-approved-front-hero-1600.webp 1600w, /images/projects/hoka-approved-front-hero-2235.webp 2235w","width":2235,"height":1257,"alt":"Front hero of the HOKA ORA Recovery Slide in violet light."},
   top: {src: '/images/projects/hoka-locked-top-macro-2560.webp', srcSet: '/images/projects/hoka-locked-top-macro-800.webp 800w, /images/projects/hoka-locked-top-macro-1200.webp 1200w, /images/projects/hoka-locked-top-macro-1920.webp 1920w, /images/projects/hoka-locked-top-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Close overhead view of the sculpted upper and footbed.'},
   heel: {src: '/images/projects/hoka-locked-heel-macro-2560.webp', srcSet: '/images/projects/hoka-locked-heel-macro-800.webp 800w, /images/projects/hoka-locked-heel-macro-1200.webp 1200w, /images/projects/hoka-locked-heel-macro-1920.webp 1920w, /images/projects/hoka-locked-heel-macro-2560.webp 2560w', width: 2560, height: 1440, alt: 'Macro of the layered heel and textured foam.'},
   bottomHero: {src: '/images/projects/hoka-locked-bottom-hero-2560.webp', srcSet: '/images/projects/hoka-locked-bottom-hero-800.webp 800w, /images/projects/hoka-locked-bottom-hero-1200.webp 1200w, /images/projects/hoka-locked-bottom-hero-1920.webp 1920w, /images/projects/hoka-locked-bottom-hero-2560.webp 2560w', width: 2560, height: 1440, alt: 'Outsole hero showing the HOKA mark and tread.'},
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     socialHandle: '',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Extreme macro · Slight macro · Messaging macro · Upright hero · Tilted hero',
-    cover: mtAngelJointImages[0],
+    cover: mtAngelJointImages[2],
     gallery: mtAngelJointImages,
   },
   {
