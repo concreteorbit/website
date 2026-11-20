@@ -202,7 +202,7 @@ export const projects: Project[] = [
     socialHandle: 'playstation',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Controller button macro · Console hero · Console logo macro · Console upper detail · Controller hero · Controller trigger macro',
-    cover: ps5Images[0],
+    cover: ps5Images[2],
     gallery: ps5Images,
   },
   {
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     socialHandle: 'harrys',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
     deliverables: 'Top macro · Tilted hero · Slight macro · Extreme macro · Side macro',
-    cover: harrysTamingImages[1],
+    cover: harrysTamingImages[2],
     gallery: harrysTamingImages,
   },
   {
