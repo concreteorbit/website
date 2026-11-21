@@ -1528,6 +1528,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .campaign-image-guide{display:grid;grid-template-columns:1fr;gap:6px}
 }
 
+.site-arrow{display:inline-block;width:.8em;height:.8em;vertical-align:-.08em;flex-shrink:0}
+
 /* Mobile opening banner: readable introduction, then the complete wide photo. */
 @media(max-width:800px){
  .fullbleed-hero .hero-image{display:flex;flex-direction:column;height:auto;min-height:0;max-height:none}

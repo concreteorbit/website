@@ -7,6 +7,17 @@ import { selectedWork } from './selectedWork';
 import { campaignShowcaseImages, campaignImageRows } from './campaignLayout';
 
 function Orbit({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="22" stroke="currentColor" strokeWidth="2"/><ellipse cx="50" cy="50" rx="47" ry="17" transform="rotate(-40 50 50)" stroke="currentColor" strokeWidth="2"/></svg>; }
+function Arrow({ direction = 'up-right' }: { direction?: 'up-right' | 'down-right' | 'down' | 'up' | 'left' | 'right' }) {
+  const paths = {
+    'up-right': 'M5 19 19 5M5 5h14v14',
+    'down-right': 'M5 5l14 14M5 19h14V5',
+    down: 'M12 3v18M5 14l7 7 7-7',
+    up: 'M12 21V3M5 10l7-7 7 7',
+    left: 'M21 12H3M10 5l-7 7 7 7',
+    right: 'M3 12h18M14 5l7 7-7 7',
+  };
+  return <svg className="site-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true" focusable="false"><path d={paths[direction]}/></svg>;
+}
 function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
   const target = document.getElementById('contact');
   if (!target) return;
@@ -20,7 +31,7 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
   window.setTimeout(alignContact, 250);
   window.setTimeout(alignContact, 900);
 }
-function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span>↗</span></a></nav></header>; }
+function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span><Arrow/></span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false, sizes = '(max-width: 700px) 100vw, 90vw' }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean; sizes?: string }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes={sizes} alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
 const acureHomepageHero: PortfolioImage = {
   src: '/images/acure-home-upgrade-3840.webp',
@@ -41,7 +52,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
         <h3>{selection.title}</h3>
         <p className="homepage-campaign-product">{selection.subtitle}</p>
         <p className="homepage-campaign-services">{project.services.join(' · ')}</p>
-        <span className="homepage-campaign-link" aria-hidden="true">VIEW CAMPAIGN <span>↗</span></span>
+        <span className="homepage-campaign-link" aria-hidden="true">VIEW CAMPAIGN <span><Arrow/></span></span>
       </div>
       <div className="homepage-campaign-state" aria-hidden="true"><span>{selection.stateLabel}</span></div>
     </a>
@@ -85,7 +96,7 @@ function Contact() {
   return <section id="contact" className="contact contact-simple section-pad">
     <div className="contact-context">
       <span className="eyebrow">PROJECT INQUIRIES</span>
-      <div className="contact-heading"><h2>START A<br/>PROJECT <span>↓</span></h2></div>
+      <div className="contact-heading"><h2>START A<br/>PROJECT <span><Arrow direction="down"/></span></h2></div>
     </div>
     <div className="email-inquiry">
       <h3>Have a project in mind?</h3>
@@ -97,7 +108,7 @@ function Contact() {
   </section>;
 }
 
-function Footer() { return <footer className="section-pad"><div className="footer-top"><a className="wordmark" href="/">concrete orbit</a><p>Based in Washington, DC.<br/>Working worldwide.</p><a href="#top">Back to top ↑</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Concrete Orbit</span><a href="https://www.instagram.com/concreteorbitvisuals/" target="_blank" rel="noopener noreferrer" aria-label="Concrete Orbit on Instagram (opens in a new tab)" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24}}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></footer>; }
+function Footer() { return <footer className="section-pad"><div className="footer-top"><a className="wordmark" href="/">concrete orbit</a><p>Based in Washington, DC.<br/>Working worldwide.</p><a href="#top">Back to top <Arrow direction="up"/></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Concrete Orbit</span><a href="https://www.instagram.com/concreteorbitvisuals/" target="_blank" rel="noopener noreferrer" aria-label="Concrete Orbit on Instagram (opens in a new tab)" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24}}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></footer>; }
 
 function Home() {
   return <>
@@ -110,7 +121,7 @@ function Home() {
           <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
           <h1>Cinematic product<br/>campaigns.</h1>
           <p className="fullbleed-hero-description">Cinematic product photography built as coordinated hero, macro and copy-space images for websites, social and advertising.</p>
-          <a className="hero-project-cta" href="#contact" onClick={scrollToContact}>Start a project <span>↘</span></a>
+          <a className="hero-project-cta" href="#contact" onClick={scrollToContact}>Start a project <span><Arrow direction="down-right"/></span></a>
         </div>
         <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span></div>
       </div>
@@ -245,7 +256,7 @@ function ProjectPage({ project }: { project: Project }) {
   const rows = campaignImageRows(showcaseImages);
   return <>
   <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
-    <a className="back-link" href="/#work">← PROJECT INDEX</a>
+    <a className="back-link" href="/#work"><Arrow direction="left"/> PROJECT INDEX</a>
     <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
     <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
@@ -260,5 +271,5 @@ function ProjectPage({ project }: { project: Project }) {
   </>;
 }
 
-function App() { const path = window.location.pathname.replace(/\/$/, '') || '/'; const project = projects.find(p => path === `/work/${p.slug}`); useEffect(() => { const title = project ? `${project.name} | Concrete Orbit` : path === '/' ? 'Concrete Orbit | Cinematic Product Photography' : 'Page not found | Concrete Orbit'; document.title = title; document.querySelector('meta[property="og:title"]')?.setAttribute('content', title); if (project) document.querySelector('meta[name="description"]')?.setAttribute('content', `${project.name}: ${project.gallery.length}-image product campaign by Concrete Orbit.`); }, [project, path]); useEffect(() => { const id = decodeURIComponent(window.location.hash.slice(1)); if (!id) return; const scrollToTarget = () => document.getElementById(id)?.scrollIntoView({ block: 'start' }); const frame = window.requestAnimationFrame(scrollToTarget); const timers = [250, 1000, 2500].map(delay => window.setTimeout(scrollToTarget, delay)); const pendingImages = Array.from(document.images).filter(image => !image.complete); pendingImages.forEach(image => image.addEventListener('load', scrollToTarget)); window.addEventListener('load', scrollToTarget, { once: true }); return () => { window.cancelAnimationFrame(frame); timers.forEach(timer => window.clearTimeout(timer)); pendingImages.forEach(image => image.removeEventListener('load', scrollToTarget)); window.removeEventListener('load', scrollToTarget); }; }, [path]); const contactHref = path === '/' || project ? '#contact' : '/#contact'; return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header contactHref={contactHref}/><main id="main">{path === '/' ? <Home/> : project ? <ProjectPage project={project}/> : <section className="not-found section-pad"><span className="eyebrow">404 / OUT OF ORBIT</span><h1>Nothing here. Yet.</h1><a href="/">Return to the studio →</a></section>}</main><Footer/></>; }
+function App() { const path = window.location.pathname.replace(/\/$/, '') || '/'; const project = projects.find(p => path === `/work/${p.slug}`); useEffect(() => { const title = project ? `${project.name} | Concrete Orbit` : path === '/' ? 'Concrete Orbit | Cinematic Product Photography' : 'Page not found | Concrete Orbit'; document.title = title; document.querySelector('meta[property="og:title"]')?.setAttribute('content', title); if (project) document.querySelector('meta[name="description"]')?.setAttribute('content', `${project.name}: ${project.gallery.length}-image product campaign by Concrete Orbit.`); }, [project, path]); useEffect(() => { const id = decodeURIComponent(window.location.hash.slice(1)); if (!id) return; const scrollToTarget = () => document.getElementById(id)?.scrollIntoView({ block: 'start' }); const frame = window.requestAnimationFrame(scrollToTarget); const timers = [250, 1000, 2500].map(delay => window.setTimeout(scrollToTarget, delay)); const pendingImages = Array.from(document.images).filter(image => !image.complete); pendingImages.forEach(image => image.addEventListener('load', scrollToTarget)); window.addEventListener('load', scrollToTarget, { once: true }); return () => { window.cancelAnimationFrame(frame); timers.forEach(timer => window.clearTimeout(timer)); pendingImages.forEach(image => image.removeEventListener('load', scrollToTarget)); window.removeEventListener('load', scrollToTarget); }; }, [path]); const contactHref = path === '/' || project ? '#contact' : '/#contact'; return <><a className="skip-link" href="#main">Skip to content</a><div id="top"/><Header contactHref={contactHref}/><main id="main">{path === '/' ? <Home/> : project ? <ProjectPage project={project}/> : <section className="not-found section-pad"><span className="eyebrow">404 / OUT OF ORBIT</span><h1>Nothing here. Yet.</h1><a href="/">Return to the studio <Arrow direction="right"/></a></section>}</main><Footer/></>; }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
