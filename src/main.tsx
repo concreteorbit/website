@@ -88,9 +88,11 @@ function Contact() {
       <div className="contact-heading"><h2>START A<br/>PROJECT <span>↓</span></h2></div>
     </div>
     <div className="email-inquiry">
-      <h3>Tell me what you’re creating.</h3>
-      <p>Tell me what you’re launching and when you need it.</p>
-      <a className="email-address" href="mailto:hello@concreteorbit.com">hello@concreteorbit.com</a>
+      <h3>Have a project in mind?</h3>
+      <p>Send me the product, what you need the images for, and your timing. We can work out the direction together.</p>
+      <p>I’ll put together a proposal covering the images, schedule and usage.</p>
+      <span className="email-address">hello@concreteorbit.com</span>
+      <p className="inquiry-location">Based in Washington, DC. Available for remote projects with products shipped to the studio.</p>
     </div>
   </section>;
 }
