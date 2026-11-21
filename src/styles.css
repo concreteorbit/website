@@ -1529,6 +1529,8 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 }
 
 .site-arrow{display:inline-block;width:.8em;height:.8em;vertical-align:-.08em;flex-shrink:0}
+.homepage-work-grid>.homepage-intro{min-height:0;padding:0 clamp(20px,4vw,68px);margin:0 0 28px!important}
+.homepage-intro h1{margin:0;font:400 clamp(16px,1.4vw,22px)/1.5 'Space Grotesk',sans-serif;letter-spacing:.01em;color:#c5cdd1}
 
 /* Mobile opening banner: readable introduction, then the complete wide photo. */
 @media(max-width:800px){

@@ -33,20 +33,13 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
 }
 function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span><Arrow/></span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false, sizes = '(max-width: 700px) 100vw, 90vw' }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean; sizes?: string }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes={sizes} alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
-const acureHomepageHero: PortfolioImage = {
-  src: '/images/acure-home-upgrade-3840.webp',
-  srcSet: '/images/acure-home-upgrade-960.webp 960w, /images/acure-home-upgrade-1920.webp 1920w, /images/acure-home-upgrade-3840.webp 3840w',
-  alt: 'Extreme macro photograph of an ACURE shampoo tube covered in water droplets.',
-  width: 3840,
-  height: 2143,
-};
 
 function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
   const image = selection.images[0];
   const project = selection.project;
   return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full homepage-campaign-${selection.size}`}>
     <a className="homepage-campaign-stage" href={`/work/${selection.slug}`} aria-label={`View ${selection.title} ${selection.subtitle} campaign`} style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
-      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={selection.size === 'feature' ? '100vw' : '(max-width: 600px) 100vw, 50vw'} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" key={image.src}/>
+      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={selection.size === 'feature' ? '100vw' : '(max-width: 600px) 100vw, 50vw'} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : undefined} decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
         <h3>{selection.title}</h3>
@@ -60,7 +53,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
 }
 function Work() {
   return <section id="work" className="work section-pad curated-work homepage-work-grid">
-    <div className="section-heading"><div><span className="lab-index">01 / SELECTED WORK</span><h2>Selected campaigns.</h2></div><p className="section-note">HERO / MACRO / COPY SPACE<br/>WASHINGTON, DC · WORLDWIDE</p></div>
+    <div className="section-heading homepage-intro"><h1>Cinematic product photography.</h1></div>
     <div className="homepage-campaign-list">{selectedWork.map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div>
   </section>;
 }
@@ -112,20 +105,6 @@ function Footer() { return <footer className="section-pad"><div className="foote
 
 function Home() {
   return <>
-    <section className="hero section-pad fullbleed-hero">
-      <div className="hero-image homepage-hero-stage homepage-hero-acure">
-        <picture className="homepage-hero-photo homepage-hero-slide homepage-hero-macro is-active">
-          <img className="portfolio-image" src={acureHomepageHero.src} srcSet={acureHomepageHero.srcSet} sizes="100vw" width={acureHomepageHero.width} height={acureHomepageHero.height} alt={acureHomepageHero.alt} loading="eager" fetchPriority="high" decoding="async"/>
-        </picture>
-        <div className="fullbleed-hero-copy">
-          <p className="fullbleed-hero-brand"><span>CONCRETE ORBIT</span></p>
-          <h1>Cinematic product<br/>campaigns.</h1>
-          <p className="fullbleed-hero-description">Cinematic product photography built as coordinated hero, macro and copy-space images for websites, social and advertising.</p>
-          <a className="hero-project-cta" href="#contact" onClick={scrollToContact}>Start a project <span><Arrow direction="down-right"/></span></a>
-        </div>
-        <div className="hero-axis" aria-hidden="true"><span>IMAGE / MATTER / LIGHT</span></div>
-      </div>
-    </section>
     <Work/><InTheStudio/><Studio/><Contact/>
   </>;
 }
