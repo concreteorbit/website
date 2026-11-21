@@ -1527,3 +1527,16 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
   .compact-project .campaign-credits{margin-top:22px;padding-bottom:20px}
   .campaign-image-guide{display:grid;grid-template-columns:1fr;gap:6px}
 }
+
+/* Mobile opening banner: readable introduction, then the complete wide photo. */
+@media(max-width:800px){
+ .fullbleed-hero .hero-image{display:flex;flex-direction:column;height:auto;min-height:0;max-height:none}
+ .fullbleed-hero .homepage-hero-acure::after{display:none}
+ .fullbleed-hero .fullbleed-hero-copy{position:static;order:0;max-width:none;transform:none;padding:32px 24px 28px}
+ .fullbleed-hero .fullbleed-hero-brand{margin:0 0 18px}
+ .fullbleed-hero .fullbleed-hero-copy h1{font-size:clamp(32px,8.8vw,50px);line-height:1.08;max-width:none}
+ .fullbleed-hero .fullbleed-hero-description{max-width:38ch;margin:18px 0 20px;font-size:13px;line-height:1.75}
+ .fullbleed-hero .homepage-hero-photo{position:relative;order:1;inset:auto;display:block;width:100%;height:auto}
+ .fullbleed-hero .homepage-hero-macro .portfolio-image{display:block;width:100%;height:auto;max-height:none;object-fit:contain;transform:none}
+ .fullbleed-hero .hero-axis{position:static;order:2;width:auto;margin:0;padding:16px 24px;transform:none}
+}
