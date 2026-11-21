@@ -23,11 +23,11 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
 function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span>↗</span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false, sizes = '(max-width: 700px) 100vw, 90vw' }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean; sizes?: string }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes={sizes} alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
 const acureHomepageHero: PortfolioImage = {
-  src: '/images/acure-home-hero-2560.webp',
-  srcSet: '/images/acure-home-hero-1200.webp 1200w, /images/acure-home-hero-2560.webp 2560w',
+  src: '/images/acure-home-upgrade-3840.webp',
+  srcSet: '/images/acure-home-upgrade-960.webp 960w, /images/acure-home-upgrade-1920.webp 1920w, /images/acure-home-upgrade-3840.webp 3840w',
   alt: 'Extreme macro photograph of an ACURE shampoo tube covered in water droplets.',
-  width: 2560,
-  height: 1429,
+  width: 3840,
+  height: 2143,
 };
 
 function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
