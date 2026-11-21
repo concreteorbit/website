@@ -6,7 +6,7 @@ export function campaignShowcaseImages(project: Project): PortfolioImage[] {
     return [images[2], images[3], images[5], images[1], images[4], images[0]];
   }
   if (project.slug === 'hoka-ora-recovery-slides') {
-    return [images[1], images[2], images[3], images[0], images[5], images[4], images[6]];
+    return [images[1], images[2], images[3], images[0], images[4], images[5]];
   }
   if (project.slug === 'trace-magnesium-glycinate' || project.slug === 'xbox-elite-controller') {
     const [signature, slight, macro, hero] = images;

@@ -223,9 +223,9 @@ export const projects: Project[] = [
     tone: 'slate',
     socialHandle: 'hoka',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro · Outsole hero · Top hero · Opposite-side hero',
+    deliverables: 'Extreme macro · Front hero · Top macro · Back heel macro · Top hero · Opposite-side hero',
     cover: hokaOra.hero,
-    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel, hokaOra.bottomHero, hokaOra.topHero, hokaOra.backHero],
+    gallery: [hokaOra.extreme, hokaOra.hero, hokaOra.top, hokaOra.heel, hokaOra.topHero, hokaOra.backHero],
   },
   {
     slug: 'xbox-elite-controller',
