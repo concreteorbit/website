@@ -184,11 +184,11 @@ const mtAngelJointImages: PortfolioImage[] = [
 
 const seedPm02Images: PortfolioImage[] = [
   {
-    "src": "/images/projects/seed-pm02-tilted-hero-2560.webp",
-    "srcSet": "/images/projects/seed-pm02-tilted-hero-480.webp 480w, /images/projects/seed-pm02-tilted-hero-960.webp 960w, /images/projects/seed-pm02-tilted-hero-1600.webp 1600w, /images/projects/seed-pm02-tilted-hero-2560.webp 2560w",
+    "src": "/images/projects/seed-pm02-hero-crop-2560.webp",
+    "srcSet": "/images/projects/seed-pm02-hero-crop-480.webp 480w, /images/projects/seed-pm02-hero-crop-960.webp 960w, /images/projects/seed-pm02-hero-crop-1600.webp 1600w, /images/projects/seed-pm02-hero-crop-2560.webp 2560w",
     "width": 2560,
-    "height": 1717,
-    "alt": "Tilted Seed PM-02 Sleep + Restore bottle in cool directional light against black."
+    "height": 1429,
+    "alt": "Cropped angled view of the Seed PM-02 bottle, logo and label in cool directional light."
   },
   {
     "src": "/images/projects/seed-pm02-stacked-hero-2560.webp",
@@ -242,7 +242,7 @@ export const projects: Project[] = [
     tone: 'slate',
     socialHandle: '',
     services: ['Creative Direction', 'Photography', 'Image Finishing'],
-    deliverables: 'Tilted hero · Bottle and box · Cap detail · Label detail · Packaging hero · Packaging macro · Upright hero',
+    deliverables: 'Cropped hero · Bottle and box · Cap detail · Label detail · Packaging hero · Packaging macro · Upright hero',
     cover: seedPm02Images[0],
     gallery: seedPm02Images,
   },

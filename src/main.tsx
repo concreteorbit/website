@@ -196,6 +196,7 @@ function CampaignApplications({ project }: { project: Project }) {
 
 function photoTypeLabel(src: string) {
   const name = src.toLowerCase();
+  if (name.includes('seed-pm02-hero-crop')) return 'CROPPED HERO';
   if (name.includes('seed-pm02-stacked-hero')) return 'BOTTLE + PACKAGING';
   if (name.includes('seed-pm02-cap-extreme')) return 'LOGO + CAP / EXTREME MACRO';
   if (name.includes('seed-pm02-label-extreme')) return 'PM-02 / EXTREME MACRO';
