@@ -196,6 +196,11 @@ function CampaignApplications({ project }: { project: Project }) {
 
 function photoTypeLabel(src: string) {
   const name = src.toLowerCase();
+  if (name.includes('seed-pm02-stacked-hero')) return 'BOTTLE + PACKAGING';
+  if (name.includes('seed-pm02-cap-extreme')) return 'LOGO + CAP / EXTREME MACRO';
+  if (name.includes('seed-pm02-label-extreme')) return 'PM-02 / EXTREME MACRO';
+  if (name.includes('seed-pm02-box-hero')) return 'PACKAGING / HERO';
+  if (name.includes('seed-pm02-box-macro')) return 'PACKAGING / MACRO';
   if (name.includes('ps5-controller-buttons-macro')) return 'CONTROLLER / BUTTON MACRO';
   if (name.includes('ps5-console-hero')) return 'CONSOLE / HERO';
   if (name.includes('ps5-console-logo-macro')) return 'CONSOLE / LOGO MACRO';
@@ -232,14 +237,16 @@ function CampaignPhoto({ image, index, size, wide = false }: { image: PortfolioI
 function ProjectPage({ project }: { project: Project }) {
   const showcaseImages = campaignShowcaseImages(project);
   const leadImage = showcaseImages[0];
-  const rows = campaignImageRows(showcaseImages);
+  const rows = project.slug === 'seed-pm02-sleep-restore'
+    ? [[showcaseImages[1]], showcaseImages.slice(2, 4), showcaseImages.slice(4, 6), [showcaseImages[6]]]
+    : campaignImageRows(showcaseImages);
   return <>
   <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
     <a className="back-link" href="/#work"><Arrow direction="left"/> PROJECT INDEX</a>
     <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
     <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
-      <div className="campaign-paired-grid">{rows.map((row, rowIndex) => <div className={`campaign-paired-row${row.length === 1 ? ' campaign-paired-row-single' : ''}`} style={{ '--campaign-pair-left': `${row[0].width / row[0].height}fr`, '--campaign-pair-right': row[1] ? `${row[1].width / row[1].height}fr` : '1fr' } as React.CSSProperties} key={row[0].src}>{row.map((image, index) => <CampaignPhoto image={image} index={rowIndex * 2 + index + 2} size="medium" wide={row.length === 1} key={image.src}/>)}</div>)}</div>
+      <div className="campaign-paired-grid">{rows.map((row) => <div className={`campaign-paired-row${row.length === 1 ? ' campaign-paired-row-single' : ''}`} style={{ '--campaign-pair-left': `${row[0].width / row[0].height}fr`, '--campaign-pair-right': row[1] ? `${row[1].width / row[1].height}fr` : '1fr' } as React.CSSProperties} key={row[0].src}>{row.map((image) => <CampaignPhoto image={image} index={showcaseImages.indexOf(image) + 1} size="medium" wide={row.length === 1} key={image.src}/>)}</div>)}</div>
     </div>
     <div className="campaign-credits">
       <p className="campaign-credit">Shot by Simon Jackson / Concrete Orbit</p>

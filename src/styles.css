@@ -1544,3 +1544,12 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
  .fullbleed-hero .homepage-hero-macro .portfolio-image{display:block;width:100%;height:auto;max-height:none;object-fit:contain;transform:none}
  .fullbleed-hero .hero-axis{position:static;order:2;width:auto;margin:0;padding:16px 24px;transform:none}
 }
+
+/* Seed adds a sixth full-width feature without changing existing image framing. */
+@media(min-width:601px){
+ .homepage-work-grid .homepage-campaign-list{grid-template-rows:repeat(6,minmax(480px,calc(100svh - 80px)))}
+ .homepage-work-grid .homepage-campaign-seed-pm02-sleep-restore .homepage-campaign-image{object-fit:contain!important}
+}
+@media(max-width:700px){
+ .project-seed-pm02-sleep-restore .campaign-paired-row{grid-template-columns:minmax(0,1fr);gap:24px}
+}

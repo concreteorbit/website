@@ -182,7 +182,70 @@ const mtAngelJointImages: PortfolioImage[] = [
   }
 ];
 
+const seedPm02Images: PortfolioImage[] = [
+  {
+    "src": "/images/projects/seed-pm02-tilted-hero-2560.webp",
+    "srcSet": "/images/projects/seed-pm02-tilted-hero-480.webp 480w, /images/projects/seed-pm02-tilted-hero-960.webp 960w, /images/projects/seed-pm02-tilted-hero-1600.webp 1600w, /images/projects/seed-pm02-tilted-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1717,
+    "alt": "Tilted Seed PM-02 Sleep + Restore bottle in cool directional light against black."
+  },
+  {
+    "src": "/images/projects/seed-pm02-stacked-hero-2560.webp",
+    "srcSet": "/images/projects/seed-pm02-stacked-hero-480.webp 480w, /images/projects/seed-pm02-stacked-hero-960.webp 960w, /images/projects/seed-pm02-stacked-hero-1600.webp 1600w, /images/projects/seed-pm02-stacked-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Seed PM-02 bottle standing on its packaging in a dark studio composition."
+  },
+  {
+    "src": "/images/projects/seed-pm02-cap-extreme-macro-1624.webp",
+    "srcSet": "/images/projects/seed-pm02-cap-extreme-macro-480.webp 480w, /images/projects/seed-pm02-cap-extreme-macro-960.webp 960w, /images/projects/seed-pm02-cap-extreme-macro-1600.webp 1600w, /images/projects/seed-pm02-cap-extreme-macro-1624.webp 1624w",
+    "width": 1624,
+    "height": 914,
+    "alt": "Extreme macro of the Seed wordmark, frosted bottle and textured green cap."
+  },
+  {
+    "src": "/images/projects/seed-pm02-label-extreme-macro-1505.webp",
+    "srcSet": "/images/projects/seed-pm02-label-extreme-macro-480.webp 480w, /images/projects/seed-pm02-label-extreme-macro-960.webp 960w, /images/projects/seed-pm02-label-extreme-macro-1505.webp 1505w",
+    "width": 1505,
+    "height": 840,
+    "alt": "Extreme macro of the PM-02 Sleep + Restore label on the frosted bottle."
+  },
+  {
+    "src": "/images/projects/seed-pm02-box-hero-2560.webp",
+    "srcSet": "/images/projects/seed-pm02-box-hero-480.webp 480w, /images/projects/seed-pm02-box-hero-960.webp 960w, /images/projects/seed-pm02-box-hero-1600.webp 1600w, /images/projects/seed-pm02-box-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Seed PM-02 packaging hero with open space to the right."
+  },
+  {
+    "src": "/images/projects/seed-pm02-box-macro-2560.webp",
+    "srcSet": "/images/projects/seed-pm02-box-macro-480.webp 480w, /images/projects/seed-pm02-box-macro-960.webp 960w, /images/projects/seed-pm02-box-macro-1600.webp 1600w, /images/projects/seed-pm02-box-macro-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Macro of the Seed wordmark and PM-02 lettering on textured green packaging."
+  },
+  {
+    "src": "/images/projects/seed-pm02-upright-hero-2560.webp",
+    "srcSet": "/images/projects/seed-pm02-upright-hero-480.webp 480w, /images/projects/seed-pm02-upright-hero-960.webp 960w, /images/projects/seed-pm02-upright-hero-1600.webp 1600w, /images/projects/seed-pm02-upright-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1749,
+    "alt": "Upright Seed PM-02 Sleep + Restore bottle with capsules visible through frosted glass."
+  }
+];
+
 export const projects: Project[] = [
+  {
+    slug: 'seed-pm02-sleep-restore',
+    name: 'SEED',
+    brand: 'PM-02 Sleep + Restore',
+    tone: 'slate',
+    socialHandle: '',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Tilted hero · Bottle and box · Cap detail · Label detail · Packaging hero · Packaging macro · Upright hero',
+    cover: seedPm02Images[0],
+    gallery: seedPm02Images,
+  },
   {
     slug: 'mt-angel-joint-solution',
     name: 'MT. ANGEL',
