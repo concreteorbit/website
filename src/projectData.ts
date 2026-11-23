@@ -182,7 +182,91 @@ const mtAngelJointImages: PortfolioImage[] = [
   }
 ];
 
+const seedImages: PortfolioImage[] = [
+  {
+    "src": "/images/projects/seed-hero-crop-2400.webp",
+    "srcSet": "/images/projects/seed-hero-crop-1000.webp 1000w, /images/projects/seed-hero-crop-2400.webp 2400w",
+    "alt": "Angled Seed PM-02 bottle with a forest-green cap and frosted glass.",
+    "width": 2400,
+    "height": 1340
+  },
+  {
+    "src": "/images/projects/seed-stacked-hero-2400.webp",
+    "srcSet": "/images/projects/seed-stacked-hero-1000.webp 1000w, /images/projects/seed-stacked-hero-2400.webp 2400w",
+    "alt": "Seed PM-02 bottle stacked on its retail box.",
+    "width": 2400,
+    "height": 1340
+  },
+  {
+    "src": "/images/projects/seed-upper-half-macro-2400.webp",
+    "srcSet": "/images/projects/seed-upper-half-macro-1000.webp 1000w, /images/projects/seed-upper-half-macro-2400.webp 2400w",
+    "alt": "Close-up of the Seed lid, wordmark and frosted shoulder.",
+    "width": 2400,
+    "height": 1350
+  },
+  {
+    "src": "/images/projects/seed-cap-extreme-macro-1624.webp",
+    "srcSet": "/images/projects/seed-cap-extreme-macro-1000.webp 1000w, /images/projects/seed-cap-extreme-macro-1624.webp 1624w",
+    "alt": "Extreme close-up of the Seed wordmark and textured green lid.",
+    "width": 1624,
+    "height": 914
+  },
+  {
+    "src": "/images/projects/seed-label-extreme-macro-1505.webp",
+    "srcSet": "/images/projects/seed-label-extreme-macro-1000.webp 1000w, /images/projects/seed-label-extreme-macro-1505.webp 1505w",
+    "alt": "Extreme close-up of the PM-02 Sleep + Restore strip and frosted glass.",
+    "width": 1505,
+    "height": 840
+  },
+  {
+    "src": "/images/projects/seed-box-hero-2400.webp",
+    "srcSet": "/images/projects/seed-box-hero-1000.webp 1000w, /images/projects/seed-box-hero-2400.webp 2400w",
+    "alt": "Seed PM-02 box against a dark background.",
+    "width": 2400,
+    "height": 1340
+  },
+  {
+    "src": "/images/projects/seed-box-macro-2400.webp",
+    "srcSet": "/images/projects/seed-box-macro-1000.webp 1000w, /images/projects/seed-box-macro-2400.webp 2400w",
+    "alt": "Close-up of the Seed box typography and paper texture.",
+    "width": 2400,
+    "height": 1340
+  },
+  {
+    "src": "/images/projects/seed-stacked-macro-2400.webp",
+    "srcSet": "/images/projects/seed-stacked-macro-1000.webp 1000w, /images/projects/seed-stacked-macro-2400.webp 2400w",
+    "alt": "Tight view of the bottle and box in the stacked composition.",
+    "width": 2400,
+    "height": 1340
+  },
+  {
+    "src": "/images/projects/seed-tilted-hero-2400.webp",
+    "srcSet": "/images/projects/seed-tilted-hero-1000.webp 1000w, /images/projects/seed-tilted-hero-2400.webp 2400w",
+    "alt": "Tilted Seed PM-02 bottle floating against black.",
+    "width": 2400,
+    "height": 1610
+  },
+  {
+    "src": "/images/projects/seed-upright-hero-2400.webp",
+    "srcSet": "/images/projects/seed-upright-hero-1000.webp 1000w, /images/projects/seed-upright-hero-2400.webp 2400w",
+    "alt": "Upright Seed PM-02 bottle against black.",
+    "width": 2400,
+    "height": 1639
+  }
+];
+
 export const projects: Project[] = [
+  {
+    slug: 'seed-pm-02',
+    name: 'SEED',
+    brand: 'PM-02 Sleep + Restore',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Bottle heroes, packaging photography and macro details',
+    tone: 'forest',
+    socialHandle: 'seed',
+    cover: seedImages[0],
+    gallery: seedImages,
+  },
   {
     slug: 'mt-angel-joint-solution',
     name: 'MT. ANGEL',
