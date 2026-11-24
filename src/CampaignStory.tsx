@@ -1,0 +1,45 @@
+import type { Project } from './projectData';
+import { campaigns } from './Placements';
+import './campaign-story.css';
+
+type StoryGroup = { title: string; photos: number[]; uses: string[]; note?: string };
+
+const traceGroups: StoryGroup[] = [
+  { title: 'Extreme macro', photos: [0], uses: ['website-banner'] },
+  { title: 'Product hero', photos: [3], uses: ['product-page', 'billboard'], note: 'The macro and slight macro also support the product page.' },
+  { title: 'Messaging macro', photos: [2], uses: ['email', 'social'] },
+  { title: 'Slight macro', photos: [1], uses: ['popup-detail', 'sidebar'] },
+];
+const seedGroups: StoryGroup[] = [
+  { title: 'Bottle + packaging', photos: [1], uses: ['seed-website-banner'] },
+  { title: 'Product hero + label detail', photos: [6, 3], uses: ['seed-product-page', 'seed-billboard'], note: 'The box macro also supports the product page.' },
+  { title: 'Cropped hero', photos: [0], uses: ['seed-popup', 'seed-sidebar'] },
+  { title: 'Packaging macro', photos: [5], uses: ['seed-email'] },
+  { title: 'Upper bottle macro', photos: [2], uses: ['seed-social'] },
+];
+
+export default function CampaignStory({ project }: { project: Project }) {
+  const isSeed = project.slug === 'seed-pm02-sleep-restore';
+  const campaign = campaigns[isSeed ? 1 : 0];
+  const groups = isSeed ? seedGroups : traceGroups;
+  const usedPhotos = new Set(groups.flatMap(group => group.photos));
+  const remaining = project.gallery.filter((_, index) => !usedPhotos.has(index));
+  return <div className="campaign-story">
+    <div className="story-intro"><p>Photography + campaign applications</p><span>Photography and concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</span></div>
+    {groups.map((group, groupIndex) => <section className="story-group" key={group.title} aria-labelledby={`story-${groupIndex}`}>
+      <div className="story-source"><div className="story-source-inner">
+        <div className="story-source-heading"><span>{String(groupIndex + 1).padStart(2, '0')} / PHOTOGRAPHY</span><h2 id={`story-${groupIndex}`}>{group.title}</h2></div>
+        {group.photos.map((index, photoIndex) => { const photo = project.gallery[index]; return <figure key={photo.src} className="story-photo"><img src={photo.src} srcSet={photo.srcSet} sizes="(max-width: 800px) 90vw, 28vw" width={photo.width} height={photo.height} alt={photo.alt} loading={groupIndex === 0 && photoIndex === 0 ? 'eager' : 'lazy'} decoding="async"/><figcaption>{photoIndex === 0 ? 'Original photograph' : 'Supporting photograph'}</figcaption></figure>; })}
+        {group.note ? <p className="story-source-note">{group.note}</p> : null}
+      </div></div>
+      <div className="story-uses">{group.uses.map(id => {
+        const example = campaign.examples.find(item => item.id === id)!;
+        return <article className={`story-use${example.portrait ? ' story-use-portrait' : ''}`} key={id}>
+          <div className="story-use-heading"><span>{example.format}</span><h3>{example.title}</h3></div>
+          <img src={`/images/placements/${example.file}-${example.width}.webp`} srcSet={`/images/placements/${example.file}-800.webp 800w, /images/placements/${example.file}-${example.width}.webp ${example.width}w`} sizes="(max-width: 800px) 90vw, 64vw" width={example.width} height={example.height} alt={`${campaign.brand} ${example.title.toLowerCase()} concept using the accompanying photography by Concrete Orbit.`} loading={groupIndex === 0 ? 'eager' : 'lazy'} decoding="async"/>
+        </article>;
+      })}</div>
+    </section>)}
+    {remaining.length ? <section className="story-additional" aria-labelledby="story-additional-title"><span>FROM THE SAME CAMPAIGN</span><h2 id="story-additional-title">More photography</h2><div>{remaining.map(photo => <img key={photo.src} src={photo.src} srcSet={photo.srcSet} sizes="90vw" width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async"/>)}</div></section> : null}
+  </div>;
+}

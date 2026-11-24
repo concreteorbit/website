@@ -20,7 +20,7 @@ const seedExamples = [
   {"id": "seed-sidebar", "file": "seed-sidebar-concept", "title": "Website sidebar ad", "detail": "A vertical layout places the headline above the tilted bottle and a clear call to action below.", "width": 1000, "height": 1000, "format": "Display / Vertical", "portrait": true},
 ];
 
-const campaigns = [
+export const campaigns = [
   { id: 'trace', brand: 'Trace', product: 'Magnesium Glycinate', href: '/work/trace-magnesium-glycinate', examples },
   { id: 'seed', brand: 'Seed', product: 'PM-02™ Sleep + Restore', href: '/work/seed-pm02-sleep-restore', examples: seedExamples },
 ];

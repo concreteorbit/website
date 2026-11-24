@@ -5,6 +5,7 @@ import type { PortfolioImage, Project } from './projectData';
 import './styles.css';
 import { selectedWork } from './selectedWork';
 import Placements from './Placements';
+import CampaignStory from './CampaignStory';
 import { campaignShowcaseImages, campaignImageRows } from './campaignLayout';
 
 function Orbit({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="22" stroke="currentColor" strokeWidth="2"/><ellipse cx="50" cy="50" rx="47" ry="17" transform="rotate(-40 50 50)" stroke="currentColor" strokeWidth="2"/></svg>; }
@@ -32,7 +33,7 @@ function scrollToContact(event: React.MouseEvent<HTMLAnchorElement>) {
   window.setTimeout(alignContact, 250);
   window.setTimeout(alignContact, 900);
 }
-function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/placements" onClick={() => setOpen(false)}>Placements</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span><Arrow/></span></a></nav></header>; }
+function Header({ contactHref }: { contactHref: string }) { const [open, setOpen] = useState(false); return <header className="header"><a className="wordmark" href="/" aria-label="Concrete Orbit home">concrete orbit</a><button className="menu-button" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close −' : 'Menu +'}</button><nav id="navigation" className={open ? 'navigation open' : 'navigation'} aria-label="Main navigation"><a href="/#work" onClick={() => setOpen(false)}>Selected work</a><a href="/#studio" onClick={() => setOpen(false)}>The studio</a><a className="nav-cta" href={contactHref} onClick={(event) => { setOpen(false); scrollToContact(event); }}>Start a project <span><Arrow/></span></a></nav></header>; }
 function ImageFrame({ image, tone = 'hero-tone', label, priority = false, sizes = '(max-width: 700px) 100vw, 90vw' }: { image?: PortfolioImage | null; tone?: string; label: string; priority?: boolean; sizes?: string }) { return image ? <img className="portfolio-image" src={image.src} srcSet={image.srcSet} sizes={sizes} alt={image.alt} width={image.width} height={image.height} loading={priority ? 'eager' : 'lazy'} decoding="async"/> : <div className={`image-placeholder ${tone}`} role="img" aria-label={`${label}, image to be supplied`}><span className="frame-corner top-left"/><span className="frame-corner bottom-right"/><span className="placeholder-cross">+</span><div className="placeholder-caption"><span>IMAGE PLACEHOLDER</span></div></div>; }
 
 function HomepageCampaign({ selection, index }: { selection: (typeof selectedWork)[number]; index: number }) {
@@ -237,7 +238,7 @@ function CampaignPhoto({ image, index, size, wide = false }: { image: PortfolioI
 }
 
 function ProjectPage({ project }: { project: Project }) {
-  const placementHref = project.slug === 'trace-magnesium-glycinate' ? '/placements' : project.slug === 'seed-pm02-sleep-restore' ? '/placements#seed' : null;
+  const hasStory = project.slug === 'trace-magnesium-glycinate' || project.slug === 'seed-pm02-sleep-restore';
   const showcaseImages = campaignShowcaseImages(project);
   const leadImage = showcaseImages[0];
   const rows = project.slug === 'seed-pm02-sleep-restore'
@@ -247,18 +248,17 @@ function ProjectPage({ project }: { project: Project }) {
   <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
     <a className="back-link" href="/#work"><Arrow direction="left"/> PROJECT INDEX</a>
     <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
-    {placementHref ? <a className="campaign-placement-link" href={placementHref}><strong>See this campaign in use.</strong><span>Website, social, display + billboard placements ↗</span></a> : null}
-    <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
+    {hasStory ? <CampaignStory project={project}/> : <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
       <div className="campaign-paired-grid">{rows.map((row) => <div className={`campaign-paired-row${row.length === 1 ? ' campaign-paired-row-single' : ''}`} style={{ '--campaign-pair-left': `${row[0].width / row[0].height}fr`, '--campaign-pair-right': row[1] ? `${row[1].width / row[1].height}fr` : '1fr' } as React.CSSProperties} key={row[0].src}>{row.map((image) => <CampaignPhoto image={image} index={showcaseImages.indexOf(image) + 1} size="medium" wide={row.length === 1} key={image.src}/>)}</div>)}</div>
-    </div>
+    </div>}
     <div className="campaign-credits">
       <p className="campaign-credit">Shot by Simon Jackson / Concrete Orbit</p>
-      <ol className="campaign-image-guide" aria-label="Photograph index">{showcaseImages.map((image, index) => <li key={image.src}><span>{String(index + 1).padStart(2, '0')}</span><span>{photoTypeLabel(image.src)}</span></li>)}</ol>
+      <ol className="campaign-image-guide" aria-label="Photograph index">{(hasStory ? project.gallery : showcaseImages).map((image, index) => <li key={image.src}><span>{String(index + 1).padStart(2, '0')}</span><span>{photoTypeLabel(image.src)}</span></li>)}</ol>
     </div>
   </section>
   <Contact/>
-  {placementHref ? <div className="campaign-placement-bottom"><a className="campaign-placement-link" href={placementHref}><strong>See placements</strong><span aria-hidden="true">↗</span></a></div> : null}
+
   </>;
 }
 
