@@ -56,7 +56,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
 function Work() {
   return <section id="work" className="work section-pad curated-work homepage-work-grid">
     <div className="section-heading homepage-intro"><h1>Cinematic product photography.</h1></div>
-    <div className="homepage-campaign-list">{selectedWork.filter(selection => selection.size === 'feature').map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div><section className="homepage-secondary" aria-labelledby="more-campaigns-title"><h2 id="more-campaigns-title">More campaigns</h2><div className="homepage-secondary-grid">{selectedWork.filter(selection => selection.size === 'compact').map((selection, i) => <HomepageCampaign selection={selection} index={i + 3} key={selection.slug}/>)}</div></section><a className="home-placements-link" href="/placements"><strong>See the images in context.</strong><span>Explore placements ↗</span></a>
+    <div className="homepage-campaign-list">{selectedWork.filter(selection => selection.size === 'feature').map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div><section className="homepage-secondary" aria-labelledby="more-campaigns-title"><h2 id="more-campaigns-title">More campaigns</h2><div className="homepage-secondary-grid">{selectedWork.filter(selection => selection.size === 'compact').map((selection, i) => <HomepageCampaign selection={selection} index={i + 4} key={selection.slug}/>)}</div></section><a className="home-placements-link" href="/placements"><strong>See the images in context.</strong><span>Explore placements ↗</span></a>
   </section>;
 }
 const studioMoments = [
