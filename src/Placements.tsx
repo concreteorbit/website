@@ -10,19 +10,36 @@ const examples = [
   { id: 'sidebar', file: 'trace-sidebar-concept', title: 'Website sidebar ad', detail: 'A vertical layout places the headline above the product and the call to action directly below.', width: 1000, height: 1000, format: 'Display / Vertical', portrait: true },
 ];
 
+const seedExamples = [
+  {"id": "seed-website-banner", "file": "seed-stacked-banner-concept", "title": "Homepage banner", "detail": "A wide stacked hero pairs product photography with a clear headline and a direct path to shop.", "width": 1600, "height": 900, "format": "Website / Desktop", "portrait": false},
+  {"id": "seed-product-page", "file": "seed-product-v1-concept", "title": "Product page", "detail": "The bottle hero leads, with box and label macros below. One image set supports the full product story.", "width": 1600, "height": 1282, "format": "E-commerce / Desktop", "portrait": false},
+  {"id": "seed-email", "file": "seed-email-concept", "title": "Email campaign", "detail": "The box macro anchors a nighttime routine message, followed by a clear shop button.", "width": 1000, "height": 1307, "format": "Email / Campaign", "portrait": true},
+  {"id": "seed-popup", "file": "seed-popup-concept", "title": "Website popup", "detail": "A close crop draws attention to an email signup offer against a softly blurred website.", "width": 1600, "height": 940, "format": "Website / Promotion", "portrait": false},
+  {"id": "seed-social", "file": "seed-instagram-concept", "title": "Instagram ad", "detail": "The upper-half macro fills the creative, with a short line on the image and supporting copy in the caption.", "width": 1000, "height": 1100, "format": "Social / Mobile", "portrait": true},
+  {"id": "seed-billboard", "file": "seed-billboard-concept", "title": "Billboard", "detail": "The upright hero and a short headline use the photograph’s open black space at a large scale.", "width": 1600, "height": 900, "format": "Out of home / Wide", "portrait": false},
+  {"id": "seed-sidebar", "file": "seed-sidebar-concept", "title": "Website sidebar ad", "detail": "A vertical layout places the headline above the tilted bottle and a clear call to action below.", "width": 1000, "height": 1000, "format": "Display / Vertical", "portrait": true},
+];
+
+const campaigns = [
+  { id: 'trace', brand: 'Trace', product: 'Magnesium Glycinate', href: '/work/trace-magnesium-glycinate', examples },
+  { id: 'seed', brand: 'Seed', product: 'PM-02™ Sleep + Restore', href: '/work/seed-pm02-sleep-restore', examples: seedExamples },
+];
+
 export default function Placements() {
   return <div className="placements-page">
-    <section className="placements-campaign" aria-labelledby="placements-brand">
-      <div className="placements-brand-row"><div><h1 id="placements-brand">TRACE / PLACEMENTS</h1><p>Magnesium Glycinate</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
-      <nav className="placements-jump" aria-label="Placement formats"><a href="#website-banner">Website</a><a href="#product-page">Product page</a><a href="#email">Email</a><a href="#popup-detail">Popup</a><a href="#social">Social</a><a href="#billboard">Billboard</a><a href="#sidebar">Sidebar</a></nav>
-      <div className="placements-examples">{examples.map((example, index) => <article id={example.id} className={`placement-example${example.portrait ? ' placement-portrait' : ''}`} key={example.id}>
+    <h1 className="sr-only">Photography placements</h1>
+    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a></nav>
+    {campaigns.map(campaign => <section id={campaign.id} key={campaign.id} className="placements-campaign" aria-labelledby={`${campaign.id}-heading`}>
+      <div className="placements-brand-row"><div><h2 id={`${campaign.id}-heading`}>{campaign.brand.toUpperCase()} / PLACEMENTS</h2><p>{campaign.product}</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
+      <nav className="placements-jump" aria-label={`${campaign.brand} placement formats`}>{campaign.examples.map((example, index) => <a key={example.id} href={`#${example.id}`}>{['Website', 'Product page', 'Email', 'Popup', 'Social', 'Billboard', 'Sidebar'][index]}</a>)}</nav>
+      <div className="placements-examples">{campaign.examples.map((example, index) => <article id={example.id} className={`placement-example${example.portrait ? ' placement-portrait' : ''}`} key={example.id}>
         <div className="placement-heading"><span className="placement-number">{String(index + 1).padStart(2, '0')}</span><div><span className="placement-format">{example.format}</span><h3>{example.title}</h3></div><p>{example.detail}</p></div>
         <div className="placement-preview">
-          <img src={`/images/placements/${example.file}-${example.width}.webp`} srcSet={`/images/placements/${example.file}-800.webp 800w, /images/placements/${example.file}-${example.width}.webp ${example.width}w`} sizes={example.portrait ? '(max-width:700px) 100vw, 700px' : '95vw'} width={example.width} height={example.height} alt={`Trace Magnesium Glycinate ${example.title.toLowerCase()} concept using photography by Concrete Orbit.`} loading={index === 0 ? 'eager' : 'lazy'} decoding="async"/>
+          <img src={`/images/placements/${example.file}-${example.width}.webp`} srcSet={`/images/placements/${example.file}-800.webp 800w, /images/placements/${example.file}-${example.width}.webp ${example.width}w`} sizes={example.portrait ? '(max-width:700px) 100vw, 700px' : '95vw'} width={example.width} height={example.height} alt={`${campaign.brand} ${campaign.product} ${example.title.toLowerCase()} concept using photography by Concrete Orbit.`} loading={index === 0 ? 'eager' : 'lazy'} decoding="async"/>
         </div>
       </article>)}</div>
-      <div className="placements-end"><p>One campaign. Multiple points of connection.</p><a href="/work/trace-magnesium-glycinate">Explore the original photographs ↗</a></div>
-    </section>
+      <div className="placements-end"><p>One campaign. Multiple points of connection.</p><a href={campaign.href}>Explore the original photographs ↗</a></div>
+    </section>)}
 
   </div>;
 }
