@@ -33,11 +33,11 @@ const neuroExamples = [
   },
   {
     "id": "neuro-product",
-    "file": "neuro-placement-product-concept",
+    "file": "neuro-placement-product-final-concept",
     "title": "Product page",
-    "detail": "The upright hero and supporting macros bring the product and packaging details together.",
+    "detail": "A single product photograph anchors the product page.",
     "width": 1600,
-    "height": 1313,
+    "height": 1080,
     "format": "E-commerce / Desktop",
     "portrait": false
   },
@@ -63,7 +63,7 @@ const neuroExamples = [
   },
   {
     "id": "neuro-instagram",
-    "file": "neuro-placement-instagram-concept",
+    "file": "neuro-placement-instagram-final-concept",
     "title": "Instagram ad",
     "detail": "An upper packaging macro brings the product into the feed.",
     "width": 1000,
@@ -73,17 +73,17 @@ const neuroExamples = [
   },
   {
     "id": "neuro-billboard",
-    "file": "neuro-placement-billboard-concept",
+    "file": "neuro-placement-billboard-final-concept",
     "title": "Billboard",
-    "detail": "The upright hero and a short headline share a wide frame.",
+    "detail": "The tilted product sits beside a short headline in the supplied billboard frame.",
     "width": 1600,
-    "height": 900,
+    "height": 954,
     "format": "Out of home / Wide",
     "portrait": false
   },
   {
     "id": "neuro-sidebar",
-    "file": "neuro-placement-sidebar-concept",
+    "file": "neuro-placement-sidebar-final-concept",
     "title": "Website sidebar ad",
     "detail": "The tilted hero anchors a vertical display ad.",
     "width": 1000,
