@@ -19,10 +19,9 @@ const seedGroups: StoryGroup[] = [
 ];
 
 const neuroGroups: StoryGroup[] = [
-  { title: 'Upright hero', photos: [0], uses: ['neuro-banner', 'neuro-product'] },
-  { title: 'Messaging macro', photos: [3], uses: ['neuro-email'] },
-  { title: 'Packaging macro', photos: [2], uses: ['neuro-instagram'] },
-  { title: 'Tilted hero', photos: [4], uses: ['neuro-popup', 'neuro-billboard', 'neuro-sidebar'] },
+  { title: 'Tilted hero', photos: [4], uses: ['neuro-banner', 'neuro-billboard'] },
+  { title: 'Extreme macro', photos: [1], uses: ['neuro-instagram', 'neuro-email', 'neuro-sidebar'] },
+  { title: 'Upright hero', photos: [0], uses: ['neuro-product', 'neuro-popup'] },
 ];
 
 export default function CampaignStory({ project }: { project: Project }) {

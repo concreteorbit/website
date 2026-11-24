@@ -23,11 +23,11 @@ const seedExamples = [
 const neuroExamples = [
   {
     "id": "neuro-banner",
-    "file": "neuro-placement-banner-hero-concept",
+    "file": "neuro-placement-banner-simplified-concept",
     "title": "Homepage banner",
-    "detail": "An upright hero pairs with left-aligned copy, a white sale strip and dark-purple framing.",
+    "detail": "The tilted billboard photograph pairs with copy in its open space, a white sale strip and dark-purple framing.",
     "width": 1600,
-    "height": 930,
+    "height": 1124,
     "format": "Website / Desktop",
     "portrait": false
   },
@@ -43,19 +43,19 @@ const neuroExamples = [
   },
   {
     "id": "neuro-email",
-    "file": "neuro-placement-email-concept",
+    "file": "neuro-placement-email-simplified-concept",
     "title": "Email campaign",
-    "detail": "The messaging macro anchors a nighttime routine email.",
+    "detail": "The extreme macro is cropped at the bottom for a tighter email image.",
     "width": 1000,
-    "height": 1304,
+    "height": 1293,
     "format": "Email / Campaign",
     "portrait": true
   },
   {
     "id": "neuro-popup",
-    "file": "neuro-placement-popup-concept",
+    "file": "neuro-placement-popup-simplified-concept",
     "title": "Website popup",
-    "detail": "The tilted hero supports a promotional signup offer.",
+    "detail": "The upright hero is scaled to fill the promotional popup panel.",
     "width": 1600,
     "height": 940,
     "format": "Website / Promotion",
@@ -63,11 +63,11 @@ const neuroExamples = [
   },
   {
     "id": "neuro-instagram",
-    "file": "neuro-placement-instagram-final-concept",
+    "file": "neuro-placement-instagram-simplified-concept",
     "title": "Instagram ad",
-    "detail": "An upper packaging macro brings the product into the feed.",
+    "detail": "The extreme macro fills the social post.",
     "width": 1000,
-    "height": 1100,
+    "height": 900,
     "format": "Social / Mobile",
     "portrait": true
   },
@@ -83,9 +83,9 @@ const neuroExamples = [
   },
   {
     "id": "neuro-sidebar",
-    "file": "neuro-placement-sidebar-final-concept",
+    "file": "neuro-placement-sidebar-simplified-concept",
     "title": "Website sidebar ad",
-    "detail": "The tilted hero anchors a vertical display ad.",
+    "detail": "The extreme macro anchors a vertical display ad.",
     "width": 1000,
     "height": 1000,
     "format": "Display / Vertical",
