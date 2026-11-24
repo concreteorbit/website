@@ -23,9 +23,9 @@ const seedExamples = [
 const neuroExamples = [
   {
     "id": "neuro-banner",
-    "file": "neuro-placement-banner-concept",
+    "file": "neuro-placement-banner-hero-concept",
     "title": "Homepage banner",
-    "detail": "An extreme macro becomes the first impression, with a short headline and a clear path to shop.",
+    "detail": "An upright hero pairs with left-aligned copy, a white sale strip and dark-purple framing.",
     "width": 1600,
     "height": 930,
     "format": "Website / Desktop",

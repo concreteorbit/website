@@ -19,8 +19,7 @@ const seedGroups: StoryGroup[] = [
 ];
 
 const neuroGroups: StoryGroup[] = [
-  { title: 'Extreme macro', photos: [1], uses: ['neuro-banner'] },
-  { title: 'Upright hero', photos: [0], uses: ['neuro-product', 'neuro-billboard'], note: 'The packaging and messaging macros also support the product page.' },
+  { title: 'Upright hero', photos: [0], uses: ['neuro-banner', 'neuro-product', 'neuro-billboard'], note: 'The packaging and messaging macros also support the product page.' },
   { title: 'Messaging macro', photos: [3], uses: ['neuro-email'] },
   { title: 'Packaging macro', photos: [2], uses: ['neuro-instagram'] },
   { title: 'Tilted hero', photos: [4], uses: ['neuro-popup', 'neuro-sidebar'] },
