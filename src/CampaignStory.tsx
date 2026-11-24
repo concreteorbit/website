@@ -18,10 +18,19 @@ const seedGroups: StoryGroup[] = [
   { title: 'Upper bottle macro', photos: [2], uses: ['seed-social'] },
 ];
 
+const neuroGroups: StoryGroup[] = [
+  { title: 'Extreme macro', photos: [1], uses: ['neuro-banner'] },
+  { title: 'Upright hero', photos: [0], uses: ['neuro-product', 'neuro-billboard'], note: 'The packaging and messaging macros also support the product page.' },
+  { title: 'Messaging macro', photos: [3], uses: ['neuro-email'] },
+  { title: 'Packaging macro', photos: [2], uses: ['neuro-instagram'] },
+  { title: 'Tilted hero', photos: [4], uses: ['neuro-popup', 'neuro-sidebar'] },
+];
+
 export default function CampaignStory({ project }: { project: Project }) {
   const isSeed = project.slug === 'seed-pm02-sleep-restore';
-  const campaign = campaigns[isSeed ? 1 : 0];
-  const groups = isSeed ? seedGroups : traceGroups;
+  const isNeuro = project.slug === 'neuro-sleep-recharge';
+  const campaign = campaigns.find(item => item.id === (isSeed ? 'seed' : isNeuro ? 'neuro' : 'trace'))!;
+  const groups = isSeed ? seedGroups : isNeuro ? neuroGroups : traceGroups;
   const usedPhotos = new Set(groups.flatMap(group => group.photos));
   const remaining = project.gallery.filter((_, index) => !usedPhotos.has(index));
   return <div className="campaign-story">

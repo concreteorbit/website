@@ -20,15 +20,89 @@ const seedExamples = [
   {"id": "seed-sidebar", "file": "seed-sidebar-concept", "title": "Website sidebar ad", "detail": "A vertical layout places the headline above the tilted bottle and a clear call to action below.", "width": 1000, "height": 1000, "format": "Display / Vertical", "portrait": true},
 ];
 
+const neuroExamples = [
+  {
+    "id": "neuro-banner",
+    "file": "neuro-placement-banner-concept",
+    "title": "Homepage banner",
+    "detail": "An extreme macro becomes the first impression, with a short headline and a clear path to shop.",
+    "width": 1600,
+    "height": 930,
+    "format": "Website / Desktop",
+    "portrait": false
+  },
+  {
+    "id": "neuro-product",
+    "file": "neuro-placement-product-concept",
+    "title": "Product page",
+    "detail": "The upright hero and supporting macros bring the product and packaging details together.",
+    "width": 1600,
+    "height": 1313,
+    "format": "E-commerce / Desktop",
+    "portrait": false
+  },
+  {
+    "id": "neuro-email",
+    "file": "neuro-placement-email-concept",
+    "title": "Email campaign",
+    "detail": "The messaging macro anchors a nighttime routine email.",
+    "width": 1000,
+    "height": 1304,
+    "format": "Email / Campaign",
+    "portrait": true
+  },
+  {
+    "id": "neuro-popup",
+    "file": "neuro-placement-popup-concept",
+    "title": "Website popup",
+    "detail": "The tilted hero supports a promotional signup offer.",
+    "width": 1600,
+    "height": 940,
+    "format": "Website / Promotion",
+    "portrait": false
+  },
+  {
+    "id": "neuro-instagram",
+    "file": "neuro-placement-instagram-concept",
+    "title": "Instagram ad",
+    "detail": "An upper packaging macro brings the product into the feed.",
+    "width": 1000,
+    "height": 1100,
+    "format": "Social / Mobile",
+    "portrait": true
+  },
+  {
+    "id": "neuro-billboard",
+    "file": "neuro-placement-billboard-concept",
+    "title": "Billboard",
+    "detail": "The upright hero and a short headline share a wide frame.",
+    "width": 1600,
+    "height": 900,
+    "format": "Out of home / Wide",
+    "portrait": false
+  },
+  {
+    "id": "neuro-sidebar",
+    "file": "neuro-placement-sidebar-concept",
+    "title": "Website sidebar ad",
+    "detail": "The tilted hero anchors a vertical display ad.",
+    "width": 1000,
+    "height": 1000,
+    "format": "Display / Vertical",
+    "portrait": true
+  }
+];
+
 export const campaigns = [
   { id: 'trace', brand: 'Trace', product: 'Magnesium Glycinate', href: '/work/trace-magnesium-glycinate', examples },
+  { id: 'neuro', brand: 'Neuro', product: 'Sleep & Recharge', href: '/work/neuro-sleep-recharge', examples: neuroExamples },
   { id: 'seed', brand: 'Seed', product: 'PM-02™ Sleep + Restore', href: '/work/seed-pm02-sleep-restore', examples: seedExamples },
 ];
 
 export default function Placements() {
   return <div className="placements-page">
     <h1 className="sr-only">Photography placements</h1>
-    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a></nav>
+    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a><a href="#neuro">Neuro ↘</a></nav>
     {campaigns.map(campaign => <section id={campaign.id} key={campaign.id} className="placements-campaign" aria-labelledby={`${campaign.id}-heading`}>
       <div className="placements-brand-row"><div><h2 id={`${campaign.id}-heading`}>{campaign.brand.toUpperCase()} / PLACEMENTS</h2><p>{campaign.product}</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
       <nav className="placements-jump" aria-label={`${campaign.brand} placement formats`}>{campaign.examples.map((example, index) => <a key={example.id} href={`#${example.id}`}>{['Website', 'Product page', 'Email', 'Popup', 'Social', 'Billboard', 'Sidebar'][index]}</a>)}</nav>
