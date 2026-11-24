@@ -41,7 +41,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
   const project = selection.project;
   return <article className={`homepage-campaign homepage-campaign-${selection.slug} homepage-campaign-full homepage-campaign-${selection.size}`}>
     <a className="homepage-campaign-stage" href={`/work/${selection.slug}`} aria-label={`View ${selection.title} ${selection.subtitle} campaign`} style={{ '--campaign-ratio': `${image.width} / ${image.height}` } as React.CSSProperties}>
-      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={selection.size === 'feature' ? '100vw' : '(max-width: 600px) 100vw, 50vw'} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : undefined} decoding="async" key={image.src}/>
+      <img className="homepage-campaign-image" src={image.src} srcSet={image.srcSet} sizes={selection.size === 'feature' ? '100vw' : '(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw'} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : undefined} decoding="async" key={image.src}/>
       <div className="homepage-campaign-info">
         <span className="homepage-campaign-kicker">CAMPAIGN / {String(index + 1).padStart(2, '0')}</span>
         <h3>{selection.title}</h3>
@@ -56,7 +56,7 @@ function HomepageCampaign({ selection, index }: { selection: (typeof selectedWor
 function Work() {
   return <section id="work" className="work section-pad curated-work homepage-work-grid">
     <div className="section-heading homepage-intro"><h1>Cinematic product photography.</h1></div>
-    <div className="homepage-campaign-list">{selectedWork.map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div><a className="home-placements-link" href="/placements"><strong>See the images in context.</strong><span>Explore placements ↗</span></a>
+    <div className="homepage-campaign-list">{selectedWork.filter(selection => selection.size === 'feature').map((selection, i) => <HomepageCampaign selection={selection} index={i} key={selection.slug}/>)}</div><section className="homepage-secondary" aria-labelledby="more-campaigns-title"><h2 id="more-campaigns-title">More campaigns</h2><div className="homepage-secondary-grid">{selectedWork.filter(selection => selection.size === 'compact').map((selection, i) => <HomepageCampaign selection={selection} index={i + 3} key={selection.slug}/>)}</div></section><a className="home-placements-link" href="/placements"><strong>See the images in context.</strong><span>Explore placements ↗</span></a>
   </section>;
 }
 const studioMoments = [

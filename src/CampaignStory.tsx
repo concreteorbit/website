@@ -29,8 +29,6 @@ export default function CampaignStory({ project }: { project: Project }) {
   const isNeuro = project.slug === 'neuro-sleep-recharge';
   const campaign = campaigns.find(item => item.id === (isSeed ? 'seed' : isNeuro ? 'neuro' : 'trace'))!;
   const groups = isSeed ? seedGroups : isNeuro ? neuroGroups : traceGroups;
-  const usedPhotos = new Set(groups.flatMap(group => group.photos));
-  const remaining = project.gallery.filter((_, index) => !usedPhotos.has(index));
   return <div className="campaign-story">
     <div className="story-intro"><p>Photography + campaign applications</p><span>Photography and concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</span></div>
     {groups.map((group, groupIndex) => <section className="story-group" key={group.title} aria-labelledby={`story-${groupIndex}`}>
@@ -47,6 +45,5 @@ export default function CampaignStory({ project }: { project: Project }) {
         </article>;
       })}</div>
     </section>)}
-    {remaining.length ? <section className="story-additional" aria-labelledby="story-additional-title"><span>FROM THE SAME CAMPAIGN</span><h2 id="story-additional-title">More photography</h2><div>{remaining.map(photo => <img key={photo.src} src={photo.src} srcSet={photo.srcSet} sizes="90vw" width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async"/>)}</div></section> : null}
   </div>;
 }
