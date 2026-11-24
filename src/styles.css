@@ -1553,3 +1553,5 @@ footer{background:var(--lab-panel);border-top:1px solid var(--lab-line)}
 @media(max-width:700px){
  .project-seed-pm02-sleep-restore .campaign-paired-row{grid-template-columns:minmax(0,1fr);gap:24px}
 }
+
+@media(max-width:700px){.project-neuro-sleep-recharge .campaign-paired-row{grid-template-columns:minmax(0,1fr);gap:24px}}

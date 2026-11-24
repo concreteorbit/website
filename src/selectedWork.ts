@@ -11,8 +11,9 @@ type HomepageSelection = {
   stateLabel?: string;
 };
 
-// Six full-page homepage features; Xbox remains available at its campaign URL.
+// Full-page homepage features; Xbox remains available at its campaign URL.
 const homepageSelections: HomepageSelection[] = [
+  { slug: 'neuro-sleep-recharge', title: 'NEURO', subtitle: 'Sleep & Recharge', size: 'feature', alt: 'Extreme macro of the Neuro wordmark and reflective Sleep & Recharge packaging label.', imageIndex: 1, stateLabel: 'EXTREME MACRO' },
   { slug: 'seed-pm02-sleep-restore', title: 'SEED', subtitle: 'PM-02 Sleep + Restore', size: 'feature', alt: 'Cropped angled view of the Seed PM-02 bottle, logo and label in cool directional light.', imageIndex: 0, stateLabel: 'CROPPED HERO' },
   { slug: 'mt-angel-joint-solution', title: 'MT. ANGEL', subtitle: 'Joint Solution', size: 'feature', alt: 'Angled macro of the Mt. Angel Joint Solution label, bottle neck and cap.', imageIndex: 2, stateLabel: 'MACRO' },
   { slug: 'playstation-5', title: 'PLAYSTATION 5', subtitle: 'Console + DualSense Controller', size: 'feature', alt: 'Close view of the PlayStation emblem cut into the textured console panel.', imageIndex: 2, stateLabel: 'CONSOLE MACRO' },

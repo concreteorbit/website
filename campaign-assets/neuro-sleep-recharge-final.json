@@ -1,0 +1,62 @@
+{
+  "campaign": "Neuro Sleep & Recharge",
+  "sourceDirectory": "C:\\Users\\jacks\\OneDrive\\Attachments\\Documents\\Neuro FINAL",
+  "instruction": "Approved final source set. Preserve color, lighting, framing and texture. Do not substitute earlier versions. Website exports are proportional resizes only.",
+  "files": [
+    {
+      "file": "neuro - hero.jpg",
+      "sha256": "9a094bbd31fc5869a1063a1d2def25624f53de56e6bddd039f617c1acb7c4bbb",
+      "width": 7489,
+      "height": 3072,
+      "outputs": [
+        "public/images/projects/neuro-sleep-recharge-final-hero-800.webp",
+        "public/images/projects/neuro-sleep-recharge-final-hero-1600.webp",
+        "public/images/projects/neuro-sleep-recharge-final-hero-2560.webp"
+      ]
+    },
+    {
+      "file": "neuro - extreme macro.png",
+      "sha256": "31815afd33797a42caababfb1dc999ffe31f977de52539e781175b8dfb8c76e9",
+      "width": 2200,
+      "height": 1270,
+      "outputs": [
+        "public/images/projects/neuro-sleep-recharge-final-extreme-macro-800.webp",
+        "public/images/projects/neuro-sleep-recharge-final-extreme-macro-1600.webp",
+        "public/images/projects/neuro-sleep-recharge-final-extreme-macro-2200.webp"
+      ]
+    },
+    {
+      "file": "neuro - macro.jpg",
+      "sha256": "4129019f1742490dc57f81e2e4cbf61ac2309a3ed8f9c769291b6de2191e49ab",
+      "width": 2831,
+      "height": 1769,
+      "outputs": [
+        "public/images/projects/neuro-sleep-recharge-final-macro-800.webp",
+        "public/images/projects/neuro-sleep-recharge-final-macro-1600.webp",
+        "public/images/projects/neuro-sleep-recharge-final-macro-2560.webp"
+      ]
+    },
+    {
+      "file": "neuro - messaging macro.jpg",
+      "sha256": "cf130017303cceb67b02007e75dc1e332c9f351def105b3de5e2a97bd99af33f",
+      "width": 2828,
+      "height": 1566,
+      "outputs": [
+        "public/images/projects/neuro-sleep-recharge-final-messaging-macro-800.webp",
+        "public/images/projects/neuro-sleep-recharge-final-messaging-macro-1600.webp",
+        "public/images/projects/neuro-sleep-recharge-final-messaging-macro-2560.webp"
+      ]
+    },
+    {
+      "file": "Neuro - Tilt hero.png",
+      "sha256": "7a51837fcefc49f0e193e3eb31aa29f5740daeb225ddc565c22e29aaf2da2e1c",
+      "width": 5504,
+      "height": 3072,
+      "outputs": [
+        "public/images/projects/neuro-sleep-recharge-final-tilted-hero-800.webp",
+        "public/images/projects/neuro-sleep-recharge-final-tilted-hero-1600.webp",
+        "public/images/projects/neuro-sleep-recharge-final-tilted-hero-2560.webp"
+      ]
+    }
+  ]
+}

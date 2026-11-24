@@ -198,6 +198,7 @@ function CampaignApplications({ project }: { project: Project }) {
 
 function photoTypeLabel(src: string) {
   const name = src.toLowerCase();
+  if (name.includes('neuro-sleep-recharge-final-macro')) return 'MACRO';
   if (name.includes('seed-pm02-hero-crop')) return 'CROPPED HERO';
   if (name.includes('seed-pm02-stacked-hero')) return 'BOTTLE + PACKAGING';
   if (name.includes('seed-pm02-upper-macro')) return 'UPPER BOTTLE / MACRO';

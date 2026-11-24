@@ -234,7 +234,57 @@ const seedPm02Images: PortfolioImage[] = [
   }
 ];
 
+// Approved Neuro FINAL sources; see campaign-assets/neuro-sleep-recharge-final.json.
+const neuroSleepImages: PortfolioImage[] = [
+  {
+    "src": "/images/projects/neuro-sleep-recharge-final-hero-2560.webp",
+    "srcSet": "/images/projects/neuro-sleep-recharge-final-hero-800.webp 800w, /images/projects/neuro-sleep-recharge-final-hero-1600.webp 1600w, /images/projects/neuro-sleep-recharge-final-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1050,
+    "alt": "Upright Neuro Sleep & Recharge packaging in blue and purple light with open black space."
+  },
+  {
+    "src": "/images/projects/neuro-sleep-recharge-final-extreme-macro-2200.webp",
+    "srcSet": "/images/projects/neuro-sleep-recharge-final-extreme-macro-800.webp 800w, /images/projects/neuro-sleep-recharge-final-extreme-macro-1600.webp 1600w, /images/projects/neuro-sleep-recharge-final-extreme-macro-2200.webp 2200w",
+    "width": 2200,
+    "height": 1270,
+    "alt": "Extreme macro of the Neuro wordmark and reflective Sleep & Recharge packaging label."
+  },
+  {
+    "src": "/images/projects/neuro-sleep-recharge-final-macro-2560.webp",
+    "srcSet": "/images/projects/neuro-sleep-recharge-final-macro-800.webp 800w, /images/projects/neuro-sleep-recharge-final-macro-1600.webp 1600w, /images/projects/neuro-sleep-recharge-final-macro-2560.webp 2560w",
+    "width": 2560,
+    "height": 1600,
+    "alt": "Close view of the upright Neuro box, wordmark, Mixed Berry label and packaging details."
+  },
+  {
+    "src": "/images/projects/neuro-sleep-recharge-final-messaging-macro-2560.webp",
+    "srcSet": "/images/projects/neuro-sleep-recharge-final-messaging-macro-800.webp 800w, /images/projects/neuro-sleep-recharge-final-messaging-macro-1600.webp 1600w, /images/projects/neuro-sleep-recharge-final-messaging-macro-2560.webp 2560w",
+    "width": 2560,
+    "height": 1418,
+    "alt": "Angled messaging macro of the embossed Sleep & Recharge name and melatonin band."
+  },
+  {
+    "src": "/images/projects/neuro-sleep-recharge-final-tilted-hero-2560.webp",
+    "srcSet": "/images/projects/neuro-sleep-recharge-final-tilted-hero-800.webp 800w, /images/projects/neuro-sleep-recharge-final-tilted-hero-1600.webp 1600w, /images/projects/neuro-sleep-recharge-final-tilted-hero-2560.webp 2560w",
+    "width": 2560,
+    "height": 1429,
+    "alt": "Tilted Neuro Sleep & Recharge box in blue directional light against black."
+  }
+];
+
 export const projects: Project[] = [
+  {
+    slug: 'neuro-sleep-recharge',
+    name: 'NEURO',
+    brand: 'Sleep & Recharge',
+    tone: 'slate',
+    socialHandle: '',
+    services: ['Creative Direction', 'Photography', 'Image Finishing'],
+    deliverables: 'Upright hero · Extreme macro · Macro · Messaging macro · Tilted hero',
+    cover: neuroSleepImages[1],
+    gallery: neuroSleepImages,
+  },
   {
     slug: 'seed-pm02-sleep-restore',
     name: 'SEED',
