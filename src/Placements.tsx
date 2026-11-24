@@ -12,13 +12,8 @@ const examples = [
 
 export default function Placements() {
   return <div className="placements-page">
-    <section className="placements-intro">
-      <span className="eyebrow">PHOTOGRAPHY IN CONTEXT / 01</span>
-      <h1>Beyond the photograph.</h1>
-      <div className="placements-intro-bottom"><p>From the first impression to the product page. A look at how one campaign can live across a brand’s world.</p><a href="/work/trace-magnesium-glycinate">View the Trace campaign <span aria-hidden="true">↗</span></a></div>
-    </section>
     <section className="placements-campaign" aria-labelledby="placements-brand">
-      <div className="placements-brand-row"><div><h2 id="placements-brand">TRACE</h2><p>Magnesium Glycinate</p></div><p className="placements-disclosure">Concept placements by Concrete Orbit.<br/>Mockups illustrate possible uses; they are not live brand advertisements. Offers and pricing shown are illustrative.</p></div>
+      <div className="placements-brand-row"><div><h1 id="placements-brand">TRACE / PLACEMENTS</h1><p>Magnesium Glycinate</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
       <nav className="placements-jump" aria-label="Placement formats"><a href="#website-banner">Website</a><a href="#product-page">Product page</a><a href="#email">Email</a><a href="#popup-detail">Popup</a><a href="#social">Social</a><a href="#billboard">Billboard</a><a href="#sidebar">Sidebar</a></nav>
       <div className="placements-examples">{examples.map((example, index) => <article id={example.id} className={`placement-example${example.portrait ? ' placement-portrait' : ''}`} key={example.id}>
         <div className="placement-heading"><span className="placement-number">{String(index + 1).padStart(2, '0')}</span><div><span className="placement-format">{example.format}</span><h3>{example.title}</h3></div><p>{example.detail}</p></div>

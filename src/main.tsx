@@ -257,6 +257,7 @@ function ProjectPage({ project }: { project: Project }) {
     </div>
   </section>
   <Contact/>
+  {project.slug === 'trace-magnesium-glycinate' ? <div className="campaign-placement-bottom"><a className="campaign-placement-link" href="/placements"><strong>See placements</strong><span aria-hidden="true">↗</span></a></div> : null}
   </>;
 }
 
