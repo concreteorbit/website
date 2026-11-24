@@ -198,11 +198,11 @@ const seedPm02Images: PortfolioImage[] = [
     "alt": "Seed PM-02 bottle standing on its packaging in a dark studio composition."
   },
   {
-    "src": "/images/projects/seed-pm02-cap-extreme-macro-1624.webp",
-    "srcSet": "/images/projects/seed-pm02-cap-extreme-macro-480.webp 480w, /images/projects/seed-pm02-cap-extreme-macro-960.webp 960w, /images/projects/seed-pm02-cap-extreme-macro-1600.webp 1600w, /images/projects/seed-pm02-cap-extreme-macro-1624.webp 1624w",
-    "width": 1624,
-    "height": 914,
-    "alt": "Extreme macro of the Seed wordmark, frosted bottle and textured green cap."
+    "src": "/images/projects/seed-pm02-upper-macro-2488.webp",
+    "srcSet": "/images/projects/seed-pm02-upper-macro-480.webp 480w, /images/projects/seed-pm02-upper-macro-960.webp 960w, /images/projects/seed-pm02-upper-macro-1600.webp 1600w, /images/projects/seed-pm02-upper-macro-2488.webp 2488w",
+    "width": 2488,
+    "height": 1400,
+    "alt": "Macro of the upper Seed bottle, wordmark and textured green cap."
   },
   {
     "src": "/images/projects/seed-pm02-label-extreme-macro-1505.webp",
