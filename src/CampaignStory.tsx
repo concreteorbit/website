@@ -6,13 +6,13 @@ type StoryGroup = { title: string; photos: number[]; uses: string[]; note?: stri
 
 const traceGroups: StoryGroup[] = [
   { title: 'Extreme macro', photos: [0], uses: ['website-banner'] },
-  { title: 'Product hero', photos: [3], uses: ['product-page', 'billboard'], note: 'The macro and slight macro also support the product page.' },
+  { title: 'Product hero', photos: [3], uses: ['product-page', 'trace-wide-popup'], note: 'The macro and slight macro also support the product page.' },
   { title: 'Messaging macro', photos: [2], uses: ['email', 'social'] },
   { title: 'Slight macro', photos: [1], uses: ['popup-detail', 'sidebar'] },
 ];
 const seedGroups: StoryGroup[] = [
   { title: 'Bottle + packaging', photos: [1], uses: ['seed-website-banner'] },
-  { title: 'Product hero + label detail', photos: [6, 3], uses: ['seed-product-page', 'seed-billboard'], note: 'The box macro also supports the product page.' },
+  { title: 'Product hero + label detail', photos: [6, 3], uses: ['seed-product-page', 'seed-wide-popup'], note: 'The box macro also supports the product page.' },
   { title: 'Cropped hero', photos: [0], uses: ['seed-popup', 'seed-sidebar'] },
   { title: 'Packaging macro', photos: [5], uses: ['seed-email'] },
   { title: 'Upper bottle macro', photos: [2], uses: ['seed-social'] },
