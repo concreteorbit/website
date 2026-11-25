@@ -24,11 +24,14 @@ const neuroGroups: StoryGroup[] = [
   { title: 'Upright hero', photos: [0], uses: ['neuro-product', 'neuro-popup'] },
 ];
 
+const mtAngelGroups: StoryGroup[] = [{ title: 'Product macro', photos: [2], uses: ['mt-angel-banner'] }];
+
 export default function CampaignStory({ project }: { project: Project }) {
+  const isMtAngel = project.slug === 'mt-angel-joint-solution';
   const isSeed = project.slug === 'seed-pm02-sleep-restore';
   const isNeuro = project.slug === 'neuro-sleep-recharge';
-  const campaign = campaigns.find(item => item.id === (isSeed ? 'seed' : isNeuro ? 'neuro' : 'trace'))!;
-  const groups = isSeed ? seedGroups : isNeuro ? neuroGroups : traceGroups;
+  const campaign = campaigns.find(item => item.id === (isMtAngel ? 'mt-angel' : isSeed ? 'seed' : isNeuro ? 'neuro' : 'trace'))!;
+  const groups = isMtAngel ? mtAngelGroups : isSeed ? seedGroups : isNeuro ? neuroGroups : traceGroups;
   return <div className="campaign-story">
     <div className="story-intro"><p>Photography + campaign applications</p><span>Photography and concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</span></div>
     {groups.map((group, groupIndex) => <section className="story-group" key={group.title} aria-labelledby={`story-${groupIndex}`}>

@@ -93,16 +93,21 @@ const neuroExamples = [
   }
 ];
 
+const mtAngelExamples = [
+  { id: 'mt-angel-banner', file: 'mt-angel-banner-wide-concept', title: 'Homepage banner', detail: 'A wide close-up fills the frame beneath a black header, with white copy and a teal shop button.', width: 1600, height: 770, format: 'Website / Desktop', portrait: false },
+];
+
 export const campaigns = [
   { id: 'trace', brand: 'Trace', product: 'Magnesium Glycinate', href: '/work/trace-magnesium-glycinate', examples },
   { id: 'neuro', brand: 'Neuro', product: 'Sleep & Recharge', href: '/work/neuro-sleep-recharge', examples: neuroExamples },
   { id: 'seed', brand: 'Seed', product: 'PM-02™ Sleep + Restore', href: '/work/seed-pm02-sleep-restore', examples: seedExamples },
+  { id: 'mt-angel', brand: 'Mt. Angel', product: 'Joint Solution', href: '/work/mt-angel-joint-solution', examples: mtAngelExamples },
 ];
 
 export default function Placements() {
   return <div className="placements-page">
     <h1 className="sr-only">Photography placements</h1>
-    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a><a href="#neuro">Neuro ↘</a></nav>
+    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a><a href="#neuro">Neuro ↘</a><a href="#mt-angel">Mt. Angel ↘</a></nav>
     {campaigns.map(campaign => <section id={campaign.id} key={campaign.id} className="placements-campaign" aria-labelledby={`${campaign.id}-heading`}>
       <div className="placements-brand-row"><div><h2 id={`${campaign.id}-heading`}>{campaign.brand.toUpperCase()} / PLACEMENTS</h2><p>{campaign.product}</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
       <nav className="placements-jump" aria-label={`${campaign.brand} placement formats`}>{campaign.examples.map((example, index) => <a key={example.id} href={`#${example.id}`}>{['Website', 'Product page', 'Email', 'Popup', 'Social', 'Billboard', 'Sidebar'][index]}</a>)}</nav>
