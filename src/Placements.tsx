@@ -23,7 +23,7 @@ const seedExamples = [
 const neuroExamples = [
   {
     "id": "neuro-banner",
-    "file": "neuro-placement-banner-simplified-concept",
+    "file": "neuro-placement-banner-copy-v1-concept",
     "title": "Homepage banner",
     "detail": "The tilted billboard photograph pairs with copy in its open space, a white sale strip and dark-purple framing.",
     "width": 1600,
@@ -43,7 +43,7 @@ const neuroExamples = [
   },
   {
     "id": "neuro-email",
-    "file": "neuro-placement-email-simplified-concept",
+    "file": "neuro-placement-email-copy-v1-concept",
     "title": "Email campaign",
     "detail": "The extreme macro is cropped at the bottom for a tighter email image.",
     "width": 1000,
@@ -73,7 +73,7 @@ const neuroExamples = [
   },
   {
     "id": "neuro-billboard",
-    "file": "neuro-placement-billboard-final-concept",
+    "file": "neuro-placement-billboard-copy-v1-concept",
     "title": "Billboard",
     "detail": "The tilted product sits beside a short headline in the supplied billboard frame.",
     "width": 1600,
@@ -83,7 +83,7 @@ const neuroExamples = [
   },
   {
     "id": "neuro-sidebar",
-    "file": "neuro-placement-sidebar-simplified-concept",
+    "file": "neuro-placement-sidebar-copy-v1-concept",
     "title": "Website sidebar ad",
     "detail": "The extreme macro anchors a vertical display ad.",
     "width": 1000,
