@@ -24,7 +24,12 @@ const neuroGroups: StoryGroup[] = [
   { title: 'Upright hero', photos: [0], uses: ['neuro-product', 'neuro-popup'] },
 ];
 
-const mtAngelGroups: StoryGroup[] = [{ title: 'Product macro', photos: [2], uses: ['mt-angel-banner'] }];
+const mtAngelGroups: StoryGroup[] = [
+  { title: 'Tilted hero', photos: [4], uses: ['mt-angel-banner', 'mt-angel-sidebar'] },
+  { title: 'Upright hero', photos: [3], uses: ['mt-angel-product', 'mt-angel-popup'] },
+  { title: 'Product macro', photos: [2], uses: ['mt-angel-email'] },
+  { title: 'Extreme macro', photos: [0], uses: ['mt-angel-instagram'] },
+];
 
 export default function CampaignStory({ project }: { project: Project }) {
   const isMtAngel = project.slug === 'mt-angel-joint-solution';

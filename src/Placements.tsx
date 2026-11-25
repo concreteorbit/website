@@ -94,7 +94,66 @@ const neuroExamples = [
 ];
 
 const mtAngelExamples = [
-  { id: 'mt-angel-banner', file: 'mt-angel-banner-wide-concept', title: 'Homepage banner', detail: 'A wide close-up fills the frame beneath a black header, with white copy and a teal shop button.', width: 1600, height: 770, format: 'Website / Desktop', portrait: false },
+  {
+    "id": "mt-angel-banner",
+    "file": "mt-angel-banner-third-photo-concept",
+    "title": "Homepage banner",
+    "detail": "The tilted hero pairs with white copy and a teal call to action.",
+    "width": 1600,
+    "height": 1050,
+    "format": "Website / Desktop",
+    "portrait": false
+  },
+  {
+    "id": "mt-angel-product",
+    "file": "mt-angel-product-concept",
+    "title": "Product page",
+    "detail": "An upright hero anchors the product page.",
+    "width": 1600,
+    "height": 1080,
+    "format": "E-commerce / Desktop",
+    "portrait": false
+  },
+  {
+    "id": "mt-angel-email",
+    "file": "mt-angel-email-concept",
+    "title": "Email campaign",
+    "detail": "The product macro leads a branded email campaign.",
+    "width": 1000,
+    "height": 1256,
+    "format": "Email / Campaign",
+    "portrait": true
+  },
+  {
+    "id": "mt-angel-popup",
+    "file": "mt-angel-popup-concept",
+    "title": "Website popup",
+    "detail": "A full-screen product photograph frames the website popup.",
+    "width": 1600,
+    "height": 900,
+    "format": "Website / Promotion",
+    "portrait": false
+  },
+  {
+    "id": "mt-angel-instagram",
+    "file": "mt-angel-instagram-extreme-concept",
+    "title": "Instagram ad",
+    "detail": "The extreme macro fills the Instagram creative, with supporting copy in the caption.",
+    "width": 480,
+    "height": 940,
+    "format": "Social / Mobile",
+    "portrait": true
+  },
+  {
+    "id": "mt-angel-sidebar",
+    "file": "mt-angel-sidebar-tilted-concept",
+    "title": "Website sidebar ad",
+    "detail": "The headline and call to action sit above the tilted bottle.",
+    "width": 600,
+    "height": 1000,
+    "format": "Display / Vertical",
+    "portrait": true
+  }
 ];
 
 export const campaigns = [
@@ -110,7 +169,7 @@ export default function Placements() {
     <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a><a href="#neuro">Neuro ↘</a><a href="#mt-angel">Mt. Angel ↘</a></nav>
     {campaigns.map(campaign => <section id={campaign.id} key={campaign.id} className="placements-campaign" aria-labelledby={`${campaign.id}-heading`}>
       <div className="placements-brand-row"><div><h2 id={`${campaign.id}-heading`}>{campaign.brand.toUpperCase()} / PLACEMENTS</h2><p>{campaign.product}</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
-      <nav className="placements-jump" aria-label={`${campaign.brand} placement formats`}>{campaign.examples.map((example, index) => <a key={example.id} href={`#${example.id}`}>{['Website', 'Product page', 'Email', 'Popup', 'Social', 'Billboard', 'Sidebar'][index]}</a>)}</nav>
+      <nav className="placements-jump" aria-label={`${campaign.brand} placement formats`}>{campaign.examples.map((example, index) => <a key={example.id} href={`#${example.id}`}>{example.title}</a>)}</nav>
       <div className="placements-examples">{campaign.examples.map((example, index) => <article id={example.id} className={`placement-example${example.portrait ? ' placement-portrait' : ''}`} key={example.id}>
         <div className="placement-heading"><span className="placement-number">{String(index + 1).padStart(2, '0')}</span><div><span className="placement-format">{example.format}</span><h3>{example.title}</h3></div><p>{example.detail}</p></div>
         <div className="placement-preview">

@@ -241,7 +241,7 @@ function CampaignPhoto({ image, index, size, wide = false }: { image: PortfolioI
 function ProjectPage({ project }: { project: Project }) {
   const isMtAngel = project.slug === 'mt-angel-joint-solution';
   const hasStory = ['trace-magnesium-glycinate', 'seed-pm02-sleep-restore', 'neuro-sleep-recharge'].includes(project.slug);
-  const showcaseImages = campaignShowcaseImages(project).filter(image => !isMtAngel || image.src !== project.gallery[2].src);
+  const showcaseImages = campaignShowcaseImages(project).filter(image => !isMtAngel || image.src === project.gallery[1].src);
   const leadImage = showcaseImages[0];
   const rows = project.slug === 'seed-pm02-sleep-restore'
     ? [[showcaseImages[1]], showcaseImages.slice(2, 4), showcaseImages.slice(4, 6), [showcaseImages[6]]]
