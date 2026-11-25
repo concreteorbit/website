@@ -23,37 +23,37 @@ const seedExamples = [
 const neuroExamples = [
   {
     "id": "neuro-banner",
-    "file": "neuro-banner-slogan-v1-concept",
+    "file": "neuro-banner-sans-v3-concept",
     "title": "Homepage banner",
     "detail": "The tilted billboard photograph pairs with copy in its open space, a white sale strip and dark-purple framing.",
     "width": 1600,
-    "height": 1124,
+    "height": 1000,
     "format": "Website / Desktop",
     "portrait": false
   },
   {
     "id": "neuro-product",
-    "file": "neuro-placement-product-final-concept",
+    "file": "neuro-product-sans-v3-concept",
     "title": "Product page",
     "detail": "A single product photograph anchors the product page.",
     "width": 1600,
-    "height": 1080,
+    "height": 1090,
     "format": "E-commerce / Desktop",
     "portrait": false
   },
   {
     "id": "neuro-email",
-    "file": "neuro-email-slogan-v1-concept",
+    "file": "neuro-email-sans-v3-concept",
     "title": "Email campaign",
     "detail": "The extreme macro is cropped at the bottom for a tighter email image.",
     "width": 1000,
-    "height": 1293,
+    "height": 1309,
     "format": "Email / Campaign",
     "portrait": true
   },
   {
     "id": "neuro-popup",
-    "file": "neuro-popup-slogan-v1-concept",
+    "file": "neuro-popup-sans-v3-concept",
     "title": "Website popup",
     "detail": "The upright hero is scaled to fill the promotional popup panel.",
     "width": 1600,
@@ -63,7 +63,7 @@ const neuroExamples = [
   },
   {
     "id": "neuro-instagram",
-    "file": "neuro-social-slogan-v1-concept",
+    "file": "neuro-social-sans-v3-concept",
     "title": "Instagram ad",
     "detail": "The extreme macro fills the social post.",
     "width": 1000,
@@ -73,17 +73,17 @@ const neuroExamples = [
   },
   {
     "id": "neuro-billboard",
-    "file": "neuro-billboard-slogan-v1-concept",
+    "file": "neuro-billboard-sans-v3-concept",
     "title": "Billboard",
     "detail": "The tilted product sits beside a short headline in the supplied billboard frame.",
     "width": 1600,
-    "height": 954,
+    "height": 955,
     "format": "Out of home / Wide",
     "portrait": false
   },
   {
     "id": "neuro-sidebar",
-    "file": "neuro-sidebar-slogan-v1-concept",
+    "file": "neuro-sidebar-sans-v3-concept",
     "title": "Website sidebar ad",
     "detail": "The extreme macro anchors a vertical display ad.",
     "width": 1000,
