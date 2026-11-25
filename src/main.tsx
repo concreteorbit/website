@@ -240,7 +240,7 @@ function CampaignPhoto({ image, index, size, wide = false }: { image: PortfolioI
 
 function ProjectPage({ project }: { project: Project }) {
   const isMtAngel = project.slug === 'mt-angel-joint-solution';
-  const hasStory = ['trace-magnesium-glycinate', 'seed-pm02-sleep-restore', 'neuro-sleep-recharge', 'mt-angel-joint-solution'].includes(project.slug);
+  const hasStory = ['trace-magnesium-glycinate', 'seed-pm02-sleep-restore', 'neuro-sleep-recharge', 'mt-angel-joint-solution', 'hoka-ora-recovery-slides'].includes(project.slug);
   const showcaseImages = campaignShowcaseImages(project).filter(image => !isMtAngel || image.src === project.gallery[1].src);
   const leadImage = showcaseImages[0];
   const rows = project.slug === 'seed-pm02-sleep-restore'

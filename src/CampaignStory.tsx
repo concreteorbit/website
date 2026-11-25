@@ -31,12 +31,18 @@ const mtAngelGroups: StoryGroup[] = [
   { title: 'Extreme macro', photos: [0], uses: ['mt-angel-instagram'] },
 ];
 
+const hokaGroups: StoryGroup[] = [
+  { title: 'Front macro', photos: [0], uses: ['hoka-banner', 'hoka-email', 'hoka-social'] },
+  { title: 'Product hero + details', photos: [1, 2, 3], uses: ['hoka-product', 'hoka-popup', 'hoka-sidebar'], note: 'The product page includes upper, heel and outsole details. Wide and portrait hero crops support the popup and sidebar.' },
+];
+
 export default function CampaignStory({ project }: { project: Project }) {
+  const isHoka = project.slug === 'hoka-ora-recovery-slides';
   const isMtAngel = project.slug === 'mt-angel-joint-solution';
   const isSeed = project.slug === 'seed-pm02-sleep-restore';
   const isNeuro = project.slug === 'neuro-sleep-recharge';
-  const campaign = campaigns.find(item => item.id === (isMtAngel ? 'mt-angel' : isSeed ? 'seed' : isNeuro ? 'neuro' : 'trace'))!;
-  const groups = isMtAngel ? mtAngelGroups : isSeed ? seedGroups : isNeuro ? neuroGroups : traceGroups;
+  const campaign = campaigns.find(item => item.id === (isHoka ? 'hoka' : isMtAngel ? 'mt-angel' : isSeed ? 'seed' : isNeuro ? 'neuro' : 'trace'))!;
+  const groups = isHoka ? hokaGroups : isMtAngel ? mtAngelGroups : isSeed ? seedGroups : isNeuro ? neuroGroups : traceGroups;
   return <div className="campaign-story">
     <div className="story-intro"><p>Photography + campaign applications</p><span>Photography and concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</span></div>
     {groups.map((group, groupIndex) => <section className="story-group" key={group.title} aria-labelledby={`story-${groupIndex}`}>

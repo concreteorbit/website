@@ -156,17 +156,81 @@ const mtAngelExamples = [
   }
 ];
 
+const hokaExamples = [
+  {
+    "id": "hoka-banner",
+    "file": "hoka-banner-concept-v1",
+    "title": "Homepage banner",
+    "detail": "A full-bleed macro occupies the right side, with black copy space on the left.",
+    "width": 1600,
+    "height": 800,
+    "format": "Website / Desktop",
+    "portrait": false
+  },
+  {
+    "id": "hoka-product",
+    "file": "hoka-product-mockup-v1",
+    "title": "Product page",
+    "detail": "The front hero leads a product page with supporting upper, heel and outsole details.",
+    "width": 1600,
+    "height": 1050,
+    "format": "E-commerce / Desktop",
+    "portrait": false
+  },
+  {
+    "id": "hoka-email",
+    "file": "hoka-email-concept-v1",
+    "title": "Email campaign",
+    "detail": "The product macro anchors a branded email with a lavender call to action.",
+    "width": 1000,
+    "height": 1280,
+    "format": "Email / Campaign",
+    "portrait": true
+  },
+  {
+    "id": "hoka-popup",
+    "file": "hoka-popup-wide-concept-v1",
+    "title": "Wide website popup",
+    "detail": "A wide hero crop pairs with a bold headline and lavender shop button.",
+    "width": 1600,
+    "height": 900,
+    "format": "Website / Wide popup",
+    "portrait": false
+  },
+  {
+    "id": "hoka-social",
+    "file": "hoka-social-concept-v2",
+    "title": "Instagram ad",
+    "detail": "The macro fills the creative inside a phone mockup with corrected proportions.",
+    "width": 540,
+    "height": 1040,
+    "format": "Social / Mobile",
+    "portrait": true
+  },
+  {
+    "id": "hoka-sidebar",
+    "file": "hoka-sidebar-concept-v1",
+    "title": "Website sidebar ad",
+    "detail": "The headline and call to action sit above the supplied portrait hero.",
+    "width": 600,
+    "height": 1000,
+    "format": "Display / Vertical",
+    "portrait": true
+  }
+];
+
 export const campaigns = [
   { id: 'trace', brand: 'Trace', product: 'Magnesium Glycinate', href: '/work/trace-magnesium-glycinate', examples },
   { id: 'neuro', brand: 'Neuro', product: 'Sleep & Recharge', href: '/work/neuro-sleep-recharge', examples: neuroExamples },
   { id: 'seed', brand: 'Seed', product: 'PM-02™ Sleep + Restore', href: '/work/seed-pm02-sleep-restore', examples: seedExamples },
   { id: 'mt-angel', brand: 'Mt. Angel', product: 'Joint Solution', href: '/work/mt-angel-joint-solution', examples: mtAngelExamples },
+  { id: 'hoka', brand: 'HOKA', product: 'ORA Recovery Slide', href: '/work/hoka-ora-recovery-slides', examples: hokaExamples },
 ];
 
 export default function Placements() {
   return <div className="placements-page">
     <h1 className="sr-only">Photography placements</h1>
-    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a><a href="#neuro">Neuro ↘</a><a href="#mt-angel">Mt. Angel ↘</a></nav>
+    <nav className="placements-campaign-nav" aria-label="Placement campaigns"><a href="#trace">Trace ↘</a><a href="#seed">Seed ↘</a><a href="#neuro">Neuro ↘</a><a href="#mt-angel">Mt. Angel ↘</a><a href="#hoka">HOKA ↘</a></nav>
     {campaigns.map(campaign => <section id={campaign.id} key={campaign.id} className="placements-campaign" aria-labelledby={`${campaign.id}-heading`}>
       <div className="placements-brand-row"><div><h2 id={`${campaign.id}-heading`}>{campaign.brand.toUpperCase()} / PLACEMENTS</h2><p>{campaign.product}</p></div><p className="placements-disclosure">Concept designs by Concrete Orbit. Illustrative uses, offers and pricing.</p></div>
       <nav className="placements-jump" aria-label={`${campaign.brand} placement formats`}>{campaign.examples.map((example, index) => <a key={example.id} href={`#${example.id}`}>{example.title}</a>)}</nav>
