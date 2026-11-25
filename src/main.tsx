@@ -240,7 +240,7 @@ function CampaignPhoto({ image, index, size, wide = false }: { image: PortfolioI
 
 function ProjectPage({ project }: { project: Project }) {
   const isMtAngel = project.slug === 'mt-angel-joint-solution';
-  const hasStory = ['trace-magnesium-glycinate', 'seed-pm02-sleep-restore', 'neuro-sleep-recharge'].includes(project.slug);
+  const hasStory = ['trace-magnesium-glycinate', 'seed-pm02-sleep-restore', 'neuro-sleep-recharge', 'mt-angel-joint-solution'].includes(project.slug);
   const showcaseImages = campaignShowcaseImages(project).filter(image => !isMtAngel || image.src === project.gallery[1].src);
   const leadImage = showcaseImages[0];
   const rows = project.slug === 'seed-pm02-sleep-restore'
@@ -250,7 +250,6 @@ function ProjectPage({ project }: { project: Project }) {
   <section className={`project-detail section-pad curated-project compact-project project-${project.slug}`}>
     <a className="back-link" href="/#work"><Arrow direction="left"/> PROJECT INDEX</a>
     <div className="detail-heading"><h1>{project.name}</h1><p>{project.brand}</p></div>
-    {isMtAngel ? <CampaignStory project={project}/> : null}
     {hasStory ? <CampaignStory project={project}/> : <div className="campaign-gallery" aria-label={`${project.name} campaign photographs`}>
       {leadImage ? <CampaignPhoto image={leadImage} index={1} size="lead"/> : null}
       <div className="campaign-paired-grid">{rows.map((row) => <div className={`campaign-paired-row${row.length === 1 ? ' campaign-paired-row-single' : ''}`} style={{ '--campaign-pair-left': `${row[0].width / row[0].height}fr`, '--campaign-pair-right': row[1] ? `${row[1].width / row[1].height}fr` : '1fr' } as React.CSSProperties} key={row[0].src}>{row.map((image) => <CampaignPhoto image={image} index={showcaseImages.indexOf(image) + 1} size="medium" wide={row.length === 1} key={image.src}/>)}</div>)}</div>

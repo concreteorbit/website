@@ -96,17 +96,17 @@ const neuroExamples = [
 const mtAngelExamples = [
   {
     "id": "mt-angel-banner",
-    "file": "mt-angel-banner-third-photo-concept",
+    "file": "mt-angel-banner-wide-type-v2-concept",
     "title": "Homepage banner",
-    "detail": "The tilted hero pairs with white copy and a teal call to action.",
+    "detail": "The close-up product macro pairs with white copy and a teal call to action.",
     "width": 1600,
-    "height": 1050,
+    "height": 770,
     "format": "Website / Desktop",
     "portrait": false
   },
   {
     "id": "mt-angel-product",
-    "file": "mt-angel-product-concept",
+    "file": "mt-angel-product-type-v2-concept",
     "title": "Product page",
     "detail": "An upright hero anchors the product page.",
     "width": 1600,
@@ -116,7 +116,7 @@ const mtAngelExamples = [
   },
   {
     "id": "mt-angel-email",
-    "file": "mt-angel-email-concept",
+    "file": "mt-angel-email-type-v2-concept",
     "title": "Email campaign",
     "detail": "The product macro leads a branded email campaign.",
     "width": 1000,
@@ -126,7 +126,7 @@ const mtAngelExamples = [
   },
   {
     "id": "mt-angel-popup",
-    "file": "mt-angel-popup-concept",
+    "file": "mt-angel-popup-type-v2-concept",
     "title": "Website popup",
     "detail": "A full-screen product photograph frames the website popup.",
     "width": 1600,
@@ -146,7 +146,7 @@ const mtAngelExamples = [
   },
   {
     "id": "mt-angel-sidebar",
-    "file": "mt-angel-sidebar-tilted-concept",
+    "file": "mt-angel-sidebar-tilted-type-v2-concept",
     "title": "Website sidebar ad",
     "detail": "The headline and call to action sit above the tilted bottle.",
     "width": 600,

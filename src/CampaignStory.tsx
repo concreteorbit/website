@@ -25,9 +25,9 @@ const neuroGroups: StoryGroup[] = [
 ];
 
 const mtAngelGroups: StoryGroup[] = [
-  { title: 'Tilted hero', photos: [4], uses: ['mt-angel-banner', 'mt-angel-sidebar'] },
+  { title: 'Product macro', photos: [2], uses: ['mt-angel-banner', 'mt-angel-email'] },
   { title: 'Upright hero', photos: [3], uses: ['mt-angel-product', 'mt-angel-popup'] },
-  { title: 'Product macro', photos: [2], uses: ['mt-angel-email'] },
+  { title: 'Tilted hero', photos: [4], uses: ['mt-angel-sidebar'] },
   { title: 'Extreme macro', photos: [0], uses: ['mt-angel-instagram'] },
 ];
 
